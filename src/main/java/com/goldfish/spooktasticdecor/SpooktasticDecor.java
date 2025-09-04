@@ -63,6 +63,12 @@ public class SpooktasticDecor {
             .icon(() -> EXAMPLE_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                output.acceptAll(
+                ITEMS.getEntries().stream()
+                    .map(sup -> sup.get().getDefaultInstance())
+                    .filter(itemStack -> itemStack != null && !itemStack.isEmpty())
+                    .toList()
+            );
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
@@ -107,6 +113,13 @@ public class SpooktasticDecor {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(EXAMPLE_BLOCK_ITEM);
+            event.acceptAll(
+                ITEMS.getEntries().stream()
+                    .filter(sup -> sup != EXAMPLE_BLOCK_ITEM) // Avoid duplicate
+                    .map(sup -> sup.get().getDefaultInstance())
+                    .filter(itemStack -> itemStack != null && !itemStack.isEmpty())
+                    .toList()
+            );
         }
     }
 
