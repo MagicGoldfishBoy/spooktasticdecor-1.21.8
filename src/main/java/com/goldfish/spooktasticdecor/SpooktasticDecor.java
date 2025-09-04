@@ -2,6 +2,8 @@ package com.goldfish.spooktasticdecor;
 
 import org.slf4j.Logger;
 
+import com.goldfish.spooktasticdecor.datagen.Datagen;
+import com.goldfish.spooktasticdecor.datagen.RecipeGenerator;
 import com.mojang.logging.LogUtils;
 
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -24,6 +26,7 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -84,6 +87,8 @@ public class SpooktasticDecor {
         // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modEventBus);
 
+        //modEventBus.addListener(Datagen::gatherData);
+
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (SpooktasticDecor) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
@@ -91,6 +96,8 @@ public class SpooktasticDecor {
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
+
+        modEventBus.addListener(this::gatherData);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -128,5 +135,10 @@ public class SpooktasticDecor {
     public void onServerStarting(ServerStartingEvent event) {
         // Do something when the server starts
         LOGGER.info("Good news, the server is starting! :D");
+    }
+
+    public void gatherData(GatherDataEvent.Client event) {
+        Datagen datagen = new Datagen();
+        datagen.gatherData(event);
     }
 }
