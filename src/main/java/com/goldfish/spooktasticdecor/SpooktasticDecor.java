@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 
 import com.goldfish.spooktasticdecor.datagen.Datagen;
 import com.goldfish.spooktasticdecor.datagen.RecipeGenerator;
+import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
 import com.mojang.logging.LogUtils;
 
@@ -88,6 +89,7 @@ public class SpooktasticDecor {
         // Register the Deferred Register to the mod event bus so tabs get registered
 
         simpleblockregistry.registerAll();
+        SimpleBlockItemRegistry.registerAll();
         CREATIVE_MODE_TABS.register(modEventBus);
 
         //modEventBus.addListener(Datagen::gatherData);

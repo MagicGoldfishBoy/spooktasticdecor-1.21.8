@@ -1,8 +1,9 @@
-// 1.21.8	2025-09-04T12:57:57.605987227	Model Definitions - spooktasticdecor
+// 1.21.8	2025-09-04T14:06:19.345123925	Model Definitions - spooktasticdecor
 c331396d092a270639bc427730c002b3dc54b222 assets/spooktasticdecor/blockstates/example_block.json
 ce89b03f918a362a38668ed207549cc3ec2e173e assets/spooktasticdecor/blockstates/my_better_block.json
 7889b5da07d90d375811d5ffba9490ceef3d3292 assets/spooktasticdecor/items/example_block.json
 5d9baf31a83b31d4bbdc0226da2a679a10b4e837 assets/spooktasticdecor/items/example_item.json
+1cb321e1d830bd974703a597223e0317b14f17f4 assets/spooktasticdecor/items/my_better_block.json
 56cc2bfdb1cdcbf2b2a959c34747f505af0fbdb3 assets/spooktasticdecor/models/block/example_block.json
 32ac207004d97f6d621f84f7bf3334ccd7c957d6 assets/spooktasticdecor/models/block/my_better_block.json
 ccbb9998041155ba60c05fbc4e5e652d684a541b assets/spooktasticdecor/models/item/example_block.json
