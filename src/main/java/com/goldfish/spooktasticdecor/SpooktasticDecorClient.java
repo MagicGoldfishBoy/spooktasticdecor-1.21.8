@@ -25,7 +25,7 @@ public class SpooktasticDecorClient {
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
         // Some client setup code
-        SpooktasticDecor.LOGGER.info("HELLO FROM CLIENT SETUP");
+        SpooktasticDecor.LOGGER.info("Notice me, client senpai!");
         SpooktasticDecor.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }
 }

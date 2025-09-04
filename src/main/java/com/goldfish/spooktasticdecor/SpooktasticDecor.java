@@ -38,8 +38,10 @@ public class SpooktasticDecor {
     public static final String MODID = "spooktasticdecor";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
+
     // Create a Deferred Register to hold Blocks which will all be registered under the "spooktasticdecor" namespace
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
+    
     // Create a Deferred Register to hold Items which will all be registered under the "spooktasticdecor" namespace
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "spooktasticdecor" namespace
@@ -112,6 +114,6 @@ public class SpooktasticDecor {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         // Do something when the server starts
-        LOGGER.info("HELLO from server starting");
+        LOGGER.info("Good news, the server is starting! :D");
     }
 }
