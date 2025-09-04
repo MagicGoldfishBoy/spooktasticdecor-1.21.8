@@ -14,13 +14,28 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class simpleblockregistry {
 
-    public static final DeferredBlock<Block> MY_BETTER_BLOCK = SpooktasticDecor.BLOCKS.register(
-    "my_better_block", 
-    registryName -> new Block(BlockBehaviour.Properties.of()
-        .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        .destroyTime(2.0f)
-        .explosionResistance(10.0f)
-        .sound(SoundType.GRAVEL)
-        .lightLevel(state -> 7)
-    ));
+    
+    public static DeferredBlock<Block> MY_BETTER_BLOCK;
+
+    public static void registerAll() {
+        MY_BETTER_BLOCK = SpooktasticDecor.BLOCKS.register(
+            "my_better_block",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.GRAVEL)
+                .lightLevel(state -> 7)
+            )
+        );
+    }
+    // public static final DeferredBlock<Block> MY_BETTER_BLOCK = SpooktasticDecor.BLOCKS.register(
+    // "my_better_block", 
+    // registryName -> new Block(BlockBehaviour.Properties.of()
+    //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+    //     .destroyTime(2.0f)
+    //     .explosionResistance(10.0f)
+    //     .sound(SoundType.GRAVEL)
+    //     .lightLevel(state -> 7)
+    // ));
 }
