@@ -34,6 +34,8 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createTrivialCube(simpleblockregistry.WITHER_SKELETON_LAMP.get());
 
         blockModels.createTrivialCube(simpleblockregistry.GHAST_LAMP.get());
+
+        blockModels.createTrivialCube(simpleblockregistry.CREAKING_LAMP.get());
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
@@ -52,6 +54,10 @@ public class ModelDatagen extends ModelProvider {
         itemModels.itemModelOutput.accept(
             SimpleBlockItemRegistry.GHAST_LAMP_ITEM.get(),
             ItemModelUtils.plainModel(modLocation("block/ghast_lamp"))
+        );
+        itemModels.itemModelOutput.accept(
+            SimpleBlockItemRegistry.CREAKING_LAMP_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/creaking_lamp"))
         );
     }
 }

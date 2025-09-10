@@ -58,6 +58,15 @@ protected void buildRecipes() {
             .define('C', Items.GHAST_TEAR)
             .unlockedBy("has_ghast_tear", has(Items.GHAST_TEAR))
             .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.CREAKING_LAMP_ITEM.get())
+            .pattern("ACA")
+            .pattern("ABA")
+            .pattern("ACA")
+            .define('A', Items.PALE_OAK_PLANKS)
+            .define('B', Blocks.GLOWSTONE)
+            .define('C', Items.RESIN_CLUMP)
+            .unlockedBy("has_pale_oak_planks", has(Items.PALE_OAK_PLANKS))
+            .save(this.output);
 }
 
     // The data provider class
