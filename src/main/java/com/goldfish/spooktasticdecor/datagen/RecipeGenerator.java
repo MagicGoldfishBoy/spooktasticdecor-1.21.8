@@ -85,6 +85,15 @@ protected void buildRecipes() {
             .define('C', Items.FERMENTED_SPIDER_EYE)
             .unlockedBy("has_spider_eye", has(Items.SPIDER_EYE))
             .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ENDER_LAMP_ITEM.get())
+            .pattern("ACA")
+            .pattern("ABA")
+            .pattern("ACA")
+            .define('A', Items.ENDER_PEARL)
+            .define('B', Blocks.GLOWSTONE)
+            .define('C', Items.ENDER_EYE)
+            .unlockedBy("has_ender_pearl", has(Items.ENDER_PEARL))
+            .save(this.output);
 }
 
     // The data provider class
