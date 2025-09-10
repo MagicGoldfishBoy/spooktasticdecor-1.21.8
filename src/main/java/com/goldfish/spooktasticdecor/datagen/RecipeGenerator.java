@@ -22,7 +22,9 @@ public class RecipeGenerator extends RecipeProvider {
 
 @Override
 protected void buildRecipes() {
+
     System.out.println("Running RecipeGenerator#buildRecipes");
+
     ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get())
             .pattern("AAA")
             .pattern("ABA")
@@ -30,6 +32,14 @@ protected void buildRecipes() {
             .define('A', Items.ROTTEN_FLESH)
             .define('B', Blocks.GLOWSTONE)
             .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH))
+            .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.SKELETON_LAMP_ITEM.get())
+            .pattern("AAA")
+            .pattern("ABA")
+            .pattern("AAA")
+            .define('A', Items.BONE)
+            .define('B', Blocks.GLOWSTONE)
+            .unlockedBy("has_bone", has(Items.BONE))
             .save(this.output);
 }
 

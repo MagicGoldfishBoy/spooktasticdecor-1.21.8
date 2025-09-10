@@ -28,13 +28,20 @@ public class ModelDatagen extends ModelProvider {
     }
 
     protected void registerBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+
         blockModels.createTrivialCube(simpleblockregistry.ZOMBIE_LAMP.get()); 
+
+        blockModels.createTrivialCube(simpleblockregistry.SKELETON_LAMP.get());
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
         itemModels.itemModelOutput.accept(
             SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get(),
             ItemModelUtils.plainModel(modLocation("block/zombie_lamp"))
+        );
+        itemModels.itemModelOutput.accept(
+            SimpleBlockItemRegistry.SKELETON_LAMP_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/skeleton_lamp"))
         );
     }
 }

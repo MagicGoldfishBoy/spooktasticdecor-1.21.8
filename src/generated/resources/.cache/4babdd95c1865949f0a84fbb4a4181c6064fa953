@@ -1,3 +1,5 @@
-// 1.21.8	2025-09-10T09:14:11.273245484	SpooktasticDecor Recipes
+// 1.21.8	2025-09-10T10:22:11.142283562	SpooktasticDecor Recipes
+c3956ad8b396e33fa17587b10e7694e6872e6d89 data/spooktasticdecor/advancement/recipes/misc/skeleton_lamp.json
 b7d83e45f942cd84b1e3dd509f6ce66fe33f8076 data/spooktasticdecor/advancement/recipes/misc/zombie_lamp.json
+bf0e247a2adc6e9785323c83348cf49890717778 data/spooktasticdecor/recipe/skeleton_lamp.json
 cebfca19867fcbd7d6264f5d1580dc90fa7ef0e4 data/spooktasticdecor/recipe/zombie_lamp.json
