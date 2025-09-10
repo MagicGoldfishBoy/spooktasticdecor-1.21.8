@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "spooktasticdecor:block/my_better_block"
+    "all": "spooktasticdecor:block/zombie_lamp"
   }
 }

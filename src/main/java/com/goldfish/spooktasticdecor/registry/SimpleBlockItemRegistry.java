@@ -7,10 +7,10 @@ import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.DeferredItem;
 
 public class SimpleBlockItemRegistry {
-    public static DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM;
+    public static DeferredItem<BlockItem> ZOMBIE_LAMP_ITEM;
     public static void registerAll() {
-    EXAMPLE_BLOCK_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
-    simpleblockregistry.MY_BETTER_BLOCK,
+    ZOMBIE_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+    simpleblockregistry.ZOMBIE_LAMP,
     new Item.Properties());
     };
 }

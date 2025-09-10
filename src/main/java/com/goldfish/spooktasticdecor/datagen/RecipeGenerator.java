@@ -22,7 +22,7 @@ public class RecipeGenerator extends RecipeProvider {
 @Override
 protected void buildRecipes() {
     System.out.println("Running RecipeGenerator#buildRecipes");
-    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SpooktasticDecor.EXAMPLE_BLOCK_ITEM.get())
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SpooktasticDecor.ZOMBIE_LAMP_ITEM.get())
             .pattern("###")
             .pattern("# #")
             .pattern("###")

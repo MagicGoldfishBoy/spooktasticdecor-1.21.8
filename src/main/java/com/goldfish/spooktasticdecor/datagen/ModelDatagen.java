@@ -18,11 +18,11 @@ public class ModelDatagen extends ModelProvider {
 
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
-        Block block = simpleblockregistry.MY_BETTER_BLOCK.get();
+        Block block = simpleblockregistry.ZOMBIE_LAMP.get();
         blockModels.createTrivialCube(block);
         blockModels.createTrivialCube(SpooktasticDecor.EXAMPLE_BLOCK.get()); 
 
-        itemModels.generateFlatItem(SpooktasticDecor.EXAMPLE_BLOCK_ITEM.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(SpooktasticDecor.ZOMBIE_LAMP_ITEM.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(SpooktasticDecor.EXAMPLE_ITEM.get(), ModelTemplates.FLAT_ITEM);
     }
 }

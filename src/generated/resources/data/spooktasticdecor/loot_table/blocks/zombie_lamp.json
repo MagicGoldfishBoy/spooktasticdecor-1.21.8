@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "spooktasticdecor:my_better_block"
+          "name": "spooktasticdecor:zombie_lamp"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "spooktasticdecor:blocks/my_better_block"
+  "random_sequence": "spooktasticdecor:blocks/zombie_lamp"
 }
