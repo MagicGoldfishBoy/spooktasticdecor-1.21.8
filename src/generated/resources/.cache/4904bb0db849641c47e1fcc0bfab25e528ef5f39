@@ -1,6 +1,4 @@
-// 1.21.8	2025-09-10T09:37:01.520346333	Model Definitions - spooktasticdecor
+// 1.21.8	2025-09-10T09:45:25.390280507	Model Definitions - spooktasticdecor
 d8fe090daf002d36fa7b21c95fe0120e5c250591 assets/spooktasticdecor/blockstates/zombie_lamp.json
-5d9baf31a83b31d4bbdc0226da2a679a10b4e837 assets/spooktasticdecor/items/example_item.json
 f1dba99ef347f0e037daa885ea73e3837199eb1b assets/spooktasticdecor/items/zombie_lamp.json
 35205502c96b982ca3a83ac81fdb86231abe476a assets/spooktasticdecor/models/block/zombie_lamp.json
-c6ffed4d82d895729790083e7a604cf312f64b49 assets/spooktasticdecor/models/item/example_item.json

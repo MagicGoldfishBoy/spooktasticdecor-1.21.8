@@ -27,6 +27,5 @@ public class ModelDatagen extends ModelProvider {
             SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get(),
             ItemModelUtils.plainModel(modLocation("block/zombie_lamp"))
         );
-        itemModels.generateFlatItem(SpooktasticDecor.EXAMPLE_ITEM.get(), ModelTemplates.FLAT_ITEM);
     }
 }

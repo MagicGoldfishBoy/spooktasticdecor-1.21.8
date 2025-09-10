@@ -52,14 +52,6 @@ public class SpooktasticDecor {
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "spooktasticdecor" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    // Creates a new Block with the id "spooktasticdecor:example_block", combining the namespace and path
-    //public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-    // Creates a new BlockItem with the id "spooktasticdecor:example_block", combining the namespace and path
-    //public static final DeferredItem<BlockItem> ZOMBIE_LAMP_ITEM = ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
-
-    // Creates a new food item with the id "spooktasticdecor:example_id", nutrition 1 and saturation 2
-    public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.registerSimpleItem("example_item", new Item.Properties().food(new FoodProperties.Builder()
-            .alwaysEdible().nutrition(1).saturationModifier(2f).build()));
 
     // Creates a creative tab with the id "spooktasticdecor:example_tab" for the example item, that is placed after the combat tab
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
@@ -127,7 +119,6 @@ public class SpooktasticDecor {
             //event.accept(ZOMBIE_LAMP_ITEM);
             event.acceptAll(
                 ITEMS.getEntries().stream()
-                    //.filter(sup -> sup != ZOMBIE_LAMP_ITEM) // Avoid duplicate
                     .map(sup -> sup.get().getDefaultInstance())
                     .filter(itemStack -> itemStack != null && !itemStack.isEmpty())
                     .toList()
