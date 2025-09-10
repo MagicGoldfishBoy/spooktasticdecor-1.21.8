@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:ghast_tear",
+    "B": "minecraft:glowstone",
+    "C": "minecraft:ghast_tear"
+  },
+  "pattern": [
+    "ACA",
+    "ABA",
+    "ACA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:ghast_lamp"
+  }
+}

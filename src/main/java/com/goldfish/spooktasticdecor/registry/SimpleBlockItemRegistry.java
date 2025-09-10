@@ -11,6 +11,7 @@ public class SimpleBlockItemRegistry {
     public static DeferredItem<BlockItem> ZOMBIE_LAMP_ITEM;
     public static DeferredItem<BlockItem> SKELETON_LAMP_ITEM;
     public static DeferredItem<BlockItem> WITHER_SKELETON_LAMP_ITEM;
+    public static DeferredItem<BlockItem> GHAST_LAMP_ITEM;
 
     public static void registerAll() {
 
@@ -25,7 +26,11 @@ public class SimpleBlockItemRegistry {
     WITHER_SKELETON_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
     simpleblockregistry.WITHER_SKELETON_LAMP,
     new Item.Properties());
-    
+
+    GHAST_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+    simpleblockregistry.GHAST_LAMP,
+    new Item.Properties());
+
     };
 
 
