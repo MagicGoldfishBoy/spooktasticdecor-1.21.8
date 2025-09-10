@@ -1,10 +1,12 @@
-// 1.21.8	2025-09-10T12:11:50.600293252	SpooktasticDecor Recipes
+// 1.21.8	2025-09-10T12:29:53.235701678	SpooktasticDecor Recipes
 f444e238ccddf8ec8c75a713e73d65afaa64f777 data/spooktasticdecor/advancement/recipes/misc/creaking_lamp.json
+db96fffdb30c1c552711b4e8c55062dd147eb09e data/spooktasticdecor/advancement/recipes/misc/eyeball_lamp.json
 8878311694daf0ba06526d0cd8d9bebf6cd1d1f1 data/spooktasticdecor/advancement/recipes/misc/ghast_lamp.json
 c3956ad8b396e33fa17587b10e7694e6872e6d89 data/spooktasticdecor/advancement/recipes/misc/skeleton_lamp.json
 c0ce71951ff55481e41acf1b61ebc9bda96d6147 data/spooktasticdecor/advancement/recipes/misc/wither_skeleton_lamp.json
 b7d83e45f942cd84b1e3dd509f6ce66fe33f8076 data/spooktasticdecor/advancement/recipes/misc/zombie_lamp.json
 3724583c8a42f7ee78181ae80f4fb0e32d4f981e data/spooktasticdecor/recipe/creaking_lamp.json
+6535b5df5f7a94508cafef5323780b011ea72566 data/spooktasticdecor/recipe/eyeball_lamp.json
 747a8790663dc880d1afc99983ac56090572adea data/spooktasticdecor/recipe/ghast_lamp.json
 bf0e247a2adc6e9785323c83348cf49890717778 data/spooktasticdecor/recipe/skeleton_lamp.json
 4d2934b10fd4889da606ac3fdce4e398d44e3a11 data/spooktasticdecor/recipe/wither_skeleton_lamp.json

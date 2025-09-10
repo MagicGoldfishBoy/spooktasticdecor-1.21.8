@@ -67,6 +67,15 @@ protected void buildRecipes() {
             .define('C', Items.RESIN_CLUMP)
             .unlockedBy("has_pale_oak_planks", has(Items.PALE_OAK_PLANKS))
             .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.EYEBALL_LAMP_ITEM.get())
+            .pattern("ACA")
+            .pattern("ABA")
+            .pattern("ACA")
+            .define('A', Items.SPIDER_EYE)
+            .define('B', Blocks.GLOWSTONE)
+            .define('C', Items.ENDER_EYE)
+            .unlockedBy("has_spider_eye", has(Items.SPIDER_EYE))
+            .save(this.output);
 }
 
     // The data provider class
