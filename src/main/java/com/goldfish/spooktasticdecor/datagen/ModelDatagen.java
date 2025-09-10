@@ -1,11 +1,13 @@
 package com.goldfish.spooktasticdecor.datagen;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
+import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
 
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.model.ItemModelUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
@@ -18,11 +20,13 @@ public class ModelDatagen extends ModelProvider {
 
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
-        Block block = simpleblockregistry.ZOMBIE_LAMP.get();
-        blockModels.createTrivialCube(block);
-        blockModels.createTrivialCube(SpooktasticDecor.EXAMPLE_BLOCK.get()); 
 
-        itemModels.generateFlatItem(SpooktasticDecor.ZOMBIE_LAMP_ITEM.get(), ModelTemplates.FLAT_ITEM);
+        blockModels.createTrivialCube(simpleblockregistry.ZOMBIE_LAMP.get()); 
+
+        itemModels.itemModelOutput.accept(
+            SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/zombie_lamp"))
+        );
         itemModels.generateFlatItem(SpooktasticDecor.EXAMPLE_ITEM.get(), ModelTemplates.FLAT_ITEM);
     }
 }

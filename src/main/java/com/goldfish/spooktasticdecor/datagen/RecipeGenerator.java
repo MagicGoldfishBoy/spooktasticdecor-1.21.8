@@ -13,6 +13,7 @@ import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 
 public class RecipeGenerator extends RecipeProvider {
     public RecipeGenerator(HolderLookup.Provider registries, RecipeOutput output) {
@@ -22,12 +23,13 @@ public class RecipeGenerator extends RecipeProvider {
 @Override
 protected void buildRecipes() {
     System.out.println("Running RecipeGenerator#buildRecipes");
-    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SpooktasticDecor.ZOMBIE_LAMP_ITEM.get())
-            .pattern("###")
-            .pattern("# #")
-            .pattern("###")
-            .define('#', net.minecraft.world.item.Items.IRON_INGOT)
-            .unlockedBy("has_iron_ingot", has(net.minecraft.world.item.Items.IRON_INGOT))
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get())
+            .pattern("AAA")
+            .pattern("ABA")
+            .pattern("AAA")
+            .define('A', Items.ROTTEN_FLESH)
+            .define('B', Blocks.GLOWSTONE)
+            .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH))
             .save(this.output);
 }
 

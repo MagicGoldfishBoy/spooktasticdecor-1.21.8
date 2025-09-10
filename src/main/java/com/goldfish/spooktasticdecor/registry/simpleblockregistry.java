@@ -24,8 +24,8 @@ public class simpleblockregistry {
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
-                .sound(SoundType.GRAVEL)
-                .lightLevel(state -> 7)
+                .sound(SoundType.MUD)
+                .lightLevel(state -> 10)
             )
         );
     }

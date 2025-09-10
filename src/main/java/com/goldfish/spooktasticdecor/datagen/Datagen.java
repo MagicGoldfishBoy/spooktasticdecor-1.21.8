@@ -19,10 +19,10 @@ public class Datagen {
         event.createProvider(ModelDatagen::new);
         event.createProvider((output, lookupProvider) -> new LootTableProvider(
             output,
-            Set.of(), // Required table locations - empty set for mods
+            Set.of(),
             List.of(
                 new LootTableProvider.SubProviderEntry(
-                    LootTableDatagen::new, // Must match constructor (HolderLookup.Provider)
+                    LootTableDatagen::new,
                     LootContextParamSets.BLOCK
                 )
             ),
