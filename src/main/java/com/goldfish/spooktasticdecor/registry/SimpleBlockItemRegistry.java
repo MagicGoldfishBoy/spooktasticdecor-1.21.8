@@ -14,6 +14,7 @@ public class SimpleBlockItemRegistry {
     public static DeferredItem<BlockItem> GHAST_LAMP_ITEM;
     public static DeferredItem<BlockItem> CREAKING_LAMP_ITEM;
     public static DeferredItem<BlockItem> EYEBALL_LAMP_ITEM;
+    public static DeferredItem<BlockItem> SPIDER_LAMP_ITEM;
 
     public static void registerAll() {
 
@@ -39,6 +40,10 @@ public class SimpleBlockItemRegistry {
 
     EYEBALL_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
     simpleblockregistry.EYEBALL_LAMP,
+    new Item.Properties());
+
+    SPIDER_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+    simpleblockregistry.SPIDER_LAMP,
     new Item.Properties());
 
     };

@@ -38,6 +38,8 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createTrivialCube(simpleblockregistry.CREAKING_LAMP.get());
 
         blockModels.createTrivialCube(simpleblockregistry.EYEBALL_LAMP.get());
+
+        blockModels.createTrivialCube(simpleblockregistry.SPIDER_LAMP.get());
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
@@ -64,6 +66,10 @@ public class ModelDatagen extends ModelProvider {
         itemModels.itemModelOutput.accept(
             SimpleBlockItemRegistry.EYEBALL_LAMP_ITEM.get(),
             ItemModelUtils.plainModel(modLocation("block/eyeball_lamp"))
+        );
+        itemModels.itemModelOutput.accept(
+            SimpleBlockItemRegistry.SPIDER_LAMP_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/spider_lamp"))
         );
     }
 }
