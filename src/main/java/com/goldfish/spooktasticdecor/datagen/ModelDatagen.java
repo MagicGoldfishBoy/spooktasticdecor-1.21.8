@@ -21,8 +21,17 @@ public class ModelDatagen extends ModelProvider {
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
-        blockModels.createTrivialCube(simpleblockregistry.ZOMBIE_LAMP.get()); 
+        registerBlockModels(blockModels, itemModels);
 
+        registerItemModels(blockModels, itemModels);
+
+    }
+
+    protected void registerBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+        blockModels.createTrivialCube(simpleblockregistry.ZOMBIE_LAMP.get()); 
+    }
+
+    protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
         itemModels.itemModelOutput.accept(
             SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get(),
             ItemModelUtils.plainModel(modLocation("block/zombie_lamp"))
