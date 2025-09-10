@@ -41,6 +41,14 @@ protected void buildRecipes() {
             .define('B', Blocks.GLOWSTONE)
             .unlockedBy("has_bone", has(Items.BONE))
             .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.WITHER_SKELETON_LAMP_ITEM.get())
+            .pattern("AAA")
+            .pattern("ABA")
+            .pattern("AAA")
+            .define('A', Items.NETHERRACK)
+            .define('B', SimpleBlockItemRegistry.SKELETON_LAMP_ITEM.get())
+            .unlockedBy("has_netherrack", has(Items.NETHERRACK))
+            .save(this.output);
 }
 
     // The data provider class

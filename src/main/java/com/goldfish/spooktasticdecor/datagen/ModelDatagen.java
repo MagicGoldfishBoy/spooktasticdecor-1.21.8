@@ -8,9 +8,7 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.model.ItemModelUtils;
-import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.block.Block;
 
 public class ModelDatagen extends ModelProvider {
 
@@ -32,6 +30,8 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createTrivialCube(simpleblockregistry.ZOMBIE_LAMP.get()); 
 
         blockModels.createTrivialCube(simpleblockregistry.SKELETON_LAMP.get());
+
+        blockModels.createTrivialCube(simpleblockregistry.WITHER_SKELETON_LAMP.get());
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
@@ -42,6 +42,10 @@ public class ModelDatagen extends ModelProvider {
         itemModels.itemModelOutput.accept(
             SimpleBlockItemRegistry.SKELETON_LAMP_ITEM.get(),
             ItemModelUtils.plainModel(modLocation("block/skeleton_lamp"))
+        );
+        itemModels.itemModelOutput.accept(
+            SimpleBlockItemRegistry.WITHER_SKELETON_LAMP_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/wither_skeleton_lamp"))
         );
     }
 }

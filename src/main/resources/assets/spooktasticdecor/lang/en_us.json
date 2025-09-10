@@ -2,6 +2,7 @@
   "itemGroup.spooktasticdecor": "Spooktastic Decor",
   "block.spooktasticdecor.zombie_lamp": "Zombie Lamp",
   "block.spooktasticdecor.skeleton_lamp": "Skeleton Lamp",
+  "block.spooktasticdecor.wither_skeleton_lamp": "Wither Skeleton Lamp",
 
   "spooktasticdecor.configuration.title": "Spooktastic Decor Configs",
   "spooktasticdecor.configuration.section.spooktasticdecor.common.toml": "Spooktastic Decor Configs",

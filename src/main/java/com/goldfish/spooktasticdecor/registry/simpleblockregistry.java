@@ -14,6 +14,7 @@ public class simpleblockregistry {
     
     public static DeferredBlock<Block> ZOMBIE_LAMP;
     public static DeferredBlock<Block> SKELETON_LAMP;
+    public static DeferredBlock<Block> WITHER_SKELETON_LAMP;
 
     public static void registerAll() {
 
@@ -33,6 +34,16 @@ public class simpleblockregistry {
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
+                .sound(SoundType.BONE_BLOCK)
+                .lightLevel(state -> 10)
+            )
+        );
+        WITHER_SKELETON_LAMP = SpooktasticDecor.BLOCKS.register(
+            "wither_skeleton_lamp",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(3.0f)
+                .explosionResistance(15.0f)
                 .sound(SoundType.BONE_BLOCK)
                 .lightLevel(state -> 10)
             )

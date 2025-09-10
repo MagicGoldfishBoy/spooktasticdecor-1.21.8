@@ -1,7 +1,10 @@
-// 1.21.8	2025-09-10T10:22:11.14331298	Model Definitions - spooktasticdecor
+// 1.21.8	2025-09-10T11:31:23.38367305	Model Definitions - spooktasticdecor
 78ed96f9e5c3d6089a1b54e16590708638cbc79c assets/spooktasticdecor/blockstates/skeleton_lamp.json
+db9c32ad6aff9e8f24547581e1037d3c472528e4 assets/spooktasticdecor/blockstates/wither_skeleton_lamp.json
 d8fe090daf002d36fa7b21c95fe0120e5c250591 assets/spooktasticdecor/blockstates/zombie_lamp.json
 47ad6e921385ecdfb9e8c38368d88ff3b9d5c36e assets/spooktasticdecor/items/skeleton_lamp.json
+c415287044baf7f06093739ef859207911d1d8bb assets/spooktasticdecor/items/wither_skeleton_lamp.json
 f1dba99ef347f0e037daa885ea73e3837199eb1b assets/spooktasticdecor/items/zombie_lamp.json
 dca906c796726a6146e26f6f7910531a77f2f457 assets/spooktasticdecor/models/block/skeleton_lamp.json
+8b189c6a912d53d6b7ed0fdd8efda65a145cd51b assets/spooktasticdecor/models/block/wither_skeleton_lamp.json
 35205502c96b982ca3a83ac81fdb86231abe476a assets/spooktasticdecor/models/block/zombie_lamp.json
