@@ -10,6 +10,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -28,6 +29,7 @@ public class simpleblockregistry {
     public static DeferredBlock<ZombieLog> ZOMBIE_LOG;
     public static DeferredBlock<RotatedPillarBlock> ZOMBIE_LOG_STRIPPED;
     public static DeferredBlock<Block> ZOMBIE_WOOD_PLANKS;
+    public static DeferredBlock<SlabBlock> ZOMBIE_WOOD_PLANKS_SLAB;
 
     public static void registerAll() {
         register_lamps();
@@ -139,6 +141,16 @@ public class simpleblockregistry {
         ZOMBIE_WOOD_PLANKS = SpooktasticDecor.BLOCKS.register(
             "zombie_wood_planks",
             registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.WOOD)
+                .ignitedByLava()
+            )
+        );
+        ZOMBIE_WOOD_PLANKS_SLAB = SpooktasticDecor.BLOCKS.register(
+            "zombie_wood_planks_slab",
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)

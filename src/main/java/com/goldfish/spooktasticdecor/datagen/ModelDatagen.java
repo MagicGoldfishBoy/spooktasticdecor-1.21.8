@@ -7,8 +7,10 @@ import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.model.ItemModelUtils;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.block.state.properties.SlabType;
 
 public class ModelDatagen extends ModelProvider {
 
@@ -49,6 +51,48 @@ public class ModelDatagen extends ModelProvider {
         blockModels.woodProvider(simpleblockregistry.ZOMBIE_LOG_STRIPPED.get()).log(simpleblockregistry.ZOMBIE_LOG_STRIPPED.get());
 
         blockModels.createTrivialCube(simpleblockregistry.ZOMBIE_WOOD_PLANKS.get());
+
+        //placeholder
+        blockModels.createTrivialCube(simpleblockregistry.ZOMBIE_WOOD_PLANKS_SLAB.get());
+
+        // MultiVariant zombiePlanks = BlockModelGenerators.plainVariant(modLocation("block/zombie_wood_planks"));
+        // BlockModelGenerators.createSlab(simpleblockregistry.ZOMBIE_WOOD_PLANKS_SLAB.get(), zombiePlanks, zombiePlanks, zombiePlanks);
+
+    //     MultiVariant zombiePlanks = BlockModelGenerators.plainVariant(
+    //     modLocation("block/zombie_wood_planks")
+    // );
+
+    // BlockModelGenerators.createSlab(
+    //     simpleblockregistry.ZOMBIE_WOOD_PLANKS_SLAB.get(),
+    //     zombiePlanks, // bottom slab
+    //     zombiePlanks, // top slab
+    //     BlockModelGenerators.plainVariant(
+    //         modLocation("block/zombie_wood_planks") // double slab = full planks
+    //     )
+    // );
+    // Base plank model
+    // MultiVariant plankVariant = BlockModelGenerators.plainVariant(modLocation("block/zombie_wood_planks"));
+
+    // // Bottom slab uses the same as base
+    // MultiVariant bottomSlab = plankVariant;
+
+    // // Top slab can be the same (if orientation is not important)
+    // MultiVariant topSlab = plankVariant;
+
+    // // Double slab = full block
+    // MultiVariant doubleSlab = BlockModelGenerators.plainVariant(modLocation("block/zombie_wood_planks"));
+
+    // // Register slab
+    // BlockModelGenerators.createSlab(
+    //     simpleblockregistry.ZOMBIE_WOOD_PLANKS_SLAB.get(),
+    //     bottomSlab,
+    //     topSlab,
+    //     doubleSlab
+    // );
+
+
+
+
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
@@ -84,6 +128,10 @@ public class ModelDatagen extends ModelProvider {
             SimpleBlockItemRegistry.ENDER_LAMP_ITEM.get(),
             ItemModelUtils.plainModel(modLocation("block/ender_lamp"))
         );
+        // itemModels.itemModelOutput.accept(
+        //     SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_SLAB_ITEM.get(),
+        //     ItemModelUtils.plainModel(modLocation("block/zombie_planks_slab"))
+        // );
 
     }
 }

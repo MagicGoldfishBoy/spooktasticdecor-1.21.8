@@ -41,7 +41,7 @@ protected void buildRecipes() {
     System.out.println("Running RecipeGenerator#buildRecipes");
 
     registerLampRecipes();
-    registerLogRecipes();
+    registerWoodRecipes();
 
 }
 protected void registerLampRecipes() {
@@ -115,7 +115,7 @@ protected void registerLampRecipes() {
             .unlockedBy("has_ender_pearl", has(Items.ENDER_PEARL))
             .save(this.output); 
 }
-protected void registerLogRecipes() {
+protected void registerWoodRecipes() {
     ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LOG_ITEM.get())
             .pattern("AAA")
             .pattern("ABA")
@@ -130,6 +130,11 @@ protected void registerLogRecipes() {
     ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_ITEM.get(), 4)
             .requires(this.tag(ZOMBIE_WOOD_TAG))
             .unlockedBy("has_zombie_log", has(simpleblockregistry.ZOMBIE_LOG.get()))
+            .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_SLAB_ITEM.get(), 6)
+            .pattern("AAA")
+            .define('A', SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_ITEM.get())
+            .unlockedBy("has_zombie_planks", has(SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_ITEM.get()))
             .save(this.output);
 }
 
