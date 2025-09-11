@@ -42,6 +42,9 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createTrivialCube(simpleblockregistry.SPIDER_LAMP.get());
 
         blockModels.createTrivialCube(simpleblockregistry.ENDER_LAMP.get());
+
+
+        blockModels.woodProvider(simpleblockregistry.ZOMBIE_LOG.get()).log(simpleblockregistry.ZOMBIE_LOG.get());
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
@@ -77,5 +80,6 @@ public class ModelDatagen extends ModelProvider {
             SimpleBlockItemRegistry.ENDER_LAMP_ITEM.get(),
             ItemModelUtils.plainModel(modLocation("block/ender_lamp"))
         );
+
     }
 }

@@ -10,6 +10,8 @@
   "block.spooktasticdecor.spider_lamp": "Spider Lamp",
   "block.spooktasticdecor.ender_lamp": "Ender Lamp",
 
+  "block.spooktasticdecor.zombie_log": "Zombie Log",
+
   "spooktasticdecor.configuration.title": "Spooktastic Decor Configs",
   "spooktasticdecor.configuration.section.spooktasticdecor.common.toml": "Spooktastic Decor Configs",
   "spooktasticdecor.configuration.section.spooktasticdecor.common.toml.title": "Spooktastic Decor Configs",

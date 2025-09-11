@@ -12,6 +12,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 
@@ -25,6 +26,11 @@ protected void buildRecipes() {
 
     System.out.println("Running RecipeGenerator#buildRecipes");
 
+    registerLampRecipes();
+    registerLogRecipes();
+
+}
+protected void registerLampRecipes() {
     ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get())
             .pattern("AAA")
             .pattern("ABA")
@@ -93,6 +99,16 @@ protected void buildRecipes() {
             .define('B', Blocks.GLOWSTONE)
             .define('C', Items.ENDER_EYE)
             .unlockedBy("has_ender_pearl", has(Items.ENDER_PEARL))
+            .save(this.output); 
+}
+protected void registerLogRecipes() {
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LOG_ITEM.get())
+            .pattern("AAA")
+            .pattern("ABA")
+            .pattern("AAA")
+            .define('A', Items.ROTTEN_FLESH)
+            .define('B', this.tag(ItemTags.LOGS))
+            .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH))
             .save(this.output);
 }
 
