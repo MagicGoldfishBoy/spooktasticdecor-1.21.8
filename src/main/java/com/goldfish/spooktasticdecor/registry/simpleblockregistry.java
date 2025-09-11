@@ -1,6 +1,7 @@
 package com.goldfish.spooktasticdecor.registry;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
+import com.goldfish.spooktasticdecor.block.ZombieLog;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -24,7 +25,7 @@ public class simpleblockregistry {
     public static DeferredBlock<Block> SPIDER_LAMP;
     public static DeferredBlock<Block> ENDER_LAMP;
 
-    public static DeferredBlock<RotatedPillarBlock> ZOMBIE_LOG;
+    public static DeferredBlock<ZombieLog> ZOMBIE_LOG;
     public static DeferredBlock<RotatedPillarBlock> ZOMBIE_LOG_STRIPPED;
     public static DeferredBlock<Block> ZOMBIE_WOOD_PLANKS;
 
@@ -117,7 +118,7 @@ public class simpleblockregistry {
     public static void register_wood() {
         ZOMBIE_LOG = SpooktasticDecor.BLOCKS.register(
             "zombie_log",
-            registryName -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
+            registryName -> new ZombieLog(BlockBehaviour.Properties.of()
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
