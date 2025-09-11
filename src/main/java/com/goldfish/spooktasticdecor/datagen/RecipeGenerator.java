@@ -4,6 +4,7 @@ import java.util.concurrent.CompletableFuture;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
+import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -12,8 +13,11 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.SingleItemRecipe;
 import net.minecraft.world.level.block.Blocks;
 
 public class RecipeGenerator extends RecipeProvider {
@@ -110,6 +114,9 @@ protected void registerLogRecipes() {
             .define('B', this.tag(ItemTags.LOGS))
             .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH))
             .save(this.output);
+    SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.ZOMBIE_LOG.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.ZOMBIE_LOG_STRIPPED.get(), 1)
+            .unlockedBy("has_zombie_log", has(simpleblockregistry.ZOMBIE_LOG.get()))
+            .save(this.output, SpooktasticDecor.MODID + ":zombie_log_stripped_from_stonecutting");
 }
 
     // The data provider class

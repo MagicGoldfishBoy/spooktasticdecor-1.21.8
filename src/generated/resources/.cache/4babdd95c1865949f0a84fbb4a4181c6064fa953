@@ -1,4 +1,5 @@
-// 1.21.8	2025-09-11T11:53:47.667873611	SpooktasticDecor Recipes
+// 1.21.8	2025-09-11T12:52:28.720433869	SpooktasticDecor Recipes
+bbb2f8480d697a9363d03cb95f63605ac9070088 data/spooktasticdecor/advancement/recipes/building_blocks/zombie_log_stripped_from_stonecutting.json
 f444e238ccddf8ec8c75a713e73d65afaa64f777 data/spooktasticdecor/advancement/recipes/misc/creaking_lamp.json
 4887e40c7a0139994c131b9fda971dc074d13706 data/spooktasticdecor/advancement/recipes/misc/ender_lamp.json
 db96fffdb30c1c552711b4e8c55062dd147eb09e data/spooktasticdecor/advancement/recipes/misc/eyeball_lamp.json
@@ -17,3 +18,4 @@ be7008288235be69d314aef883f650521520e8e2 data/spooktasticdecor/recipe/spider_lam
 4d2934b10fd4889da606ac3fdce4e398d44e3a11 data/spooktasticdecor/recipe/wither_skeleton_lamp.json
 cebfca19867fcbd7d6264f5d1580dc90fa7ef0e4 data/spooktasticdecor/recipe/zombie_lamp.json
 81197918951e6fcf8d53f030b98a2669f755ced8 data/spooktasticdecor/recipe/zombie_log.json
+234fdf6f02594c92ec2193304bd5517b60d4409c data/spooktasticdecor/recipe/zombie_log_stripped_from_stonecutting.json
