@@ -13,8 +13,12 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SingleItemRecipeBuilder;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.SingleItemRecipe;
@@ -24,6 +28,11 @@ public class RecipeGenerator extends RecipeProvider {
     public RecipeGenerator(HolderLookup.Provider registries, RecipeOutput output) {
         super(registries, output);
     }
+
+    public static final TagKey<Item> ZOMBIE_WOOD_TAG = TagKey.create(
+        Registries.ITEM,
+        ResourceLocation.fromNamespaceAndPath("spooktasticdecor", "zombie_logs")
+);
 
 @Override
 protected void buildRecipes() {
@@ -117,6 +126,10 @@ protected void registerLogRecipes() {
     SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.ZOMBIE_LOG.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.ZOMBIE_LOG_STRIPPED.get(), 1)
             .unlockedBy("has_zombie_log", has(simpleblockregistry.ZOMBIE_LOG.get()))
             .save(this.output, SpooktasticDecor.MODID + ":zombie_log_stripped_from_stonecutting");
+    ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_ITEM.get(), 4)
+            .requires(this.tag(ZOMBIE_WOOD_TAG))
+            .unlockedBy("has_zombie_log", has(simpleblockregistry.ZOMBIE_LOG.get()))
+            .save(this.output);
 }
 
     // The data provider class

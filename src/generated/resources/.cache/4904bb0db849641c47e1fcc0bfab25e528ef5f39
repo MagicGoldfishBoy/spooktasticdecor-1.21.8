@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-11T12:17:55.50920161	Model Definitions - spooktasticdecor
+// 1.21.8	2025-09-11T13:11:44.836790489	Model Definitions - spooktasticdecor
 1c10a184616f5bcf249197b191154dd60b617c66 assets/spooktasticdecor/blockstates/creaking_lamp.json
 7b01c6b366b8e4dfbb14f30500d8d188a48386ea assets/spooktasticdecor/blockstates/ender_lamp.json
 7c6eece152606ee2264ad074908713b446b4a04a assets/spooktasticdecor/blockstates/eyeball_lamp.json
@@ -9,6 +9,7 @@ db9c32ad6aff9e8f24547581e1037d3c472528e4 assets/spooktasticdecor/blockstates/wit
 d8fe090daf002d36fa7b21c95fe0120e5c250591 assets/spooktasticdecor/blockstates/zombie_lamp.json
 a264b8a9125d5b1bd24178c632dca1914ac7fa5a assets/spooktasticdecor/blockstates/zombie_log.json
 b2f4e2f08f640411ffa4e64846c8155b6c788265 assets/spooktasticdecor/blockstates/zombie_log_stripped.json
+a76bba8a6a37f94c36d2cb7ac31dbac2fbfb07b7 assets/spooktasticdecor/blockstates/zombie_wood_planks.json
 c8c9c6e50479456d7e3da33d5cc6c27b630569bb assets/spooktasticdecor/items/creaking_lamp.json
 cd71adc7dd14056393a98353c764c324babae83b assets/spooktasticdecor/items/ender_lamp.json
 c166b5622ec4a16564760e8eb1e9c9300910aaad assets/spooktasticdecor/items/eyeball_lamp.json
@@ -19,6 +20,7 @@ c415287044baf7f06093739ef859207911d1d8bb assets/spooktasticdecor/items/wither_sk
 f1dba99ef347f0e037daa885ea73e3837199eb1b assets/spooktasticdecor/items/zombie_lamp.json
 112a34e25e470b1d9089e2d9de1879198688fd8f assets/spooktasticdecor/items/zombie_log.json
 da9ea36375897dd83861e7ee8488635fa2eaaf22 assets/spooktasticdecor/items/zombie_log_stripped.json
+75feb55b5e450f2d69dfc7f631912bc98abf6234 assets/spooktasticdecor/items/zombie_wood_planks.json
 fa16d3eace0cadb2545f369fc9c542dfa963dce1 assets/spooktasticdecor/models/block/creaking_lamp.json
 bb3860eed652549f3f2ca78ea17f4e9c64fb8ce9 assets/spooktasticdecor/models/block/ender_lamp.json
 c6fef8ece3e7bdc7c88b2cfbbead9154eb030443 assets/spooktasticdecor/models/block/eyeball_lamp.json
@@ -29,3 +31,4 @@ dca906c796726a6146e26f6f7910531a77f2f457 assets/spooktasticdecor/models/block/sk
 35205502c96b982ca3a83ac81fdb86231abe476a assets/spooktasticdecor/models/block/zombie_lamp.json
 1dee3fe30f5cf81939979dbb6615e29efad92935 assets/spooktasticdecor/models/block/zombie_log.json
 82658efca3d6692028138ebf4157291c138af265 assets/spooktasticdecor/models/block/zombie_log_stripped.json
+27399029c8f2e45f15be392ee42d206e87e8eede assets/spooktasticdecor/models/block/zombie_wood_planks.json

@@ -47,6 +47,8 @@ public class ModelDatagen extends ModelProvider {
         blockModels.woodProvider(simpleblockregistry.ZOMBIE_LOG.get()).log(simpleblockregistry.ZOMBIE_LOG.get());
 
         blockModels.woodProvider(simpleblockregistry.ZOMBIE_LOG_STRIPPED.get()).log(simpleblockregistry.ZOMBIE_LOG_STRIPPED.get());
+
+        blockModels.createTrivialCube(simpleblockregistry.ZOMBIE_WOOD_PLANKS.get());
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
