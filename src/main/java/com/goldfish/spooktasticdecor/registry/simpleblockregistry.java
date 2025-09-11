@@ -22,6 +22,7 @@ public class simpleblockregistry {
     public static DeferredBlock<Block> ENDER_LAMP;
 
     public static DeferredBlock<RotatedPillarBlock> ZOMBIE_LOG;
+    public static DeferredBlock<RotatedPillarBlock> ZOMBIE_LOG_STRIPPED;
 
     public static void registerAll() {
         register_lamps();
@@ -112,6 +113,15 @@ public class simpleblockregistry {
     public static void register_logs() {
         ZOMBIE_LOG = SpooktasticDecor.BLOCKS.register(
             "zombie_log",
+            registryName -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.WOOD)
+            )
+        );
+        ZOMBIE_LOG_STRIPPED = SpooktasticDecor.BLOCKS.register(
+            "zombie_log_stripped",
             registryName -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .destroyTime(2.0f)
