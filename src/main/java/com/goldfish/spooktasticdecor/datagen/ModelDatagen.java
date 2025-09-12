@@ -53,7 +53,8 @@ public class ModelDatagen extends ModelProvider {
         blockModels.familyWithExistingFullBlock(simpleblockregistry.ZOMBIE_WOOD_PLANKS.get())
                    .slab(simpleblockregistry.ZOMBIE_WOOD_PLANKS_SLAB.get())
                    .stairs(simpleblockregistry.ZOMBIE_WOOD_PLANKS_STAIRS.get())
-                   .button(simpleblockregistry.ZOMBIE_WOOD_PLANKS_BUTTON.get());
+                   .button(simpleblockregistry.ZOMBIE_WOOD_PLANKS_BUTTON.get())
+                   .fence(simpleblockregistry.ZOMBIE_WOOD_PLANKS_FENCE.get());
 
     }
 
