@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "spooktasticdecor:block/zombie_wood_planks"
+  }
+}

@@ -143,6 +143,10 @@ protected void registerWoodRecipes() {
             .define('A', SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_ITEM.get())
             .unlockedBy("has_zombie_planks", has(SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_ITEM.get()))
             .save(this.output);
+    ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_BUTTON_ITEM.get(), 1)
+            .requires(SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_ITEM.get())
+            .unlockedBy("has_zombie_planks", has(SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_ITEM.get()))
+            .save(this.output);
 }
 
     // The data provider class

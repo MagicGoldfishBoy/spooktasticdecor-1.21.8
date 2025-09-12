@@ -7,10 +7,8 @@ import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
-import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.model.ItemModelUtils;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.block.state.properties.SlabType;
 
 public class ModelDatagen extends ModelProvider {
 
@@ -54,7 +52,8 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.familyWithExistingFullBlock(simpleblockregistry.ZOMBIE_WOOD_PLANKS.get())
                    .slab(simpleblockregistry.ZOMBIE_WOOD_PLANKS_SLAB.get())
-                   .stairs(simpleblockregistry.ZOMBIE_WOOD_PLANKS_STAIRS.get());
+                   .stairs(simpleblockregistry.ZOMBIE_WOOD_PLANKS_STAIRS.get())
+                   .button(simpleblockregistry.ZOMBIE_WOOD_PLANKS_BUTTON.get());
 
     }
 

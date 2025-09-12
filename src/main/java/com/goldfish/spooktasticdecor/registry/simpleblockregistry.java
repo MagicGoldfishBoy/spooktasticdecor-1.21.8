@@ -3,17 +3,22 @@ package com.goldfish.spooktasticdecor.registry;
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.ZombieLog;
 
+import net.minecraft.client.gui.components.Button;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.BlockTypes;
+import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
 public class simpleblockregistry {
@@ -32,6 +37,7 @@ public class simpleblockregistry {
     public static DeferredBlock<Block> ZOMBIE_WOOD_PLANKS;
     public static DeferredBlock<SlabBlock> ZOMBIE_WOOD_PLANKS_SLAB;
     public static DeferredBlock<StairBlock> ZOMBIE_WOOD_PLANKS_STAIRS;
+    public static DeferredBlock<ButtonBlock> ZOMBIE_WOOD_PLANKS_BUTTON;
 
     public static void registerAll() {
         register_lamps();
@@ -168,6 +174,18 @@ public class simpleblockregistry {
             .explosionResistance(10.0f)
             .sound(SoundType.WOOD)
             .ignitedByLava()
+            )
+        );
+        ZOMBIE_WOOD_PLANKS_BUTTON = SpooktasticDecor.BLOCKS.register(
+            "zombie_wood_planks_button",
+            registryName -> new ButtonBlock(BlockSetType.WARPED, 20, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.WOOD)
+                .ignitedByLava()
+                .noCollission()
+                .instabreak()
             )
         );
     }
