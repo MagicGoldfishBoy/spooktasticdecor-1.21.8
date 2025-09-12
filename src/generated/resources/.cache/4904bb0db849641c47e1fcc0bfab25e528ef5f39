@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-11T15:57:30.816093111	Model Definitions - spooktasticdecor
+// 1.21.8	2025-09-11T21:58:34.772034074	Model Definitions - spooktasticdecor
 1c10a184616f5bcf249197b191154dd60b617c66 assets/spooktasticdecor/blockstates/creaking_lamp.json
 7b01c6b366b8e4dfbb14f30500d8d188a48386ea assets/spooktasticdecor/blockstates/ender_lamp.json
 7c6eece152606ee2264ad074908713b446b4a04a assets/spooktasticdecor/blockstates/eyeball_lamp.json
@@ -10,7 +10,7 @@ d8fe090daf002d36fa7b21c95fe0120e5c250591 assets/spooktasticdecor/blockstates/zom
 a264b8a9125d5b1bd24178c632dca1914ac7fa5a assets/spooktasticdecor/blockstates/zombie_log.json
 b2f4e2f08f640411ffa4e64846c8155b6c788265 assets/spooktasticdecor/blockstates/zombie_log_stripped.json
 a76bba8a6a37f94c36d2cb7ac31dbac2fbfb07b7 assets/spooktasticdecor/blockstates/zombie_wood_planks.json
-ba323146178ac89415921c0a8b21b73dbe98f8ff assets/spooktasticdecor/blockstates/zombie_wood_planks_slab.json
+88db335cd21ccdadd0583e04fd74af1175f964e2 assets/spooktasticdecor/blockstates/zombie_wood_planks_slab.json
 c8c9c6e50479456d7e3da33d5cc6c27b630569bb assets/spooktasticdecor/items/creaking_lamp.json
 cd71adc7dd14056393a98353c764c324babae83b assets/spooktasticdecor/items/ender_lamp.json
 c166b5622ec4a16564760e8eb1e9c9300910aaad assets/spooktasticdecor/items/eyeball_lamp.json
@@ -34,4 +34,5 @@ dca906c796726a6146e26f6f7910531a77f2f457 assets/spooktasticdecor/models/block/sk
 1dee3fe30f5cf81939979dbb6615e29efad92935 assets/spooktasticdecor/models/block/zombie_log.json
 82658efca3d6692028138ebf4157291c138af265 assets/spooktasticdecor/models/block/zombie_log_stripped.json
 27399029c8f2e45f15be392ee42d206e87e8eede assets/spooktasticdecor/models/block/zombie_wood_planks.json
-d50fa5ac62dfdcaf0394d15b807666b0d7cd80e5 assets/spooktasticdecor/models/block/zombie_wood_planks_slab.json
+827cf44448eeb88e6b5f5d590b13962dc777d803 assets/spooktasticdecor/models/block/zombie_wood_planks_slab.json
+764e0c3532780fb4cd2fb57469131e5278d26d13 assets/spooktasticdecor/models/block/zombie_wood_planks_slab_top.json

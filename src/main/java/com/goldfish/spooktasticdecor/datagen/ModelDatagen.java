@@ -52,43 +52,7 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createTrivialCube(simpleblockregistry.ZOMBIE_WOOD_PLANKS.get());
 
-        //placeholder
-        blockModels.createTrivialCube(simpleblockregistry.ZOMBIE_WOOD_PLANKS_SLAB.get());
-
-        // MultiVariant zombiePlanks = BlockModelGenerators.plainVariant(modLocation("block/zombie_wood_planks"));
-        // BlockModelGenerators.createSlab(simpleblockregistry.ZOMBIE_WOOD_PLANKS_SLAB.get(), zombiePlanks, zombiePlanks, zombiePlanks);
-
-    //     MultiVariant zombiePlanks = BlockModelGenerators.plainVariant(
-    //     modLocation("block/zombie_wood_planks")
-    // );
-
-    // BlockModelGenerators.createSlab(
-    //     simpleblockregistry.ZOMBIE_WOOD_PLANKS_SLAB.get(),
-    //     zombiePlanks, // bottom slab
-    //     zombiePlanks, // top slab
-    //     BlockModelGenerators.plainVariant(
-    //         modLocation("block/zombie_wood_planks") // double slab = full planks
-    //     )
-    // );
-    // Base plank model
-    // MultiVariant plankVariant = BlockModelGenerators.plainVariant(modLocation("block/zombie_wood_planks"));
-
-    // // Bottom slab uses the same as base
-    // MultiVariant bottomSlab = plankVariant;
-
-    // // Top slab can be the same (if orientation is not important)
-    // MultiVariant topSlab = plankVariant;
-
-    // // Double slab = full block
-    // MultiVariant doubleSlab = BlockModelGenerators.plainVariant(modLocation("block/zombie_wood_planks"));
-
-    // // Register slab
-    // BlockModelGenerators.createSlab(
-    //     simpleblockregistry.ZOMBIE_WOOD_PLANKS_SLAB.get(),
-    //     bottomSlab,
-    //     topSlab,
-    //     doubleSlab
-    // );
+        blockModels.familyWithExistingFullBlock(simpleblockregistry.ZOMBIE_WOOD_PLANKS.get()).slab(simpleblockregistry.ZOMBIE_WOOD_PLANKS_SLAB.get());
 
 
 
