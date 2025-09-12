@@ -6,6 +6,7 @@
         "spooktasticdecor:zombie_wood_planks_slab_item",
         "spooktasticdecor:zombie_wood_planks_stairs_item",
         "spooktasticdecor:zombie_wood_planks_button_item",
-        "spooktasticdecor:zombie_wood_planks_fence_item"
+        "spooktasticdecor:zombie_wood_planks_fence_item",
+        "spooktasticdecor:zombie_wood_planks_fence_gate_item"
     ]
 }
