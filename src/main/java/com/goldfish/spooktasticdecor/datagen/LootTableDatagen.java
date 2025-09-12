@@ -30,23 +30,18 @@ protected Iterable<Block> getKnownBlocks() {
         .toList();
 }
 
-    // @Override
-    // protected Iterable<Block> getKnownBlocks() {
-    //     return SpooktasticDecor.BLOCKS.getEntries()
-    //         .stream()
-    //         .map(e -> (Block) e.value())
-    //         .toList();
-    // }
-
     @Override
 protected void generate() {
     SpooktasticDecor.BLOCKS.getEntries().forEach(entry -> {
         Block block = entry.get();
 
         if (block.asItem() == Items.AIR) {
-        return; // Skip
+        return;
 }
-
+        if (block.getName().toString().matches(".*slab.*")) {
+        this.add(block, this::createSlabItemTable);
+        return;
+}
 
         this.dropSelf(block);
     });
