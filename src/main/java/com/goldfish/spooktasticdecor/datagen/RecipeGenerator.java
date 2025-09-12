@@ -30,6 +30,10 @@ public class RecipeGenerator extends RecipeProvider {
         super(registries, output);
     }
 
+    public static final TagKey<Item> LOGS_THAT_BURN_TAG = ItemTags.create(
+        ResourceLocation.fromNamespaceAndPath("minecraft", "logs_that_burn")
+);
+
     public static final TagKey<Item> ZOMBIE_WOOD_TAG = TagKey.create(
         Registries.ITEM,
         ResourceLocation.fromNamespaceAndPath("spooktasticdecor", "zombie_logs")
@@ -121,7 +125,7 @@ protected void registerWoodRecipes() {
             .pattern("ABA")
             .pattern("AAA")
             .define('A', Items.ROTTEN_FLESH)
-            .define('B', this.tag(ItemTags.LOGS))
+            .define('B', this.tag(LOGS_THAT_BURN_TAG))
             .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH))
             .save(this.output);
     SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.ZOMBIE_LOG.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.ZOMBIE_LOG_STRIPPED.get(), 1)

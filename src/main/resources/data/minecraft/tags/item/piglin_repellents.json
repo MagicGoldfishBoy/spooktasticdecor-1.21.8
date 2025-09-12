@@ -1,15 +1,15 @@
 {
     "values": [
-        "spooktasticdecor:zombie_log_item",
-        "spooktasticdecor:zombie_log_stripped_item",
-        "spooktasticdecor:zombie_wood_planks_item",
-        "spooktasticdecor:zombie_wood_planks_slab_item",
-        "spooktasticdecor:zombie_wood_planks_stairs_item",
-        "spooktasticdecor:zombie_wood_planks_button_item",
-        "spooktasticdecor:zombie_wood_planks_fence_item",
-        "spooktasticdecor:zombie_wood_planks_fence_gate_item",
-        "spooktasticdecor:zombie_wood_planks_pressure_plate_item",
-        "spooktasticdecor:zombie_wood_planks_trapdoor_item",
-        "spooktasticdecor:zombie_wood_planks_door_item"
+        "spooktasticdecor:zombie_log",
+        "spooktasticdecor:zombie_log_stripped",
+        "spooktasticdecor:zombie_wood_planks",
+        "spooktasticdecor:zombie_wood_planks_slab",
+        "spooktasticdecor:zombie_wood_planks_stairs",
+        "spooktasticdecor:zombie_wood_planks_button",
+        "spooktasticdecor:zombie_wood_planks_fence",
+        "spooktasticdecor:zombie_wood_planks_fence_gate",
+        "spooktasticdecor:zombie_wood_planks_pressure_plate",
+        "spooktasticdecor:zombie_wood_planks_trapdoor",
+        "spooktasticdecor:zombie_wood_planks_door"
     ]
 }

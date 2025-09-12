@@ -136,6 +136,9 @@ public class simpleblockregistry {
         );    
     }
     public static void register_wood() {
+        register_zombie_wood();
+    }
+    public static void register_zombie_wood() {
         ZOMBIE_LOG = SpooktasticDecor.BLOCKS.register(
             "zombie_log",
             registryName -> new ZombieLog(BlockBehaviour.Properties.of()
@@ -250,6 +253,6 @@ public class simpleblockregistry {
                 .ignitedByLava()
                 .noOcclusion()
             )
-        );
+        );       
     }
 }
