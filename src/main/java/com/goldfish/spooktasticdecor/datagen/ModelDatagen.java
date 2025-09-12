@@ -55,7 +55,8 @@ public class ModelDatagen extends ModelProvider {
                    .stairs(simpleblockregistry.ZOMBIE_WOOD_PLANKS_STAIRS.get())
                    .button(simpleblockregistry.ZOMBIE_WOOD_PLANKS_BUTTON.get())
                    .fence(simpleblockregistry.ZOMBIE_WOOD_PLANKS_FENCE.get())
-                   .fenceGate(simpleblockregistry.ZOMBIE_WOOD_PLANKS_FENCE_GATE.get());
+                   .fenceGate(simpleblockregistry.ZOMBIE_WOOD_PLANKS_FENCE_GATE.get())
+                   .pressurePlate(simpleblockregistry.ZOMBIE_WOOD_PLANKS_PRESSURE_PLATE.get());
 
     }
 
