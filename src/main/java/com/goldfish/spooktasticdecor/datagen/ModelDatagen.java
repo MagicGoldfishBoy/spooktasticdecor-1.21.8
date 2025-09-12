@@ -52,10 +52,9 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createTrivialCube(simpleblockregistry.ZOMBIE_WOOD_PLANKS.get());
 
-        blockModels.familyWithExistingFullBlock(simpleblockregistry.ZOMBIE_WOOD_PLANKS.get()).slab(simpleblockregistry.ZOMBIE_WOOD_PLANKS_SLAB.get());
-
-
-
+        blockModels.familyWithExistingFullBlock(simpleblockregistry.ZOMBIE_WOOD_PLANKS.get())
+                   .slab(simpleblockregistry.ZOMBIE_WOOD_PLANKS_SLAB.get())
+                   .stairs(simpleblockregistry.ZOMBIE_WOOD_PLANKS_STAIRS.get());
 
     }
 
@@ -92,10 +91,6 @@ public class ModelDatagen extends ModelProvider {
             SimpleBlockItemRegistry.ENDER_LAMP_ITEM.get(),
             ItemModelUtils.plainModel(modLocation("block/ender_lamp"))
         );
-        // itemModels.itemModelOutput.accept(
-        //     SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_SLAB_ITEM.get(),
-        //     ItemModelUtils.plainModel(modLocation("block/zombie_planks_slab"))
-        // );
 
     }
 }
