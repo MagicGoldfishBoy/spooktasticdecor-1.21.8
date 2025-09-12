@@ -2,6 +2,8 @@
     "values": [
         "spooktasticdecor:zombie_log",
         "spooktasticdecor:zombie_log_stripped",
-        "spooktasticdecor:zombie_wood_planks"
+        "spooktasticdecor:zombie_wood_planks",
+        "spooktasticdecor:zombie_wood_planks_slab",
+        "spooktasticdecor:zombie_wood_planks_stairs"
     ]
 }
