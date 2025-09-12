@@ -172,6 +172,13 @@ protected void registerWoodRecipes() {
             .define('A', SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_ITEM.get())
             .unlockedBy("has_zombie_planks", has(SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_ITEM.get()))
             .save(this.output); 
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_DOOR_ITEM.get(), 3)
+            .pattern("AA")
+            .pattern("AA")
+            .pattern("AA")
+            .define('A', SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_ITEM.get())
+            .unlockedBy("has_zombie_planks", has(SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_ITEM.get()))
+            .save(this.output);
 }
 
     // The data provider class

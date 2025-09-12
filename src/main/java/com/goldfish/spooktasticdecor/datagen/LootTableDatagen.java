@@ -26,7 +26,7 @@ protected Iterable<Block> getKnownBlocks() {
     return SpooktasticDecor.BLOCKS.getEntries()
         .stream()
         .map(e -> (Block) e.value())
-        .filter(block -> block.asItem() != Items.AIR) // only include blocks with items
+        .filter(block -> block.asItem() != Items.AIR)
         .toList();
 }
 
@@ -40,6 +40,10 @@ protected void generate() {
 }
         if (block.getName().toString().matches(".*slab.*")) {
         this.add(block, this::createSlabItemTable);
+        return;
+}
+        if(block.getName().toString().matches(".*door.*") && !block.getName().toString().matches(".*trapdoor.*")) {
+        this.add(block, this::createDoorTable);
         return;
 }
 

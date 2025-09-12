@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right_open",
+  "textures": {
+    "bottom": "spooktasticdecor:block/zombie_wood_planks_door_bottom",
+    "top": "spooktasticdecor:block/zombie_wood_planks_door_top"
+  }
+}

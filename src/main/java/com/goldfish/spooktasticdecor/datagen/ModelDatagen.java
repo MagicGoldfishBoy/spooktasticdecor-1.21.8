@@ -59,6 +59,8 @@ public class ModelDatagen extends ModelProvider {
                    .pressurePlate(simpleblockregistry.ZOMBIE_WOOD_PLANKS_PRESSURE_PLATE.get())
                    .trapdoor(simpleblockregistry.ZOMBIE_WOOD_PLANKS_TRAPDOOR.get());
 
+        blockModels.createDoor(simpleblockregistry.ZOMBIE_WOOD_PLANKS_DOOR.get());
+
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {

@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-12T11:11:34.704346173	Loot Tables
+// 1.21.8	2025-09-12T11:36:01.549679871	Loot Tables
 e30628148fa475a47ca934a2667f679515556c52 data/spooktasticdecor/loot_table/blocks/creaking_lamp.json
 12c06872be47a4ee010fb04d174b646a312f82ff data/spooktasticdecor/loot_table/blocks/ender_lamp.json
 48d4b95ba6521af279df2eb6c1677433b75d54f6 data/spooktasticdecor/loot_table/blocks/eyeball_lamp.json
@@ -11,6 +11,7 @@ a2951cb336e7452f847b85b32c20e5ae9a5ff727 data/spooktasticdecor/loot_table/blocks
 f46a9049b1b7d5e509f89b657c5b5fa3b9244a6d data/spooktasticdecor/loot_table/blocks/zombie_log_stripped.json
 33c4856c178ba49b703b7bf5524ad5450d47ab2c data/spooktasticdecor/loot_table/blocks/zombie_wood_planks.json
 96709fb87448766645fc253346f3161b262cf773 data/spooktasticdecor/loot_table/blocks/zombie_wood_planks_button.json
+c3b235112a72d302adc8037f349e38ac80acd2b6 data/spooktasticdecor/loot_table/blocks/zombie_wood_planks_door.json
 318f58e3a852ad170b7479b25b0f6a24e4f53c5d data/spooktasticdecor/loot_table/blocks/zombie_wood_planks_fence.json
 24ceb32e0926b07046b1feb52c034b98bf07df43 data/spooktasticdecor/loot_table/blocks/zombie_wood_planks_fence_gate.json
 f97391e6214e811cfb615e137ef6d9c2b0f075d8 data/spooktasticdecor/loot_table/blocks/zombie_wood_planks_pressure_plate.json

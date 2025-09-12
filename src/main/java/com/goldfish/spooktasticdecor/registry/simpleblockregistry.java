@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BlockTypes;
 import net.minecraft.world.level.block.ButtonBlock;
+import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
@@ -46,6 +47,7 @@ public class simpleblockregistry {
     public static DeferredBlock<FenceGateBlock> ZOMBIE_WOOD_PLANKS_FENCE_GATE;
     public static DeferredBlock<PressurePlateBlock> ZOMBIE_WOOD_PLANKS_PRESSURE_PLATE;
     public static DeferredBlock<TrapDoorBlock> ZOMBIE_WOOD_PLANKS_TRAPDOOR;
+    public static DeferredBlock<DoorBlock> ZOMBIE_WOOD_PLANKS_DOOR;
 
     public static void registerAll() {
         register_lamps();
@@ -236,6 +238,17 @@ public class simpleblockregistry {
                 .explosionResistance(10.0f)
                 .sound(SoundType.WOOD)
                 .ignitedByLava()
+            )
+        );
+        ZOMBIE_WOOD_PLANKS_DOOR = SpooktasticDecor.BLOCKS.register(
+            "zombie_wood_planks_door",
+            registryName -> new DoorBlock(BlockSetType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.WOOD)
+                .ignitedByLava()
+                .noOcclusion()
             )
         );
     }
