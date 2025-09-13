@@ -50,9 +50,9 @@ protected void buildRecipes() {
 }
 protected void registerLampRecipes() {
     ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get())
-            .pattern("AAA")
+            .pattern(" A ")
             .pattern("ABA")
-            .pattern("AAA")
+            .pattern(" A ")
             .define('A', Items.ROTTEN_FLESH)
             .define('B', Blocks.GLOWSTONE)
             .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH))
@@ -120,10 +120,10 @@ protected void registerLampRecipes() {
             .save(this.output); 
 }
 protected void registerWoodRecipes() {
-    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LOG_ITEM.get())
-            .pattern("AAA")
-            .pattern("ABA")
-            .pattern("AAA")
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LOG_ITEM.get(), 2)
+            .pattern(" B ")
+            .pattern(" A ")
+            .pattern(" B ")
             .define('A', Items.ROTTEN_FLESH)
             .define('B', this.tag(LOGS_THAT_BURN_TAG))
             .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH))

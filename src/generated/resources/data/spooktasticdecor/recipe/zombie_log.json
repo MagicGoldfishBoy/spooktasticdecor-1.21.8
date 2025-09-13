@@ -6,12 +6,12 @@
     "B": "#minecraft:logs_that_burn"
   },
   "pattern": [
-    "AAA",
-    "ABA",
-    "AAA"
+    " B ",
+    " A ",
+    " B "
   ],
   "result": {
-    "count": 1,
+    "count": 2,
     "id": "spooktasticdecor:zombie_log"
   }
 }

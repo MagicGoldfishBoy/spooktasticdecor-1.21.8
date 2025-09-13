@@ -6,9 +6,9 @@
     "B": "minecraft:glowstone"
   },
   "pattern": [
-    "AAA",
+    " A ",
     "ABA",
-    "AAA"
+    " A "
   ],
   "result": {
     "count": 1,
