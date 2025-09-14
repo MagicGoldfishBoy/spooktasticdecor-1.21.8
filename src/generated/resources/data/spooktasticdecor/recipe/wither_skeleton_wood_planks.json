@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "#spooktasticdecor:wither_skeleton_logs"
+  ],
+  "result": {
+    "count": 4,
+    "id": "spooktasticdecor:wither_skeleton_wood_planks"
+  }
+}

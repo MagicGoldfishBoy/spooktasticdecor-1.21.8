@@ -42,6 +42,11 @@ public class RecipeGenerator extends RecipeProvider {
         ResourceLocation.fromNamespaceAndPath("spooktasticdecor", "skeleton_logs")
 );
 
+    public static final TagKey<Item> WITHER_SKELETON_WOOD_TAG = TagKey.create(
+                Registries.ITEM,
+                ResourceLocation.fromNamespaceAndPath("spooktasticdecor", "wither_skeleton_logs")
+);
+
 @Override
 protected void buildRecipes() {
 
@@ -125,6 +130,7 @@ protected void registerLampRecipes() {
 protected void registerWoodRecipes() {
     registerZombieWoodRecipes();
     registerSkeletonWoodRecipes();
+    registerWitherSkeletonWoodRecipes();
 }
 protected void registerZombieWoodRecipes() {
     ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LOG_ITEM.get(), 2)
@@ -254,6 +260,71 @@ protected void registerSkeletonWoodRecipes() {
             .pattern("AA")
             .define('A', SimpleBlockItemRegistry.SKELETON_WOOD_PLANKS_ITEM.get())
             .unlockedBy("has_skeleton_planks", has(SimpleBlockItemRegistry.SKELETON_WOOD_PLANKS_ITEM.get()))
+            .save(this.output);
+}
+protected void registerWitherSkeletonWoodRecipes() {
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.WITHER_SKELETON_LOG_ITEM.get(), 2)
+            .pattern(" B ")
+            .pattern(" A ")
+            .pattern(" B ")
+            .define('A', Items.NETHERRACK)
+            .define('B', this.tag(LOGS_THAT_BURN_TAG))
+            .unlockedBy("has_netherrack", has(Items.NETHERRACK))
+            .save(this.output);
+    SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.WITHER_SKELETON_LOG.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.WITHER_SKELETON_LOG_STRIPPED.get(), 1)
+            .unlockedBy("has_wither_skeleton_log", has(simpleblockregistry.WITHER_SKELETON_LOG.get()))
+            .save(this.output, SpooktasticDecor.MODID + ":wither_skeleton_log_stripped_from_stonecutting");
+    ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get(), 4)
+            .requires(this.tag(WITHER_SKELETON_WOOD_TAG))
+            .unlockedBy("has_wither_skeleton_log", has(simpleblockregistry.WITHER_SKELETON_LOG.get()))
+            .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_SLAB_ITEM.get(), 6)
+            .pattern("AAA")
+            .define('A', SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get())
+            .unlockedBy("has_wither_skeleton_planks", has(SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get()))
+            .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_STAIRS_ITEM.get(), 4)
+            .pattern("A  ")
+            .pattern("AA ")
+            .pattern("AAA")
+            .define('A', SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get())
+            .unlockedBy("has_wither_skeleton_planks", has(SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get()))
+            .save(this.output);
+    ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_BUTTON_ITEM.get(), 1)
+            .requires(SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get())
+            .unlockedBy("has_wither_skeleton_planks", has(SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get()))
+            .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_FENCE_ITEM.get(), 3)
+            .pattern("ABA")
+            .pattern("ABA")
+            .define('A', SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get())
+            .define('B', Items.STICK)
+            .unlockedBy("has_wither_skeleton_planks", has(SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get()))
+            .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_FENCE_GATE_ITEM.get(), 1)
+            .pattern("BAB")
+            .pattern("BAB")
+            .define('A', SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get())
+            .define('B', Items.STICK)
+            .unlockedBy("has_wither_skeleton_planks", has(SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get()))
+            .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_PRESSURE_PLATE_ITEM.get(), 1)
+            .pattern("AA")
+            .define('A', SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get())
+            .unlockedBy("has_wither_skeleton_planks", has(SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get()))
+            .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_TRAPDOOR_ITEM.get(), 2)
+            .pattern("AAA")
+            .pattern("AAA")
+            .define('A', SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get())
+            .unlockedBy("has_wither_skeleton_planks", has(SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get()))
+            .save(this.output); 
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_DOOR_ITEM.get(), 3)
+            .pattern("AA")
+            .pattern("AA")
+            .pattern("AA")
+            .define('A', SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get())
+            .unlockedBy("has_wither_skeleton_planks", has(SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get()))
             .save(this.output);
 }
 

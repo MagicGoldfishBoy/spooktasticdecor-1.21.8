@@ -79,6 +79,24 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createDoor(simpleblockregistry.SKELETON_WOOD_PLANKS_DOOR.get());
 
+
+        blockModels.woodProvider(simpleblockregistry.WITHER_SKELETON_LOG.get()).log(simpleblockregistry.WITHER_SKELETON_LOG.get());
+
+        blockModels.woodProvider(simpleblockregistry.WITHER_SKELETON_LOG_STRIPPED.get()).log(simpleblockregistry.WITHER_SKELETON_LOG_STRIPPED.get());
+
+        blockModels.createTrivialCube(simpleblockregistry.WITHER_SKELETON_WOOD_PLANKS.get());
+
+        blockModels.familyWithExistingFullBlock(simpleblockregistry.WITHER_SKELETON_WOOD_PLANKS.get())
+                   .slab(simpleblockregistry.WITHER_SKELETON_WOOD_PLANKS_SLAB.get())
+                   .stairs(simpleblockregistry.WITHER_SKELETON_WOOD_PLANKS_STAIRS.get())
+                   .button(simpleblockregistry.WITHER_SKELETON_WOOD_PLANKS_BUTTON.get())
+                   .fence(simpleblockregistry.WITHER_SKELETON_WOOD_PLANKS_FENCE.get())
+                   .fenceGate(simpleblockregistry.WITHER_SKELETON_WOOD_PLANKS_FENCE_GATE.get())
+                   .pressurePlate(simpleblockregistry.WITHER_SKELETON_WOOD_PLANKS_PRESSURE_PLATE.get())
+                   .trapdoor(simpleblockregistry.WITHER_SKELETON_WOOD_PLANKS_TRAPDOOR.get());
+
+        blockModels.createDoor(simpleblockregistry.WITHER_SKELETON_WOOD_PLANKS_DOOR.get());
+
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {

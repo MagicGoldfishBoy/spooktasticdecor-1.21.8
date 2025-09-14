@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "spooktasticdecor:block/wither_skeleton_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "spooktasticdecor:block/wither_skeleton_log"
+    },
+    "axis=z": {
+      "model": "spooktasticdecor:block/wither_skeleton_log",
+      "x": 90
+    }
+  }
+}

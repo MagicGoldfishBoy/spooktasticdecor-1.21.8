@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "A": "spooktasticdecor:wither_skeleton_wood_planks"
+  },
+  "pattern": [
+    "AA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:wither_skeleton_wood_planks_pressure_plate"
+  }
+}

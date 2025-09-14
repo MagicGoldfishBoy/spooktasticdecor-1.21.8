@@ -34,6 +34,18 @@
   "block.spooktasticdecor.skeleton_wood_planks_trapdoor": "Skeleton Wood Planks Trapdoor",
   "block.spooktasticdecor.skeleton_wood_planks_door": "Skeleton Wood Planks Door",
 
+  "block.spooktasticdecor.wither_skeleton_log": "Wither Skeleton Log",
+  "block.spooktasticdecor.wither_skeleton_log_stripped": "Stripped Wither Skeleton Log",
+  "block.spooktasticdecor.wither_skeleton_wood_planks": "Wither Skeleton Wood Planks",
+  "block.spooktasticdecor.wither_skeleton_wood_planks_slab": "Wither Skeleton Wood Planks Slab",
+  "block.spooktasticdecor.wither_skeleton_wood_planks_stairs": "Wither Skeleton Wood Planks Stairs",
+  "block.spooktasticdecor.wither_skeleton_wood_planks_button": "Wither Skeleton Wood Planks Button",
+  "block.spooktasticdecor.wither_skeleton_wood_planks_fence": "Wither Skeleton Wood Planks Fence",
+  "block.spooktasticdecor.wither_skeleton_wood_planks_fence_gate": "Wither Skeleton Wood Planks Fence Gate",
+  "block.spooktasticdecor.wither_skeleton_wood_planks_pressure_plate": "Wither Skeleton Wood Planks Pressure Plate",
+  "block.spooktasticdecor.wither_skeleton_wood_planks_trapdoor": "Wither Skeleton Wood Planks Trapdoor",
+  "block.spooktasticdecor.wither_skeleton_wood_planks_door": "Wither Skeleton Wood Planks Door",
+
   "spooktasticdecor.configuration.title": "Spooktastic Decor Configs",
   "spooktasticdecor.configuration.section.spooktasticdecor.common.toml": "Spooktastic Decor Configs",
   "spooktasticdecor.configuration.section.spooktasticdecor.common.toml.title": "Spooktastic Decor Configs",

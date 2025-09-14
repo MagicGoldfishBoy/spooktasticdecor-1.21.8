@@ -2,10 +2,12 @@ package com.goldfish.spooktasticdecor.registry;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.SkeletonLog;
+import com.goldfish.spooktasticdecor.block.WitherSkeletonLog;
 import com.goldfish.spooktasticdecor.block.ZombieLog;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.DoorBlock;
@@ -56,6 +58,18 @@ public class simpleblockregistry {
     public static DeferredBlock<PressurePlateBlock> SKELETON_WOOD_PLANKS_PRESSURE_PLATE;
     public static DeferredBlock<TrapDoorBlock> SKELETON_WOOD_PLANKS_TRAPDOOR;
     public static DeferredBlock<DoorBlock> SKELETON_WOOD_PLANKS_DOOR;
+
+    public static DeferredBlock<WitherSkeletonLog> WITHER_SKELETON_LOG;
+    public static DeferredBlock<RotatedPillarBlock> WITHER_SKELETON_LOG_STRIPPED;
+    public static DeferredBlock<Block> WITHER_SKELETON_WOOD_PLANKS;
+    public static DeferredBlock<SlabBlock> WITHER_SKELETON_WOOD_PLANKS_SLAB;
+    public static DeferredBlock<StairBlock> WITHER_SKELETON_WOOD_PLANKS_STAIRS;
+    public static DeferredBlock<ButtonBlock> WITHER_SKELETON_WOOD_PLANKS_BUTTON;
+    public static DeferredBlock<FenceBlock> WITHER_SKELETON_WOOD_PLANKS_FENCE;
+    public static DeferredBlock<FenceGateBlock> WITHER_SKELETON_WOOD_PLANKS_FENCE_GATE;
+    public static DeferredBlock<PressurePlateBlock> WITHER_SKELETON_WOOD_PLANKS_PRESSURE_PLATE;
+    public static DeferredBlock<TrapDoorBlock> WITHER_SKELETON_WOOD_PLANKS_TRAPDOOR;
+    public static DeferredBlock<DoorBlock> WITHER_SKELETON_WOOD_PLANKS_DOOR;
 
     public static void registerAll() {
         register_lamps();
@@ -146,6 +160,7 @@ public class simpleblockregistry {
     public static void register_wood() {
         register_zombie_wood();
         registerSkeletonWood();
+        registerWitherSkeletonWood();
     }
     public static void register_zombie_wood() {
         ZOMBIE_LOG = SpooktasticDecor.BLOCKS.register(
@@ -369,5 +384,112 @@ public class simpleblockregistry {
                 .noOcclusion()
             )
         );
+    }
+    public static void registerWitherSkeletonWood() {
+        WITHER_SKELETON_LOG = SpooktasticDecor.BLOCKS.register(
+            "wither_skeleton_log",
+            registryName -> new WitherSkeletonLog(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.BONE_BLOCK)
+            )
+        );
+        WITHER_SKELETON_LOG_STRIPPED = SpooktasticDecor.BLOCKS.register(
+            "wither_skeleton_log_stripped",
+            registryName -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.BONE_BLOCK)
+            )
+        );
+        WITHER_SKELETON_WOOD_PLANKS = SpooktasticDecor.BLOCKS.register(
+            "wither_skeleton_wood_planks",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.BONE_BLOCK)
+            )
+        );
+        WITHER_SKELETON_WOOD_PLANKS_SLAB = SpooktasticDecor.BLOCKS.register(
+            "wither_skeleton_wood_planks_slab",
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.BONE_BLOCK)
+            )
+        );
+        WITHER_SKELETON_WOOD_PLANKS_STAIRS = SpooktasticDecor.BLOCKS.register(
+            "wither_skeleton_wood_planks_stairs",
+            registryName -> new StairBlock(WITHER_SKELETON_WOOD_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(2.0f)
+            .explosionResistance(10.0f)
+            .sound(SoundType.BONE_BLOCK)
+            )
+        );
+        WITHER_SKELETON_WOOD_PLANKS_BUTTON = SpooktasticDecor.BLOCKS.register(
+            "wither_skeleton_wood_planks_button",
+            registryName -> new ButtonBlock(BlockSetType.WARPED, 20, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.BONE_BLOCK)
+                .noCollission()
+                .instabreak()
+            )
+        );
+        WITHER_SKELETON_WOOD_PLANKS_FENCE = SpooktasticDecor.BLOCKS.register(
+            "wither_skeleton_wood_planks_fence",
+            registryName -> new FenceBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.BONE_BLOCK)
+            )
+        );
+        WITHER_SKELETON_WOOD_PLANKS_FENCE_GATE = SpooktasticDecor.BLOCKS.register(
+            "wither_skeleton_wood_planks_fence_gate",
+            registryName -> new FenceGateBlock(WoodType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.BONE_BLOCK)
+            )
+        );
+        WITHER_SKELETON_WOOD_PLANKS_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+            "wither_skeleton_wood_planks_pressure_plate",
+            registryName -> new PressurePlateBlock(BlockSetType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.BONE_BLOCK)
+                .noCollission()
+                .instabreak()
+            )
+        );
+        WITHER_SKELETON_WOOD_PLANKS_TRAPDOOR = SpooktasticDecor.BLOCKS.register(
+            "wither_skeleton_wood_planks_trapdoor",
+            registryName -> new TrapDoorBlock(BlockSetType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.BONE_BLOCK)
+            )
+        );
+        WITHER_SKELETON_WOOD_PLANKS_DOOR = SpooktasticDecor.BLOCKS.register(
+            "wither_skeleton_wood_planks_door",
+            registryName -> new DoorBlock(BlockSetType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.BONE_BLOCK)
+                .noOcclusion()
+            )
+        );
+
     }
 }
