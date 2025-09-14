@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "spooktasticdecor:block/skeleton_log_stripped",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "spooktasticdecor:block/skeleton_log_stripped"
+    },
+    "axis=z": {
+      "model": "spooktasticdecor:block/skeleton_log_stripped",
+      "x": 90
+    }
+  }
+}

@@ -29,6 +29,9 @@ public class SimpleBlockItemRegistry {
     public static DeferredItem<BlockItem> ZOMBIE_WOOD_PLANKS_TRAPDOOR_ITEM;
     public static DeferredItem<BlockItem> ZOMBIE_WOOD_PLANKS_DOOR_ITEM;
 
+    public static DeferredItem<BlockItem> SKELETON_LOG_ITEM;
+    public static DeferredItem<BlockItem> STRIPPED_SKELETON_LOG_ITEM;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
@@ -69,6 +72,10 @@ public class SimpleBlockItemRegistry {
 
     }
     public static void register_wood() {
+        registerZombieWood();
+        registerSkeletonWood();
+    }
+    public static void registerZombieWood() {
 
         ZOMBIE_LOG_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
         simpleblockregistry.ZOMBIE_LOG,
@@ -113,7 +120,16 @@ public class SimpleBlockItemRegistry {
         ZOMBIE_WOOD_PLANKS_DOOR_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
         simpleblockregistry.ZOMBIE_WOOD_PLANKS_DOOR,
         new Item.Properties());
+    }
+    public static void registerSkeletonWood() {
 
+        SKELETON_LOG_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SKELETON_LOG,
+            new Item.Properties());
+
+        STRIPPED_SKELETON_LOG_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SKELETON_LOG_STRIPPED,
+            new Item.Properties());
     }
 
 }

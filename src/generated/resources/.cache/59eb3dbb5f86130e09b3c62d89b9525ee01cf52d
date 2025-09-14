@@ -1,9 +1,11 @@
-// 1.21.8	2025-09-12T11:36:01.549679871	Loot Tables
+// 1.21.8	2025-09-14T09:57:44.245341973	Loot Tables
 e30628148fa475a47ca934a2667f679515556c52 data/spooktasticdecor/loot_table/blocks/creaking_lamp.json
 12c06872be47a4ee010fb04d174b646a312f82ff data/spooktasticdecor/loot_table/blocks/ender_lamp.json
 48d4b95ba6521af279df2eb6c1677433b75d54f6 data/spooktasticdecor/loot_table/blocks/eyeball_lamp.json
 9691389500fae8ee2ed0935db44fee106c9bd6ea data/spooktasticdecor/loot_table/blocks/ghast_lamp.json
 413773f0c9e1900208c41baf47785ae9fdcd0d63 data/spooktasticdecor/loot_table/blocks/skeleton_lamp.json
+1cfcffd12024e3d6d0a535f23d5e76467ba8d014 data/spooktasticdecor/loot_table/blocks/skeleton_log.json
+e06ca3f2534418535237918aff3400005bf82a3b data/spooktasticdecor/loot_table/blocks/skeleton_log_stripped.json
 a2951cb336e7452f847b85b32c20e5ae9a5ff727 data/spooktasticdecor/loot_table/blocks/spider_lamp.json
 0f85059ee48550abb073b1ac81dc1945e1cbee23 data/spooktasticdecor/loot_table/blocks/wither_skeleton_lamp.json
 01894d513205b83ce079bc65582c71f482c625c3 data/spooktasticdecor/loot_table/blocks/zombie_lamp.json

@@ -26,14 +26,5 @@ public class ZombieLog extends RotatedPillarBlock {
             return super.getToolModifiedState(state, context, itemAbility, simulate);
         }
 }
-    // @Override
-    // public BlockState getToolModifiedState(BlockState state, Level world, BlockPos pos, Player player, ItemStack stack, ToolAction action) {
-    //     if (action == ToolActions.AXE_STRIP && stack.getItem() instanceof AxeItem) {
-    //         // Replace 'YourStrippedLogBlock.BLOCK_STATE_HERE' with the actual BlockState of your stripped log
-    //         // You might need to copy properties like axis from the original log state
-    //         return simpleblockregistry.ZOMBIE_LOG_STRIPPED.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS)); 
-    //     }
-    //     return super.getToolModifiedState(state, world, pos, player, stack, action);
-    // }
     
 

@@ -9,7 +9,6 @@ import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
@@ -22,7 +21,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.SingleItemRecipe;
 import net.minecraft.world.level.block.Blocks;
 
 public class RecipeGenerator extends RecipeProvider {
@@ -120,6 +118,10 @@ protected void registerLampRecipes() {
             .save(this.output); 
 }
 protected void registerWoodRecipes() {
+    registerZombieWoodRecipes();
+    registerSkeletonWoodRecipes();
+}
+protected void registerZombieWoodRecipes() {
     ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LOG_ITEM.get(), 2)
             .pattern(" B ")
             .pattern(" A ")
@@ -183,6 +185,19 @@ protected void registerWoodRecipes() {
             .define('A', SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_ITEM.get())
             .unlockedBy("has_zombie_planks", has(SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_ITEM.get()))
             .save(this.output);
+}
+protected void registerSkeletonWoodRecipes() {
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.SKELETON_LOG_ITEM.get(), 2)
+            .pattern(" B ")
+            .pattern(" A ")
+            .pattern(" B ")
+            .define('A', Items.BONE)
+            .define('B', this.tag(LOGS_THAT_BURN_TAG))
+            .unlockedBy("has_bone", has(Items.BONE))
+            .save(this.output);
+    SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.SKELETON_LOG.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.SKELETON_LOG_STRIPPED.get(), 1)
+            .unlockedBy("has_skeleton_log", has(simpleblockregistry.SKELETON_LOG.get()))
+            .save(this.output, SpooktasticDecor.MODID + ":skeleton_log_stripped_from_stonecutting");
 }
 
     // The data provider class

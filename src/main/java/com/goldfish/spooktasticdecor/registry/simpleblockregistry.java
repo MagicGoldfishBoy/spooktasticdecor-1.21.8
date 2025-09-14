@@ -1,16 +1,12 @@
 package com.goldfish.spooktasticdecor.registry;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
+import com.goldfish.spooktasticdecor.block.SkeletonLog;
 import com.goldfish.spooktasticdecor.block.ZombieLog;
 
-import net.minecraft.client.gui.components.Button;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BlockTypes;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
@@ -48,6 +44,9 @@ public class simpleblockregistry {
     public static DeferredBlock<PressurePlateBlock> ZOMBIE_WOOD_PLANKS_PRESSURE_PLATE;
     public static DeferredBlock<TrapDoorBlock> ZOMBIE_WOOD_PLANKS_TRAPDOOR;
     public static DeferredBlock<DoorBlock> ZOMBIE_WOOD_PLANKS_DOOR;
+
+    public static DeferredBlock<SkeletonLog> SKELETON_LOG;
+    public static DeferredBlock<RotatedPillarBlock> SKELETON_LOG_STRIPPED;
 
     public static void registerAll() {
         register_lamps();
@@ -137,6 +136,7 @@ public class simpleblockregistry {
     }
     public static void register_wood() {
         register_zombie_wood();
+        registerSkeletonWood();
     }
     public static void register_zombie_wood() {
         ZOMBIE_LOG = SpooktasticDecor.BLOCKS.register(
@@ -254,5 +254,25 @@ public class simpleblockregistry {
                 .noOcclusion()
             )
         );       
+    }
+    public static void registerSkeletonWood() {
+        SKELETON_LOG = SpooktasticDecor.BLOCKS.register(
+            "skeleton_log",
+            registryName -> new SkeletonLog(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.BONE_BLOCK)
+            )
+        );
+        SKELETON_LOG_STRIPPED = SpooktasticDecor.BLOCKS.register(
+            "skeleton_log_stripped",
+            registryName -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.BONE_BLOCK)
+            )
+        );
     }
 }

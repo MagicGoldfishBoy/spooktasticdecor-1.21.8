@@ -61,6 +61,11 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createDoor(simpleblockregistry.ZOMBIE_WOOD_PLANKS_DOOR.get());
 
+
+        blockModels.woodProvider(simpleblockregistry.SKELETON_LOG.get()).log(simpleblockregistry.SKELETON_LOG.get());
+
+        blockModels.woodProvider(simpleblockregistry.SKELETON_LOG_STRIPPED.get()).log(simpleblockregistry.SKELETON_LOG_STRIPPED.get());
+
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
