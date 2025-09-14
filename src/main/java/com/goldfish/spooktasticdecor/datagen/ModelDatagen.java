@@ -97,6 +97,24 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createDoor(simpleblockregistry.WITHER_SKELETON_WOOD_PLANKS_DOOR.get());
 
+
+        blockModels.woodProvider(simpleblockregistry.GHAST_LOG.get()).log(simpleblockregistry.GHAST_LOG.get());
+
+        blockModels.woodProvider(simpleblockregistry.GHAST_LOG_STRIPPED.get()).log(simpleblockregistry.GHAST_LOG_STRIPPED.get());
+
+        blockModels.createTrivialCube(simpleblockregistry.GHAST_WOOD_PLANKS.get());
+
+        blockModels.familyWithExistingFullBlock(simpleblockregistry.GHAST_WOOD_PLANKS.get())
+                   .slab(simpleblockregistry.GHAST_WOOD_PLANKS_SLAB.get())
+                   .stairs(simpleblockregistry.GHAST_WOOD_PLANKS_STAIRS.get())
+                   .button(simpleblockregistry.GHAST_WOOD_PLANKS_BUTTON.get())
+                   .fence(simpleblockregistry.GHAST_WOOD_PLANKS_FENCE.get())
+                   .fenceGate(simpleblockregistry.GHAST_WOOD_PLANKS_FENCE_GATE.get())
+                   .pressurePlate(simpleblockregistry.GHAST_WOOD_PLANKS_PRESSURE_PLATE.get())
+                   .trapdoor(simpleblockregistry.GHAST_WOOD_PLANKS_TRAPDOOR.get());
+
+        blockModels.createDoor(simpleblockregistry.GHAST_WOOD_PLANKS_DOOR.get());
+
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {

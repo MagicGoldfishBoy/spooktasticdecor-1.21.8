@@ -1,6 +1,7 @@
 package com.goldfish.spooktasticdecor.registry;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
+import com.goldfish.spooktasticdecor.block.GhastLog;
 import com.goldfish.spooktasticdecor.block.SkeletonLog;
 import com.goldfish.spooktasticdecor.block.WitherSkeletonLog;
 import com.goldfish.spooktasticdecor.block.ZombieLog;
@@ -70,6 +71,18 @@ public class simpleblockregistry {
     public static DeferredBlock<PressurePlateBlock> WITHER_SKELETON_WOOD_PLANKS_PRESSURE_PLATE;
     public static DeferredBlock<TrapDoorBlock> WITHER_SKELETON_WOOD_PLANKS_TRAPDOOR;
     public static DeferredBlock<DoorBlock> WITHER_SKELETON_WOOD_PLANKS_DOOR;
+
+    public static DeferredBlock<GhastLog> GHAST_LOG;
+    public static DeferredBlock<RotatedPillarBlock> GHAST_LOG_STRIPPED;
+    public static DeferredBlock<Block> GHAST_WOOD_PLANKS;
+    public static DeferredBlock<SlabBlock> GHAST_WOOD_PLANKS_SLAB;
+    public static DeferredBlock<StairBlock> GHAST_WOOD_PLANKS_STAIRS;
+    public static DeferredBlock<ButtonBlock> GHAST_WOOD_PLANKS_BUTTON;
+    public static DeferredBlock<FenceBlock> GHAST_WOOD_PLANKS_FENCE;
+    public static DeferredBlock<FenceGateBlock> GHAST_WOOD_PLANKS_FENCE_GATE;
+    public static DeferredBlock<PressurePlateBlock> GHAST_WOOD_PLANKS_PRESSURE_PLATE;
+    public static DeferredBlock<TrapDoorBlock> GHAST_WOOD_PLANKS_TRAPDOOR;
+    public static DeferredBlock<DoorBlock> GHAST_WOOD_PLANKS_DOOR;
 
     public static void registerAll() {
         register_lamps();
@@ -161,6 +174,7 @@ public class simpleblockregistry {
         register_zombie_wood();
         registerSkeletonWood();
         registerWitherSkeletonWood();
+        registerGhastWood();
     }
     public static void register_zombie_wood() {
         ZOMBIE_LOG = SpooktasticDecor.BLOCKS.register(
@@ -491,5 +505,111 @@ public class simpleblockregistry {
             )
         );
 
+    }
+    public static void registerGhastWood() {
+        GHAST_LOG = SpooktasticDecor.BLOCKS.register(
+            "ghast_log",
+            registryName -> new GhastLog(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.DRIED_GHAST)
+            )
+        );
+        GHAST_LOG_STRIPPED = SpooktasticDecor.BLOCKS.register(
+            "ghast_log_stripped",
+            registryName -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.DRIED_GHAST)
+            )
+        );
+        GHAST_WOOD_PLANKS = SpooktasticDecor.BLOCKS.register(
+            "ghast_wood_planks",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.DRIED_GHAST)
+            )
+        );
+        GHAST_WOOD_PLANKS_SLAB = SpooktasticDecor.BLOCKS.register(
+            "ghast_wood_planks_slab",
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.DRIED_GHAST)
+            )
+        );
+        GHAST_WOOD_PLANKS_STAIRS = SpooktasticDecor.BLOCKS.register(
+            "ghast_wood_planks_stairs",
+            registryName -> new StairBlock(GHAST_WOOD_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(2.0f)
+            .explosionResistance(10.0f)
+            .sound(SoundType.DRIED_GHAST)
+            )
+        );
+        GHAST_WOOD_PLANKS_BUTTON = SpooktasticDecor.BLOCKS.register(
+            "ghast_wood_planks_button",
+            registryName -> new ButtonBlock(BlockSetType.WARPED, 20, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.DRIED_GHAST)
+                .noCollission()
+                .instabreak()
+            )
+        );
+        GHAST_WOOD_PLANKS_FENCE = SpooktasticDecor.BLOCKS.register(
+            "ghast_wood_planks_fence",
+            registryName -> new FenceBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.DRIED_GHAST)
+            )
+        );
+        GHAST_WOOD_PLANKS_FENCE_GATE = SpooktasticDecor.BLOCKS.register(
+            "ghast_wood_planks_fence_gate",
+            registryName -> new FenceGateBlock(WoodType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.DRIED_GHAST)
+            )
+        );
+        GHAST_WOOD_PLANKS_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+            "ghast_wood_planks_pressure_plate",
+            registryName -> new PressurePlateBlock(BlockSetType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.DRIED_GHAST)
+                .noCollission()
+                .instabreak()
+            )
+        );
+        GHAST_WOOD_PLANKS_TRAPDOOR = SpooktasticDecor.BLOCKS.register(
+            "ghast_wood_planks_trapdoor",
+            registryName -> new TrapDoorBlock(BlockSetType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.DRIED_GHAST)
+            )
+        );
+        GHAST_WOOD_PLANKS_DOOR = SpooktasticDecor.BLOCKS.register(
+            "ghast_wood_planks_door",
+            registryName -> new DoorBlock(BlockSetType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.DRIED_GHAST)
+                .noOcclusion()
+            )
+        );
     }
 }

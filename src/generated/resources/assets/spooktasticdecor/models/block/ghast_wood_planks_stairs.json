@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "spooktasticdecor:block/ghast_wood_planks",
+    "side": "spooktasticdecor:block/ghast_wood_planks",
+    "top": "spooktasticdecor:block/ghast_wood_planks"
+  }
+}

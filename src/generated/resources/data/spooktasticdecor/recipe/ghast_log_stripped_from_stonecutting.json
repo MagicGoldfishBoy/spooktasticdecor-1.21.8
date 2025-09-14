@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "spooktasticdecor:ghast_log",
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:ghast_log_stripped"
+  }
+}

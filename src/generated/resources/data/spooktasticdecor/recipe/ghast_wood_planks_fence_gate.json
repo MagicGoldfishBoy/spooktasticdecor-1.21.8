@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "A": "spooktasticdecor:ghast_wood_planks",
+    "B": "minecraft:stick"
+  },
+  "pattern": [
+    "BAB",
+    "BAB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:ghast_wood_planks_fence_gate"
+  }
+}

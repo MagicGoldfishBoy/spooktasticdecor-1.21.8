@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spooktasticdecor:item/ghast_wood_planks_door"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "#spooktasticdecor:ghast_logs"
+  ],
+  "result": {
+    "count": 4,
+    "id": "spooktasticdecor:ghast_wood_planks"
+  }
+}
