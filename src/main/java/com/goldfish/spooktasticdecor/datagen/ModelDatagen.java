@@ -66,6 +66,17 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.woodProvider(simpleblockregistry.SKELETON_LOG_STRIPPED.get()).log(simpleblockregistry.SKELETON_LOG_STRIPPED.get());
 
+        blockModels.createTrivialCube(simpleblockregistry.SKELETON_WOOD_PLANKS.get());
+
+        blockModels.familyWithExistingFullBlock(simpleblockregistry.SKELETON_WOOD_PLANKS.get())
+                   .slab(simpleblockregistry.SKELETON_WOOD_PLANKS_SLAB.get())
+                   .stairs(simpleblockregistry.SKELETON_WOOD_PLANKS_STAIRS.get())
+                   .button(simpleblockregistry.SKELETON_WOOD_PLANKS_BUTTON.get())
+                   .fence(simpleblockregistry.SKELETON_WOOD_PLANKS_FENCE.get())
+                   .fenceGate(simpleblockregistry.SKELETON_WOOD_PLANKS_FENCE_GATE.get())
+                   .pressurePlate(simpleblockregistry.SKELETON_WOOD_PLANKS_PRESSURE_PLATE.get())
+                   .trapdoor(simpleblockregistry.SKELETON_WOOD_PLANKS_TRAPDOOR.get());
+
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {

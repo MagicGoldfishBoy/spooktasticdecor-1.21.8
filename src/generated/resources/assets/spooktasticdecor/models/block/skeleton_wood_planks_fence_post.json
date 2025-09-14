@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "texture": "spooktasticdecor:block/skeleton_wood_planks"
+  }
+}

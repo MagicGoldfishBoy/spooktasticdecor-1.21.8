@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "A": "spooktasticdecor:skeleton_wood_planks"
+  },
+  "pattern": [
+    "AAA"
+  ],
+  "result": {
+    "count": 6,
+    "id": "spooktasticdecor:skeleton_wood_planks_slab"
+  }
+}
