@@ -55,6 +55,7 @@ public class simpleblockregistry {
     public static DeferredBlock<FenceGateBlock> SKELETON_WOOD_PLANKS_FENCE_GATE;
     public static DeferredBlock<PressurePlateBlock> SKELETON_WOOD_PLANKS_PRESSURE_PLATE;
     public static DeferredBlock<TrapDoorBlock> SKELETON_WOOD_PLANKS_TRAPDOOR;
+    public static DeferredBlock<DoorBlock> SKELETON_WOOD_PLANKS_DOOR;
 
     public static void registerAll() {
         register_lamps();
@@ -356,6 +357,16 @@ public class simpleblockregistry {
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
                 .sound(SoundType.BONE_BLOCK)
+            )
+        );
+        SKELETON_WOOD_PLANKS_DOOR = SpooktasticDecor.BLOCKS.register(
+            "skeleton_wood_planks_door",
+            registryName -> new DoorBlock(BlockSetType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.BONE_BLOCK)
+                .noOcclusion()
             )
         );
     }

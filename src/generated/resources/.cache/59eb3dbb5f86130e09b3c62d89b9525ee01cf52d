@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-14T10:22:01.669462016	Loot Tables
+// 1.21.8	2025-09-14T10:40:54.962936451	Loot Tables
 e30628148fa475a47ca934a2667f679515556c52 data/spooktasticdecor/loot_table/blocks/creaking_lamp.json
 12c06872be47a4ee010fb04d174b646a312f82ff data/spooktasticdecor/loot_table/blocks/ender_lamp.json
 48d4b95ba6521af279df2eb6c1677433b75d54f6 data/spooktasticdecor/loot_table/blocks/eyeball_lamp.json
@@ -8,6 +8,7 @@ e30628148fa475a47ca934a2667f679515556c52 data/spooktasticdecor/loot_table/blocks
 e06ca3f2534418535237918aff3400005bf82a3b data/spooktasticdecor/loot_table/blocks/skeleton_log_stripped.json
 9d84bb1cbd74598443a46301792b400c44b3c7dc data/spooktasticdecor/loot_table/blocks/skeleton_wood_planks.json
 4cbeb2abaf9baec67c6665956c64a049993f4e98 data/spooktasticdecor/loot_table/blocks/skeleton_wood_planks_button.json
+30dfecca04196f53ea2cc6ce57e81d2682f018b3 data/spooktasticdecor/loot_table/blocks/skeleton_wood_planks_door.json
 9243e2e8742e155f4baae5a9cddd028e511388bc data/spooktasticdecor/loot_table/blocks/skeleton_wood_planks_fence.json
 ee691b82fc31c420e22c30932d398ebaf61a8b61 data/spooktasticdecor/loot_table/blocks/skeleton_wood_planks_fence_gate.json
 784a8639c3e1d09478b1a6c2215431c059029b37 data/spooktasticdecor/loot_table/blocks/skeleton_wood_planks_pressure_plate.json

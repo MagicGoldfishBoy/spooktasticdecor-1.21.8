@@ -248,6 +248,13 @@ protected void registerSkeletonWoodRecipes() {
             .define('A', SimpleBlockItemRegistry.SKELETON_WOOD_PLANKS_ITEM.get())
             .unlockedBy("has_skeleton_planks", has(SimpleBlockItemRegistry.SKELETON_WOOD_PLANKS_ITEM.get()))
             .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.SKELETON_WOOD_PLANKS_DOOR_ITEM.get(), 3)
+            .pattern("AA")
+            .pattern("AA")
+            .pattern("AA")
+            .define('A', SimpleBlockItemRegistry.SKELETON_WOOD_PLANKS_ITEM.get())
+            .unlockedBy("has_skeleton_planks", has(SimpleBlockItemRegistry.SKELETON_WOOD_PLANKS_ITEM.get()))
+            .save(this.output);
 }
 
     // The data provider class

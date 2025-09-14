@@ -39,6 +39,7 @@ public class SimpleBlockItemRegistry {
     public static DeferredItem<BlockItem> SKELETON_WOOD_PLANKS_FENCE_GATE_ITEM;
     public static DeferredItem<BlockItem> SKELETON_WOOD_PLANKS_PRESSURE_PLATE_ITEM;
     public static DeferredItem<BlockItem> SKELETON_WOOD_PLANKS_TRAPDOOR_ITEM;
+    public static DeferredItem<BlockItem> SKELETON_WOOD_PLANKS_DOOR_ITEM;
 
     public static void registerAll() {
         register_lamps();
@@ -169,6 +170,10 @@ public class SimpleBlockItemRegistry {
 
         SKELETON_WOOD_PLANKS_TRAPDOOR_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             simpleblockregistry.SKELETON_WOOD_PLANKS_TRAPDOOR,
+            new Item.Properties());
+
+        SKELETON_WOOD_PLANKS_DOOR_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SKELETON_WOOD_PLANKS_DOOR,
             new Item.Properties());
     }
 

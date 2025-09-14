@@ -77,6 +77,8 @@ public class ModelDatagen extends ModelProvider {
                    .pressurePlate(simpleblockregistry.SKELETON_WOOD_PLANKS_PRESSURE_PLATE.get())
                    .trapdoor(simpleblockregistry.SKELETON_WOOD_PLANKS_TRAPDOOR.get());
 
+        blockModels.createDoor(simpleblockregistry.SKELETON_WOOD_PLANKS_DOOR.get());
+
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
