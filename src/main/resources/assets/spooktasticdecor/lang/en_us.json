@@ -58,6 +58,18 @@
   "block.spooktasticdecor.ghast_wood_planks_trapdoor": "Ghast Wood Planks Trapdoor",
   "block.spooktasticdecor.ghast_wood_planks_door": "Ghast Wood Planks Door",
 
+  "block.spooktasticdecor.spider_log": "Spider Log",
+  "block.spooktasticdecor.spider_log_stripped": "Stripped Spider Log",
+  "block.spooktasticdecor.spider_wood_planks": "Spider Wood Planks",
+  "block.spooktasticdecor.spider_wood_planks_slab": "Spider Wood Planks Slab",
+  "block.spooktasticdecor.spider_wood_planks_stairs": "Spider Wood Planks Stairs",
+  "block.spooktasticdecor.spider_wood_planks_button": "Spider Wood Planks Button",
+  "block.spooktasticdecor.spider_wood_planks_fence": "Spider Wood Planks Fence",
+  "block.spooktasticdecor.spider_wood_planks_fence_gate": "Spider Wood Planks Fence Gate",
+  "block.spooktasticdecor.spider_wood_planks_pressure_plate": "Spider Wood Planks Pressure Plate",
+  "block.spooktasticdecor.spider_wood_planks_trapdoor": "Spider Wood Planks Trapdoor",
+  "block.spooktasticdecor.spider_wood_planks_door": "Spider Wood Planks Door",
+
   "spooktasticdecor.configuration.title": "Spooktastic Decor Configs",
   "spooktasticdecor.configuration.section.spooktasticdecor.common.toml": "Spooktastic Decor Configs",
   "spooktasticdecor.configuration.section.spooktasticdecor.common.toml.title": "Spooktastic Decor Configs",

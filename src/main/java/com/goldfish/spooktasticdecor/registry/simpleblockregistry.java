@@ -3,6 +3,7 @@ package com.goldfish.spooktasticdecor.registry;
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.GhastLog;
 import com.goldfish.spooktasticdecor.block.SkeletonLog;
+import com.goldfish.spooktasticdecor.block.SpiderLog;
 import com.goldfish.spooktasticdecor.block.WitherSkeletonLog;
 import com.goldfish.spooktasticdecor.block.ZombieLog;
 
@@ -83,6 +84,18 @@ public class simpleblockregistry {
     public static DeferredBlock<PressurePlateBlock> GHAST_WOOD_PLANKS_PRESSURE_PLATE;
     public static DeferredBlock<TrapDoorBlock> GHAST_WOOD_PLANKS_TRAPDOOR;
     public static DeferredBlock<DoorBlock> GHAST_WOOD_PLANKS_DOOR;
+
+    public static DeferredBlock<SpiderLog> SPIDER_LOG;
+    public static DeferredBlock<RotatedPillarBlock> SPIDER_LOG_STRIPPED;
+    public static DeferredBlock<Block> SPIDER_WOOD_PLANKS;
+    public static DeferredBlock<SlabBlock> SPIDER_WOOD_PLANKS_SLAB;
+    public static DeferredBlock<StairBlock> SPIDER_WOOD_PLANKS_STAIRS;
+    public static DeferredBlock<ButtonBlock> SPIDER_WOOD_PLANKS_BUTTON;
+    public static DeferredBlock<FenceBlock> SPIDER_WOOD_PLANKS_FENCE;
+    public static DeferredBlock<FenceGateBlock> SPIDER_WOOD_PLANKS_FENCE_GATE;
+    public static DeferredBlock<PressurePlateBlock> SPIDER_WOOD_PLANKS_PRESSURE_PLATE;
+    public static DeferredBlock<TrapDoorBlock> SPIDER_WOOD_PLANKS_TRAPDOOR;
+    public static DeferredBlock<DoorBlock> SPIDER_WOOD_PLANKS_DOOR;
 
     public static void registerAll() {
         register_lamps();
@@ -175,6 +188,7 @@ public class simpleblockregistry {
         registerSkeletonWood();
         registerWitherSkeletonWood();
         registerGhastWood();
+        registerSpiderWood();
     }
     public static void register_zombie_wood() {
         ZOMBIE_LOG = SpooktasticDecor.BLOCKS.register(
@@ -608,6 +622,112 @@ public class simpleblockregistry {
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
                 .sound(SoundType.NETHER_WOOD)
+                .noOcclusion()
+            )
+        );
+    }
+    public static void registerSpiderWood() {
+        SPIDER_LOG = SpooktasticDecor.BLOCKS.register(
+            "spider_log",
+            registryName -> new SpiderLog(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.COBWEB)
+            )
+        );
+        SPIDER_LOG_STRIPPED = SpooktasticDecor.BLOCKS.register(
+            "spider_log_stripped",
+            registryName -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.COBWEB)
+            )
+        );
+        SPIDER_WOOD_PLANKS = SpooktasticDecor.BLOCKS.register(
+            "spider_wood_planks",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.COBWEB)
+            )
+        );
+        SPIDER_WOOD_PLANKS_SLAB = SpooktasticDecor.BLOCKS.register(
+            "spider_wood_planks_slab",
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.COBWEB)
+            )
+        );
+        SPIDER_WOOD_PLANKS_STAIRS = SpooktasticDecor.BLOCKS.register(
+            "spider_wood_planks_stairs",
+            registryName -> new StairBlock(SPIDER_WOOD_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(2.0f)
+            .explosionResistance(10.0f)
+            .sound(SoundType.COBWEB)
+            )
+        );
+        SPIDER_WOOD_PLANKS_BUTTON = SpooktasticDecor.BLOCKS.register(
+            "spider_wood_planks_button",
+            registryName -> new ButtonBlock(BlockSetType.WARPED, 20, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.COBWEB)
+                .noCollission()
+                .instabreak()
+            )
+        );
+        SPIDER_WOOD_PLANKS_FENCE = SpooktasticDecor.BLOCKS.register(
+            "spider_wood_planks_fence",
+            registryName -> new FenceBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.COBWEB)
+            )
+        );
+        SPIDER_WOOD_PLANKS_FENCE_GATE = SpooktasticDecor.BLOCKS.register(
+            "spider_wood_planks_fence_gate",
+            registryName -> new FenceGateBlock(WoodType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.COBWEB)
+            )
+        );
+        SPIDER_WOOD_PLANKS_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+            "spider_wood_planks_pressure_plate",
+            registryName -> new PressurePlateBlock(BlockSetType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.COBWEB)
+                .noCollission()
+                .instabreak()
+            )
+        );
+        SPIDER_WOOD_PLANKS_TRAPDOOR = SpooktasticDecor.BLOCKS.register(
+            "spider_wood_planks_trapdoor",
+            registryName -> new TrapDoorBlock(BlockSetType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.COBWEB)
+            )
+        );
+        SPIDER_WOOD_PLANKS_DOOR = SpooktasticDecor.BLOCKS.register(
+            "spider_wood_planks_door",
+            registryName -> new DoorBlock(BlockSetType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.COBWEB)
                 .noOcclusion()
             )
         );

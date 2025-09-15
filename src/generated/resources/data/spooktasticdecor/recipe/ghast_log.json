@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "A": "minecraft:ghast_tear",
-    "B": "#minecraft:logs_that_burn"
+    "B": "#minecraft:logs"
   },
   "pattern": [
     " B ",

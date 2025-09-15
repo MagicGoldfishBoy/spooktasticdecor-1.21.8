@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "#spooktasticdecor:spider_logs"
+  ],
+  "result": {
+    "count": 4,
+    "id": "spooktasticdecor:spider_wood_planks"
+  }
+}

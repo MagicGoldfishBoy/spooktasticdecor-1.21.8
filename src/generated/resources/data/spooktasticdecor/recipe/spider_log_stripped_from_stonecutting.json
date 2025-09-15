@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "spooktasticdecor:spider_log",
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:spider_log_stripped"
+  }
+}

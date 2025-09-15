@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "spooktasticdecor:block/spider_wood_planks_door_bottom",
+    "top": "spooktasticdecor:block/spider_wood_planks_door_top"
+  }
+}

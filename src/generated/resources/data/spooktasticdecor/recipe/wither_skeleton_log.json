@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "A": "minecraft:netherrack",
-    "B": "#minecraft:logs_that_burn"
+    "B": "#minecraft:logs"
   },
   "pattern": [
     " B ",

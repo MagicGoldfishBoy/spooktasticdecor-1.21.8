@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "spooktasticdecor:block/spider_log_stripped_top",
+    "side": "spooktasticdecor:block/spider_log_stripped"
+  }
+}

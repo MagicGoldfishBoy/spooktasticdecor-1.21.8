@@ -65,6 +65,18 @@ public class SimpleBlockItemRegistry {
     public static DeferredItem<BlockItem> GHAST_WOOD_PLANKS_TRAPDOOR_ITEM;
     public static DeferredItem<BlockItem> GHAST_WOOD_PLANKS_DOOR_ITEM;
 
+    public static DeferredItem<BlockItem> SPIDER_LOG_ITEM;
+    public static DeferredItem<BlockItem> STRIPPED_SPIDER_LOG_ITEM;
+    public static DeferredItem<BlockItem> SPIDER_WOOD_PLANKS_ITEM;
+    public static DeferredItem<BlockItem> SPIDER_WOOD_PLANKS_SLAB_ITEM;
+    public static DeferredItem<BlockItem> SPIDER_WOOD_PLANKS_STAIRS_ITEM;
+    public static DeferredItem<BlockItem> SPIDER_WOOD_PLANKS_BUTTON_ITEM;
+    public static DeferredItem<BlockItem> SPIDER_WOOD_PLANKS_FENCE_ITEM;
+    public static DeferredItem<BlockItem> SPIDER_WOOD_PLANKS_FENCE_GATE_ITEM;
+    public static DeferredItem<BlockItem> SPIDER_WOOD_PLANKS_PRESSURE_PLATE_ITEM;
+    public static DeferredItem<BlockItem> SPIDER_WOOD_PLANKS_TRAPDOOR_ITEM;
+    public static DeferredItem<BlockItem> SPIDER_WOOD_PLANKS_DOOR_ITEM;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
@@ -109,6 +121,7 @@ public class SimpleBlockItemRegistry {
         registerSkeletonWood();
         registerWitherSkeletonWood();
         registerGhastWood();
+        registerSpiderWood();
     }
     public static void registerZombieWood() {
 
@@ -292,6 +305,51 @@ public class SimpleBlockItemRegistry {
 
         GHAST_WOOD_PLANKS_DOOR_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             simpleblockregistry.GHAST_WOOD_PLANKS_DOOR,
+            new Item.Properties());
+    }
+    public static void registerSpiderWood() {
+        SPIDER_LOG_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SPIDER_LOG,
+            new Item.Properties());
+
+        STRIPPED_SPIDER_LOG_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SPIDER_LOG_STRIPPED,
+            new Item.Properties());
+
+        SPIDER_WOOD_PLANKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SPIDER_WOOD_PLANKS,
+            new Item.Properties());
+
+        SPIDER_WOOD_PLANKS_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SPIDER_WOOD_PLANKS_SLAB,
+            new Item.Properties());
+
+        SPIDER_WOOD_PLANKS_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SPIDER_WOOD_PLANKS_STAIRS,
+            new Item.Properties());
+
+        SPIDER_WOOD_PLANKS_BUTTON_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SPIDER_WOOD_PLANKS_BUTTON,
+            new Item.Properties());
+
+        SPIDER_WOOD_PLANKS_FENCE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SPIDER_WOOD_PLANKS_FENCE,
+            new Item.Properties());
+
+        SPIDER_WOOD_PLANKS_FENCE_GATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SPIDER_WOOD_PLANKS_FENCE_GATE,
+            new Item.Properties());
+
+        SPIDER_WOOD_PLANKS_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SPIDER_WOOD_PLANKS_PRESSURE_PLATE,
+            new Item.Properties());
+
+        SPIDER_WOOD_PLANKS_TRAPDOOR_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SPIDER_WOOD_PLANKS_TRAPDOOR,
+            new Item.Properties());
+
+        SPIDER_WOOD_PLANKS_DOOR_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SPIDER_WOOD_PLANKS_DOOR,
             new Item.Properties());
     }
 

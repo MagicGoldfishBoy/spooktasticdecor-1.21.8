@@ -115,6 +115,24 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createDoor(simpleblockregistry.GHAST_WOOD_PLANKS_DOOR.get());
 
+
+        blockModels.woodProvider(simpleblockregistry.SPIDER_LOG.get()).log(simpleblockregistry.SPIDER_LOG.get());
+
+        blockModels.woodProvider(simpleblockregistry.SPIDER_LOG_STRIPPED.get()).log(simpleblockregistry.SPIDER_LOG_STRIPPED.get());
+
+        blockModels.createTrivialCube(simpleblockregistry.SPIDER_WOOD_PLANKS.get());
+
+        blockModels.familyWithExistingFullBlock(simpleblockregistry.SPIDER_WOOD_PLANKS.get())
+                   .slab(simpleblockregistry.SPIDER_WOOD_PLANKS_SLAB.get())
+                   .stairs(simpleblockregistry.SPIDER_WOOD_PLANKS_STAIRS.get())
+                   .button(simpleblockregistry.SPIDER_WOOD_PLANKS_BUTTON.get())
+                   .fence(simpleblockregistry.SPIDER_WOOD_PLANKS_FENCE.get())
+                   .fenceGate(simpleblockregistry.SPIDER_WOOD_PLANKS_FENCE_GATE.get())
+                   .pressurePlate(simpleblockregistry.SPIDER_WOOD_PLANKS_PRESSURE_PLATE.get())
+                   .trapdoor(simpleblockregistry.SPIDER_WOOD_PLANKS_TRAPDOOR.get());
+
+        blockModels.createDoor(simpleblockregistry.SPIDER_WOOD_PLANKS_DOOR.get());
+
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {

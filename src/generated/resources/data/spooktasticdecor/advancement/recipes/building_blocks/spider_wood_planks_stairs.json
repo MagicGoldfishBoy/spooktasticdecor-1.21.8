@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_spider_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spooktasticdecor:spider_wood_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "spooktasticdecor:spider_wood_planks_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_spider_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "spooktasticdecor:spider_wood_planks_stairs"
+    ]
+  }
+}

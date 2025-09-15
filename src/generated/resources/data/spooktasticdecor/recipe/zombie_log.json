@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "A": "minecraft:rotten_flesh",
-    "B": "#minecraft:logs_that_burn"
+    "B": "#minecraft:logs"
   },
   "pattern": [
     " B ",

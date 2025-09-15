@@ -1,6 +1,8 @@
 {
     "values": [
         "spooktasticdecor:zombie_log",
-        "spooktasticdecor:zombie_log_stripped"
+        "spooktasticdecor:zombie_log_stripped",
+        "spooktasticdecor:spider_log",
+        "spooktasticdecor:spider_log_stripped"
     ]
 }
