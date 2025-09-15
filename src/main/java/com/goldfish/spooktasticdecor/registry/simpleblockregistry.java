@@ -513,7 +513,7 @@ public class simpleblockregistry {
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
-                .sound(SoundType.DRIED_GHAST)
+                .sound(SoundType.NETHER_WOOD)
             )
         );
         GHAST_LOG_STRIPPED = SpooktasticDecor.BLOCKS.register(
@@ -522,7 +522,7 @@ public class simpleblockregistry {
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
-                .sound(SoundType.DRIED_GHAST)
+                .sound(SoundType.NETHER_WOOD)
             )
         );
         GHAST_WOOD_PLANKS = SpooktasticDecor.BLOCKS.register(
@@ -531,7 +531,7 @@ public class simpleblockregistry {
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
-                .sound(SoundType.DRIED_GHAST)
+                .sound(SoundType.NETHER_WOOD)
             )
         );
         GHAST_WOOD_PLANKS_SLAB = SpooktasticDecor.BLOCKS.register(
@@ -540,7 +540,7 @@ public class simpleblockregistry {
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
-                .sound(SoundType.DRIED_GHAST)
+                .sound(SoundType.NETHER_WOOD)
             )
         );
         GHAST_WOOD_PLANKS_STAIRS = SpooktasticDecor.BLOCKS.register(
@@ -549,7 +549,7 @@ public class simpleblockregistry {
             .setId(ResourceKey.create(Registries.BLOCK, registryName))
             .destroyTime(2.0f)
             .explosionResistance(10.0f)
-            .sound(SoundType.DRIED_GHAST)
+            .sound(SoundType.NETHER_WOOD)
             )
         );
         GHAST_WOOD_PLANKS_BUTTON = SpooktasticDecor.BLOCKS.register(
@@ -558,7 +558,7 @@ public class simpleblockregistry {
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
-                .sound(SoundType.DRIED_GHAST)
+                .sound(SoundType.NETHER_WOOD)
                 .noCollission()
                 .instabreak()
             )
@@ -569,7 +569,7 @@ public class simpleblockregistry {
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
-                .sound(SoundType.DRIED_GHAST)
+                .sound(SoundType.NETHER_WOOD)
             )
         );
         GHAST_WOOD_PLANKS_FENCE_GATE = SpooktasticDecor.BLOCKS.register(
@@ -578,7 +578,7 @@ public class simpleblockregistry {
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
-                .sound(SoundType.DRIED_GHAST)
+                .sound(SoundType.NETHER_WOOD)
             )
         );
         GHAST_WOOD_PLANKS_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
@@ -587,7 +587,7 @@ public class simpleblockregistry {
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
-                .sound(SoundType.DRIED_GHAST)
+                .sound(SoundType.NETHER_WOOD)
                 .noCollission()
                 .instabreak()
             )
@@ -598,7 +598,7 @@ public class simpleblockregistry {
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
-                .sound(SoundType.DRIED_GHAST)
+                .sound(SoundType.NETHER_WOOD)
             )
         );
         GHAST_WOOD_PLANKS_DOOR = SpooktasticDecor.BLOCKS.register(
@@ -607,7 +607,7 @@ public class simpleblockregistry {
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
-                .sound(SoundType.DRIED_GHAST)
+                .sound(SoundType.NETHER_WOOD)
                 .noOcclusion()
             )
         );
