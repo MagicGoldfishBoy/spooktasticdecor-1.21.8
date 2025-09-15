@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "textures": {
+    "bottom": "spooktasticdecor:block/ender_wood_planks_door_bottom",
+    "top": "spooktasticdecor:block/ender_wood_planks_door_top"
+  }
+}

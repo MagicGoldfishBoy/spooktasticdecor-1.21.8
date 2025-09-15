@@ -1,6 +1,7 @@
 package com.goldfish.spooktasticdecor.registry;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
+import com.goldfish.spooktasticdecor.block.EnderLog;
 import com.goldfish.spooktasticdecor.block.GhastLog;
 import com.goldfish.spooktasticdecor.block.SkeletonLog;
 import com.goldfish.spooktasticdecor.block.SpiderLog;
@@ -97,6 +98,18 @@ public class simpleblockregistry {
     public static DeferredBlock<TrapDoorBlock> SPIDER_WOOD_PLANKS_TRAPDOOR;
     public static DeferredBlock<DoorBlock> SPIDER_WOOD_PLANKS_DOOR;
 
+    public static DeferredBlock<EnderLog> ENDER_LOG;
+    public static DeferredBlock<RotatedPillarBlock> ENDER_LOG_STRIPPED;
+    public static DeferredBlock<Block> ENDER_WOOD_PLANKS;
+    public static DeferredBlock<SlabBlock> ENDER_WOOD_PLANKS_SLAB;
+    public static DeferredBlock<StairBlock> ENDER_WOOD_PLANKS_STAIRS;
+    public static DeferredBlock<ButtonBlock> ENDER_WOOD_PLANKS_BUTTON;
+    public static DeferredBlock<FenceBlock> ENDER_WOOD_PLANKS_FENCE;
+    public static DeferredBlock<FenceGateBlock> ENDER_WOOD_PLANKS_FENCE_GATE;
+    public static DeferredBlock<PressurePlateBlock> ENDER_WOOD_PLANKS_PRESSURE_PLATE;
+    public static DeferredBlock<TrapDoorBlock> ENDER_WOOD_PLANKS_TRAPDOOR;
+    public static DeferredBlock<DoorBlock> ENDER_WOOD_PLANKS_DOOR;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
@@ -189,6 +202,7 @@ public class simpleblockregistry {
         registerWitherSkeletonWood();
         registerGhastWood();
         registerSpiderWood();
+        registerEnderWood();
     }
     public static void register_zombie_wood() {
         ZOMBIE_LOG = SpooktasticDecor.BLOCKS.register(
@@ -728,6 +742,113 @@ public class simpleblockregistry {
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
                 .sound(SoundType.COBWEB)
+                .noOcclusion()
+            )
+        );
+    }
+    public static void registerEnderWood() {
+        ENDER_LOG = SpooktasticDecor.BLOCKS.register(
+            "ender_log",
+            registryName -> new EnderLog(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(2.0f)
+            .explosionResistance(10.0f)
+            .sound(SoundType.WOOD)
+            )
+        );
+        ENDER_LOG_STRIPPED = SpooktasticDecor.BLOCKS.register(
+            "ender_log_stripped",
+            registryName -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.STONE)
+            )
+        );
+        ENDER_WOOD_PLANKS = SpooktasticDecor.BLOCKS.register(
+            "ender_wood_planks",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.STONE)
+            )
+        );
+        ENDER_WOOD_PLANKS_SLAB = SpooktasticDecor.BLOCKS.register(
+            "ender_wood_planks_slab",
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.STONE)
+            )
+        );
+        ENDER_WOOD_PLANKS_STAIRS = SpooktasticDecor.BLOCKS.register(
+            "ender_wood_planks_stairs",
+            registryName -> new StairBlock(
+                ENDER_WOOD_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.STONE)
+            )
+        );
+        ENDER_WOOD_PLANKS_BUTTON = SpooktasticDecor.BLOCKS.register(
+            "ender_wood_planks_button",
+            registryName -> new ButtonBlock(BlockSetType.WARPED, 20, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.STONE)
+                .noCollission()
+                .instabreak()
+            )
+        );
+        ENDER_WOOD_PLANKS_FENCE = SpooktasticDecor.BLOCKS.register(
+            "ender_wood_planks_fence",
+            registryName -> new FenceBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.STONE)
+            )
+        );
+        ENDER_WOOD_PLANKS_FENCE_GATE = SpooktasticDecor.BLOCKS.register(
+            "ender_wood_planks_fence_gate",
+            registryName -> new FenceGateBlock(WoodType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.STONE)
+            )
+        );
+        ENDER_WOOD_PLANKS_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+            "ender_wood_planks_pressure_plate",
+            registryName -> new PressurePlateBlock(BlockSetType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.STONE)
+                .noCollission()
+                .instabreak()
+            )
+        );
+        ENDER_WOOD_PLANKS_TRAPDOOR = SpooktasticDecor.BLOCKS.register(
+            "ender_wood_planks_trapdoor",
+            registryName -> new TrapDoorBlock(BlockSetType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.STONE)
+            )
+        );
+        ENDER_WOOD_PLANKS_DOOR = SpooktasticDecor.BLOCKS.register(
+            "ender_wood_planks_door",
+            registryName -> new DoorBlock(BlockSetType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(2.0f)
+                .explosionResistance(10.0f)
+                .sound(SoundType.STONE)
                 .noOcclusion()
             )
         );

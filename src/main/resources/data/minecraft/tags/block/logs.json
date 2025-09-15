@@ -5,6 +5,8 @@
         "spooktasticdecor:wither_skeleton_log",
         "spooktasticdecor:wither_skeleton_log_stripped",
         "spooktasticdecor:ghast_log",
-        "spooktasticdecor:ghast_log_stripped"
+        "spooktasticdecor:ghast_log_stripped",
+        "spooktasticdecor:ender_log",
+        "spooktasticdecor:ender_log_stripped"
     ]
 }

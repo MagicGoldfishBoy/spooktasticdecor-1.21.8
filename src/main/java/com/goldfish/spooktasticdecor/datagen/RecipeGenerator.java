@@ -54,6 +54,10 @@ public class RecipeGenerator extends RecipeProvider {
                         Registries.ITEM,
                         ResourceLocation.fromNamespaceAndPath("spooktasticdecor", "spider_logs")
 );
+    public static final TagKey<Item> ENDER_WOOD_TAG = TagKey.create(
+                        Registries.ITEM,
+                        ResourceLocation.fromNamespaceAndPath("spooktasticdecor", "ender_logs")
+);
 
 @Override
 protected void buildRecipes() {
@@ -141,6 +145,7 @@ protected void registerWoodRecipes() {
     registerWitherSkeletonWoodRecipes();
     registerGhastWoodRecipes();
     registerSpiderWoodRecipes();
+    registerEnderWoodRecipes();
 }
 protected void registerZombieWoodRecipes() {
     ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LOG_ITEM.get(), 2)
@@ -465,6 +470,71 @@ protected void registerSpiderWoodRecipes() {
             .pattern("AA")
             .define('A', SimpleBlockItemRegistry.SPIDER_WOOD_PLANKS_ITEM.get())
             .unlockedBy("has_spider_planks", has(SimpleBlockItemRegistry.SPIDER_WOOD_PLANKS_ITEM.get()))
+            .save(this.output);
+}
+protected void registerEnderWoodRecipes() {
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ENDER_LOG_ITEM.get(), 2)
+            .pattern(" B ")
+            .pattern(" A ")
+            .pattern(" B ")
+            .define('A', Items.ENDER_PEARL)
+            .define('B', this.tag(LOGS_TAG))
+            .unlockedBy("has_ender_pearl", has(Items.ENDER_PEARL))
+            .save(this.output);
+    SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.ENDER_LOG.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.ENDER_LOG_STRIPPED.get(), 1)
+            .unlockedBy("has_ender_log", has(simpleblockregistry.ENDER_LOG.get()))
+            .save(this.output, SpooktasticDecor.MODID + ":ender_log_stripped_from_stonecutting");
+    ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get(), 4)
+            .requires(this.tag(ENDER_WOOD_TAG))
+            .unlockedBy("has_ender_log", has(simpleblockregistry.ENDER_LOG.get()))
+            .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_SLAB_ITEM.get(), 6)
+            .pattern("AAA")
+            .define('A', SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get())
+            .unlockedBy("has_ender_planks", has(SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get()))
+            .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_STAIRS_ITEM.get(), 4)
+            .pattern("A  ")
+            .pattern("AA ")
+            .pattern("AAA")
+            .define('A', SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get())
+            .unlockedBy("has_ender_planks", has(SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get()))
+            .save(this.output);
+    ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_BUTTON_ITEM.get(), 1)
+            .requires(SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get())
+            .unlockedBy("has_ender_planks", has(SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get()))
+            .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_FENCE_ITEM.get(), 3)
+            .pattern("ABA")
+            .pattern("ABA")
+            .define('A', SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get())
+            .define('B', Items.STICK)
+            .unlockedBy("has_ender_planks", has(SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get()))
+            .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_FENCE_GATE_ITEM.get(), 1)
+            .pattern("BAB")
+            .pattern("BAB")
+            .define('A', SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get())
+            .define('B', Items.STICK)
+            .unlockedBy("has_ender_planks", has(SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get()))
+            .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_PRESSURE_PLATE_ITEM.get(), 1)
+            .pattern("AA")
+            .define('A', SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get())
+            .unlockedBy("has_ender_planks", has(SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get()))
+            .save(this.output);
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_TRAPDOOR_ITEM.get(), 2)
+            .pattern("AAA")
+            .pattern("AAA")
+            .define('A', SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get())
+            .unlockedBy("has_ender_planks", has(SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get()))
+            .save(this.output); 
+    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_DOOR_ITEM.get(), 3)
+            .pattern("AA")
+            .pattern("AA")
+            .pattern("AA")
+            .define('A', SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get())
+            .unlockedBy("has_ender_planks", has(SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get()))
             .save(this.output);
 }
 
