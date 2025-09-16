@@ -554,6 +554,14 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('B', Items.STICK)
                         .unlockedBy("has_stripped_zombie_log", has(SimpleBlockItemRegistry.STRIPPED_ZOMBIE_LOG_ITEM.get()))
                         .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, FurnitureBlockItemRegistry.ZOMBIE_WOOD_PLANKS_TABLE_ITEM.get(), 2)
+                        .pattern("AAA")
+                        .pattern("B B")
+                        .pattern("B B")
+                        .define('A', SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_ITEM.get())
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_zombie_wood_planks", has(SimpleBlockItemRegistry.ZOMBIE_WOOD_PLANKS_ITEM.get()))
+                        .save(this.output);
         }
 
     // The data provider class
