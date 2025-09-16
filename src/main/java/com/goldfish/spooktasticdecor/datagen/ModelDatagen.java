@@ -15,6 +15,7 @@ import net.minecraft.client.data.models.model.ItemModelUtils;
 import net.minecraft.client.renderer.block.model.Variant;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -172,7 +173,7 @@ public class ModelDatagen extends ModelProvider {
         
 
         for (DeferredHolder<Block, ? extends Block> holder : SpooktasticDecor.BLOCKS.getEntries()) {
-            String rawName = holder.getId().getPath(); // e.g. "oak_table"
+            String rawName = holder.getId().getPath();
             if (rawName.contains("table")) {
                 String name = "block/" + rawName;
 
@@ -183,13 +184,29 @@ public class ModelDatagen extends ModelProvider {
 
                 blockModels.blockStateOutput.accept(
                     MultiVariantGenerator.dispatch(
-                        holder.get(), // the actual Block instance
+                        holder.get(),
                         BlockModelGenerators.variant(woodtablevariant)
                     )
                 );
             }
         }
-        
+
+        for (DeferredHolder<Item, ? extends Item> holder : SpooktasticDecor.ITEMS.getEntries()) {
+            String rawName = holder.getId().getPath();
+            if (rawName.contains("table")) {
+                String name = "block/" + rawName;
+
+                LOGGER.info("Generating model for: {}", name);
+
+                // ResourceLocation woodtable = modLocation(name);
+                // Variant woodtablevariant = new Variant(woodtable);
+
+                itemModels.itemModelOutput.accept(
+                holder.get(),
+                ItemModelUtils.plainModel(modLocation(name))
+            );
+            }
+        }
             // Block table = FurnitureBlockRegistry.ZOMBIE_WOOD_TABLE.get();
 
             // ResourceLocation modelLoc = modLocation("block/zombie_wood_table");
@@ -237,11 +254,5 @@ public class ModelDatagen extends ModelProvider {
             SimpleBlockItemRegistry.ENDER_LAMP_ITEM.get(),
             ItemModelUtils.plainModel(modLocation("block/ender_lamp"))
         );
-
-        itemModels.itemModelOutput.accept(
-            FurnitureBlockItemRegistry.ZOMBIE_WOOD_TABLE_ITEM.get(),
-            ItemModelUtils.plainModel(modLocation("block/zombie_wood_table"))
-        );
-
     }
 }
