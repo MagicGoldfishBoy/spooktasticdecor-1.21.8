@@ -3,6 +3,8 @@ package com.goldfish.spooktasticdecor;
 import org.slf4j.Logger;
 
 import com.goldfish.spooktasticdecor.datagen.Datagen;
+import com.goldfish.spooktasticdecor.registry.FurnitureBlockItemRegistry;
+import com.goldfish.spooktasticdecor.registry.FurnitureBlockRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
 import com.mojang.logging.LogUtils;
@@ -24,24 +26,21 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-// The value here should match an entry in the META-INF/neoforge.mods.toml file
+
 @Mod(SpooktasticDecor.MODID)
 public class SpooktasticDecor {
-    // Define mod id in a common place for everything to reference
+
     public static final String MODID = "spooktasticdecor";
-    // Directly reference a slf4j logger
+
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    // Create a Deferred Register to hold Blocks which will all be registered under the "spooktasticdecor" namespace
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
     
-    // Create a Deferred Register to hold Items which will all be registered under the "spooktasticdecor" namespace
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
-    // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "spooktasticdecor" namespace
+
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
 
-    // Creates a creative tab with the id "spooktasticdecor:example_tab" for the example item, that is placed after the combat tab
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> SPOOKTASTIC_DECOR_TAB = CREATIVE_MODE_TABS.register("spooktastic_decor_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.spooktasticdecor")) //The language key for the title of your CreativeModeTab
             .withTabsBefore(CreativeModeTabs.COMBAT)
@@ -69,6 +68,10 @@ public class SpooktasticDecor {
 
         simpleblockregistry.registerAll();
         SimpleBlockItemRegistry.registerAll();
+
+        FurnitureBlockRegistry.registerAll();
+        FurnitureBlockItemRegistry.registerAll();
+        
         CREATIVE_MODE_TABS.register(modEventBus);
 
         //modEventBus.addListener(Datagen::gatherData);

@@ -10,7 +10,6 @@ import com.goldfish.spooktasticdecor.block.ZombieLog;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.entity.monster.WitherSkeleton;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.DoorBlock;

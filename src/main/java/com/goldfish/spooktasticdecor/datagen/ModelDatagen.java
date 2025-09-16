@@ -1,14 +1,19 @@
 package com.goldfish.spooktasticdecor.datagen;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
+import com.goldfish.spooktasticdecor.registry.FurnitureBlockItemRegistry;
+import com.goldfish.spooktasticdecor.registry.FurnitureBlockRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
-
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.model.ItemModelUtils;
+import net.minecraft.client.renderer.block.model.Variant;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 
 public class ModelDatagen extends ModelProvider {
 
@@ -22,6 +27,8 @@ public class ModelDatagen extends ModelProvider {
         registerBlockModels(blockModels, itemModels);
 
         registerItemModels(blockModels, itemModels);
+
+        registerTableModels(blockModels, itemModels);
 
     }
 
@@ -152,6 +159,21 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createDoor(simpleblockregistry.ENDER_WOOD_PLANKS_DOOR.get());
 
     }
+    protected void registerTableModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+        
+            Block table = FurnitureBlockRegistry.ZOMBIE_WOOD_TABLE.get();
+
+            ResourceLocation modelLoc = modLocation("block/zombie_wood_table");
+
+            Variant variant = new Variant(modelLoc);
+
+            blockModels.blockStateOutput.accept(
+                MultiVariantGenerator.dispatch(
+                    table,
+                    BlockModelGenerators.variant(variant)
+                )
+            );
+    }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
         itemModels.itemModelOutput.accept(
@@ -185,6 +207,11 @@ public class ModelDatagen extends ModelProvider {
         itemModels.itemModelOutput.accept(
             SimpleBlockItemRegistry.ENDER_LAMP_ITEM.get(),
             ItemModelUtils.plainModel(modLocation("block/ender_lamp"))
+        );
+
+        itemModels.itemModelOutput.accept(
+            FurnitureBlockItemRegistry.ZOMBIE_WOOD_TABLE_ITEM.get(),
+            ItemModelUtils.plainModel(modLocation("block/zombie_wood_table"))
         );
 
     }
