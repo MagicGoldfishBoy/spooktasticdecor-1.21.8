@@ -1,5 +1,7 @@
 package com.goldfish.spooktasticdecor.datagen;
 
+import java.lang.reflect.Array;
+
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockRegistry;
@@ -14,6 +16,8 @@ import net.minecraft.client.renderer.block.model.Variant;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class ModelDatagen extends ModelProvider {
 
@@ -159,20 +163,45 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createDoor(simpleblockregistry.ENDER_WOOD_PLANKS_DOOR.get());
 
     }
+
+    ResourceLocation woodtable;
+    Variant woodtablevariant;
+
     protected void registerTableModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+
         
-            Block table = FurnitureBlockRegistry.ZOMBIE_WOOD_TABLE.get();
 
-            ResourceLocation modelLoc = modLocation("block/zombie_wood_table");
+        for (DeferredHolder<Block, ? extends Block> holder : SpooktasticDecor.BLOCKS.getEntries()) {
+            String rawName = holder.getId().getPath(); // e.g. "oak_table"
+            if (rawName.contains("table")) {
+                String name = "block/" + rawName;
 
-            Variant variant = new Variant(modelLoc);
+                LOGGER.info("Generating model for: {}", name);
 
-            blockModels.blockStateOutput.accept(
-                MultiVariantGenerator.dispatch(
-                    table,
-                    BlockModelGenerators.variant(variant)
-                )
-            );
+                ResourceLocation woodtable = modLocation(name);
+                Variant woodtablevariant = new Variant(woodtable);
+
+                blockModels.blockStateOutput.accept(
+                    MultiVariantGenerator.dispatch(
+                        holder.get(), // the actual Block instance
+                        BlockModelGenerators.variant(woodtablevariant)
+                    )
+                );
+            }
+        }
+        
+            // Block table = FurnitureBlockRegistry.ZOMBIE_WOOD_TABLE.get();
+
+            // ResourceLocation modelLoc = modLocation("block/zombie_wood_table");
+
+            // Variant variant = new Variant(modelLoc);
+
+            // blockModels.blockStateOutput.accept(
+            //     MultiVariantGenerator.dispatch(
+            //         table,
+            //         BlockModelGenerators.variant(variant)
+            //     )
+            // );
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
