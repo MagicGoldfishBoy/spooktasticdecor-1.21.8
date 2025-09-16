@@ -2,6 +2,9 @@
     "values": [
         "spooktasticdecor:zombie_wood_table",
         "spooktasticdecor:zombie_stripped_wood_table",
-        "spooktasticdecor:zombie_wood_planks_table"
+        "spooktasticdecor:zombie_wood_planks_table",
+        "spooktasticdecor:skeleton_wood_table",
+        "spooktasticdecor:skeleton_stripped_wood_table",
+        "spooktasticdecor:skeleton_wood_planks_table"
     ]
 }
