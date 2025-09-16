@@ -1,10 +1,6 @@
 package com.goldfish.spooktasticdecor.datagen;
 
-import java.lang.reflect.Array;
-
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
-import com.goldfish.spooktasticdecor.registry.FurnitureBlockItemRegistry;
-import com.goldfish.spooktasticdecor.registry.FurnitureBlockRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
 import net.minecraft.client.data.models.BlockModelGenerators;
@@ -17,7 +13,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class ModelDatagen extends ModelProvider {
@@ -197,9 +192,6 @@ public class ModelDatagen extends ModelProvider {
                 String name = "block/" + rawName;
 
                 LOGGER.info("Generating model for: {}", name);
-
-                // ResourceLocation woodtable = modLocation(name);
-                // Variant woodtablevariant = new Variant(woodtable);
 
                 itemModels.itemModelOutput.accept(
                 holder.get(),
