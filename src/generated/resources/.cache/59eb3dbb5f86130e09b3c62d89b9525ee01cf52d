@@ -1,5 +1,8 @@
-// 1.21.8	2025-09-17T08:05:08.201205829	Loot Tables
+// 1.21.8	2025-09-17T09:16:11.498601107	Loot Tables
 e30628148fa475a47ca934a2667f679515556c52 data/spooktasticdecor/loot_table/blocks/creaking_lamp.json
+6a1b6369bd5870e6e80284ba3891e68c0ccf0fcb data/spooktasticdecor/loot_table/blocks/creaking_stripped_wood_table.json
+a413636a36f082f62e3b58be9c94cc8a8dff08f3 data/spooktasticdecor/loot_table/blocks/creaking_wood_planks_table.json
+340343da7c2376ea7234c781a26d3d4418e8463c data/spooktasticdecor/loot_table/blocks/creaking_wood_table.json
 12c06872be47a4ee010fb04d174b646a312f82ff data/spooktasticdecor/loot_table/blocks/ender_lamp.json
 9330e5ffe1b782bf181b0c29b3ebae12fd34dfb3 data/spooktasticdecor/loot_table/blocks/ender_log.json
 2cb1df7b4cc9d1fdd86d16cd4dd14cf345c30168 data/spooktasticdecor/loot_table/blocks/ender_log_stripped.json

@@ -24,12 +24,17 @@ public class FurnitureBlockItemRegistry {
     public static DeferredItem<BlockItem> GHAST_STRIPPED_WOOD_TABLE_ITEM;
     public static DeferredItem<BlockItem> GHAST_WOOD_PLANKS_TABLE_ITEM;
 
+    public static DeferredItem<BlockItem> CREAKING_WOOD_TABLE_ITEM;
+    public static DeferredItem<BlockItem> CREAKING_STRIPPED_WOOD_TABLE_ITEM;
+    public static DeferredItem<BlockItem> CREAKING_WOOD_PLANKS_TABLE_ITEM;
+
     public static void registerAll() {
 
         registerZombieFurniture();
         registerSkeletonFurniture();
         registerWitherSkeletonFurniture();
         registerGhastFurniture();
+        registerCreakingFurniture();
     }
     public static void registerZombieFurniture() {
         ZOMBIE_WOOD_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
@@ -86,6 +91,20 @@ public class FurnitureBlockItemRegistry {
         );
         GHAST_WOOD_PLANKS_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             FurnitureBlockRegistry.GHAST_WOOD_PLANKS_TABLE,
+            new Item.Properties()
+        );
+    }
+    public static void registerCreakingFurniture() {
+        CREAKING_WOOD_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            FurnitureBlockRegistry.CREAKING_WOOD_TABLE,
+            new Item.Properties()
+        );
+        CREAKING_STRIPPED_WOOD_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            FurnitureBlockRegistry.CREAKING_STRIPPED_WOOD_TABLE,
+            new Item.Properties()
+        );
+        CREAKING_WOOD_PLANKS_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            FurnitureBlockRegistry.CREAKING_WOOD_PLANKS_TABLE,
             new Item.Properties()
         );
     }

@@ -637,6 +637,31 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('B', Items.STICK)
                         .unlockedBy("has_ghast_wood_planks", has(SimpleBlockItemRegistry.GHAST_WOOD_PLANKS_ITEM.get()))
                         .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, FurnitureBlockItemRegistry.CREAKING_WOOD_TABLE_ITEM.get(), 2)
+                        .pattern("AAA")
+                        .pattern("B B")
+                        .pattern("B B")
+                        .define('A', Items.PALE_OAK_LOG)
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_creaking_log", has(Items.PALE_OAK_LOG))
+                        .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, FurnitureBlockItemRegistry.CREAKING_STRIPPED_WOOD_TABLE_ITEM.get(), 2)
+                        .pattern("AAA")
+                        .pattern("B B")
+                        .pattern("B B")
+                        .define('A', Items.STRIPPED_PALE_OAK_LOG)
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_stripped_creaking_log", has(Items.STRIPPED_PALE_OAK_LOG))
+                        .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, FurnitureBlockItemRegistry.CREAKING_WOOD_PLANKS_TABLE_ITEM.get(), 2)
+                        .pattern("AAA")
+                        .pattern("B B")
+                        .pattern("B B")
+                        .define('A', Items.PALE_OAK_PLANKS)
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_creaking_wood_planks", has(Items.PALE_OAK_PLANKS))
+                        .save(this.output);
         }
 
     // The data provider class

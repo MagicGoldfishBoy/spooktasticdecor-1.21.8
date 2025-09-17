@@ -26,12 +26,17 @@ public class FurnitureBlockRegistry {
     public static DeferredBlock<Block> GHAST_WOOD_TABLE;
     public static DeferredBlock<Block> GHAST_STRIPPED_WOOD_TABLE;
     public static DeferredBlock<Block> GHAST_WOOD_PLANKS_TABLE;
+
+    public static DeferredBlock<Block> CREAKING_WOOD_TABLE;
+    public static DeferredBlock<Block> CREAKING_STRIPPED_WOOD_TABLE;
+    public static DeferredBlock<Block> CREAKING_WOOD_PLANKS_TABLE;
     
     public static void registerAll() {
         registerZombieFurniture();
         registerSkeletonFurniture();
         registerWitherSkeletonFurniture();
         registerGhastFurniture();
+        registerCreakingFurniture();
     }
     public static void registerZombieFurniture() {
         ZOMBIE_WOOD_TABLE = SpooktasticDecor.BLOCKS.register(
@@ -163,6 +168,38 @@ public class FurnitureBlockRegistry {
             .destroyTime(2.0f)
             .explosionResistance(10.0f)
             .sound(SoundType.NETHER_WOOD)
+            .noOcclusion()
+            )
+        );
+    }
+    public static void registerCreakingFurniture() {
+        CREAKING_WOOD_TABLE = SpooktasticDecor.BLOCKS.register(
+            "creaking_wood_table",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(2.0f)
+            .explosionResistance(10.0f)
+            .sound(SoundType.WOOD)
+            .noOcclusion()
+            )
+        );
+        CREAKING_STRIPPED_WOOD_TABLE = SpooktasticDecor.BLOCKS.register(
+            "creaking_stripped_wood_table",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(2.0f)
+            .explosionResistance(10.0f)
+            .sound(SoundType.WOOD)
+            .noOcclusion()
+            )
+        );
+        CREAKING_WOOD_PLANKS_TABLE = SpooktasticDecor.BLOCKS.register(
+            "creaking_wood_planks_table",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(2.0f)
+            .explosionResistance(10.0f)
+            .sound(SoundType.WOOD)
             .noOcclusion()
             )
         );
