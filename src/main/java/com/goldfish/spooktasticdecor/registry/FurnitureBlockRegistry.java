@@ -18,10 +18,15 @@ public class FurnitureBlockRegistry {
     public static DeferredBlock<Block> SKELETON_WOOD_TABLE;
     public static DeferredBlock<Block> SKELETON_STRIPPED_WOOD_TABLE;
     public static DeferredBlock<Block> SKELETON_WOOD_PLANKS_TABLE;
+
+    public static DeferredBlock<Block> WITHER_SKELETON_WOOD_TABLE;
+    public static DeferredBlock<Block> WITHER_SKELETON_STRIPPED_WOOD_TABLE;
+    public static DeferredBlock<Block> WITHER_SKELETON_WOOD_PLANKS_TABLE;
     
     public static void registerAll() {
         registerZombieFurniture();
         registerSkeletonFurniture();
+        registerWitherSkeletonFurniture();
     }
     public static void registerZombieFurniture() {
         ZOMBIE_WOOD_TABLE = SpooktasticDecor.BLOCKS.register(
@@ -89,6 +94,38 @@ public class FurnitureBlockRegistry {
             .explosionResistance(10.0f)
             .sound(SoundType.BONE_BLOCK)
             .ignitedByLava()
+            .noOcclusion()
+            )
+        );
+    }
+    public static void registerWitherSkeletonFurniture() {
+        WITHER_SKELETON_WOOD_TABLE = SpooktasticDecor.BLOCKS.register(
+            "wither_skeleton_wood_table", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(2.0f)
+            .explosionResistance(10.0f)
+            .sound(SoundType.BONE_BLOCK)
+            .noOcclusion()
+            )
+        );
+        WITHER_SKELETON_STRIPPED_WOOD_TABLE = SpooktasticDecor.BLOCKS.register(
+            "wither_skeleton_stripped_wood_table", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(2.0f)
+            .explosionResistance(10.0f)
+            .sound(SoundType.BONE_BLOCK)
+            .noOcclusion()
+            )
+        );
+        WITHER_SKELETON_WOOD_PLANKS_TABLE = SpooktasticDecor.BLOCKS.register(
+            "wither_skeleton_wood_planks_table", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(2.0f)
+            .explosionResistance(10.0f)
+            .sound(SoundType.BONE_BLOCK)
             .noOcclusion()
             )
         );

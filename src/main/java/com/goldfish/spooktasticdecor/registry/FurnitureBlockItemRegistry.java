@@ -16,10 +16,15 @@ public class FurnitureBlockItemRegistry {
     public static DeferredItem<BlockItem> SKELETON_STRIPPED_WOOD_TABLE_ITEM;
     public static DeferredItem<BlockItem> SKELETON_WOOD_PLANKS_TABLE_ITEM;
 
+    public static DeferredItem<BlockItem> WITHER_SKELETON_WOOD_TABLE_ITEM;
+    public static DeferredItem<BlockItem> WITHER_SKELETON_STRIPPED_WOOD_TABLE_ITEM;
+    public static DeferredItem<BlockItem> WITHER_SKELETON_WOOD_PLANKS_TABLE_ITEM;
+
     public static void registerAll() {
 
         registerZombieFurniture();
         registerSkeletonFurniture();
+        registerWitherSkeletonFurniture();
     }
     public static void registerZombieFurniture() {
         ZOMBIE_WOOD_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
@@ -50,5 +55,19 @@ public class FurnitureBlockItemRegistry {
             new Item.Properties()
         );
 
+    }
+    public static void registerWitherSkeletonFurniture() {
+        WITHER_SKELETON_WOOD_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            FurnitureBlockRegistry.WITHER_SKELETON_WOOD_TABLE,
+            new Item.Properties()
+        );
+        WITHER_SKELETON_STRIPPED_WOOD_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            FurnitureBlockRegistry.WITHER_SKELETON_STRIPPED_WOOD_TABLE,
+            new Item.Properties()
+        );
+        WITHER_SKELETON_WOOD_PLANKS_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            FurnitureBlockRegistry.WITHER_SKELETON_WOOD_PLANKS_TABLE,
+            new Item.Properties()
+        );
     }
 }
