@@ -673,6 +673,31 @@ public class RecipeGenerator extends RecipeProvider {
                         .unlockedBy("has_spider_eye", has(Items.SPIDER_EYE))
                         .unlockedBy("has_ender_eye", has(Items.ENDER_EYE))
                         .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, FurnitureBlockItemRegistry.SPIDER_WOOD_TABLE_ITEM.get(), 2)
+                        .pattern("AAA")
+                        .pattern("B B")
+                        .pattern("B B")
+                        .define('A', SimpleBlockItemRegistry.SPIDER_LOG_ITEM.get())
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_spider_log", has(SimpleBlockItemRegistry.SPIDER_LOG_ITEM.get()))
+                        .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, FurnitureBlockItemRegistry.SPIDER_STRIPPED_WOOD_TABLE_ITEM.get(), 2)
+                        .pattern("AAA")
+                        .pattern("B B")
+                        .pattern("B B")
+                        .define('A', SimpleBlockItemRegistry.STRIPPED_SPIDER_LOG_ITEM.get())
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_stripped_spider_log", has(SimpleBlockItemRegistry.STRIPPED_SPIDER_LOG_ITEM.get()))
+                        .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, FurnitureBlockItemRegistry.SPIDER_WOOD_PLANKS_TABLE_ITEM.get(), 2)
+                        .pattern("AAA")
+                        .pattern("B B")
+                        .pattern("B B")
+                        .define('A', SimpleBlockItemRegistry.SPIDER_WOOD_PLANKS_ITEM.get())
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_stripped_spider_log", has(SimpleBlockItemRegistry.SPIDER_WOOD_PLANKS_ITEM.get()))
+                        .save(this.output);
         }
 
     // The data provider class

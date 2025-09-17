@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "spooktasticdecor:spider_log_stripped",
+    "B": "minecraft:stick"
+  },
+  "pattern": [
+    "AAA",
+    "B B",
+    "B B"
+  ],
+  "result": {
+    "count": 2,
+    "id": "spooktasticdecor:spider_stripped_wood_table"
+  }
+}

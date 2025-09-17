@@ -4,10 +4,12 @@ import com.goldfish.spooktasticdecor.SpooktasticDecor;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredItem;
 
 public class FurnitureBlockRegistry {
 
@@ -32,6 +34,10 @@ public class FurnitureBlockRegistry {
     public static DeferredBlock<Block> CREAKING_WOOD_PLANKS_TABLE;
 
     public static DeferredBlock<Block> EYE_TABLE;
+
+    public static DeferredBlock<Block> SPIDER_WOOD_TABLE;
+    public static DeferredBlock<Block> SPIDER_STRIPPED_WOOD_TABLE;
+    public static DeferredBlock<Block> SPIDER_WOOD_PLANKS_TABLE;
     
     public static void registerAll() {
         registerZombieFurniture();
@@ -40,6 +46,7 @@ public class FurnitureBlockRegistry {
         registerGhastFurniture();
         registerCreakingFurniture();
         registerEyeFurniture();
+        registerSpiderFurniture();
     }
     public static void registerZombieFurniture() {
         ZOMBIE_WOOD_TABLE = SpooktasticDecor.BLOCKS.register(
@@ -215,6 +222,38 @@ public class FurnitureBlockRegistry {
             .destroyTime(2.0f)
             .explosionResistance(10.0f)
             .sound(SoundType.MUD)
+            .noOcclusion()
+            )
+        );
+    }
+    public static void registerSpiderFurniture() {
+        SPIDER_WOOD_TABLE = SpooktasticDecor.BLOCKS.register(
+            "spider_wood_table", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(2.0f)
+            .explosionResistance(10.0f)
+            .sound(SoundType.COBWEB)
+            .noOcclusion()
+            )
+        );
+        SPIDER_STRIPPED_WOOD_TABLE = SpooktasticDecor.BLOCKS.register(
+            "spider_stripped_wood_table", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(2.0f)
+            .explosionResistance(10.0f)
+            .sound(SoundType.COBWEB)
+            .noOcclusion()
+            )
+        );
+        SPIDER_WOOD_PLANKS_TABLE = SpooktasticDecor.BLOCKS.register(
+            "spider_wood_planks_table", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(2.0f)
+            .explosionResistance(10.0f)
+            .sound(SoundType.COBWEB)
             .noOcclusion()
             )
         );
