@@ -612,6 +612,31 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('B', Items.STICK)
                         .unlockedBy("has_wither_skeleton_wood_planks", has(SimpleBlockItemRegistry.WITHER_SKELETON_WOOD_PLANKS_ITEM.get()))
                         .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, FurnitureBlockItemRegistry.GHAST_WOOD_TABLE_ITEM.get(), 2)
+                        .pattern("AAA")
+                        .pattern("B B")
+                        .pattern("B B")
+                        .define('A', SimpleBlockItemRegistry.GHAST_LOG_ITEM.get())
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_ghast_log", has(SimpleBlockItemRegistry.GHAST_LOG_ITEM.get()))
+                        .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, FurnitureBlockItemRegistry.GHAST_STRIPPED_WOOD_TABLE_ITEM.get(), 2)
+                        .pattern("AAA")
+                        .pattern("B B")
+                        .pattern("B B")
+                        .define('A', SimpleBlockItemRegistry.STRIPPED_GHAST_LOG_ITEM.get())
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_stripped_ghast_log", has(SimpleBlockItemRegistry.STRIPPED_GHAST_LOG_ITEM.get()))
+                        .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, FurnitureBlockItemRegistry.GHAST_WOOD_PLANKS_TABLE_ITEM.get(), 2)
+                        .pattern("AAA")
+                        .pattern("B B")
+                        .pattern("B B")
+                        .define('A', SimpleBlockItemRegistry.GHAST_WOOD_PLANKS_ITEM.get())
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_ghast_wood_planks", has(SimpleBlockItemRegistry.GHAST_WOOD_PLANKS_ITEM.get()))
+                        .save(this.output);
         }
 
     // The data provider class

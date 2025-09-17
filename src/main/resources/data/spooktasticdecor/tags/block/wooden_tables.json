@@ -8,6 +8,9 @@
         "spooktasticdecor:skeleton_wood_planks_table",
         "spooktasticdecor:wither_skeleton_wood_table",
         "spooktasticdecor:wither_skeleton_stripped_wood_table",
-        "spooktasticdecor:wither_skeleton_wood_planks_table"
+        "spooktasticdecor:wither_skeleton_wood_planks_table",
+        "spooktasticdecor:ghast_wood_table",
+        "spooktasticdecor:ghast_stripped_wood_table",
+        "spooktasticdecor:ghast_wood_planks_table"
     ]
 }
