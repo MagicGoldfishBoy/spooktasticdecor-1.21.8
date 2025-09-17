@@ -6,12 +6,12 @@
     "B": "#minecraft:logs"
   },
   "pattern": [
-    " B ",
-    " A ",
-    " B "
+    "BBB",
+    "BAB",
+    "BBB"
   ],
   "result": {
-    "count": 2,
+    "count": 8,
     "id": "spooktasticdecor:spider_log"
   }
 }

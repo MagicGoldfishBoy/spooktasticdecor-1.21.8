@@ -6,12 +6,12 @@
     "B": "minecraft:glowstone"
   },
   "pattern": [
-    "AAA",
+    " A ",
     "ABA",
-    "AAA"
+    " A "
   ],
   "result": {
-    "count": 1,
+    "count": 2,
     "id": "spooktasticdecor:skeleton_lamp"
   }
 }

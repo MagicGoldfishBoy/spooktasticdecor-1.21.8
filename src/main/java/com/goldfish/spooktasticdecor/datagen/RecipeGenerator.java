@@ -67,7 +67,7 @@ public class RecipeGenerator extends RecipeProvider {
         registerTableRecipes();
         }
         protected void registerLampRecipes() {
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get())
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get(), 2)
                         .pattern(" A ")
                         .pattern("ABA")
                         .pattern(" A ")
@@ -75,62 +75,61 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('B', Blocks.GLOWSTONE)
                         .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH))
                         .save(this.output);
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.SKELETON_LAMP_ITEM.get())
-                        .pattern("AAA")
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.SKELETON_LAMP_ITEM.get(), 2)
+                        .pattern(" A ")
                         .pattern("ABA")
-                        .pattern("AAA")
+                        .pattern(" A ")
                         .define('A', Items.BONE)
                         .define('B', Blocks.GLOWSTONE)
                         .unlockedBy("has_bone", has(Items.BONE))
                         .save(this.output);
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.WITHER_SKELETON_LAMP_ITEM.get())
-                        .pattern("AAA")
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.WITHER_SKELETON_LAMP_ITEM.get(), 2)
+                        .pattern(" A ")
                         .pattern("ABA")
-                        .pattern("AAA")
+                        .pattern(" A ")
                         .define('A', Items.NETHERRACK)
                         .define('B', SimpleBlockItemRegistry.SKELETON_LAMP_ITEM.get())
                         .unlockedBy("has_netherrack", has(Items.NETHERRACK))
                         .save(this.output);
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.GHAST_LAMP_ITEM.get())
-                        .pattern("ACA")
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.GHAST_LAMP_ITEM.get(), 2)
+                        .pattern(" A ")
                         .pattern("ABA")
-                        .pattern("ACA")
+                        .pattern(" A ")
                         .define('A', Items.GHAST_TEAR)
                         .define('B', Blocks.GLOWSTONE)
-                        .define('C', Items.GHAST_TEAR)
                         .unlockedBy("has_ghast_tear", has(Items.GHAST_TEAR))
                         .save(this.output);
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.CREAKING_LAMP_ITEM.get())
-                        .pattern("ACA")
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.CREAKING_LAMP_ITEM.get(), 2)
+                        .pattern(" C ")
                         .pattern("ABA")
-                        .pattern("ACA")
+                        .pattern(" C ")
                         .define('A', Items.PALE_OAK_PLANKS)
                         .define('B', Blocks.GLOWSTONE)
                         .define('C', Items.RESIN_CLUMP)
                         .unlockedBy("has_pale_oak_planks", has(Items.PALE_OAK_PLANKS))
                         .save(this.output);
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.EYEBALL_LAMP_ITEM.get())
-                        .pattern("ACA")
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.EYEBALL_LAMP_ITEM.get(), 2)
+                        .pattern(" C ")
                         .pattern("ABA")
-                        .pattern("ACA")
+                        .pattern(" C ")
                         .define('A', Items.SPIDER_EYE)
                         .define('B', Blocks.GLOWSTONE)
                         .define('C', Items.ENDER_EYE)
                         .unlockedBy("has_spider_eye", has(Items.SPIDER_EYE))
                         .save(this.output);
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.SPIDER_LAMP_ITEM.get())
-                        .pattern("ACA")
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.SPIDER_LAMP_ITEM.get(), 2)
+                        .pattern(" C ")
                         .pattern("ABA")
-                        .pattern("ACA")
+                        .pattern(" C ")
                         .define('A', Items.SPIDER_EYE)
                         .define('B', Blocks.GLOWSTONE)
                         .define('C', Items.FERMENTED_SPIDER_EYE)
                         .unlockedBy("has_spider_eye", has(Items.SPIDER_EYE))
                         .save(this.output);
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ENDER_LAMP_ITEM.get())
-                        .pattern("ACA")
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ENDER_LAMP_ITEM.get(), 2)
+                        .pattern(" C ")
                         .pattern("ABA")
-                        .pattern("ACA")
+                        .pattern(" C ")
                         .define('A', Items.ENDER_PEARL)
                         .define('B', Blocks.GLOWSTONE)
                         .define('C', Items.ENDER_EYE)
@@ -147,10 +146,10 @@ public class RecipeGenerator extends RecipeProvider {
                 registerEnderWoodRecipes();
         }
         protected void registerZombieWoodRecipes() {
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LOG_ITEM.get(), 2)
-                        .pattern(" B ")
-                        .pattern(" A ")
-                        .pattern(" B ")
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LOG_ITEM.get(), 8)
+                        .pattern("BBB")
+                        .pattern("BAB")
+                        .pattern("BBB")
                         .define('A', Items.ROTTEN_FLESH)
                         .define('B', this.tag(LOGS_TAG))
                         .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH))
@@ -212,10 +211,10 @@ public class RecipeGenerator extends RecipeProvider {
                         .save(this.output);
         }
         protected void registerSkeletonWoodRecipes() {
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.SKELETON_LOG_ITEM.get(), 2)
-                .pattern(" B ")
-                .pattern(" A ")
-                .pattern(" B ")
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.SKELETON_LOG_ITEM.get(), 8)
+                .pattern("BBB")
+                .pattern("BAB")
+                .pattern("BBB")
                 .define('A', Items.BONE)
                 .define('B', this.tag(LOGS_TAG))
                 .unlockedBy("has_bone", has(Items.BONE))
@@ -277,10 +276,10 @@ public class RecipeGenerator extends RecipeProvider {
                 .save(this.output);
         }
         protected void registerWitherSkeletonWoodRecipes() {
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.WITHER_SKELETON_LOG_ITEM.get(), 2)
-                .pattern(" B ")
-                .pattern(" A ")
-                .pattern(" B ")
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.WITHER_SKELETON_LOG_ITEM.get(), 8)
+                .pattern("BBB")
+                .pattern("BAB")
+                .pattern("BBB")
                 .define('A', Items.NETHERRACK)
                 .define('B', this.tag(LOGS_TAG))
                 .unlockedBy("has_netherrack", has(Items.NETHERRACK))
@@ -342,10 +341,10 @@ public class RecipeGenerator extends RecipeProvider {
                 .save(this.output);
         }
         protected void registerGhastWoodRecipes() {
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.GHAST_LOG_ITEM.get(), 2)
-                .pattern(" B ")
-                .pattern(" A ")
-                .pattern(" B ")
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.GHAST_LOG_ITEM.get(), 8)
+                .pattern("BBB")
+                .pattern("BAB")
+                .pattern("BBB")
                 .define('A', Items.GHAST_TEAR)
                 .define('B', this.tag(LOGS_TAG))
                 .unlockedBy("has_ghast_tear", has(Items.GHAST_TEAR))
@@ -407,10 +406,10 @@ public class RecipeGenerator extends RecipeProvider {
                 .save(this.output);
         }
         protected void registerSpiderWoodRecipes() {
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.SPIDER_LOG_ITEM.get(), 2)
-                .pattern(" B ")
-                .pattern(" A ")
-                .pattern(" B ")
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.SPIDER_LOG_ITEM.get(), 8)
+                .pattern("BBB")
+                .pattern("BAB")
+                .pattern("BBB")
                 .define('A', Items.SPIDER_EYE)
                 .define('B', this.tag(LOGS_TAG))
                 .unlockedBy("has_spider_eye", has(Items.SPIDER_EYE))
@@ -472,10 +471,10 @@ public class RecipeGenerator extends RecipeProvider {
                 .save(this.output);
         }
         protected void registerEnderWoodRecipes() {
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ENDER_LOG_ITEM.get(), 2)
-                .pattern(" B ")
-                .pattern(" A ")
-                .pattern(" B ")
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ENDER_LOG_ITEM.get(), 8)
+                .pattern("BBB")
+                .pattern("BAB")
+                .pattern("BBB")
                 .define('A', Items.ENDER_PEARL)
                 .define('B', this.tag(LOGS_TAG))
                 .unlockedBy("has_ender_pearl", has(Items.ENDER_PEARL))
