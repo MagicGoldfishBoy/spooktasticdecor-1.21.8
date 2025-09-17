@@ -662,6 +662,17 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('B', Items.STICK)
                         .unlockedBy("has_creaking_wood_planks", has(Items.PALE_OAK_PLANKS))
                         .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, FurnitureBlockItemRegistry.EYE_TABLE_ITEM.get(), 2)
+                        .pattern("ABA")
+                        .pattern("C C")
+                        .pattern("C C")
+                        .define('A', Items.SPIDER_EYE)
+                        .define('B', Items.ENDER_EYE)
+                        .define('C', Items.STICK)
+                        .unlockedBy("has_spider_eye", has(Items.SPIDER_EYE))
+                        .unlockedBy("has_ender_eye", has(Items.ENDER_EYE))
+                        .save(this.output);
         }
 
     // The data provider class

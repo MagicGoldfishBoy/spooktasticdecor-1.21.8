@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-17T09:16:11.498601107	Loot Tables
+// 1.21.8	2025-09-17T09:55:18.099005441	Loot Tables
 e30628148fa475a47ca934a2667f679515556c52 data/spooktasticdecor/loot_table/blocks/creaking_lamp.json
 6a1b6369bd5870e6e80284ba3891e68c0ccf0fcb data/spooktasticdecor/loot_table/blocks/creaking_stripped_wood_table.json
 a413636a36f082f62e3b58be9c94cc8a8dff08f3 data/spooktasticdecor/loot_table/blocks/creaking_wood_planks_table.json
@@ -15,6 +15,7 @@ d7472a8c8d15d7a1bc478c7c7135f314d9ba256d data/spooktasticdecor/loot_table/blocks
 4447512fc8484aa2e2018f71e524970575e57b4c data/spooktasticdecor/loot_table/blocks/ender_wood_planks_slab.json
 b49191fbd56f15f2d198928d33e56b277dc21675 data/spooktasticdecor/loot_table/blocks/ender_wood_planks_stairs.json
 db17407e5c9a35ee42cc3da667321d57095dd383 data/spooktasticdecor/loot_table/blocks/ender_wood_planks_trapdoor.json
+637fb18538d37c04a32191e205c6fa2d75d34a1f data/spooktasticdecor/loot_table/blocks/eye_table.json
 48d4b95ba6521af279df2eb6c1677433b75d54f6 data/spooktasticdecor/loot_table/blocks/eyeball_lamp.json
 9691389500fae8ee2ed0935db44fee106c9bd6ea data/spooktasticdecor/loot_table/blocks/ghast_lamp.json
 269711d9658bfb7b0f1ac8cc045049e4a29c54df data/spooktasticdecor/loot_table/blocks/ghast_log.json

@@ -30,6 +30,8 @@ public class FurnitureBlockRegistry {
     public static DeferredBlock<Block> CREAKING_WOOD_TABLE;
     public static DeferredBlock<Block> CREAKING_STRIPPED_WOOD_TABLE;
     public static DeferredBlock<Block> CREAKING_WOOD_PLANKS_TABLE;
+
+    public static DeferredBlock<Block> EYE_TABLE;
     
     public static void registerAll() {
         registerZombieFurniture();
@@ -37,6 +39,7 @@ public class FurnitureBlockRegistry {
         registerWitherSkeletonFurniture();
         registerGhastFurniture();
         registerCreakingFurniture();
+        registerEyeFurniture();
     }
     public static void registerZombieFurniture() {
         ZOMBIE_WOOD_TABLE = SpooktasticDecor.BLOCKS.register(
@@ -200,6 +203,18 @@ public class FurnitureBlockRegistry {
             .destroyTime(2.0f)
             .explosionResistance(10.0f)
             .sound(SoundType.WOOD)
+            .noOcclusion()
+            )
+        );
+    }
+    public static void registerEyeFurniture() {
+        EYE_TABLE = SpooktasticDecor.BLOCKS.register(
+            "eye_table",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(2.0f)
+            .explosionResistance(10.0f)
+            .sound(SoundType.MUD)
             .noOcclusion()
             )
         );

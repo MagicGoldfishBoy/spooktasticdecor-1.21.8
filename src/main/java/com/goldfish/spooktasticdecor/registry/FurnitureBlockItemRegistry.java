@@ -28,6 +28,8 @@ public class FurnitureBlockItemRegistry {
     public static DeferredItem<BlockItem> CREAKING_STRIPPED_WOOD_TABLE_ITEM;
     public static DeferredItem<BlockItem> CREAKING_WOOD_PLANKS_TABLE_ITEM;
 
+    public static DeferredItem<BlockItem> EYE_TABLE_ITEM;
+
     public static void registerAll() {
 
         registerZombieFurniture();
@@ -35,6 +37,7 @@ public class FurnitureBlockItemRegistry {
         registerWitherSkeletonFurniture();
         registerGhastFurniture();
         registerCreakingFurniture();
+        registerEyeFurniture();
     }
     public static void registerZombieFurniture() {
         ZOMBIE_WOOD_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
@@ -105,6 +108,12 @@ public class FurnitureBlockItemRegistry {
         );
         CREAKING_WOOD_PLANKS_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             FurnitureBlockRegistry.CREAKING_WOOD_PLANKS_TABLE,
+            new Item.Properties()
+        );
+    }
+    public static void registerEyeFurniture() {
+        EYE_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            FurnitureBlockRegistry.EYE_TABLE,
             new Item.Properties()
         );
     }
