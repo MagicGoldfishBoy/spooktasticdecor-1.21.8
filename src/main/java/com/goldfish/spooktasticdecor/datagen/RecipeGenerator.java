@@ -698,6 +698,31 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('B', Items.STICK)
                         .unlockedBy("has_stripped_spider_log", has(SimpleBlockItemRegistry.SPIDER_WOOD_PLANKS_ITEM.get()))
                         .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, FurnitureBlockItemRegistry.ENDER_WOOD_TABLE_ITEM.get(), 2)
+                        .pattern("AAA")
+                        .pattern("B B")
+                        .pattern("B B")
+                        .define('A', SimpleBlockItemRegistry.ENDER_LOG_ITEM.get())
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_ender_log", has(SimpleBlockItemRegistry.ENDER_LOG_ITEM.get()))
+                        .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, FurnitureBlockItemRegistry.ENDER_STRIPPED_WOOD_TABLE_ITEM.get(), 2)
+                        .pattern("AAA")
+                        .pattern("B B")
+                        .pattern("B B")
+                        .define('A', SimpleBlockItemRegistry.STRIPPED_ENDER_LOG_ITEM.get())
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_stripped_ender_log", has(SimpleBlockItemRegistry.STRIPPED_ENDER_LOG_ITEM.get()))
+                        .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, FurnitureBlockItemRegistry.ENDER_WOOD_PLANKS_TABLE_ITEM.get(), 2)
+                        .pattern("AAA")
+                        .pattern("B B")
+                        .pattern("B B")
+                        .define('A', SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get())
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_ender_wood_planks", has(SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get()))
+                        .save(this.output);
         }
 
     // The data provider class

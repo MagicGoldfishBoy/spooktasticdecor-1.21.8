@@ -17,6 +17,9 @@
         "spooktasticdecor:creaking_wood_planks_table",
         "spooktasticdecor:spider_wood_table",
         "spooktasticdecor:spider_stripped_wood_table",
-        "spooktasticdecor:spider_wood_planks_table"
+        "spooktasticdecor:spider_wood_planks_table",
+        "spooktasticdecor:ender_wood_table",
+        "spooktasticdecor:ender_stripped_wood_table",
+        "spooktasticdecor:ender_wood_planks_table"
     ]
 }

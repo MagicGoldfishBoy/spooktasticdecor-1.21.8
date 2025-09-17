@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "spooktasticdecor:ender_log",
+    "B": "minecraft:stick"
+  },
+  "pattern": [
+    "AAA",
+    "B B",
+    "B B"
+  ],
+  "result": {
+    "count": 2,
+    "id": "spooktasticdecor:ender_wood_table"
+  }
+}

@@ -34,6 +34,10 @@ public class FurnitureBlockItemRegistry {
     public static DeferredItem<BlockItem> SPIDER_STRIPPED_WOOD_TABLE_ITEM;
     public static DeferredItem<BlockItem> SPIDER_WOOD_PLANKS_TABLE_ITEM;
 
+    public static DeferredItem<BlockItem> ENDER_WOOD_TABLE_ITEM;
+    public static DeferredItem<BlockItem> ENDER_STRIPPED_WOOD_TABLE_ITEM;
+    public static DeferredItem<BlockItem> ENDER_WOOD_PLANKS_TABLE_ITEM;
+
     public static void registerAll() {
 
         registerZombieFurniture();
@@ -43,6 +47,7 @@ public class FurnitureBlockItemRegistry {
         registerCreakingFurniture();
         registerEyeFurniture();
         registerSpiderFurniture();
+        registerEnderFurniture();
     }
     public static void registerZombieFurniture() {
         ZOMBIE_WOOD_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
@@ -133,6 +138,20 @@ public class FurnitureBlockItemRegistry {
         );
         SPIDER_WOOD_PLANKS_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             FurnitureBlockRegistry.SPIDER_WOOD_PLANKS_TABLE,
+            new Item.Properties()
+        );
+    }
+    public static void registerEnderFurniture() {
+        ENDER_WOOD_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            FurnitureBlockRegistry.ENDER_WOOD_TABLE,
+            new Item.Properties()
+        );
+        ENDER_STRIPPED_WOOD_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            FurnitureBlockRegistry.ENDER_STRIPPED_WOOD_TABLE,
+            new Item.Properties()
+        );
+        ENDER_WOOD_PLANKS_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            FurnitureBlockRegistry.ENDER_WOOD_PLANKS_TABLE,
             new Item.Properties()
         );
     }
