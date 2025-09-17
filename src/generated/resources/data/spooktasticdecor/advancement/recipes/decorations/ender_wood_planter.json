@@ -1,6 +1,16 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_ender_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spooktasticdecor:ender_log"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_gold_ingot": {
       "conditions": {
         "items": [
@@ -13,31 +23,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "spooktasticdecor:wither_skeleton_wood_planter"
+        "recipe": "spooktasticdecor:ender_wood_planter"
       },
       "trigger": "minecraft:recipe_unlocked"
-    },
-    "has_wither_skeleton_log": {
-      "conditions": {
-        "items": [
-          {
-            "items": "spooktasticdecor:wither_skeleton_log"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_wither_skeleton_log",
+      "has_ender_log",
       "has_gold_ingot"
     ]
   ],
   "rewards": {
     "recipes": [
-      "spooktasticdecor:wither_skeleton_wood_planter"
+      "spooktasticdecor:ender_wood_planter"
     ]
   }
 }

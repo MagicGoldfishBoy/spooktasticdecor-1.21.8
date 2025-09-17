@@ -3,6 +3,10 @@
         "spooktasticdecor:zombie_wood_planter",
         "spooktasticdecor:skeleton_wood_planter",
         "spooktasticdecor:wither_skeleton_wood_planter",
-        "spooktasticdecor:ghast_wood_planter"
+        "spooktasticdecor:ghast_wood_planter",
+        "spooktasticdecor:creaking_wood_planter",
+        "spooktasticdecor:eye_planter",
+        "spooktasticdecor:spider_wood_planter",
+        "spooktasticdecor:ender_wood_planter"
     ]
 }

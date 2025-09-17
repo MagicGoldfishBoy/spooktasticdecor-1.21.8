@@ -40,15 +40,27 @@ public class FurnitureBlockRegistry {
     public static DeferredBlock<Block> GHAST_STRIPPED_WOOD_TABLE;
     public static DeferredBlock<Block> GHAST_WOOD_PLANKS_TABLE;
 
+
+    public static DeferredBlock<Block> CREAKING_WOOD_PLANTER;
+
     public static DeferredBlock<Block> CREAKING_WOOD_TABLE;
     public static DeferredBlock<Block> CREAKING_STRIPPED_WOOD_TABLE;
     public static DeferredBlock<Block> CREAKING_WOOD_PLANKS_TABLE;
 
+
+    public static DeferredBlock<Block> EYE_PLANTER;
+
     public static DeferredBlock<Block> EYE_TABLE;
+
+
+    public static DeferredBlock<Block> SPIDER_WOOD_PLANTER;
 
     public static DeferredBlock<Block> SPIDER_WOOD_TABLE;
     public static DeferredBlock<Block> SPIDER_STRIPPED_WOOD_TABLE;
     public static DeferredBlock<Block> SPIDER_WOOD_PLANKS_TABLE;
+
+
+    public static DeferredBlock<Block> ENDER_WOOD_PLANTER;
 
     public static DeferredBlock<Block> ENDER_WOOD_TABLE;
     public static DeferredBlock<Block> ENDER_STRIPPED_WOOD_TABLE;
@@ -243,6 +255,16 @@ public class FurnitureBlockRegistry {
         );
     }
     public static void registerCreakingFurniture() {
+        CREAKING_WOOD_PLANTER = SpooktasticDecor.BLOCKS.register(
+            "creaking_wood_planter",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(1.5f)
+            .explosionResistance(9.0f)
+            .sound(SoundType.WOOD)
+            .noOcclusion()
+            )
+        );
         CREAKING_WOOD_TABLE = SpooktasticDecor.BLOCKS.register(
             "creaking_wood_table",
             registryName -> new Block(BlockBehaviour.Properties.of()
@@ -275,6 +297,16 @@ public class FurnitureBlockRegistry {
         );
     }
     public static void registerEyeFurniture() {
+        EYE_PLANTER = SpooktasticDecor.BLOCKS.register(
+            "eye_planter",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(1.5f)
+            .explosionResistance(9.0f)
+            .sound(SoundType.MUD)
+            .noOcclusion()
+            )
+        );
         EYE_TABLE = SpooktasticDecor.BLOCKS.register(
             "eye_table",
             registryName -> new Block(BlockBehaviour.Properties.of()
@@ -287,6 +319,16 @@ public class FurnitureBlockRegistry {
         );
     }
     public static void registerSpiderFurniture() {
+        SPIDER_WOOD_PLANTER = SpooktasticDecor.BLOCKS.register(
+            "spider_wood_planter",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(1.5f)
+            .explosionResistance(9.0f)
+            .sound(SoundType.COBWEB)
+            .noOcclusion()
+            )
+        );
         SPIDER_WOOD_TABLE = SpooktasticDecor.BLOCKS.register(
             "spider_wood_table", 
             registryName -> new Block(BlockBehaviour.Properties.of()
@@ -319,6 +361,16 @@ public class FurnitureBlockRegistry {
         );
     }
     public static void registerEnderFurniture() {
+        ENDER_WOOD_PLANTER = SpooktasticDecor.BLOCKS.register(
+            "ender_wood_planter",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(1.5f)
+            .explosionResistance(9.0f)
+            .sound(SoundType.STONE)
+            .noOcclusion()
+            )
+        );
         ENDER_WOOD_TABLE = SpooktasticDecor.BLOCKS.register(
             "ender_wood_table",
             registryName -> new Block(BlockBehaviour.Properties.of()

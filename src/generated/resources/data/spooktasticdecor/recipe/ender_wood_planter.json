@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": "spooktasticdecor:wither_skeleton_log",
+    "A": "spooktasticdecor:ender_log",
     "B": "minecraft:dirt",
     "C": "minecraft:gold_ingot"
   },
@@ -13,6 +13,6 @@
   ],
   "result": {
     "count": 4,
-    "id": "spooktasticdecor:wither_skeleton_wood_planter"
+    "id": "spooktasticdecor:ender_wood_planter"
   }
 }
