@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-17T11:34:58.472142758	Loot Tables
+// 1.21.8	2025-09-17T12:28:37.037608396	Loot Tables
 e30628148fa475a47ca934a2667f679515556c52 data/spooktasticdecor/loot_table/blocks/creaking_lamp.json
 6a1b6369bd5870e6e80284ba3891e68c0ccf0fcb data/spooktasticdecor/loot_table/blocks/creaking_stripped_wood_table.json
 a413636a36f082f62e3b58be9c94cc8a8dff08f3 data/spooktasticdecor/loot_table/blocks/creaking_wood_planks_table.json
@@ -94,4 +94,5 @@ dbac27516254a7cc4eabb96f8fe61dabb643790c data/spooktasticdecor/loot_table/blocks
 a6ec63af539343628f83ebaeb2360b36715c4601 data/spooktasticdecor/loot_table/blocks/zombie_wood_planks_stairs.json
 8ef8c0773cc40a5bec0cc5b2645dee694e9c8954 data/spooktasticdecor/loot_table/blocks/zombie_wood_planks_table.json
 4f2d481616d25af5454269b00f011637bf80e840 data/spooktasticdecor/loot_table/blocks/zombie_wood_planks_trapdoor.json
+86d3c834709efd3479b64a4da13eeed7f9e61164 data/spooktasticdecor/loot_table/blocks/zombie_wood_planter.json
 335605b3cbcd192782c9aee71bc545fba58dd781 data/spooktasticdecor/loot_table/blocks/zombie_wood_table.json

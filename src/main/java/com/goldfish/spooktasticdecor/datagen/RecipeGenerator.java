@@ -65,6 +65,7 @@ public class RecipeGenerator extends RecipeProvider {
         registerLampRecipes();
         registerWoodRecipes();
         registerTableRecipes();
+        registerPlanterRecipes();
         }
         protected void registerLampRecipes() {
                 ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get(), 2)
@@ -721,6 +722,19 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('A', SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get())
                         .define('B', Items.STICK)
                         .unlockedBy("has_ender_wood_planks", has(SimpleBlockItemRegistry.ENDER_WOOD_PLANKS_ITEM.get()))
+                        .save(this.output);
+        }
+
+        protected void registerPlanterRecipes() {
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, FurnitureBlockItemRegistry.ZOMBIE_WOOD_PLANTER_ITEM.get(), 4)
+                        .pattern("ABA")
+                        .pattern("CCC")
+                        .pattern("AAA")
+                        .define('A', SimpleBlockItemRegistry.ZOMBIE_LOG_ITEM.get())
+                        .define('B', Items.DIRT)
+                        .define('C', Items.COPPER_INGOT)
+                        .unlockedBy("has_zombie_log", has(SimpleBlockItemRegistry.ZOMBIE_LOG_ITEM.get()))
+                        .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT))
                         .save(this.output);
         }
 

@@ -30,6 +30,8 @@ public class ModelDatagen extends ModelProvider {
 
         registerTableModels(blockModels, itemModels);
 
+        registerPlanterModels(blockModels, itemModels);
+
     }
 
     protected void registerBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
@@ -165,7 +167,7 @@ public class ModelDatagen extends ModelProvider {
 
     protected void registerTableModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
-        
+        LOGGER.info("Creating Table Models");
 
         for (DeferredHolder<Block, ? extends Block> holder : SpooktasticDecor.BLOCKS.getEntries()) {
             String rawName = holder.getId().getPath();
@@ -211,6 +213,47 @@ public class ModelDatagen extends ModelProvider {
             //         BlockModelGenerators.variant(variant)
             //     )
             // );
+    }
+
+    ResourceLocation planter;
+    Variant plantervariant;
+
+    protected void registerPlanterModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+
+        LOGGER.info("Creating Planter Models");
+
+        for (DeferredHolder<Block, ? extends Block> holder : SpooktasticDecor.BLOCKS.getEntries()) {
+            String rawName = holder.getId().getPath();
+            if (rawName.contains("planter")) {
+                String name = "block/" + rawName;
+
+                LOGGER.info("Generating model for: {}", name);
+
+                ResourceLocation planter = modLocation(name);
+                Variant plantervariant = new Variant(planter);
+
+                blockModels.blockStateOutput.accept(
+                    MultiVariantGenerator.dispatch(
+                        holder.get(),
+                        BlockModelGenerators.variant(plantervariant)
+                    )
+                );
+            }
+        }
+
+        for (DeferredHolder<Item, ? extends Item> holder : SpooktasticDecor.ITEMS.getEntries()) {
+            String rawName = holder.getId().getPath();
+            if (rawName.contains("planter")) {
+                String name = "block/" + rawName;
+
+                LOGGER.info("Generating model for: {}", name);
+
+                itemModels.itemModelOutput.accept(
+                holder.get(),
+                ItemModelUtils.plainModel(modLocation(name))
+            );
+            }
+        }
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {

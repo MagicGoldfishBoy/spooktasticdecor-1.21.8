@@ -13,9 +13,11 @@ import net.neoforged.neoforge.registries.DeferredItem;
 
 public class FurnitureBlockRegistry {
 
+    public static DeferredBlock<Block> ZOMBIE_WOOD_PLANTER;
     public static DeferredBlock<Block> ZOMBIE_WOOD_TABLE;
     public static DeferredBlock<Block> ZOMBIE_STRIPPED_WOOD_TABLE;
     public static DeferredBlock<Block> ZOMBIE_WOOD_PLANKS_TABLE;
+
 
     public static DeferredBlock<Block> SKELETON_WOOD_TABLE;
     public static DeferredBlock<Block> SKELETON_STRIPPED_WOOD_TABLE;
@@ -54,6 +56,17 @@ public class FurnitureBlockRegistry {
         registerEnderFurniture();
     }
     public static void registerZombieFurniture() {
+        ZOMBIE_WOOD_PLANTER = SpooktasticDecor.BLOCKS.register(
+            "zombie_wood_planter",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(1.5f)
+            .explosionResistance(9.0f)
+            .sound(SoundType.WOOD)
+            .ignitedByLava()
+            .noOcclusion()
+            )
+        );
         ZOMBIE_WOOD_TABLE = SpooktasticDecor.BLOCKS.register(
             "zombie_wood_table",
             registryName -> new Block(BlockBehaviour.Properties.of()

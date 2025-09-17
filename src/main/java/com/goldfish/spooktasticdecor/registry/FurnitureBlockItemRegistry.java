@@ -8,6 +8,8 @@ import net.neoforged.neoforge.registries.DeferredItem;
 
 public class FurnitureBlockItemRegistry {
     
+    public static DeferredItem<BlockItem> ZOMBIE_WOOD_PLANTER_ITEM;
+
     public static DeferredItem<BlockItem> ZOMBIE_WOOD_TABLE_ITEM;
     public static DeferredItem<BlockItem> ZOMBIE_STRIPPED_WOOD_TABLE_ITEM;
     public static DeferredItem<BlockItem> ZOMBIE_WOOD_PLANKS_TABLE_ITEM;
@@ -50,6 +52,10 @@ public class FurnitureBlockItemRegistry {
         registerEnderFurniture();
     }
     public static void registerZombieFurniture() {
+        ZOMBIE_WOOD_PLANTER_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            FurnitureBlockRegistry.ZOMBIE_WOOD_PLANTER,
+            new Item.Properties()
+        );
         ZOMBIE_WOOD_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             FurnitureBlockRegistry.ZOMBIE_WOOD_TABLE,
             new Item.Properties()
