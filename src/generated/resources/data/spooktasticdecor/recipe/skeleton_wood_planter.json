@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "spooktasticdecor:skeleton_log",
+    "B": "minecraft:dirt",
+    "C": "minecraft:copper_ingot"
+  },
+  "pattern": [
+    "ABA",
+    "CCC",
+    "AAA"
+  ],
+  "result": {
+    "count": 4,
+    "id": "spooktasticdecor:skeleton_wood_planter"
+  }
+}

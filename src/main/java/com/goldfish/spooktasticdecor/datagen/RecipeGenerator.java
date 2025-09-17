@@ -736,6 +736,16 @@ public class RecipeGenerator extends RecipeProvider {
                         .unlockedBy("has_zombie_log", has(SimpleBlockItemRegistry.ZOMBIE_LOG_ITEM.get()))
                         .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT))
                         .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, FurnitureBlockItemRegistry.SKELETON_WOOD_PLANTER.get(), 4)
+                        .pattern("ABA")
+                        .pattern("CCC")
+                        .pattern("AAA")
+                        .define('A', SimpleBlockItemRegistry.SKELETON_LOG_ITEM.get())
+                        .define('B', Items.DIRT)
+                        .define('C', Items.COPPER_INGOT)
+                        .unlockedBy("has_skeleton_log", has(SimpleBlockItemRegistry.SKELETON_LOG_ITEM.get()))
+                        .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT))
+                        .save(this.output);
         }
 
     // The data provider class

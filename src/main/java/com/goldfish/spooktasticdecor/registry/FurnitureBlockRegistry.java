@@ -19,6 +19,7 @@ public class FurnitureBlockRegistry {
     public static DeferredBlock<Block> ZOMBIE_WOOD_PLANKS_TABLE;
 
 
+    public static DeferredBlock<Block> SKELETON_WOOD_PLANTER;
     public static DeferredBlock<Block> SKELETON_WOOD_TABLE;
     public static DeferredBlock<Block> SKELETON_STRIPPED_WOOD_TABLE;
     public static DeferredBlock<Block> SKELETON_WOOD_PLANKS_TABLE;
@@ -102,6 +103,17 @@ public class FurnitureBlockRegistry {
         );
     }
     public static void registerSkeletonFurniture() {
+        SKELETON_WOOD_PLANTER = SpooktasticDecor.BLOCKS.register(
+            "skeleton_wood_planter",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(1.5f)
+            .explosionResistance(9.0f)
+            .sound(SoundType.WOOD)
+            .ignitedByLava()
+            .noOcclusion()
+            )
+        );
         SKELETON_WOOD_TABLE = SpooktasticDecor.BLOCKS.register(
             "skeleton_wood_table",
             registryName -> new Block(BlockBehaviour.Properties.of()

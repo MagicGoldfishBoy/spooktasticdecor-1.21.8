@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-17T12:28:37.037608396	Loot Tables
+// 1.21.8	2025-09-17T13:13:08.358819933	Loot Tables
 e30628148fa475a47ca934a2667f679515556c52 data/spooktasticdecor/loot_table/blocks/creaking_lamp.json
 6a1b6369bd5870e6e80284ba3891e68c0ccf0fcb data/spooktasticdecor/loot_table/blocks/creaking_stripped_wood_table.json
 a413636a36f082f62e3b58be9c94cc8a8dff08f3 data/spooktasticdecor/loot_table/blocks/creaking_wood_planks_table.json
@@ -49,6 +49,7 @@ ee691b82fc31c420e22c30932d398ebaf61a8b61 data/spooktasticdecor/loot_table/blocks
 76c7346ba61d192f47a191196aa20033099db423 data/spooktasticdecor/loot_table/blocks/skeleton_wood_planks_stairs.json
 01b40d630b497abca4aaa2b55dad61bf10a38f31 data/spooktasticdecor/loot_table/blocks/skeleton_wood_planks_table.json
 b3889410edd996a8de7b333fe5c6077ba94eba22 data/spooktasticdecor/loot_table/blocks/skeleton_wood_planks_trapdoor.json
+7e30d921bf3bad09413e8945060940b02924a727 data/spooktasticdecor/loot_table/blocks/skeleton_wood_planter.json
 1ae13ed3a52373e01149557820fcd9637cea087d data/spooktasticdecor/loot_table/blocks/skeleton_wood_table.json
 a2951cb336e7452f847b85b32c20e5ae9a5ff727 data/spooktasticdecor/loot_table/blocks/spider_lamp.json
 baf8cc25e40d920a0d93d9dc5f3b5e2b8ca87452 data/spooktasticdecor/loot_table/blocks/spider_log.json
