@@ -26,11 +26,15 @@ public class FurnitureBlockRegistry {
     public static DeferredBlock<Block> SKELETON_STRIPPED_WOOD_TABLE;
     public static DeferredBlock<Block> SKELETON_WOOD_PLANKS_TABLE;
 
+
     public static DeferredBlock<Block> WITHER_SKELETON_WOOD_PLANTER;
 
     public static DeferredBlock<Block> WITHER_SKELETON_WOOD_TABLE;
     public static DeferredBlock<Block> WITHER_SKELETON_STRIPPED_WOOD_TABLE;
     public static DeferredBlock<Block> WITHER_SKELETON_WOOD_PLANKS_TABLE;
+
+
+    public static DeferredBlock<Block> GHAST_WOOD_PLANTER;
 
     public static DeferredBlock<Block> GHAST_WOOD_TABLE;
     public static DeferredBlock<Block> GHAST_STRIPPED_WOOD_TABLE;
@@ -196,6 +200,17 @@ public class FurnitureBlockRegistry {
         );
     }
     public static void registerGhastFurniture() {
+        GHAST_WOOD_PLANTER = SpooktasticDecor.BLOCKS.register(
+            "ghast_wood_planter",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(1.5f)
+            .explosionResistance(9.0f)
+            .sound(SoundType.NETHER_WOOD)
+            .ignitedByLava()
+            .noOcclusion()
+            )
+        );
         GHAST_WOOD_TABLE = SpooktasticDecor.BLOCKS.register(
             "ghast_wood_table",
             registryName -> new Block(BlockBehaviour.Properties.of()

@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-17T13:35:21.887474644	Loot Tables
+// 1.21.8	2025-09-17T14:03:15.729345409	Loot Tables
 e30628148fa475a47ca934a2667f679515556c52 data/spooktasticdecor/loot_table/blocks/creaking_lamp.json
 6a1b6369bd5870e6e80284ba3891e68c0ccf0fcb data/spooktasticdecor/loot_table/blocks/creaking_stripped_wood_table.json
 a413636a36f082f62e3b58be9c94cc8a8dff08f3 data/spooktasticdecor/loot_table/blocks/creaking_wood_planks_table.json
@@ -34,6 +34,7 @@ b6a6c6e598b3309c7fcb65f692033ff0d14fc08d data/spooktasticdecor/loot_table/blocks
 e2486d8f3958270af5850879f0a9542d6db46bd9 data/spooktasticdecor/loot_table/blocks/ghast_wood_planks_stairs.json
 8a94a4197a7116dd7d36dd160596d2b624f97ffb data/spooktasticdecor/loot_table/blocks/ghast_wood_planks_table.json
 dade06dd6eee049c9207031fe49ece47508bac78 data/spooktasticdecor/loot_table/blocks/ghast_wood_planks_trapdoor.json
+edf9c869dff6ce2220a9c2c562a4de1131cc1124 data/spooktasticdecor/loot_table/blocks/ghast_wood_planter.json
 4975084e302aff5f69a593140bdfd4ce69e54828 data/spooktasticdecor/loot_table/blocks/ghast_wood_table.json
 413773f0c9e1900208c41baf47785ae9fdcd0d63 data/spooktasticdecor/loot_table/blocks/skeleton_lamp.json
 1cfcffd12024e3d6d0a535f23d5e76467ba8d014 data/spooktasticdecor/loot_table/blocks/skeleton_log.json

@@ -753,7 +753,17 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('A', SimpleBlockItemRegistry.WITHER_SKELETON_LOG_ITEM.get())
                         .define('B', Items.DIRT)
                         .define('C', Items.COPPER_INGOT)
-                        .unlockedBy("has_skeleton_log", has(SimpleBlockItemRegistry.WITHER_SKELETON_LOG_ITEM.get()))
+                        .unlockedBy("has_wither_skeleton_log", has(SimpleBlockItemRegistry.WITHER_SKELETON_LOG_ITEM.get()))
+                        .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT))
+                        .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, FurnitureBlockItemRegistry.GHAST_WOOD_PLANTER_ITEM.get(), 4)
+                        .pattern("ABA")
+                        .pattern("CCC")
+                        .pattern("AAA")
+                        .define('A', SimpleBlockItemRegistry.GHAST_LOG_ITEM.get())
+                        .define('B', Items.DIRT)
+                        .define('C', Items.COPPER_INGOT)
+                        .unlockedBy("has_ghast_log", has(SimpleBlockItemRegistry.GHAST_LOG_ITEM.get()))
                         .unlockedBy("has_copper_ingot", has(Items.COPPER_INGOT))
                         .save(this.output);
         }

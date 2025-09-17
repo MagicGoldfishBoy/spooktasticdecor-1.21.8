@@ -7,7 +7,7 @@
 		"1": "block/podzol_top",
 		"2": "spooktasticdecor:block/skeleton_log",
 		"3": "spooktasticdecor:block/skeleton_log_top",
-		"particle": "block/exposed_copper_bulb"
+		"particle": "spooktasticdecor:block/skeleton_log"
 	},
 	"elements": [
 		{

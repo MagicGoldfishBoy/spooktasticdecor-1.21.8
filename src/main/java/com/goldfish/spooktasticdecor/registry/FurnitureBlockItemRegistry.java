@@ -28,6 +28,9 @@ public class FurnitureBlockItemRegistry {
     public static DeferredItem<BlockItem> WITHER_SKELETON_STRIPPED_WOOD_TABLE_ITEM;
     public static DeferredItem<BlockItem> WITHER_SKELETON_WOOD_PLANKS_TABLE_ITEM;
 
+
+    public static DeferredItem<BlockItem> GHAST_WOOD_PLANTER_ITEM;
+
     public static DeferredItem<BlockItem> GHAST_WOOD_TABLE_ITEM;
     public static DeferredItem<BlockItem> GHAST_STRIPPED_WOOD_TABLE_ITEM;
     public static DeferredItem<BlockItem> GHAST_WOOD_PLANKS_TABLE_ITEM;
@@ -114,6 +117,10 @@ public class FurnitureBlockItemRegistry {
         );
     }
     public static void registerGhastFurniture() {
+        GHAST_WOOD_PLANTER_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            FurnitureBlockRegistry.GHAST_WOOD_PLANTER,
+            new Item.Properties()
+        );
         GHAST_WOOD_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             FurnitureBlockRegistry.GHAST_WOOD_TABLE,
             new Item.Properties()
