@@ -23,6 +23,7 @@ import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
@@ -114,11 +115,11 @@ public class simpleblockregistry {
 
 
     public static DeferredBlock<Block> ZOMBIE_COBBLESTONE;
-    // public static DeferredBlock<Block> ZOMBIE_COBBLESTONE_SLAB;
-    // public static DeferredBlock<Block> ZOMBIE_COBBLESTONE_STAIRS;
-    // public static DeferredBlock<Block> ZOMBIE_COBBLESTONE_BUTTON;
-    // public static DeferredBlock<Block> ZOMBIE_COBBLESTONE_WALL;
-    // public static DeferredBlock<Block> ZOMBIE_COBBLESTONE_PRESSURE_PLATE;
+    public static DeferredBlock<SlabBlock> ZOMBIE_COBBLESTONE_SLAB;
+    public static DeferredBlock<StairBlock> ZOMBIE_COBBLESTONE_STAIRS;
+    public static DeferredBlock<ButtonBlock> ZOMBIE_COBBLESTONE_BUTTON;
+    public static DeferredBlock<WallBlock> ZOMBIE_COBBLESTONE_WALL;
+    public static DeferredBlock<PressurePlateBlock> ZOMBIE_COBBLESTONE_PRESSURE_PLATE;
 
     public static void registerAll() {
         register_lamps();
@@ -877,6 +878,56 @@ public class simpleblockregistry {
         ZOMBIE_COBBLESTONE = SpooktasticDecor.BLOCKS.register(
             "zombie_cobblestone",
             registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .destroyTime(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ZOMBIE_COBBLESTONE_SLAB = SpooktasticDecor.BLOCKS.register(
+            "zombie_cobblestone_slab",
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .destroyTime(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ZOMBIE_COBBLESTONE_STAIRS = SpooktasticDecor.BLOCKS.register(
+            "zombie_cobblestone_stairs",
+            registryName -> new StairBlock(ZOMBIE_COBBLESTONE.get().defaultBlockState(), BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .destroyTime(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ZOMBIE_COBBLESTONE_BUTTON = SpooktasticDecor.BLOCKS.register(
+            "zombie_cobblestone_button",
+            registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .destroyTime(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ZOMBIE_COBBLESTONE_WALL = SpooktasticDecor.BLOCKS.register(
+            "zombie_cobblestone_wall",
+            registryName -> new WallBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .destroyTime(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ZOMBIE_COBBLESTONE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+            "zombie_cobblestone_pressure_plate",
+            registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
             .setId(ResourceKey.create(Registries.BLOCK, registryName))
             .destroyTime(COBBLESTONE_DESTROY_TIME)
             .destroyTime(COBBLESTONE_EXPLOSION_RESISTANCE)

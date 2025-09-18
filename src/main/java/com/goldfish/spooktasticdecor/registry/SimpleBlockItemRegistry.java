@@ -92,6 +92,11 @@ public class SimpleBlockItemRegistry {
 
 
     public static DeferredItem<BlockItem> ZOMBIE_COBBLESTONE_ITEM;
+    public static DeferredItem<BlockItem> ZOMBIE_COBBLESTONE_SLAB_ITEM;
+    public static DeferredItem<BlockItem> ZOMBIE_COBBLESTONE_STAIRS_ITEM;
+    public static DeferredItem<BlockItem> ZOMBIE_COBBLESTONE_BUTTON_ITEM;
+    public static DeferredItem<BlockItem> ZOMBIE_COBBLESTONE_WALL_ITEM;
+    public static DeferredItem<BlockItem> ZOMBIE_COBBLESTONE_PRESSURE_PLATE_ITEM;
 
     public static void registerAll() {
         register_lamps();
@@ -425,6 +430,26 @@ public class SimpleBlockItemRegistry {
     public static void registerZombieCobblestone() {
         ZOMBIE_COBBLESTONE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             simpleblockregistry.ZOMBIE_COBBLESTONE,
+            new Item.Properties()
+        );
+        ZOMBIE_COBBLESTONE_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ZOMBIE_COBBLESTONE_SLAB,
+            new Item.Properties()
+        );
+        ZOMBIE_COBBLESTONE_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ZOMBIE_COBBLESTONE_STAIRS,
+            new Item.Properties()
+        );
+        ZOMBIE_COBBLESTONE_BUTTON_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ZOMBIE_COBBLESTONE_BUTTON,
+            new Item.Properties()
+        );
+        ZOMBIE_COBBLESTONE_WALL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ZOMBIE_COBBLESTONE_WALL,
+            new Item.Properties()
+        );
+        ZOMBIE_COBBLESTONE_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ZOMBIE_COBBLESTONE_PRESSURE_PLATE,
             new Item.Properties()
         );
     }

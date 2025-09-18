@@ -827,6 +827,43 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('B', Items.ROTTEN_FLESH)
                         .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH))
                         .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_SLAB_ITEM.get(), 6)
+                        .pattern("AAA")
+                        .define('A', SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get())
+                        .unlockedBy("has_zombie_cobblestone", has(SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get()))
+                        .save(this.output);
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.ZOMBIE_COBBLESTONE.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.ZOMBIE_COBBLESTONE_SLAB.get(), 2)
+                        .unlockedBy("has_zombie_cobblestone", has(simpleblockregistry.ZOMBIE_COBBLESTONE.get()))
+                        .save(this.output, SpooktasticDecor.MODID + ":zombie_cobblestone_slab_from_stonecutting");
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_STAIRS_ITEM.get(), 4)
+                        .pattern("A  ")
+                        .pattern("AA ")
+                        .pattern("AAA")
+                        .define('A', SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get())
+                        .unlockedBy("has_zombie_cobblestone", has(simpleblockregistry.ZOMBIE_COBBLESTONE.get()))
+                        .save(this.output);
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.ZOMBIE_COBBLESTONE.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.ZOMBIE_COBBLESTONE_STAIRS.get())
+                        .unlockedBy("has_zombie_cobblestone", has(simpleblockregistry.ZOMBIE_COBBLESTONE.get()))
+                        .save(this.output, SpooktasticDecor.MODID + ":zombie_cobblestone_stairs_from_stonecutting");
+                ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.REDSTONE, SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_BUTTON_ITEM.get())
+                        .requires(SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get())
+                        .unlockedBy("has_zombie_cobblestone", has(SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get()))
+                        .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_WALL_ITEM.get(), 6)
+                        .pattern("   ")
+                        .pattern("AAA")
+                        .pattern("AAA")
+                        .define('A', SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get())
+                        .unlockedBy("has_zombie_cobblestone", has(simpleblockregistry.ZOMBIE_COBBLESTONE.get()))
+                        .save(this.output);
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.ZOMBIE_COBBLESTONE.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.ZOMBIE_COBBLESTONE_WALL.get())
+                        .unlockedBy("has_zombie_cobblestone", has(simpleblockregistry.ZOMBIE_COBBLESTONE.get()))
+                        .save(this.output, SpooktasticDecor.MODID + ":zombie_cobblestone_wall_from_stonecutting");
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.REDSTONE, SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_PRESSURE_PLATE_ITEM.get())
+                        .pattern("AA")
+                        .define('A', SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get())
+                        .unlockedBy("has_zombie_cobblestone", has(simpleblockregistry.ZOMBIE_COBBLESTONE.get()))
+                        .save(this.output);
         }
 
     // The data provider class

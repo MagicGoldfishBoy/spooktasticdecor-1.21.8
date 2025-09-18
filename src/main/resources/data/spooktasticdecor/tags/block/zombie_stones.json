@@ -1,5 +1,10 @@
 {
     "values": [
-        "spooktasticdecor:zombie_cobblestone"
+        "spooktasticdecor:zombie_cobblestone",
+        "spooktasticdecor:zombie_cobblestone_slab",
+        "spooktasticdecor:zombie_cobblestone_stairs",
+        "spooktasticdecor:zombie_cobblestone_button",
+        "spooktasticdecor:zombie_cobblestone_wall",
+        "spooktasticdecor:zombie_cobblestone_pressure_plate"
     ]
 }

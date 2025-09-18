@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "spooktasticdecor:block/zombie_cobblestone",
+    "side": "spooktasticdecor:block/zombie_cobblestone",
+    "top": "spooktasticdecor:block/zombie_cobblestone"
+  }
+}
