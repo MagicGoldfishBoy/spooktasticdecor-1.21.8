@@ -1,5 +1,7 @@
 package com.goldfish.spooktasticdecor.registry;
 
+import java.rmi.registry.Registry;
+
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.EnderLog;
 import com.goldfish.spooktasticdecor.block.GhastLog;
@@ -36,6 +38,7 @@ public class simpleblockregistry {
     public static DeferredBlock<Block> EYEBALL_LAMP;
     public static DeferredBlock<Block> SPIDER_LAMP;
     public static DeferredBlock<Block> ENDER_LAMP;
+
 
     public static DeferredBlock<ZombieLog> ZOMBIE_LOG;
     public static DeferredBlock<RotatedPillarBlock> ZOMBIE_LOG_STRIPPED;
@@ -109,10 +112,20 @@ public class simpleblockregistry {
     public static DeferredBlock<TrapDoorBlock> ENDER_WOOD_PLANKS_TRAPDOOR;
     public static DeferredBlock<DoorBlock> ENDER_WOOD_PLANKS_DOOR;
 
+
+    public static DeferredBlock<Block> ZOMBIE_COBBLESTONE;
+    // public static DeferredBlock<Block> ZOMBIE_COBBLESTONE_SLAB;
+    // public static DeferredBlock<Block> ZOMBIE_COBBLESTONE_STAIRS;
+    // public static DeferredBlock<Block> ZOMBIE_COBBLESTONE_BUTTON;
+    // public static DeferredBlock<Block> ZOMBIE_COBBLESTONE_WALL;
+    // public static DeferredBlock<Block> ZOMBIE_COBBLESTONE_PRESSURE_PLATE;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
+        registerCobblestone();
     }
+
     public static void register_lamps() {
         ZOMBIE_LAMP = SpooktasticDecor.BLOCKS.register(
             "zombie_lamp",
@@ -195,6 +208,7 @@ public class simpleblockregistry {
             )
         );    
     }
+
     public static void register_wood() {
         register_zombie_wood();
         registerSkeletonWood();
@@ -849,6 +863,25 @@ public class simpleblockregistry {
                 .explosionResistance(10.0f)
                 .sound(SoundType.STONE)
                 .noOcclusion()
+            )
+        );
+    }
+
+    private static Float COBBLESTONE_DESTROY_TIME = 4.0f;
+    private static Float COBBLESTONE_EXPLOSION_RESISTANCE = 30.0f;
+
+    public static void registerCobblestone() {
+        registerZombieCobblestone();
+    }
+    public static void registerZombieCobblestone() {
+        ZOMBIE_COBBLESTONE = SpooktasticDecor.BLOCKS.register(
+            "zombie_cobblestone",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .destroyTime(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
             )
         );
     }

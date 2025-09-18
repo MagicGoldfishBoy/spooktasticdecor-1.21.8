@@ -160,6 +160,9 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createDoor(simpleblockregistry.ENDER_WOOD_PLANKS_DOOR.get());
 
+
+        blockModels.createTrivialCube(simpleblockregistry.ZOMBIE_COBBLESTONE.get());
+
     }
 
     ResourceLocation woodtable;

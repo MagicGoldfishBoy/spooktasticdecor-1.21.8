@@ -32,6 +32,11 @@ public class RecipeGenerator extends RecipeProvider {
     public static final TagKey<Item> LOGS_TAG = ItemTags.create(
         ResourceLocation.fromNamespaceAndPath("minecraft", "logs")
     );
+
+    public static final TagKey<Item> COBBLESTONE_TAG = ItemTags.create(
+        ResourceLocation.fromNamespaceAndPath("c", "cobblestones")
+    );
+
     public static final TagKey<Item> ZOMBIE_WOOD_TAG = TagKey.create(
         Registries.ITEM,
         ResourceLocation.fromNamespaceAndPath("spooktasticdecor", "zombie_logs")
@@ -41,20 +46,20 @@ public class RecipeGenerator extends RecipeProvider {
         ResourceLocation.fromNamespaceAndPath("spooktasticdecor", "skeleton_logs")
     );
     public static final TagKey<Item> WITHER_SKELETON_WOOD_TAG = TagKey.create(
-                Registries.ITEM,
-                ResourceLocation.fromNamespaceAndPath("spooktasticdecor", "wither_skeleton_logs")
+        Registries.ITEM,
+        ResourceLocation.fromNamespaceAndPath("spooktasticdecor", "wither_skeleton_logs")
     );
     public static final TagKey<Item> GHAST_WOOD_TAG = TagKey.create(
-                        Registries.ITEM,
-                        ResourceLocation.fromNamespaceAndPath("spooktasticdecor", "ghast_logs")
+        Registries.ITEM,
+        ResourceLocation.fromNamespaceAndPath("spooktasticdecor", "ghast_logs")
     );
     public static final TagKey<Item> SPIDER_WOOD_TAG = TagKey.create(
-                        Registries.ITEM,
-                        ResourceLocation.fromNamespaceAndPath("spooktasticdecor", "spider_logs")
+        Registries.ITEM,
+        ResourceLocation.fromNamespaceAndPath("spooktasticdecor", "spider_logs")
     );
     public static final TagKey<Item> ENDER_WOOD_TAG = TagKey.create(
-                        Registries.ITEM,
-                        ResourceLocation.fromNamespaceAndPath("spooktasticdecor", "ender_logs")
+        Registries.ITEM,
+        ResourceLocation.fromNamespaceAndPath("spooktasticdecor", "ender_logs")
     );
 
         @Override
@@ -66,6 +71,7 @@ public class RecipeGenerator extends RecipeProvider {
         registerWoodRecipes();
         registerTableRecipes();
         registerPlanterRecipes();
+        registerCobblestoneRecipes();
         }
         protected void registerLampRecipes() {
                 ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get(), 2)
@@ -806,6 +812,20 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('C', Items.GOLD_INGOT)
                         .unlockedBy("has_ender_log", has(SimpleBlockItemRegistry.ENDER_LOG_ITEM.get()))
                         .unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT))
+                        .save(this.output);
+        }
+
+        protected void registerCobblestoneRecipes() {
+                registerZombieCobblestoneRecipes();
+        }
+        protected void registerZombieCobblestoneRecipes() {
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get(), 8)
+                        .pattern("AAA")
+                        .pattern("ABA")
+                        .pattern("AAA")
+                        .define('A', this.tag(COBBLESTONE_TAG))
+                        .define('B', Items.ROTTEN_FLESH)
+                        .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH))
                         .save(this.output);
         }
 
