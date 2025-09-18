@@ -121,10 +121,18 @@ public class simpleblockregistry {
     public static DeferredBlock<WallBlock> ZOMBIE_COBBLESTONE_WALL;
     public static DeferredBlock<PressurePlateBlock> ZOMBIE_COBBLESTONE_PRESSURE_PLATE;
 
+    public static DeferredBlock<Block> ZOMBIE_STONE;
+    public static DeferredBlock<SlabBlock> ZOMBIE_STONE_SLAB;
+    public static DeferredBlock<StairBlock> ZOMBIE_STONE_STAIRS;
+    public static DeferredBlock<ButtonBlock> ZOMBIE_STONE_BUTTON;
+    public static DeferredBlock<WallBlock> ZOMBIE_STONE_WALL;
+    public static DeferredBlock<PressurePlateBlock> ZOMBIE_STONE_PRESSURE_PLATE;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
         registerCobblestone();
+        registerStone();
     }
 
     public static void register_lamps() {
@@ -880,7 +888,7 @@ public class simpleblockregistry {
             registryName -> new Block(BlockBehaviour.Properties.of()
             .setId(ResourceKey.create(Registries.BLOCK, registryName))
             .destroyTime(COBBLESTONE_DESTROY_TIME)
-            .destroyTime(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
             .requiresCorrectToolForDrops()
             .sound(SoundType.STONE)
             )
@@ -890,7 +898,7 @@ public class simpleblockregistry {
             registryName -> new SlabBlock(BlockBehaviour.Properties.of()
             .setId(ResourceKey.create(Registries.BLOCK, registryName))
             .destroyTime(COBBLESTONE_DESTROY_TIME)
-            .destroyTime(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
             .requiresCorrectToolForDrops()
             .sound(SoundType.STONE)
             )
@@ -900,7 +908,7 @@ public class simpleblockregistry {
             registryName -> new StairBlock(ZOMBIE_COBBLESTONE.get().defaultBlockState(), BlockBehaviour.Properties.of()
             .setId(ResourceKey.create(Registries.BLOCK, registryName))
             .destroyTime(COBBLESTONE_DESTROY_TIME)
-            .destroyTime(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
             .requiresCorrectToolForDrops()
             .sound(SoundType.STONE)
             )
@@ -910,7 +918,7 @@ public class simpleblockregistry {
             registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
             .setId(ResourceKey.create(Registries.BLOCK, registryName))
             .destroyTime(COBBLESTONE_DESTROY_TIME)
-            .destroyTime(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
             .requiresCorrectToolForDrops()
             .sound(SoundType.STONE)
             )
@@ -920,7 +928,7 @@ public class simpleblockregistry {
             registryName -> new WallBlock(BlockBehaviour.Properties.of()
             .setId(ResourceKey.create(Registries.BLOCK, registryName))
             .destroyTime(COBBLESTONE_DESTROY_TIME)
-            .destroyTime(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
             .requiresCorrectToolForDrops()
             .sound(SoundType.STONE)
             )
@@ -930,7 +938,76 @@ public class simpleblockregistry {
             registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
             .setId(ResourceKey.create(Registries.BLOCK, registryName))
             .destroyTime(COBBLESTONE_DESTROY_TIME)
-            .destroyTime(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+    }
+
+    private static Float STONE_DESTROY_TIME = 3.5f;
+    private static Float STONE_EXPLOSION_RESISTANCE = COBBLESTONE_EXPLOSION_RESISTANCE;
+
+    public static void registerStone() {
+        registerZombieStone();
+    }
+    public static void registerZombieStone() {
+        ZOMBIE_STONE = SpooktasticDecor.BLOCKS.register(
+            "zombie_stone",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ZOMBIE_STONE_SLAB = SpooktasticDecor.BLOCKS.register(
+            "zombie_stone_slab",
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ZOMBIE_STONE_STAIRS = SpooktasticDecor.BLOCKS.register(
+            "zombie_stone_stairs",
+            registryName -> new StairBlock(ZOMBIE_STONE.get().defaultBlockState(),BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ZOMBIE_STONE_BUTTON = SpooktasticDecor.BLOCKS.register(
+            "zombie_stone_button",
+            registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ZOMBIE_STONE_WALL = SpooktasticDecor.BLOCKS.register(
+            "zombie_stone_wall",
+            registryName -> new WallBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ZOMBIE_STONE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+            "zombie_stone_pressure_plate",
+            registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
             .requiresCorrectToolForDrops()
             .sound(SoundType.STONE)
             )

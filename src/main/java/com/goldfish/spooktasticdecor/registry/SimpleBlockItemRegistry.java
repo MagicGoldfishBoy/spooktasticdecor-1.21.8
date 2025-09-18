@@ -98,10 +98,18 @@ public class SimpleBlockItemRegistry {
     public static DeferredItem<BlockItem> ZOMBIE_COBBLESTONE_WALL_ITEM;
     public static DeferredItem<BlockItem> ZOMBIE_COBBLESTONE_PRESSURE_PLATE_ITEM;
 
+    public static DeferredItem<BlockItem> ZOMBIE_STONE_ITEM;
+    public static DeferredItem<BlockItem> ZOMBIE_STONE_SLAB_ITEM;
+    public static DeferredItem<BlockItem> ZOMBIE_STONE_STAIRS_ITEM;
+    public static DeferredItem<BlockItem> ZOMBIE_STONE_BUTTON_ITEM;
+    public static DeferredItem<BlockItem> ZOMBIE_STONE_WALL_ITEM;
+    public static DeferredItem<BlockItem> ZOMBIE_STONE_PRESSURE_PLATE_ITEM;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
         registerCobblestone();
+        registerStone();
     }
 
     public static void register_lamps() {
@@ -450,6 +458,36 @@ public class SimpleBlockItemRegistry {
         );
         ZOMBIE_COBBLESTONE_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             simpleblockregistry.ZOMBIE_COBBLESTONE_PRESSURE_PLATE,
+            new Item.Properties()
+        );
+    }
+
+    public static void registerStone() {
+        registerZombieStone();
+    }
+    public static void registerZombieStone() {
+        ZOMBIE_STONE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ZOMBIE_STONE,
+            new Item.Properties()
+        );
+        ZOMBIE_STONE_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ZOMBIE_STONE_SLAB,
+            new Item.Properties()
+        );
+        ZOMBIE_STONE_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ZOMBIE_STONE_STAIRS,
+            new Item.Properties()
+        );
+        ZOMBIE_STONE_BUTTON_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ZOMBIE_STONE_BUTTON,
+            new Item.Properties()
+        );
+        ZOMBIE_STONE_WALL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ZOMBIE_STONE_WALL,
+            new Item.Properties()
+        );
+        ZOMBIE_STONE_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ZOMBIE_STONE_PRESSURE_PLATE,
             new Item.Properties()
         );
     }
