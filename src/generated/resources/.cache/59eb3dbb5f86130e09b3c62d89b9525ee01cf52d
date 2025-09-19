@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-19T13:08:29.898227456	Loot Tables
+// 1.21.8	2025-09-19T13:17:16.841030163	Loot Tables
 e30628148fa475a47ca934a2667f679515556c52 data/spooktasticdecor/loot_table/blocks/creaking_lamp.json
 6a1b6369bd5870e6e80284ba3891e68c0ccf0fcb data/spooktasticdecor/loot_table/blocks/creaking_stripped_wood_table.json
 a413636a36f082f62e3b58be9c94cc8a8dff08f3 data/spooktasticdecor/loot_table/blocks/creaking_wood_planks_table.json
@@ -63,6 +63,7 @@ b8bd00f6c80ee5aa4066d7e58a8848affb45dafc data/spooktasticdecor/loot_table/blocks
 51558c41bd88d86382f90ef58f9b5d44916dac08 data/spooktasticdecor/loot_table/blocks/skeleton_stone_bricks_stairs.json
 8208f828124657e4fe61b28c366e7af1e30f7d56 data/spooktasticdecor/loot_table/blocks/skeleton_stone_bricks_wall.json
 fb03855e7ff4a21bc2884f9bf6a9010f411fa6fe data/spooktasticdecor/loot_table/blocks/skeleton_stone_button.json
+37192d2ddabd5275bb7725bd0a74930f35b981d5 data/spooktasticdecor/loot_table/blocks/skeleton_stone_lamp.json
 92a5e4a2b421725227807a222e699fe5a8f9d49f data/spooktasticdecor/loot_table/blocks/skeleton_stone_pressure_plate.json
 63fb615ab4a096b7a11d13e77bfdaac73568f20f data/spooktasticdecor/loot_table/blocks/skeleton_stone_slab.json
 6d573f16e3b5587b588bcb82e5303d992bb234a1 data/spooktasticdecor/loot_table/blocks/skeleton_stone_stairs.json

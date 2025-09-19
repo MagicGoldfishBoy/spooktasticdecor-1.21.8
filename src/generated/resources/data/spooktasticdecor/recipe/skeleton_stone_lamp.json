@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "spooktasticdecor:skeleton_chiseled_stone_bricks",
+    "minecraft:glowstone_dust"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:skeleton_stone_lamp"
+  }
+}
