@@ -945,6 +945,20 @@ public class RecipeGenerator extends RecipeProvider {
                         0.5f, 
                         20 
                         );
+
+                        helper.registerFamily(
+                        simpleblockregistry.SKELETON_SMOOTH_STONE.get(),
+                        SimpleBlockItemRegistry.SKELETON_SMOOTH_STONE_ITEM.get(),
+                        simpleblockregistry.SKELETON_SMOOTH_STONE_SLAB.get(),
+                        simpleblockregistry.SKELETON_SMOOTH_STONE_STAIRS.get(),
+                        simpleblockregistry.SKELETON_SMOOTH_STONE_WALL.get(),
+                        SimpleBlockItemRegistry.SKELETON_SMOOTH_STONE_BUTTON_ITEM.get(),
+                        SimpleBlockItemRegistry.SKELETON_SMOOTH_STONE_PRESSURE_PLATE_ITEM.get(),
+                        SimpleBlockItemRegistry.SKELETON_STONE_ITEM.get(),
+                        0.5f, 
+                        20 
+                        );
+
         }
 
 

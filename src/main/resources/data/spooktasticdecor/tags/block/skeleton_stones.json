@@ -11,6 +11,12 @@
         "spooktasticdecor:skeleton_stone_stairs",
         "spooktasticdecor:skeleton_stone_button",
         "spooktasticdecor:skeleton_stone_wall",
-        "spooktasticdecor:skeleton_stone_pressure_plate"
+        "spooktasticdecor:skeleton_stone_pressure_plate",
+        "spooktasticdecor:skeleton_smooth_stone",
+        "spooktasticdecor:skeleton_smooth_stone_slab",
+        "spooktasticdecor:skeleton_smooth_stone_stairs",
+        "spooktasticdecor:skeleton_smooth_stone_button",
+        "spooktasticdecor:skeleton_smooth_stone_wall",
+        "spooktasticdecor:skeleton_smooth_stone_pressure_plate"
     ]
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "spooktasticdecor:block/skeleton_smooth_stone"
+  }
+}

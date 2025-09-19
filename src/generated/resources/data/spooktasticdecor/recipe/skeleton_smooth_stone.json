@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 20,
+  "experience": 0.5,
+  "ingredient": "spooktasticdecor:skeleton_stone",
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:skeleton_smooth_stone"
+  }
+}
