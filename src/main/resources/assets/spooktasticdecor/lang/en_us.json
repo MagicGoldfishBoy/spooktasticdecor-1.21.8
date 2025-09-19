@@ -111,7 +111,15 @@
   "block.spooktasticdecor.zombie_stone_bricks_wall": "Zombie Stone bricks Wall",
   "block.spooktasticdecor.zombie_stone_bricks_pressure_plate": "Zombie Stone bricks Pressure Plate",
 
-    "block.spooktasticdecor.zombie_chiseled_stone_bricks": "Zombie Chiseled Stone bricks",
+  "block.spooktasticdecor.zombie_chiseled_stone_bricks": "Zombie Chiseled Stone bricks",
+
+
+  "block.spooktasticdecor.skeleton_cobblestone": "Skeleton Cobblestone",
+  "block.spooktasticdecor.skeleton_cobblestone_slab": "Skeleton Cobblestone Slab",
+  "block.spooktasticdecor.skeleton_cobblestone_stairs": "Skeleton Cobblestone Stairs",
+  "block.spooktasticdecor.skeleton_cobblestone_button": "Skeleton Cobblestone Button",
+  "block.spooktasticdecor.skeleton_cobblestone_wall": "Skeleton Cobblestone Wall",
+  "block.spooktasticdecor.skeleton_cobblestone_pressure_plate": "Skeleton Cobblestone Pressure Plate",
 
   "block.spooktasticdecor.zombie_wood_planter": "Zombie Wood Planter",
   "block.spooktasticdecor.skeleton_wood_planter": "Skeleton Wood Planter",

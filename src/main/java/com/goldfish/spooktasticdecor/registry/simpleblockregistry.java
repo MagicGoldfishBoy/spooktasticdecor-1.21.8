@@ -146,6 +146,14 @@ public class simpleblockregistry {
     
     public static DeferredBlock<Block> ZOMBIE_CHISELED_STONE_BRICKS;
 
+
+    public static DeferredBlock<Block> SKELETON_COBBLESTONE;
+    public static DeferredBlock<SlabBlock> SKELETON_COBBLESTONE_SLAB;
+    public static DeferredBlock<StairBlock> SKELETON_COBBLESTONE_STAIRS;
+    public static DeferredBlock<ButtonBlock> SKELETON_COBBLESTONE_BUTTON;
+    public static DeferredBlock<WallBlock> SKELETON_COBBLESTONE_WALL;
+    public static DeferredBlock<PressurePlateBlock> SKELETON_COBBLESTONE_PRESSURE_PLATE;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
@@ -909,6 +917,7 @@ public class simpleblockregistry {
 
     public static void registerCobblestone() {
         registerZombieCobblestone();
+        registerSkeletonCobblestone();
     }
     public static void registerZombieCobblestone() {
         ZOMBIE_COBBLESTONE = SpooktasticDecor.BLOCKS.register(
@@ -963,6 +972,68 @@ public class simpleblockregistry {
         );
         ZOMBIE_COBBLESTONE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
             "zombie_cobblestone_pressure_plate",
+            registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+    }
+    public static void registerSkeletonCobblestone() {
+        SKELETON_COBBLESTONE = SpooktasticDecor.BLOCKS.register(
+            "skeleton_cobblestone",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        SKELETON_COBBLESTONE_SLAB = SpooktasticDecor.BLOCKS.register(
+            "skeleton_cobblestone_slab",
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        SKELETON_COBBLESTONE_STAIRS = SpooktasticDecor.BLOCKS.register(
+            "skeleton_cobblestone_stairs",
+            registryName -> new StairBlock(SKELETON_COBBLESTONE.get().defaultBlockState(), BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        SKELETON_COBBLESTONE_BUTTON = SpooktasticDecor.BLOCKS.register(
+            "skeleton_cobblestone_button",
+            registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        SKELETON_COBBLESTONE_WALL = SpooktasticDecor.BLOCKS.register(
+            "skeleton_cobblestone_wall",
+            registryName -> new WallBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        SKELETON_COBBLESTONE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+            "skeleton_cobblestone_pressure_plate",
             registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
             .setId(ResourceKey.create(Registries.BLOCK, registryName))
             .destroyTime(COBBLESTONE_DESTROY_TIME)

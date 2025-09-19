@@ -1,5 +1,7 @@
 {
     "values": [
-        "#spooktasticdecor:zombie_stones"
+        "#spooktasticdecor:zombie_stones",
+        "spooktasticdecor:zombie_stone_lamp",
+        "#spooktasticdecor:skeleton_stones"
     ]
 }

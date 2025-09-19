@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_skeleton_cobblestone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spooktasticdecor:skeleton_cobblestone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "spooktasticdecor:skeleton_cobblestone_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_skeleton_cobblestone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "spooktasticdecor:skeleton_cobblestone_wall"
+    ]
+  }
+}
