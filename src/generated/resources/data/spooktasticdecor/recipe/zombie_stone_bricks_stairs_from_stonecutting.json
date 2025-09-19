@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "spooktasticdecor:zombie_stone_bricks",
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:zombie_stone_bricks_stairs"
+  }
+}

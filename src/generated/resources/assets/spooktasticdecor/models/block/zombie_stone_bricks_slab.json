@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "spooktasticdecor:block/zombie_stone_bricks",
+    "side": "spooktasticdecor:block/zombie_stone_bricks",
+    "top": "spooktasticdecor:block/zombie_stone_bricks"
+  }
+}

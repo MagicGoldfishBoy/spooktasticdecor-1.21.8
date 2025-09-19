@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "spooktasticdecor:zombie_stone_bricks"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:zombie_stone_bricks_button"
+  }
+}

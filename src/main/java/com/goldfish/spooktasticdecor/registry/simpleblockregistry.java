@@ -135,6 +135,13 @@ public class simpleblockregistry {
     public static DeferredBlock<WallBlock> ZOMBIE_SMOOTH_STONE_WALL;
     public static DeferredBlock<PressurePlateBlock> ZOMBIE_SMOOTH_STONE_PRESSURE_PLATE;
 
+    public static DeferredBlock<Block> ZOMBIE_STONE_BRICKS;
+    public static DeferredBlock<SlabBlock> ZOMBIE_STONE_BRICKS_SLAB;
+    public static DeferredBlock<StairBlock> ZOMBIE_STONE_BRICKS_STAIRS;
+    public static DeferredBlock<ButtonBlock> ZOMBIE_STONE_BRICKS_BUTTON;
+    public static DeferredBlock<WallBlock> ZOMBIE_STONE_BRICKS_WALL;
+    public static DeferredBlock<PressurePlateBlock> ZOMBIE_STONE_BRICKS_PRESSURE_PLATE;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
@@ -1072,6 +1079,67 @@ public class simpleblockregistry {
         );
         ZOMBIE_SMOOTH_STONE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
             "zombie_smooth_stone_pressure_plate",
+            registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+
+        ZOMBIE_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
+            "zombie_stone_bricks",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ZOMBIE_STONE_BRICKS_SLAB = SpooktasticDecor.BLOCKS.register(
+            "zombie_stone_bricks_slab",
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ZOMBIE_STONE_BRICKS_STAIRS = SpooktasticDecor.BLOCKS.register(
+            "zombie_stone_bricks_stairs",
+            registryName -> new StairBlock(ZOMBIE_STONE_BRICKS.get().defaultBlockState(),BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ZOMBIE_STONE_BRICKS_BUTTON = SpooktasticDecor.BLOCKS.register(
+            "zombie_stone_bricks_button",
+            registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ZOMBIE_STONE_BRICKS_WALL = SpooktasticDecor.BLOCKS.register(
+            "zombie_stone_bricks_wall",
+            registryName -> new WallBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ZOMBIE_STONE_BRICKS_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+            "zombie_stone_bricks_pressure_plate",
             registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
             .setId(ResourceKey.create(Registries.BLOCK, registryName))
             .destroyTime(STONE_DESTROY_TIME)
