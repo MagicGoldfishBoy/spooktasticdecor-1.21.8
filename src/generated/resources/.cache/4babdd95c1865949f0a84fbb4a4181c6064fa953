@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-18T11:42:28.674466265	SpooktasticDecor Recipes
+// 1.21.8	2025-09-19T09:32:34.128049843	SpooktasticDecor Recipes
 5fc58e65fd2504f545d640524598a8ee37735f54 data/spooktasticdecor/advancement/recipes/building_blocks/ender_log_stripped_from_stonecutting.json
 c3d571296a24749be5a45da86192a51cd841bce2 data/spooktasticdecor/advancement/recipes/building_blocks/ender_wood_planks.json
 2dce3930fac0353b6fe530109829b87bdf75f9f8 data/spooktasticdecor/advancement/recipes/building_blocks/ender_wood_planks_button.json
@@ -221,7 +221,7 @@ f03354a5b8e22942e6423fe6790f515c90fa9b49 data/spooktasticdecor/recipe/zombie_cob
 86054f12d822464654241b9c88cce9e87ecc6afa data/spooktasticdecor/recipe/zombie_lamp.json
 01824125e98bec63e4c16f1fb7598c13623ff28f data/spooktasticdecor/recipe/zombie_log.json
 234fdf6f02594c92ec2193304bd5517b60d4409c data/spooktasticdecor/recipe/zombie_log_stripped_from_stonecutting.json
-8937e5dc12790eb315ae632b7a60e1fa283aaf0e data/spooktasticdecor/recipe/zombie_stone.json
+8157c1b23dac15851911d7b1141127c9ac551c83 data/spooktasticdecor/recipe/zombie_stone.json
 df825acf6e4d20a3566591f4f5222cef8a5fd48a data/spooktasticdecor/recipe/zombie_stone_button.json
 36618c3234be23f6df43814feebbd6e1d0350b10 data/spooktasticdecor/recipe/zombie_stone_pressure_plate.json
 082fc40479ac6e83ad38c2a1900bc46a35929def data/spooktasticdecor/recipe/zombie_stone_slab.json

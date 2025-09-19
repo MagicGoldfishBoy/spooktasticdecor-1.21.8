@@ -818,9 +818,6 @@ public class RecipeGenerator extends RecipeProvider {
         }
 
         protected void registerCobblestoneRecipes() {
-                registerZombieCobblestoneRecipes();
-        }
-        protected void registerZombieCobblestoneRecipes() {
                 ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get(), 8)
                         .pattern("AAA")
                         .pattern("ABA")
@@ -829,47 +826,22 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('B', Items.ROTTEN_FLESH)
                         .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH))
                         .save(this.output);
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_SLAB_ITEM.get(), 6)
-                        .pattern("AAA")
-                        .define('A', SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get())
-                        .unlockedBy("has_zombie_cobblestone", has(SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get()))
-                        .save(this.output);
-                SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.ZOMBIE_COBBLESTONE.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.ZOMBIE_COBBLESTONE_SLAB.get(), 2)
-                        .unlockedBy("has_zombie_cobblestone", has(simpleblockregistry.ZOMBIE_COBBLESTONE.get()))
-                        .save(this.output, SpooktasticDecor.MODID + ":zombie_cobblestone_slab_from_stonecutting");
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_STAIRS_ITEM.get(), 4)
-                        .pattern("A  ")
-                        .pattern("AA ")
-                        .pattern("AAA")
-                        .define('A', SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get())
-                        .unlockedBy("has_zombie_cobblestone", has(simpleblockregistry.ZOMBIE_COBBLESTONE.get()))
-                        .save(this.output);
-                SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.ZOMBIE_COBBLESTONE.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.ZOMBIE_COBBLESTONE_STAIRS.get())
-                        .unlockedBy("has_zombie_cobblestone", has(simpleblockregistry.ZOMBIE_COBBLESTONE.get()))
-                        .save(this.output, SpooktasticDecor.MODID + ":zombie_cobblestone_stairs_from_stonecutting");
-                ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.REDSTONE, SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_BUTTON_ITEM.get())
-                        .requires(SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get())
-                        .unlockedBy("has_zombie_cobblestone", has(SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get()))
-                        .save(this.output);
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_WALL_ITEM.get(), 6)
-                        .pattern("   ")
-                        .pattern("AAA")
-                        .pattern("AAA")
-                        .define('A', SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get())
-                        .unlockedBy("has_zombie_cobblestone", has(simpleblockregistry.ZOMBIE_COBBLESTONE.get()))
-                        .save(this.output);
-                SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.ZOMBIE_COBBLESTONE.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.ZOMBIE_COBBLESTONE_WALL.get())
-                        .unlockedBy("has_zombie_cobblestone", has(simpleblockregistry.ZOMBIE_COBBLESTONE.get()))
-                        .save(this.output, SpooktasticDecor.MODID + ":zombie_cobblestone_wall_from_stonecutting");
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.REDSTONE, SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_PRESSURE_PLATE_ITEM.get())
-                        .pattern("AA")
-                        .define('A', SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get())
-                        .unlockedBy("has_zombie_cobblestone", has(simpleblockregistry.ZOMBIE_COBBLESTONE.get()))
-                        .save(this.output);
+                RecipeFamilyHelper helper = new RecipeFamilyHelper(this.output, this.registries);
+                        helper.registerFamily(
+                        simpleblockregistry.ZOMBIE_COBBLESTONE.get(),
+                        SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get(),
+                        simpleblockregistry.ZOMBIE_COBBLESTONE_SLAB.get(),
+                        simpleblockregistry.ZOMBIE_COBBLESTONE_STAIRS.get(),
+                        simpleblockregistry.ZOMBIE_COBBLESTONE_WALL.get(),
+                        SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_BUTTON_ITEM.get(),
+                        SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_PRESSURE_PLATE_ITEM.get(),
+                        null,
+                        0.0f,
+                        0
+                        );
         }
 
         protected void registerStoneRecipes() {
-                //registerZombieStoneRecipes();
                 RecipeFamilyHelper helper = new RecipeFamilyHelper(this.output, this.registries);
                         helper.registerFamily(
                         simpleblockregistry.ZOMBIE_STONE.get(),
@@ -881,81 +853,8 @@ public class RecipeGenerator extends RecipeProvider {
                         SimpleBlockItemRegistry.ZOMBIE_STONE_PRESSURE_PLATE_ITEM.get(),
                         SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get(), // optional smelt input
                         0.5f, // smelting XP
-                        10    // smelting time
+                        20    // smelting time
                         );
-
-        }
-        protected void registerZombieStoneRecipes() {
-                SimpleCookingRecipeBuilder.smelting(
-                        Ingredient.of(SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get()),
-                        RecipeCategory.BUILDING_BLOCKS,
-                        SimpleBlockItemRegistry.ZOMBIE_STONE_ITEM.get(),
-                        0.5f, 10
-                )
-                .unlockedBy("has_zombie_cobblestone", has(SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get()))
-                .save(this.output);
-
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS,
-                        SimpleBlockItemRegistry.ZOMBIE_STONE_SLAB_ITEM.get(), 6)
-                        .pattern("AAA")
-                        .define('A', SimpleBlockItemRegistry.ZOMBIE_STONE_ITEM.get())
-                        .unlockedBy("has_zombie_stone", has(SimpleBlockItemRegistry.ZOMBIE_STONE_ITEM.get()))
-                        .save(this.output);
-
-                SingleItemRecipeBuilder.stonecutting(
-                        Ingredient.of(simpleblockregistry.ZOMBIE_STONE.get()),
-                        RecipeCategory.BUILDING_BLOCKS,
-                        simpleblockregistry.ZOMBIE_STONE_SLAB.get(), 2
-                )
-                .unlockedBy("has_zombie_stone", has(SimpleBlockItemRegistry.ZOMBIE_STONE_ITEM.get()))
-                .save(this.output, SpooktasticDecor.MODID + ":zombie_stone_slab_from_stonecutting");
-
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS,
-                        SimpleBlockItemRegistry.ZOMBIE_STONE_STAIRS_ITEM.get(), 4)
-                        .pattern("A  ")
-                        .pattern("AA ")
-                        .pattern("AAA")
-                        .define('A', SimpleBlockItemRegistry.ZOMBIE_STONE_ITEM.get())
-                        .unlockedBy("has_zombie_stone", has(SimpleBlockItemRegistry.ZOMBIE_STONE_ITEM.get()))
-                        .save(this.output);
-
-                SingleItemRecipeBuilder.stonecutting(
-                        Ingredient.of(simpleblockregistry.ZOMBIE_STONE.get()),
-                        RecipeCategory.BUILDING_BLOCKS,
-                        simpleblockregistry.ZOMBIE_STONE_STAIRS.get()
-                )
-                .unlockedBy("has_zombie_stone", has(SimpleBlockItemRegistry.ZOMBIE_STONE_ITEM.get()))
-                .save(this.output, SpooktasticDecor.MODID + ":zombie_stone_stairs_from_stonecutting");
-
-                ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.REDSTONE,
-                        SimpleBlockItemRegistry.ZOMBIE_STONE_BUTTON_ITEM.get())
-                        .requires(SimpleBlockItemRegistry.ZOMBIE_STONE_ITEM.get())
-                        .unlockedBy("has_zombie_stone", has(SimpleBlockItemRegistry.ZOMBIE_STONE_ITEM.get()))
-                        .save(this.output);
-
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS,
-                        SimpleBlockItemRegistry.ZOMBIE_STONE_WALL_ITEM.get(), 6)
-                        .pattern("   ")
-                        .pattern("AAA")
-                        .pattern("AAA")
-                        .define('A', SimpleBlockItemRegistry.ZOMBIE_STONE_ITEM.get())
-                        .unlockedBy("has_zombie_stone", has(SimpleBlockItemRegistry.ZOMBIE_STONE_ITEM.get()))
-                        .save(this.output);
-
-                SingleItemRecipeBuilder.stonecutting(
-                        Ingredient.of(simpleblockregistry.ZOMBIE_STONE.get()),
-                        RecipeCategory.BUILDING_BLOCKS,
-                        simpleblockregistry.ZOMBIE_STONE_WALL.get()
-                )
-                .unlockedBy("has_zombie_stone", has(SimpleBlockItemRegistry.ZOMBIE_STONE_ITEM.get()))
-                .save(this.output, SpooktasticDecor.MODID + ":zombie_stone_wall_from_stonecutting");
-
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.REDSTONE,
-                        SimpleBlockItemRegistry.ZOMBIE_STONE_PRESSURE_PLATE_ITEM.get())
-                        .pattern("AA")
-                        .define('A', SimpleBlockItemRegistry.ZOMBIE_STONE_ITEM.get())
-                        .unlockedBy("has_zombie_stone", has(SimpleBlockItemRegistry.ZOMBIE_STONE_ITEM.get()))
-                        .save(this.output);
         }
 
 
