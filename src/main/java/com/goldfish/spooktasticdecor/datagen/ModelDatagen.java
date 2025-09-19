@@ -231,6 +231,15 @@ public class ModelDatagen extends ModelProvider {
                     .wall(simpleblockregistry.SKELETON_SMOOTH_STONE_WALL.get())
                     .pressurePlate(simpleblockregistry.SKELETON_SMOOTH_STONE_PRESSURE_PLATE.get());
 
+        blockModels.createTrivialCube(simpleblockregistry.SKELETON_STONE_BRICKS.get());
+
+        blockModels.familyWithExistingFullBlock(simpleblockregistry.SKELETON_STONE_BRICKS.get())
+                    .slab(simpleblockregistry.SKELETON_STONE_BRICKS_SLAB.get())
+                    .stairs(simpleblockregistry.SKELETON_STONE_BRICKS_STAIRS.get())
+                    .button(simpleblockregistry.SKELETON_STONE_BRICKS_BUTTON.get())
+                    .wall(simpleblockregistry.SKELETON_STONE_BRICKS_WALL.get())
+                    .pressurePlate(simpleblockregistry.SKELETON_STONE_BRICKS_PRESSURE_PLATE.get());
+
     }
 
     ResourceLocation woodtable;

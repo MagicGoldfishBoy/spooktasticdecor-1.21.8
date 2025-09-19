@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/pressure_plate_up",
+  "textures": {
+    "texture": "spooktasticdecor:block/skeleton_stone_bricks"
+  }
+}
