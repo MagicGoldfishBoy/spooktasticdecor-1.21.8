@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "spooktasticdecor:skeleton_stone_bricks",
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:skeleton_chiseled_stone_bricks"
+  }
+}
