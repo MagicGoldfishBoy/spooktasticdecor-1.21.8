@@ -190,7 +190,7 @@ public class ModelDatagen extends ModelProvider {
                     .wall(simpleblockregistry.ZOMBIE_SMOOTH_STONE_WALL.get())
                     .pressurePlate(simpleblockregistry.ZOMBIE_SMOOTH_STONE_PRESSURE_PLATE.get());
 
-                    
+
         blockModels.createTrivialCube(simpleblockregistry.ZOMBIE_STONE_BRICKS.get());
 
         blockModels.familyWithExistingFullBlock(simpleblockregistry.ZOMBIE_STONE_BRICKS.get())
@@ -199,6 +199,8 @@ public class ModelDatagen extends ModelProvider {
                     .button(simpleblockregistry.ZOMBIE_STONE_BRICKS_BUTTON.get())
                     .wall(simpleblockregistry.ZOMBIE_STONE_BRICKS_WALL.get())
                     .pressurePlate(simpleblockregistry.ZOMBIE_STONE_BRICKS_PRESSURE_PLATE.get());
+
+        blockModels.createTrivialCube(simpleblockregistry.ZOMBIE_CHISELED_STONE_BRICKS.get());
 
     }
 

@@ -892,6 +892,17 @@ public class RecipeGenerator extends RecipeProvider {
                         0.0f,
                         0   
                         );
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ZOMBIE_CHISELED_STONE_BRICKS_ITEM.get())
+                        .pattern("A")
+                        .pattern("A")
+                        .define('A', SimpleBlockItemRegistry.ZOMBIE_STONE_BRICKS_SLAB_ITEM.get())
+                        .unlockedBy("has_zombie_stone_bricks_slab", has(SimpleBlockItemRegistry.ZOMBIE_STONE_BRICKS_SLAB_ITEM.get()))
+                        .save(this.output);
+
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.ZOMBIE_STONE_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.ZOMBIE_CHISELED_STONE_BRICKS.get(), 1)
+                        .unlockedBy("has_zombie_stone_bricks", has(simpleblockregistry.ZOMBIE_STONE_BRICKS.get()))
+                        .save(this.output, SpooktasticDecor.MODID + ":zombie_chiseled_stone_bricks_from_stonecutting");
         }
 
 

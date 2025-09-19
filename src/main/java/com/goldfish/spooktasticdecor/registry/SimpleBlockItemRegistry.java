@@ -119,6 +119,8 @@ public class SimpleBlockItemRegistry {
     public static DeferredItem<BlockItem> ZOMBIE_STONE_BRICKS_WALL_ITEM;
     public static DeferredItem<BlockItem> ZOMBIE_STONE_BRICKS_PRESSURE_PLATE_ITEM;
 
+    public static DeferredItem<BlockItem> ZOMBIE_CHISELED_STONE_BRICKS_ITEM;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
@@ -552,6 +554,11 @@ public class SimpleBlockItemRegistry {
         );
         ZOMBIE_STONE_BRICKS_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             simpleblockregistry.ZOMBIE_STONE_BRICKS_PRESSURE_PLATE,
+            new Item.Properties()
+        );
+
+        ZOMBIE_CHISELED_STONE_BRICKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ZOMBIE_CHISELED_STONE_BRICKS,
             new Item.Properties()
         );
     }

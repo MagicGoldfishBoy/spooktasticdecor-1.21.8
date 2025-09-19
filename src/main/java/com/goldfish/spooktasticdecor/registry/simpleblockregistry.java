@@ -141,6 +141,8 @@ public class simpleblockregistry {
     public static DeferredBlock<ButtonBlock> ZOMBIE_STONE_BRICKS_BUTTON;
     public static DeferredBlock<WallBlock> ZOMBIE_STONE_BRICKS_WALL;
     public static DeferredBlock<PressurePlateBlock> ZOMBIE_STONE_BRICKS_PRESSURE_PLATE;
+    
+    public static DeferredBlock<Block> ZOMBIE_CHISELED_STONE_BRICKS;
 
     public static void registerAll() {
         register_lamps();
@@ -1141,6 +1143,16 @@ public class simpleblockregistry {
         ZOMBIE_STONE_BRICKS_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
             "zombie_stone_bricks_pressure_plate",
             registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ZOMBIE_CHISELED_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
+            "zombie_chiseled_stone_bricks",
+            registryName -> new Block(BlockBehaviour.Properties.of()
             .setId(ResourceKey.create(Registries.BLOCK, registryName))
             .destroyTime(STONE_DESTROY_TIME)
             .explosionResistance(STONE_EXPLOSION_RESISTANCE)
