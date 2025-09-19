@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-19T11:07:09.95054772	Loot Tables
+// 1.21.8	2025-09-19T11:20:41.559642015	Loot Tables
 e30628148fa475a47ca934a2667f679515556c52 data/spooktasticdecor/loot_table/blocks/creaking_lamp.json
 6a1b6369bd5870e6e80284ba3891e68c0ccf0fcb data/spooktasticdecor/loot_table/blocks/creaking_stripped_wood_table.json
 a413636a36f082f62e3b58be9c94cc8a8dff08f3 data/spooktasticdecor/loot_table/blocks/creaking_wood_planks_table.json
@@ -111,6 +111,7 @@ b7957d576bd51d033dbe92334fba09b7a5a45193 data/spooktasticdecor/loot_table/blocks
 19417e8fddee2ac85960f975a97b321e06fb9b48 data/spooktasticdecor/loot_table/blocks/zombie_stone_bricks_stairs.json
 ca1b2646cc229e055b000908acea1874d5d287c1 data/spooktasticdecor/loot_table/blocks/zombie_stone_bricks_wall.json
 8787d9565645599d43bee3baad84f625b91506e9 data/spooktasticdecor/loot_table/blocks/zombie_stone_button.json
+f3cdea29b7fcc05f78842baa93ee11e0f79d8eb6 data/spooktasticdecor/loot_table/blocks/zombie_stone_lamp.json
 0fe394a6d05e0cebbfa9b974d500183620b268ca data/spooktasticdecor/loot_table/blocks/zombie_stone_pressure_plate.json
 6ceaec74726d9b313d7663ce5ac6ddbff0359c80 data/spooktasticdecor/loot_table/blocks/zombie_stone_slab.json
 6205fb280bf1695d1333c675f098c080d65d8dc9 data/spooktasticdecor/loot_table/blocks/zombie_stone_stairs.json

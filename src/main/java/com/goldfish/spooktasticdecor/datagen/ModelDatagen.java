@@ -37,6 +37,7 @@ public class ModelDatagen extends ModelProvider {
     protected void registerBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
         blockModels.createTrivialCube(simpleblockregistry.ZOMBIE_LAMP.get()); 
+        blockModels.createTrivialCube(simpleblockregistry.ZOMBIE_STONE_LAMP.get()); 
 
         blockModels.createTrivialCube(simpleblockregistry.SKELETON_LAMP.get());
 

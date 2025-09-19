@@ -84,6 +84,13 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('B', Blocks.GLOWSTONE)
                         .unlockedBy("has_rotten_flesh", has(Items.ROTTEN_FLESH))
                         .save(this.output);
+                ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ZOMBIE_STONE_LAMP_ITEM.get())
+                        .requires(SimpleBlockItemRegistry.ZOMBIE_CHISELED_STONE_BRICKS_ITEM.get())
+                        .requires(Items.GLOWSTONE_DUST)
+                        .unlockedBy("has_zombie_chiseled_stone", has(SimpleBlockItemRegistry.ZOMBIE_CHISELED_STONE_BRICKS_ITEM.get()))
+                        .unlockedBy("has_glowstone_dust", has(Items.GLOWSTONE_DUST))
+                        .save(this.output);
+
                 ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.SKELETON_LAMP_ITEM.get(), 2)
                         .pattern(" A ")
                         .pattern("ABA")
