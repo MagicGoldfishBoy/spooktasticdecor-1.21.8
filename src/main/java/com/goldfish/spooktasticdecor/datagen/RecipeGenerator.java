@@ -869,7 +869,21 @@ public class RecipeGenerator extends RecipeProvider {
         }
 
         protected void registerStoneRecipes() {
-                registerZombieStoneRecipes();
+                //registerZombieStoneRecipes();
+                RecipeFamilyHelper helper = new RecipeFamilyHelper(this.output, this.registries);
+                        helper.registerFamily(
+                        simpleblockregistry.ZOMBIE_STONE.get(),
+                        SimpleBlockItemRegistry.ZOMBIE_STONE_ITEM.get(),
+                        simpleblockregistry.ZOMBIE_STONE_SLAB.get(),
+                        simpleblockregistry.ZOMBIE_STONE_STAIRS.get(),
+                        simpleblockregistry.ZOMBIE_STONE_WALL.get(),
+                        SimpleBlockItemRegistry.ZOMBIE_STONE_BUTTON_ITEM.get(),
+                        SimpleBlockItemRegistry.ZOMBIE_STONE_PRESSURE_PLATE_ITEM.get(),
+                        SimpleBlockItemRegistry.ZOMBIE_COBBLESTONE_ITEM.get(), // optional smelt input
+                        0.5f, // smelting XP
+                        10    // smelting time
+                        );
+
         }
         protected void registerZombieStoneRecipes() {
                 SimpleCookingRecipeBuilder.smelting(
