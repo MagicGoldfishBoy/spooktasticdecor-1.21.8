@@ -131,6 +131,13 @@ public class SimpleBlockItemRegistry {
     public static DeferredItem<BlockItem> SKELETON_COBBLESTONE_WALL_ITEM;
     public static DeferredItem<BlockItem> SKELETON_COBBLESTONE_PRESSURE_PLATE_ITEM;
 
+    public static DeferredItem<BlockItem> SKELETON_STONE_ITEM;
+    public static DeferredItem<BlockItem> SKELETON_STONE_SLAB_ITEM;
+    public static DeferredItem<BlockItem> SKELETON_STONE_STAIRS_ITEM;
+    public static DeferredItem<BlockItem> SKELETON_STONE_BUTTON_ITEM;
+    public static DeferredItem<BlockItem> SKELETON_STONE_WALL_ITEM;
+    public static DeferredItem<BlockItem> SKELETON_STONE_PRESSURE_PLATE_ITEM;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
@@ -522,6 +529,7 @@ public class SimpleBlockItemRegistry {
 
     public static void registerStone() {
         registerZombieStone();
+        registerSkeletonStone();
     }
     public static void registerZombieStone() {
         ZOMBIE_STONE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
@@ -603,6 +611,87 @@ public class SimpleBlockItemRegistry {
             simpleblockregistry.ZOMBIE_CHISELED_STONE_BRICKS,
             new Item.Properties()
         );
+    }
+    public static void registerSkeletonStone() {
+        SKELETON_STONE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SKELETON_STONE,
+            new Item.Properties()
+        );
+        SKELETON_STONE_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SKELETON_STONE_SLAB,
+            new Item.Properties()
+        );
+        SKELETON_STONE_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SKELETON_STONE_STAIRS,
+            new Item.Properties()
+        );
+        SKELETON_STONE_BUTTON_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SKELETON_STONE_BUTTON,
+            new Item.Properties()
+        );
+        SKELETON_STONE_WALL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SKELETON_STONE_WALL,
+            new Item.Properties()
+        );
+        SKELETON_STONE_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SKELETON_STONE_PRESSURE_PLATE,
+            new Item.Properties()
+        );
+
+        // SKELETON_SMOOTH_STONE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.SKELETON_SMOOTH_STONE,
+        //     new Item.Properties()
+        // );
+        // SKELETON_SMOOTH_STONE_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.SKELETON_SMOOTH_STONE_SLAB,
+        //     new Item.Properties()
+        // );
+        // SKELETON_SMOOTH_STONE_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.SKELETON_SMOOTH_STONE_STAIRS,
+        //     new Item.Properties()
+        // );
+        // SKELETON_SMOOTH_STONE_BUTTON_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.SKELETON_SMOOTH_STONE_BUTTON,
+        //     new Item.Properties()
+        // );
+        // SKELETON_SMOOTH_STONE_WALL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.SKELETON_SMOOTH_STONE_WALL,
+        //     new Item.Properties()
+        // );
+        // SKELETON_SMOOTH_STONE_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.SKELETON_SMOOTH_STONE_PRESSURE_PLATE,
+        //     new Item.Properties()
+        // );
+
+        // SKELETON_STONE_BRICKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.SKELETON_STONE_BRICKS,
+        //     new Item.Properties()
+        // );
+        // SKELETON_STONE_BRICKS_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.SKELETON_STONE_BRICKS_SLAB,
+        //     new Item.Properties()
+        // );
+        // SKELETON_STONE_BRICKS_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.SKELETON_STONE_BRICKS_STAIRS,
+        //     new Item.Properties()
+        // );
+        // SKELETON_STONE_BRICKS_BUTTON_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.SKELETON_STONE_BRICKS_BUTTON,
+        //     new Item.Properties()
+        // );
+        // SKELETON_STONE_BRICKS_WALL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.SKELETON_STONE_BRICKS_WALL,
+        //     new Item.Properties()
+        // );
+        // SKELETON_STONE_BRICKS_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.SKELETON_STONE_BRICKS_PRESSURE_PLATE,
+        //     new Item.Properties()
+        // );
+
+        // SKELETON_CHISELED_STONE_BRICKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.SKELETON_CHISELED_STONE_BRICKS,
+        //     new Item.Properties()
+        // );
     }
 
 }
