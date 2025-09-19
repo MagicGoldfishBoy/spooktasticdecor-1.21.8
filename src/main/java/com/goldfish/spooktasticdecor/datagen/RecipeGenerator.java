@@ -855,6 +855,19 @@ public class RecipeGenerator extends RecipeProvider {
                         0.5f, // smelting XP
                         20    // smelting time
                         );
+                //RecipeFamilyHelper smooth_helper = new RecipeFamilyHelper(this.output, this.registries);
+                        helper.registerFamily(
+                        simpleblockregistry.ZOMBIE_SMOOTH_STONE.get(),
+                        SimpleBlockItemRegistry.ZOMBIE_SMOOTH_STONE_ITEM.get(),
+                        simpleblockregistry.ZOMBIE_SMOOTH_STONE_SLAB.get(),
+                        simpleblockregistry.ZOMBIE_SMOOTH_STONE_STAIRS.get(),
+                        simpleblockregistry.ZOMBIE_SMOOTH_STONE_WALL.get(),
+                        SimpleBlockItemRegistry.ZOMBIE_SMOOTH_STONE_BUTTON_ITEM.get(),
+                        SimpleBlockItemRegistry.ZOMBIE_SMOOTH_STONE_PRESSURE_PLATE_ITEM.get(),
+                        SimpleBlockItemRegistry.ZOMBIE_STONE_ITEM.get(), // optional smelt input
+                        0.5f, // smelting XP
+                        20    // smelting time
+                        );
         }
 
 

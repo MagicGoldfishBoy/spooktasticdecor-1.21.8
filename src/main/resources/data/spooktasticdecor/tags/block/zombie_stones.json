@@ -11,6 +11,12 @@
         "spooktasticdecor:zombie_stone_stairs",
         "spooktasticdecor:zombie_stone_button",
         "spooktasticdecor:zombie_stone_wall",
-        "spooktasticdecor:zombie_stone_pressure_plate"
+        "spooktasticdecor:zombie_stone_pressure_plate",
+        "spooktasticdecor:zombie_smooth_stone",
+        "spooktasticdecor:zombie_smooth_stone_slab",
+        "spooktasticdecor:zombie_smooth_stone_stairs",
+        "spooktasticdecor:zombie_smooth_stone_button",
+        "spooktasticdecor:zombie_smooth_stone_wall",
+        "spooktasticdecor:zombie_smooth_stone_pressure_plate"
     ]
 }

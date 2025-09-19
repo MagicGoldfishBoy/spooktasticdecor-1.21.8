@@ -180,6 +180,16 @@ public class ModelDatagen extends ModelProvider {
                     .wall(simpleblockregistry.ZOMBIE_STONE_WALL.get())
                     .pressurePlate(simpleblockregistry.ZOMBIE_STONE_PRESSURE_PLATE.get());
 
+                    
+        blockModels.createTrivialCube(simpleblockregistry.ZOMBIE_SMOOTH_STONE.get());
+
+        blockModels.familyWithExistingFullBlock(simpleblockregistry.ZOMBIE_SMOOTH_STONE.get())
+                    .slab(simpleblockregistry.ZOMBIE_SMOOTH_STONE_SLAB.get())
+                    .stairs(simpleblockregistry.ZOMBIE_SMOOTH_STONE_STAIRS.get())
+                    .button(simpleblockregistry.ZOMBIE_SMOOTH_STONE_BUTTON.get())
+                    .wall(simpleblockregistry.ZOMBIE_SMOOTH_STONE_WALL.get())
+                    .pressurePlate(simpleblockregistry.ZOMBIE_SMOOTH_STONE_PRESSURE_PLATE.get());
+
     }
 
     ResourceLocation woodtable;
