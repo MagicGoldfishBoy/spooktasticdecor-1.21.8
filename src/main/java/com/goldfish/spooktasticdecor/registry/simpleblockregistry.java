@@ -41,6 +41,8 @@ public class simpleblockregistry {
     public static DeferredBlock<Block> WITHER_SKELETON_STONE_LAMP;
 
     public static DeferredBlock<Block> GHAST_LAMP;
+    public static DeferredBlock<Block> GHAST_STONE_LAMP;
+
     public static DeferredBlock<Block> CREAKING_LAMP;
     public static DeferredBlock<Block> EYEBALL_LAMP;
     public static DeferredBlock<Block> SPIDER_LAMP;
@@ -319,6 +321,16 @@ public class simpleblockregistry {
                 .explosionResistance(15.0f)
                 .sound(SoundType.NETHERRACK)
                 .lightLevel(state -> 10)
+            )
+        );
+        GHAST_STONE_LAMP = SpooktasticDecor.BLOCKS.register(
+            "ghast_stone_lamp",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(3.0f)
+                .explosionResistance(15.0f)
+                .sound(SoundType.NETHERRACK)
+                .lightLevel(state -> 12)
             )
         );
         CREAKING_LAMP = SpooktasticDecor.BLOCKS.register(

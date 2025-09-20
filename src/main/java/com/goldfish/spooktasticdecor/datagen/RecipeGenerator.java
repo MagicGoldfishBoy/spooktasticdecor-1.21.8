@@ -121,7 +121,7 @@ public class RecipeGenerator extends RecipeProvider {
                         .unlockedBy("has_glowstone_dust", has(Items.GLOWSTONE_DUST))
                         .save(this.output);
 
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.GHAST_LAMP_ITEM.get(), 2)
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.GHAST_LAMP_ITEM.get(), 4)
                         .pattern(" A ")
                         .pattern("ABA")
                         .pattern(" A ")
@@ -129,6 +129,13 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('B', Blocks.GLOWSTONE)
                         .unlockedBy("has_ghast_tear", has(Items.GHAST_TEAR))
                         .save(this.output);
+                ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.GHAST_STONE_LAMP_ITEM.get())
+                        .requires(SimpleBlockItemRegistry.GHAST_CHISELED_STONE_BRICKS_ITEM.get())
+                        .requires(Items.GLOWSTONE_DUST)
+                        .unlockedBy("has_ghast_chiseled_stone", has(SimpleBlockItemRegistry.GHAST_CHISELED_STONE_BRICKS_ITEM.get()))
+                        .unlockedBy("has_glowstone_dust", has(Items.GLOWSTONE_DUST))
+                        .save(this.output);
+
                 ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.CREAKING_LAMP_ITEM.get(), 2)
                         .pattern(" C ")
                         .pattern("ABA")
