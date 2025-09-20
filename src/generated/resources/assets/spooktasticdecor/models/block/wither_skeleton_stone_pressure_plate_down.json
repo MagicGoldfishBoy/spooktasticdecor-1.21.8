@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/pressure_plate_down",
+  "textures": {
+    "texture": "spooktasticdecor:block/wither_skeleton_stone"
+  }
+}

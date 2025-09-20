@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "spooktasticdecor:block/wither_skeleton_stone"
+  }
+}
