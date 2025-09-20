@@ -15,6 +15,8 @@ public class SimpleBlockItemRegistry {
     public static DeferredItem<BlockItem> SKELETON_STONE_LAMP_ITEM;
 
     public static DeferredItem<BlockItem> WITHER_SKELETON_LAMP_ITEM;
+    public static DeferredItem<BlockItem> WITHER_SKELETON_STONE_LAMP_ITEM;
+
     public static DeferredItem<BlockItem> GHAST_LAMP_ITEM;
     public static DeferredItem<BlockItem> CREAKING_LAMP_ITEM;
     public static DeferredItem<BlockItem> EYEBALL_LAMP_ITEM;
@@ -213,10 +215,16 @@ public class SimpleBlockItemRegistry {
         simpleblockregistry.SKELETON_STONE_LAMP,
         new Item.Properties());
 
+
         WITHER_SKELETON_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
         simpleblockregistry.WITHER_SKELETON_LAMP,
         new Item.Properties());
 
+        WITHER_SKELETON_STONE_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        simpleblockregistry.WITHER_SKELETON_STONE_LAMP,
+        new Item.Properties());
+
+        
         GHAST_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
         simpleblockregistry.GHAST_LAMP,
         new Item.Properties());

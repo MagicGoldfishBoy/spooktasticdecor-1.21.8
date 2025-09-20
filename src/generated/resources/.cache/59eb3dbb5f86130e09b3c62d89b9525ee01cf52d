@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-20T10:33:27.956461515	Loot Tables
+// 1.21.8	2025-09-20T10:44:09.131505135	Loot Tables
 e30628148fa475a47ca934a2667f679515556c52 data/spooktasticdecor/loot_table/blocks/creaking_lamp.json
 6a1b6369bd5870e6e80284ba3891e68c0ccf0fcb data/spooktasticdecor/loot_table/blocks/creaking_stripped_wood_table.json
 a413636a36f082f62e3b58be9c94cc8a8dff08f3 data/spooktasticdecor/loot_table/blocks/creaking_wood_planks_table.json
@@ -121,6 +121,7 @@ f6f05e1933bdaf34cc0653feb90c8a7a47dfda63 data/spooktasticdecor/loot_table/blocks
 57e40c41dd2b83250aa34bb0d2f465b61593d8fe data/spooktasticdecor/loot_table/blocks/wither_skeleton_stone_bricks_stairs.json
 4ac10c71782bc626dd0782b606a7951c735ae4cd data/spooktasticdecor/loot_table/blocks/wither_skeleton_stone_bricks_wall.json
 346a7dddf1564561d53ec7eaf1d3d5a6bdebe7b4 data/spooktasticdecor/loot_table/blocks/wither_skeleton_stone_button.json
+a488e478f36d3c5f14c2aa56989300ba8620ce21 data/spooktasticdecor/loot_table/blocks/wither_skeleton_stone_lamp.json
 f4ab3d290bdb8b3a82d81b5042ff846e08f6da03 data/spooktasticdecor/loot_table/blocks/wither_skeleton_stone_pressure_plate.json
 db565f9970cb6b17aa066123fe92e9a69e52da5d data/spooktasticdecor/loot_table/blocks/wither_skeleton_stone_slab.json
 00b9f8b999c6ad84c27875d0612820902219f82e data/spooktasticdecor/loot_table/blocks/wither_skeleton_stone_stairs.json
