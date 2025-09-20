@@ -208,6 +208,8 @@ public class simpleblockregistry {
     public static DeferredBlock<WallBlock> WITHER_SKELETON_STONE_BRICKS_WALL;
     public static DeferredBlock<PressurePlateBlock> WITHER_SKELETON_STONE_BRICKS_PRESSURE_PLATE;
 
+    public static DeferredBlock<Block> WITHER_SKELETON_CHISELED_STONE_BRICKS;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
@@ -1750,15 +1752,15 @@ public class simpleblockregistry {
             .sound(SoundType.BASALT)
             )
         );
-        // WITHER_SKELETON_CHISELED_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
-        //     "wither_skeleton_chiseled_stone_bricks",
-        //     registryName -> new Block(BlockBehaviour.Properties.of()
-        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //     .destroyTime(STONE_DESTROY_TIME)
-        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
-        //     .requiresCorrectToolForDrops()
-        //     .sound(SoundType.BASALT)
-        //     )
-        // );
+        WITHER_SKELETON_CHISELED_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
+            "wither_skeleton_chiseled_stone_bricks",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.BASALT)
+            )
+        );
     }
 }

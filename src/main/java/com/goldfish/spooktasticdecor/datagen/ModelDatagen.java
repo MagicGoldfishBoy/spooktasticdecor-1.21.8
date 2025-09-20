@@ -280,6 +280,8 @@ public class ModelDatagen extends ModelProvider {
                     .wall(simpleblockregistry.WITHER_SKELETON_STONE_BRICKS_WALL.get())
                     .pressurePlate(simpleblockregistry.WITHER_SKELETON_STONE_BRICKS_PRESSURE_PLATE.get());
 
+        blockModels.createTrivialCube(simpleblockregistry.WITHER_SKELETON_CHISELED_STONE_BRICKS.get());
+
     }
 
     ResourceLocation woodtable;
