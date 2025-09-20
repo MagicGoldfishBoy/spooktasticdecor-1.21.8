@@ -160,6 +160,13 @@
   "block.spooktasticdecor.wither_skeleton_stone_wall": "Wither Skeleton Stone Wall",
   "block.spooktasticdecor.wither_skeleton_stone_pressure_plate": "Wither Skeleton Stone Pressure Plate",
 
+  "block.spooktasticdecor.wither_skeleton_smooth_stone": "Wither Skeleton Smooth Stone",
+  "block.spooktasticdecor.wither_skeleton_smooth_stone_slab": "Wither  Skeleton Smooth Stone Slab",
+  "block.spooktasticdecor.wither_skeleton_smooth_stone_stairs": "Wither Skeleton Smooth Stone Stairs",
+  "block.spooktasticdecor.wither_skeleton_smooth_stone_button": "Wither Skeleton Smooth Stone Button",
+  "block.spooktasticdecor.wither_skeleton_smooth_stone_wall": "Wither Skeleton Smooth Stone Wall",
+  "block.spooktasticdecor.wither_skeleton_smooth_stone_pressure_plate": "Wither Skeleton Smooth Stone Pressure Plate",
+
 
   "block.spooktasticdecor.zombie_wood_planter": "Zombie Wood Planter",
   "block.spooktasticdecor.skeleton_wood_planter": "Skeleton Wood Planter",

@@ -9,6 +9,7 @@
         "spooktasticdecor:skeleton_smooth_stone_wall",
         "spooktasticdecor:skeleton_stone_bricks_wall",
         "spooktasticdecor:wither_skeleton_cobblestone_wall",
-        "spooktasticdecor:wither_skeleton_stone_wall"
+        "spooktasticdecor:wither_skeleton_stone_wall",
+        "spooktasticdecor:wither_skeleton_smooth_stone_wall"
     ]
 }

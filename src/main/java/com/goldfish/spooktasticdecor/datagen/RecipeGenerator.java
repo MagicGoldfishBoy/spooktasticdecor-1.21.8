@@ -1046,18 +1046,18 @@ public class RecipeGenerator extends RecipeProvider {
                         20 
                         );
 
-                //         helper.registerFamily(
-                //         simpleblockregistry.WITHER_SKELETON_SMOOTH_STONE.get(),
-                //         SimpleBlockItemRegistry.WITHER_SKELETON_SMOOTH_STONE_ITEM.get(),
-                //         simpleblockregistry.WITHER_SKELETON_SMOOTH_STONE_SLAB.get(),
-                //         simpleblockregistry.WITHER_SKELETON_SMOOTH_STONE_STAIRS.get(),
-                //         simpleblockregistry.WITHER_SKELETON_SMOOTH_STONE_WALL.get(),
-                //         SimpleBlockItemRegistry.WITHER_SKELETON_SMOOTH_STONE_BUTTON_ITEM.get(),
-                //         SimpleBlockItemRegistry.WITHER_SKELETON_SMOOTH_STONE_PRESSURE_PLATE_ITEM.get(),
-                //         SimpleBlockItemRegistry.WITHER_SKELETON_STONE_ITEM.get(),
-                //         0.5f, 
-                //         20 
-                //         );
+                        helper.registerFamily(
+                        simpleblockregistry.WITHER_SKELETON_SMOOTH_STONE.get(),
+                        SimpleBlockItemRegistry.WITHER_SKELETON_SMOOTH_STONE_ITEM.get(),
+                        simpleblockregistry.WITHER_SKELETON_SMOOTH_STONE_SLAB.get(),
+                        simpleblockregistry.WITHER_SKELETON_SMOOTH_STONE_STAIRS.get(),
+                        simpleblockregistry.WITHER_SKELETON_SMOOTH_STONE_WALL.get(),
+                        SimpleBlockItemRegistry.WITHER_SKELETON_SMOOTH_STONE_BUTTON_ITEM.get(),
+                        SimpleBlockItemRegistry.WITHER_SKELETON_SMOOTH_STONE_PRESSURE_PLATE_ITEM.get(),
+                        SimpleBlockItemRegistry.WITHER_SKELETON_STONE_ITEM.get(),
+                        0.5f, 
+                        20 
+                        );
                 // ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.WITHER_SKELETON_STONE_BRICKS_ITEM.get(), 4)
                 //         .pattern("AA ")
                 //         .pattern("AA ")

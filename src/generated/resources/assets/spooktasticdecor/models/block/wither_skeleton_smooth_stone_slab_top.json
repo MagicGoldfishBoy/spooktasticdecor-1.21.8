@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "spooktasticdecor:block/wither_skeleton_smooth_stone",
+    "side": "spooktasticdecor:block/wither_skeleton_smooth_stone",
+    "top": "spooktasticdecor:block/wither_skeleton_smooth_stone"
+  }
+}

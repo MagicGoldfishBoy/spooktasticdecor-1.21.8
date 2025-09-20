@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "spooktasticdecor:block/wither_skeleton_smooth_stone_slab"
+    },
+    "type=double": {
+      "model": "spooktasticdecor:block/wither_skeleton_smooth_stone"
+    },
+    "type=top": {
+      "model": "spooktasticdecor:block/wither_skeleton_smooth_stone_slab_top"
+    }
+  }
+}
