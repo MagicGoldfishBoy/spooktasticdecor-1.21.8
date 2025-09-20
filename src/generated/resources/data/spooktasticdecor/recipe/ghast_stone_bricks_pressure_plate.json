@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "A": "spooktasticdecor:ghast_stone_bricks"
+  },
+  "pattern": [
+    "AA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:ghast_stone_bricks_pressure_plate"
+  }
+}

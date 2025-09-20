@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "spooktasticdecor:block/ghast_stone_bricks"
+  }
+}

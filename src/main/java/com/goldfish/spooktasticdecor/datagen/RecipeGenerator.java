@@ -1151,29 +1151,29 @@ public class RecipeGenerator extends RecipeProvider {
                         0.5f, 
                         20 
                         );
-                // ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.GHAST_STONE_BRICKS_ITEM.get(), 4)
-                //         .pattern("AA ")
-                //         .pattern("AA ")
-                //         .define('A', SimpleBlockItemRegistry.GHAST_STONE_ITEM.get())
-                //         .unlockedBy("has_ghast_stone", has(SimpleBlockItemRegistry.GHAST_STONE_ITEM.get()))
-                //         .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.GHAST_STONE_BRICKS_ITEM.get(), 4)
+                        .pattern("AA ")
+                        .pattern("AA ")
+                        .define('A', SimpleBlockItemRegistry.GHAST_STONE_ITEM.get())
+                        .unlockedBy("has_ghast_stone", has(SimpleBlockItemRegistry.GHAST_STONE_ITEM.get()))
+                        .save(this.output);
 
-                // SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.GHAST_STONE.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.GHAST_STONE_BRICKS.get(), 1)
-                //         .unlockedBy("has_ghast_stone", has(simpleblockregistry.GHAST_STONE.get()))
-                //         .save(this.output, SpooktasticDecor.MODID + ":ghast_stone_bricks_from_stonecutting");
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.GHAST_STONE.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.GHAST_STONE_BRICKS.get(), 1)
+                        .unlockedBy("has_ghast_stone", has(simpleblockregistry.GHAST_STONE.get()))
+                        .save(this.output, SpooktasticDecor.MODID + ":ghast_stone_bricks_from_stonecutting");
 
-                //         helper.registerFamily(
-                //         simpleblockregistry.GHAST_STONE_BRICKS.get(),
-                //         SimpleBlockItemRegistry.GHAST_STONE_BRICKS_ITEM.get(),
-                //         simpleblockregistry.GHAST_STONE_BRICKS_SLAB.get(),
-                //         simpleblockregistry.GHAST_STONE_BRICKS_STAIRS.get(),
-                //         simpleblockregistry.GHAST_STONE_BRICKS_WALL.get(),
-                //         SimpleBlockItemRegistry.GHAST_STONE_BRICKS_BUTTON_ITEM.get(),
-                //         SimpleBlockItemRegistry.GHAST_STONE_BRICKS_PRESSURE_PLATE_ITEM.get(),
-                //         null,
-                //         0.0f,
-                //         0   
-                //         );
+                        helper.registerFamily(
+                        simpleblockregistry.GHAST_STONE_BRICKS.get(),
+                        SimpleBlockItemRegistry.GHAST_STONE_BRICKS_ITEM.get(),
+                        simpleblockregistry.GHAST_STONE_BRICKS_SLAB.get(),
+                        simpleblockregistry.GHAST_STONE_BRICKS_STAIRS.get(),
+                        simpleblockregistry.GHAST_STONE_BRICKS_WALL.get(),
+                        SimpleBlockItemRegistry.GHAST_STONE_BRICKS_BUTTON_ITEM.get(),
+                        SimpleBlockItemRegistry.GHAST_STONE_BRICKS_PRESSURE_PLATE_ITEM.get(),
+                        null,
+                        0.0f,
+                        0   
+                        );
 
 
                 // ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.GHAST_CHISELED_STONE_BRICKS_ITEM.get())
