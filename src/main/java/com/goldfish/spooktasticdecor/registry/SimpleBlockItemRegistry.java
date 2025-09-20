@@ -197,6 +197,13 @@ public class SimpleBlockItemRegistry {
     public static DeferredItem<BlockItem> GHAST_COBBLESTONE_WALL_ITEM;
     public static DeferredItem<BlockItem> GHAST_COBBLESTONE_PRESSURE_PLATE_ITEM;
 
+    public static DeferredItem<BlockItem> GHAST_STONE_ITEM;
+    public static DeferredItem<BlockItem> GHAST_STONE_SLAB_ITEM;
+    public static DeferredItem<BlockItem> GHAST_STONE_STAIRS_ITEM;
+    public static DeferredItem<BlockItem> GHAST_STONE_BUTTON_ITEM;
+    public static DeferredItem<BlockItem> GHAST_STONE_WALL_ITEM;
+    public static DeferredItem<BlockItem> GHAST_STONE_PRESSURE_PLATE_ITEM;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
@@ -654,6 +661,7 @@ public class SimpleBlockItemRegistry {
         registerZombieStone();
         registerSkeletonStone();
         registerWitherSkeletonStone();
+        registerGhastStone();
     }
     public static void registerZombieStone() {
         ZOMBIE_STONE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
@@ -897,6 +905,87 @@ public class SimpleBlockItemRegistry {
             simpleblockregistry.WITHER_SKELETON_CHISELED_STONE_BRICKS,
             new Item.Properties()
         );
+    }
+    public static void registerGhastStone() {
+        GHAST_STONE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.GHAST_STONE,
+            new Item.Properties()
+        );
+        GHAST_STONE_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.GHAST_STONE_SLAB,
+            new Item.Properties()
+        );
+        GHAST_STONE_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.GHAST_STONE_STAIRS,
+            new Item.Properties()
+        );
+        GHAST_STONE_BUTTON_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.GHAST_STONE_BUTTON,
+            new Item.Properties()
+        );
+        GHAST_STONE_WALL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.GHAST_STONE_WALL,
+            new Item.Properties()
+        );
+        GHAST_STONE_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.GHAST_STONE_PRESSURE_PLATE,
+            new Item.Properties()
+        );
+
+        // GHAST_SMOOTH_STONE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.GHAST_SMOOTH_STONE,
+        //     new Item.Properties()
+        // );
+        // GHAST_SMOOTH_STONE_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.GHAST_SMOOTH_STONE_SLAB,
+        //     new Item.Properties()
+        // );
+        // GHAST_SMOOTH_STONE_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.GHAST_SMOOTH_STONE_STAIRS,
+        //     new Item.Properties()
+        // );
+        // GHAST_SMOOTH_STONE_BUTTON_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.GHAST_SMOOTH_STONE_BUTTON,
+        //     new Item.Properties()
+        // );
+        // GHAST_SMOOTH_STONE_WALL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.GHAST_SMOOTH_STONE_WALL,
+        //     new Item.Properties()
+        // );
+        // GHAST_SMOOTH_STONE_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.GHAST_SMOOTH_STONE_PRESSURE_PLATE,
+        //     new Item.Properties()
+        // );
+
+        // GHAST_STONE_BRICKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.GHAST_STONE_BRICKS,
+        //     new Item.Properties()
+        // );
+        // GHAST_STONE_BRICKS_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.GHAST_STONE_BRICKS_SLAB,
+        //     new Item.Properties()
+        // );
+        // GHAST_STONE_BRICKS_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.GHAST_STONE_BRICKS_STAIRS,
+        //     new Item.Properties()
+        // );
+        // GHAST_STONE_BRICKS_BUTTON_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.GHAST_STONE_BRICKS_BUTTON,
+        //     new Item.Properties()
+        // );
+        // GHAST_STONE_BRICKS_WALL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.GHAST_STONE_BRICKS_WALL,
+        //     new Item.Properties()
+        // );
+        // GHAST_STONE_BRICKS_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.GHAST_STONE_BRICKS_PRESSURE_PLATE,
+        //     new Item.Properties()
+        // );
+
+        // GHAST_CHISELED_STONE_BRICKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.GHAST_CHISELED_STONE_BRICKS,
+        //     new Item.Properties()
+        // );
     }
 
 }

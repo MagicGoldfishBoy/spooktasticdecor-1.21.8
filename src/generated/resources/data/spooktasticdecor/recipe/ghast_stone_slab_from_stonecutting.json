@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "spooktasticdecor:ghast_stone",
+  "result": {
+    "count": 2,
+    "id": "spooktasticdecor:ghast_stone_slab"
+  }
+}

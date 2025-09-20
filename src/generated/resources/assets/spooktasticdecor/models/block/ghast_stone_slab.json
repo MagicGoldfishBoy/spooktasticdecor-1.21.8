@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "spooktasticdecor:block/ghast_stone",
+    "side": "spooktasticdecor:block/ghast_stone",
+    "top": "spooktasticdecor:block/ghast_stone"
+  }
+}

@@ -220,6 +220,13 @@ public class simpleblockregistry {
     public static DeferredBlock<WallBlock> GHAST_COBBLESTONE_WALL;
     public static DeferredBlock<PressurePlateBlock> GHAST_COBBLESTONE_PRESSURE_PLATE;
 
+    public static DeferredBlock<Block> GHAST_STONE;
+    public static DeferredBlock<SlabBlock> GHAST_STONE_SLAB;
+    public static DeferredBlock<StairBlock> GHAST_STONE_STAIRS;
+    public static DeferredBlock<ButtonBlock> GHAST_STONE_BUTTON;
+    public static DeferredBlock<WallBlock> GHAST_STONE_WALL;
+    public static DeferredBlock<PressurePlateBlock> GHAST_STONE_PRESSURE_PLATE;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
@@ -1263,6 +1270,7 @@ public class simpleblockregistry {
         registerZombieStone();
         registerSkeletonStone();
         registerWitherSkeletonStone();
+        registerGhastStone();
     }
     public static void registerZombieStone() {
         ZOMBIE_STONE = SpooktasticDecor.BLOCKS.register(
@@ -1845,5 +1853,199 @@ public class simpleblockregistry {
             .sound(SoundType.BASALT)
             )
         );
+    }
+    public static void registerGhastStone() {
+        GHAST_STONE = SpooktasticDecor.BLOCKS.register(
+            "ghast_stone",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.NETHER_BRICKS)
+            )
+        );
+        GHAST_STONE_SLAB = SpooktasticDecor.BLOCKS.register(
+            "ghast_stone_slab",
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.NETHER_BRICKS)
+            )
+        );
+        GHAST_STONE_STAIRS = SpooktasticDecor.BLOCKS.register(
+            "ghast_stone_stairs",
+            registryName -> new StairBlock(GHAST_STONE.get().defaultBlockState(),BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.NETHER_BRICKS)
+            )
+        );
+        GHAST_STONE_BUTTON = SpooktasticDecor.BLOCKS.register(
+            "ghast_stone_button",
+            registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.NETHER_BRICKS)
+            )
+        );
+        GHAST_STONE_WALL = SpooktasticDecor.BLOCKS.register(
+            "ghast_stone_wall",
+            registryName -> new WallBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.NETHER_BRICKS)
+            )
+        );
+        GHAST_STONE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+            "ghast_stone_pressure_plate",
+            registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.NETHER_BRICKS)
+            )
+        );
+
+        // GHAST_SMOOTH_STONE = SpooktasticDecor.BLOCKS.register(
+        //     "ghast_smooth_stone",
+        //     registryName -> new Block(BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.STONE)
+        //     )
+        // );
+        // GHAST_SMOOTH_STONE_SLAB = SpooktasticDecor.BLOCKS.register(
+        //     "ghast_smooth_stone_slab",
+        //     registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.STONE)
+        //     )
+        // );
+        // GHAST_SMOOTH_STONE_STAIRS = SpooktasticDecor.BLOCKS.register(
+        //     "ghast_smooth_stone_stairs",
+        //     registryName -> new StairBlock(GHAST_SMOOTH_STONE.get().defaultBlockState(),BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.STONE)
+        //     )
+        // );
+        // GHAST_SMOOTH_STONE_BUTTON = SpooktasticDecor.BLOCKS.register(
+        //     "ghast_smooth_stone_button",
+        //     registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.STONE)
+        //     )
+        // );
+        // GHAST_SMOOTH_STONE_WALL = SpooktasticDecor.BLOCKS.register(
+        //     "ghast_smooth_stone_wall",
+        //     registryName -> new WallBlock(BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.STONE)
+        //     )
+        // );
+        // GHAST_SMOOTH_STONE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+        //     "ghast_smooth_stone_pressure_plate",
+        //     registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.STONE)
+        //     )
+        // );
+
+        // GHAST_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
+        //     "ghast_stone_bricks",
+        //     registryName -> new Block(BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.STONE)
+        //     )
+        // );
+        // GHAST_STONE_BRICKS_SLAB = SpooktasticDecor.BLOCKS.register(
+        //     "ghast_stone_bricks_slab",
+        //     registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.STONE)
+        //     )
+        // );
+        // GHAST_STONE_BRICKS_STAIRS = SpooktasticDecor.BLOCKS.register(
+        //     "ghast_stone_bricks_stairs",
+        //     registryName -> new StairBlock(GHAST_STONE_BRICKS.get().defaultBlockState(),BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.STONE)
+        //     )
+        // );
+        // GHAST_STONE_BRICKS_BUTTON = SpooktasticDecor.BLOCKS.register(
+        //     "ghast_stone_bricks_button",
+        //     registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.STONE)
+        //     )
+        // );
+        // GHAST_STONE_BRICKS_WALL = SpooktasticDecor.BLOCKS.register(
+        //     "ghast_stone_bricks_wall",
+        //     registryName -> new WallBlock(BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.STONE)
+        //     )
+        // );
+        // GHAST_STONE_BRICKS_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+        //     "ghast_stone_bricks_pressure_plate",
+        //     registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.STONE)
+        //     )
+        // );
+        // GHAST_CHISELED_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
+        //     "ghast_chiseled_stone_bricks",
+        //     registryName -> new Block(BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.STONE)
+        //     )
+        // );
     }
 }
