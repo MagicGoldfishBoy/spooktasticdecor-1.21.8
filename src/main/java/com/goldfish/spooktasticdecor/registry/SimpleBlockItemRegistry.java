@@ -218,6 +218,8 @@ public class SimpleBlockItemRegistry {
     public static DeferredItem<BlockItem> GHAST_STONE_BRICKS_WALL_ITEM;
     public static DeferredItem<BlockItem> GHAST_STONE_BRICKS_PRESSURE_PLATE_ITEM;
 
+    public static DeferredItem<BlockItem> GHAST_CHISELED_STONE_BRICKS_ITEM;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
@@ -996,10 +998,10 @@ public class SimpleBlockItemRegistry {
             new Item.Properties()
         );
 
-        // GHAST_CHISELED_STONE_BRICKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
-        //     simpleblockregistry.GHAST_CHISELED_STONE_BRICKS,
-        //     new Item.Properties()
-        // );
+        GHAST_CHISELED_STONE_BRICKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.GHAST_CHISELED_STONE_BRICKS,
+            new Item.Properties()
+        );
     }
 
 }

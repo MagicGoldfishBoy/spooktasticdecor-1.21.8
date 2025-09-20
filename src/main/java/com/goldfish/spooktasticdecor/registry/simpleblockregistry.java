@@ -241,6 +241,8 @@ public class simpleblockregistry {
     public static DeferredBlock<WallBlock> GHAST_STONE_BRICKS_WALL;
     public static DeferredBlock<PressurePlateBlock> GHAST_STONE_BRICKS_PRESSURE_PLATE;
 
+    public static DeferredBlock<Block> GHAST_CHISELED_STONE_BRICKS;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
@@ -2051,15 +2053,15 @@ public class simpleblockregistry {
             .sound(SoundType.NETHER_BRICKS)
             )
         );
-        // GHAST_CHISELED_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
-        //     "ghast_chiseled_stone_bricks",
-        //     registryName -> new Block(BlockBehaviour.Properties.of()
-        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //     .destroyTime(STONE_DESTROY_TIME)
-        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
-        //     .requiresCorrectToolForDrops()
-        //     .sound(SoundType.STONE)
-        //     )
-        // );
+        GHAST_CHISELED_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
+            "ghast_chiseled_stone_bricks",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
     }
 }

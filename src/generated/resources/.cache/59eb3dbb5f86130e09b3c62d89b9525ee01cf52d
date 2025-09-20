@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-20T12:11:23.756736004	Loot Tables
+// 1.21.8	2025-09-20T12:23:48.207657398	Loot Tables
 e30628148fa475a47ca934a2667f679515556c52 data/spooktasticdecor/loot_table/blocks/creaking_lamp.json
 6a1b6369bd5870e6e80284ba3891e68c0ccf0fcb data/spooktasticdecor/loot_table/blocks/creaking_stripped_wood_table.json
 a413636a36f082f62e3b58be9c94cc8a8dff08f3 data/spooktasticdecor/loot_table/blocks/creaking_wood_planks_table.json
@@ -23,6 +23,7 @@ d6a8439f807b331a77f7cf14ceee58eb3af8dce4 data/spooktasticdecor/loot_table/blocks
 53093926dd0b0c7bff59206696ca4d9ba32d9ccc data/spooktasticdecor/loot_table/blocks/eye_planter.json
 637fb18538d37c04a32191e205c6fa2d75d34a1f data/spooktasticdecor/loot_table/blocks/eye_table.json
 48d4b95ba6521af279df2eb6c1677433b75d54f6 data/spooktasticdecor/loot_table/blocks/eyeball_lamp.json
+18058ae849294e30e19937fc4acbfd89e86303ef data/spooktasticdecor/loot_table/blocks/ghast_chiseled_stone_bricks.json
 126c843f52bb7587267522bc95c9ea98327fbb6f data/spooktasticdecor/loot_table/blocks/ghast_cobblestone.json
 c364d6fb0ae6e0d5f65f62d785e6275640e97861 data/spooktasticdecor/loot_table/blocks/ghast_cobblestone_button.json
 792cb9a16077a8209d258752ca1a49ef6f7bada1 data/spooktasticdecor/loot_table/blocks/ghast_cobblestone_pressure_plate.json

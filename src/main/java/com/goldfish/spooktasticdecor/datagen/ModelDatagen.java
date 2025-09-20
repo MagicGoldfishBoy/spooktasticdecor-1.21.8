@@ -283,8 +283,8 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createTrivialCube(simpleblockregistry.WITHER_SKELETON_CHISELED_STONE_BRICKS.get());
 
-        blockModels.createTrivialCube(simpleblockregistry.GHAST_COBBLESTONE.get());
 
+        blockModels.createTrivialCube(simpleblockregistry.GHAST_COBBLESTONE.get());
 
         blockModels.familyWithExistingFullBlock(simpleblockregistry.GHAST_COBBLESTONE.get())
                    .slab(simpleblockregistry.GHAST_COBBLESTONE_SLAB.get())
@@ -319,6 +319,8 @@ public class ModelDatagen extends ModelProvider {
                     .button(simpleblockregistry.GHAST_STONE_BRICKS_BUTTON.get())
                     .wall(simpleblockregistry.GHAST_STONE_BRICKS_WALL.get())
                     .pressurePlate(simpleblockregistry.GHAST_STONE_BRICKS_PRESSURE_PLATE.get());
+
+        blockModels.createTrivialCube(simpleblockregistry.GHAST_CHISELED_STONE_BRICKS.get());
 
     }
 

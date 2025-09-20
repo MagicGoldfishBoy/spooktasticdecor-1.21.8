@@ -4,6 +4,8 @@
         "spooktasticdecor:zombie_stone_lamp",
         "#spooktasticdecor:skeleton_stones",
         "spooktasticdecor:skeleton_stone_lamp",
-        "#spooktasticdecor:wither_skeleton_stones"
+        "#spooktasticdecor:wither_skeleton_stones",
+        "spooktasticdecor:skeleton_stone_lamp",
+        "#spooktasticdecor:ghast_stones"
     ]
 }
