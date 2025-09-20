@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "spooktasticdecor:wither_skeleton_stone_bricks"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:wither_skeleton_stone_bricks_button"
+  }
+}
