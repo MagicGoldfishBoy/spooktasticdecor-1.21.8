@@ -212,6 +212,14 @@ public class simpleblockregistry {
 
     public static DeferredBlock<Block> WITHER_SKELETON_CHISELED_STONE_BRICKS;
 
+
+    public static DeferredBlock<Block> GHAST_COBBLESTONE;
+    public static DeferredBlock<SlabBlock> GHAST_COBBLESTONE_SLAB;
+    public static DeferredBlock<StairBlock> GHAST_COBBLESTONE_STAIRS;
+    public static DeferredBlock<ButtonBlock> GHAST_COBBLESTONE_BUTTON;
+    public static DeferredBlock<WallBlock> GHAST_COBBLESTONE_WALL;
+    public static DeferredBlock<PressurePlateBlock> GHAST_COBBLESTONE_PRESSURE_PLATE;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
@@ -997,6 +1005,7 @@ public class simpleblockregistry {
         registerZombieCobblestone();
         registerSkeletonCobblestone();
         registerWitherSkeletonCobblestone();
+        registerGhastCobblestone();
     }
     public static void registerZombieCobblestone() {
         ZOMBIE_COBBLESTONE = SpooktasticDecor.BLOCKS.register(
@@ -1181,6 +1190,68 @@ public class simpleblockregistry {
             .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
             .requiresCorrectToolForDrops()
             .sound(SoundType.BASALT)
+            )
+        );
+    }
+    public static void registerGhastCobblestone() {
+        GHAST_COBBLESTONE = SpooktasticDecor.BLOCKS.register(
+            "ghast_cobblestone",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.NETHERRACK)
+            )
+        );
+        GHAST_COBBLESTONE_SLAB = SpooktasticDecor.BLOCKS.register(
+            "ghast_cobblestone_slab",
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.NETHERRACK)
+            )
+        );
+        GHAST_COBBLESTONE_STAIRS = SpooktasticDecor.BLOCKS.register(
+            "ghast_cobblestone_stairs",
+            registryName -> new StairBlock(GHAST_COBBLESTONE.get().defaultBlockState(), BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.NETHERRACK)
+            )
+        );
+        GHAST_COBBLESTONE_BUTTON = SpooktasticDecor.BLOCKS.register(
+            "ghast_cobblestone_button",
+            registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.NETHERRACK)
+            )
+        );
+        GHAST_COBBLESTONE_WALL = SpooktasticDecor.BLOCKS.register(
+            "ghast_cobblestone_wall",
+            registryName -> new WallBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.NETHERRACK)
+            )
+        );
+        GHAST_COBBLESTONE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+            "ghast_cobblestone_pressure_plate",
+            registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.NETHERRACK)
             )
         );
     }

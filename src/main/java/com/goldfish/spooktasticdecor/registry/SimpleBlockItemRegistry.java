@@ -189,6 +189,14 @@ public class SimpleBlockItemRegistry {
 
     public static DeferredItem<BlockItem> WITHER_SKELETON_CHISELED_STONE_BRICKS_ITEM;
 
+
+    public static DeferredItem<BlockItem> GHAST_COBBLESTONE_ITEM;
+    public static DeferredItem<BlockItem> GHAST_COBBLESTONE_SLAB_ITEM;
+    public static DeferredItem<BlockItem> GHAST_COBBLESTONE_STAIRS_ITEM;
+    public static DeferredItem<BlockItem> GHAST_COBBLESTONE_BUTTON_ITEM;
+    public static DeferredItem<BlockItem> GHAST_COBBLESTONE_WALL_ITEM;
+    public static DeferredItem<BlockItem> GHAST_COBBLESTONE_PRESSURE_PLATE_ITEM;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
@@ -224,7 +232,7 @@ public class SimpleBlockItemRegistry {
         simpleblockregistry.WITHER_SKELETON_STONE_LAMP,
         new Item.Properties());
 
-        
+
         GHAST_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
         simpleblockregistry.GHAST_LAMP,
         new Item.Properties());
@@ -535,6 +543,7 @@ public class SimpleBlockItemRegistry {
         registerZombieCobblestone();
         registerSkeletonCobblestone();
         registerWitherSkeletonCobblestone();
+        registerGhastCobblestone();
     }
     public static void registerZombieCobblestone() {
         ZOMBIE_COBBLESTONE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
@@ -611,6 +620,32 @@ public class SimpleBlockItemRegistry {
         );
         WITHER_SKELETON_COBBLESTONE_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             simpleblockregistry.WITHER_SKELETON_COBBLESTONE_PRESSURE_PLATE,
+            new Item.Properties()
+        );
+    }
+    public static void registerGhastCobblestone() {
+        GHAST_COBBLESTONE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.GHAST_COBBLESTONE,
+            new Item.Properties()
+        );
+        GHAST_COBBLESTONE_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.GHAST_COBBLESTONE_SLAB,
+            new Item.Properties()
+        );
+        GHAST_COBBLESTONE_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.GHAST_COBBLESTONE_STAIRS,
+            new Item.Properties()
+        );
+        GHAST_COBBLESTONE_BUTTON_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.GHAST_COBBLESTONE_BUTTON,
+            new Item.Properties()
+        );
+        GHAST_COBBLESTONE_WALL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.GHAST_COBBLESTONE_WALL,
+            new Item.Properties()
+        );
+        GHAST_COBBLESTONE_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.GHAST_COBBLESTONE_PRESSURE_PLATE,
             new Item.Properties()
         );
     }

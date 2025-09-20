@@ -120,7 +120,7 @@ public class RecipeGenerator extends RecipeProvider {
                         .unlockedBy("has_wither_skeleton_chiseled_stone", has(SimpleBlockItemRegistry.WITHER_SKELETON_CHISELED_STONE_BRICKS_ITEM.get()))
                         .unlockedBy("has_glowstone_dust", has(Items.GLOWSTONE_DUST))
                         .save(this.output);
-                        
+
                 ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.GHAST_LAMP_ITEM.get(), 2)
                         .pattern(" A ")
                         .pattern("ABA")
@@ -898,6 +898,27 @@ public class RecipeGenerator extends RecipeProvider {
                         simpleblockregistry.WITHER_SKELETON_COBBLESTONE_WALL.get(),
                         SimpleBlockItemRegistry.WITHER_SKELETON_COBBLESTONE_BUTTON_ITEM.get(),
                         SimpleBlockItemRegistry.WITHER_SKELETON_COBBLESTONE_PRESSURE_PLATE_ITEM.get(),
+                        null,
+                        0.0f,
+                        0
+                        );
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.GHAST_COBBLESTONE_ITEM.get(), 8)
+                        .pattern("AAA")
+                        .pattern("ABA")
+                        .pattern("AAA")
+                        .define('A', this.tag(COBBLESTONE_TAG))
+                        .define('B', Items.GHAST_TEAR)
+                        .unlockedBy("has_ghast_tear", has(Items.GHAST_TEAR))
+                        .save(this.output);
+
+                        helper.registerFamily(
+                        simpleblockregistry.GHAST_COBBLESTONE.get(),
+                        SimpleBlockItemRegistry.GHAST_COBBLESTONE_ITEM.get(),
+                        simpleblockregistry.GHAST_COBBLESTONE_SLAB.get(),
+                        simpleblockregistry.GHAST_COBBLESTONE_STAIRS.get(),
+                        simpleblockregistry.GHAST_COBBLESTONE_WALL.get(),
+                        SimpleBlockItemRegistry.GHAST_COBBLESTONE_BUTTON_ITEM.get(),
+                        SimpleBlockItemRegistry.GHAST_COBBLESTONE_PRESSURE_PLATE_ITEM.get(),
                         null,
                         0.0f,
                         0
