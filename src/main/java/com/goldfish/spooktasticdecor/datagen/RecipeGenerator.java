@@ -106,13 +106,13 @@ public class RecipeGenerator extends RecipeProvider {
                         .unlockedBy("has_glowstone_dust", has(Items.GLOWSTONE_DUST))
                         .save(this.output);
 
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.WITHER_SKELETON_LAMP_ITEM.get(), 2)
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.WITHER_SKELETON_LAMP_ITEM.get(), 4)
                         .pattern(" A ")
                         .pattern("ABA")
                         .pattern(" A ")
-                        .define('A', Items.NETHERRACK)
-                        .define('B', SimpleBlockItemRegistry.SKELETON_LAMP_ITEM.get())
-                        .unlockedBy("has_netherrack", has(Items.NETHERRACK))
+                        .define('A', Items.WITHER_ROSE)
+                        .define('B', Blocks.GLOWSTONE)
+                        .unlockedBy("has_wither_rose", has(Items.WITHER_ROSE))
                         .save(this.output);
                 ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.GHAST_LAMP_ITEM.get(), 2)
                         .pattern(" A ")
@@ -299,13 +299,13 @@ public class RecipeGenerator extends RecipeProvider {
                 .save(this.output);
         }
         protected void registerWitherSkeletonWoodRecipes() {
-        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.WITHER_SKELETON_LOG_ITEM.get(), 8)
+        ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.WITHER_SKELETON_LOG_ITEM.get(), 16)
                 .pattern("BBB")
                 .pattern("BAB")
                 .pattern("BBB")
-                .define('A', Items.NETHERRACK)
+                .define('A', Items.WITHER_ROSE)
                 .define('B', this.tag(LOGS_TAG))
-                .unlockedBy("has_netherrack", has(Items.NETHERRACK))
+                .unlockedBy("has_wither_rose", has(Items.WITHER_ROSE))
                 .save(this.output);
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.WITHER_SKELETON_LOG.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.WITHER_SKELETON_LOG_STRIPPED.get(), 1)
                 .unlockedBy("has_wither_skeleton_log", has(simpleblockregistry.WITHER_SKELETON_LOG.get()))
@@ -870,6 +870,27 @@ public class RecipeGenerator extends RecipeProvider {
                         simpleblockregistry.SKELETON_COBBLESTONE_WALL.get(),
                         SimpleBlockItemRegistry.SKELETON_COBBLESTONE_BUTTON_ITEM.get(),
                         SimpleBlockItemRegistry.SKELETON_COBBLESTONE_PRESSURE_PLATE_ITEM.get(),
+                        null,
+                        0.0f,
+                        0
+                        );
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.WITHER_SKELETON_COBBLESTONE_ITEM.get(), 16)
+                        .pattern("AAA")
+                        .pattern("ABA")
+                        .pattern("AAA")
+                        .define('A', this.tag(COBBLESTONE_TAG))
+                        .define('B', Items.WITHER_ROSE)
+                        .unlockedBy("has_wither_rose", has(Items.WITHER_ROSE))
+                        .save(this.output);
+
+                        helper.registerFamily(
+                        simpleblockregistry.WITHER_SKELETON_COBBLESTONE.get(),
+                        SimpleBlockItemRegistry.WITHER_SKELETON_COBBLESTONE_ITEM.get(),
+                        simpleblockregistry.WITHER_SKELETON_COBBLESTONE_SLAB.get(),
+                        simpleblockregistry.WITHER_SKELETON_COBBLESTONE_STAIRS.get(),
+                        simpleblockregistry.WITHER_SKELETON_COBBLESTONE_WALL.get(),
+                        SimpleBlockItemRegistry.WITHER_SKELETON_COBBLESTONE_BUTTON_ITEM.get(),
+                        SimpleBlockItemRegistry.WITHER_SKELETON_COBBLESTONE_PRESSURE_PLATE_ITEM.get(),
                         null,
                         0.0f,
                         0

@@ -1,0 +1,29 @@
+{
+    "values": [
+        "spooktasticdecor:wither_skeleton_cobblestone",
+        "spooktasticdecor:wither_skeleton_cobblestone_slab",
+        "spooktasticdecor:wither_skeleton_cobblestone_stairs",
+        "spooktasticdecor:wither_skeleton_cobblestone_button",
+        "spooktasticdecor:wither_skeleton_cobblestone_wall",
+        "spooktasticdecor:wither_skeleton_cobblestone_pressure_plate",
+        "spooktasticdecor:wither_skeleton_stone",
+        "spooktasticdecor:wither_skeleton_stone_slab",
+        "spooktasticdecor:wither_skeleton_stone_stairs",
+        "spooktasticdecor:wither_skeleton_stone_button",
+        "spooktasticdecor:wither_skeleton_stone_wall",
+        "spooktasticdecor:wither_skeleton_stone_pressure_plate",
+        "spooktasticdecor:wither_skeleton_smooth_stone",
+        "spooktasticdecor:wither_skeleton_smooth_stone_slab",
+        "spooktasticdecor:wither_skeleton_smooth_stone_stairs",
+        "spooktasticdecor:wither_skeleton_smooth_stone_button",
+        "spooktasticdecor:wither_skeleton_smooth_stone_wall",
+        "spooktasticdecor:wither_skeleton_smooth_stone_pressure_plate",
+        "spooktasticdecor:wither_skeleton_stone_bricks",
+        "spooktasticdecor:wither_skeleton_stone_bricks_slab",
+        "spooktasticdecor:wither_skeleton_stone_bricks_stairs",
+        "spooktasticdecor:wither_skeleton_stone_bricks_button",
+        "spooktasticdecor:wither_skeleton_stone_bricks_wall",
+        "spooktasticdecor:wither_skeleton_stone_bricks_pressure_plate",
+        "spooktasticdecor:wither_skeleton_chiseled_stone_bricks"
+    ]
+}

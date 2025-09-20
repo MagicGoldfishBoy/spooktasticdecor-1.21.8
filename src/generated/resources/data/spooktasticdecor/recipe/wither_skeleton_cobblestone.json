@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "A": "#c:cobblestones",
+    "B": "minecraft:wither_rose"
+  },
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "result": {
+    "count": 16,
+    "id": "spooktasticdecor:wither_skeleton_cobblestone"
+  }
+}
