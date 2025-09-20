@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "spooktasticdecor:ghast_smooth_stone",
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:ghast_smooth_stone_wall"
+  }
+}

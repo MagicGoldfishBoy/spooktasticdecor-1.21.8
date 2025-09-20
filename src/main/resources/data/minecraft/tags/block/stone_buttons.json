@@ -13,6 +13,7 @@
         "spooktasticdecor:wither_skeleton_smooth_stone_button",
         "spooktasticdecor:wither_skeleton_stone_bricks_button",
         "spooktasticdecor:ghast_cobblestone_button",
-        "spooktasticdecor:ghast_stone_button"
+        "spooktasticdecor:ghast_stone_button",
+        "spooktasticdecor:ghast_smooth_stone_button"
     ]
 }

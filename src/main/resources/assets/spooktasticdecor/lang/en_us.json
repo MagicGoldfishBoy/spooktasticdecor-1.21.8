@@ -192,6 +192,13 @@
   "block.spooktasticdecor.ghast_stone_wall": "Ghast Stone Wall",
   "block.spooktasticdecor.ghast_stone_pressure_plate": "Ghast Stone Pressure Plate",
 
+  "block.spooktasticdecor.ghast_smooth_stone": "Ghast Smooth Stone",
+  "block.spooktasticdecor.ghast_smooth_stone_slab": "Ghast Smooth Stone Slab",
+  "block.spooktasticdecor.ghast_smooth_stone_stairs": "Ghast Smooth Stone Stairs",
+  "block.spooktasticdecor.ghast_smooth_stone_button": "Ghast Smooth Stone Button",
+  "block.spooktasticdecor.ghast_smooth_stone_wall": "Ghast Smooth Stone Wall",
+  "block.spooktasticdecor.ghast_smooth_stone_pressure_plate": "Ghast Smooth Stone Pressure Plate",
+
 
   "block.spooktasticdecor.zombie_wood_planter": "Zombie Wood Planter",
   "block.spooktasticdecor.skeleton_wood_planter": "Skeleton Wood Planter",

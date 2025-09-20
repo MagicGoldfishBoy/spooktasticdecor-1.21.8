@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "spooktasticdecor:block/ghast_smooth_stone_slab"
+    },
+    "type=double": {
+      "model": "spooktasticdecor:block/ghast_smooth_stone"
+    },
+    "type=top": {
+      "model": "spooktasticdecor:block/ghast_smooth_stone_slab_top"
+    }
+  }
+}
