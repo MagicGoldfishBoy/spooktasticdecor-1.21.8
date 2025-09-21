@@ -245,6 +245,37 @@ public class simpleblockregistry {
 
     public static DeferredBlock<Block> GHAST_CHISELED_STONE_BRICKS;
 
+
+    public static DeferredBlock<Block> CREAKING_COBBLESTONE;
+    public static DeferredBlock<SlabBlock> CREAKING_COBBLESTONE_SLAB;
+    public static DeferredBlock<StairBlock> CREAKING_COBBLESTONE_STAIRS;
+    public static DeferredBlock<ButtonBlock> CREAKING_COBBLESTONE_BUTTON;
+    public static DeferredBlock<WallBlock> CREAKING_COBBLESTONE_WALL;
+    public static DeferredBlock<PressurePlateBlock> CREAKING_COBBLESTONE_PRESSURE_PLATE;
+
+    // public static DeferredBlock<Block> CREAKING_STONE;
+    // public static DeferredBlock<SlabBlock> CREAKING_STONE_SLAB;
+    // public static DeferredBlock<StairBlock> CREAKING_STONE_STAIRS;
+    // public static DeferredBlock<ButtonBlock> CREAKING_STONE_BUTTON;
+    // public static DeferredBlock<WallBlock> CREAKING_STONE_WALL;
+    // public static DeferredBlock<PressurePlateBlock> CREAKING_STONE_PRESSURE_PLATE;
+
+    // public static DeferredBlock<Block> CREAKING_SMOOTH_STONE;
+    // public static DeferredBlock<SlabBlock> CREAKING_SMOOTH_STONE_SLAB;
+    // public static DeferredBlock<StairBlock> CREAKING_SMOOTH_STONE_STAIRS;
+    // public static DeferredBlock<ButtonBlock> CREAKING_SMOOTH_STONE_BUTTON;
+    // public static DeferredBlock<WallBlock> CREAKING_SMOOTH_STONE_WALL;
+    // public static DeferredBlock<PressurePlateBlock> CREAKING_SMOOTH_STONE_PRESSURE_PLATE;
+
+    // public static DeferredBlock<Block> CREAKING_STONE_BRICKS;
+    // public static DeferredBlock<SlabBlock> CREAKING_STONE_BRICKS_SLAB;
+    // public static DeferredBlock<StairBlock> CREAKING_STONE_BRICKS_STAIRS;
+    // public static DeferredBlock<ButtonBlock> CREAKING_STONE_BRICKS_BUTTON;
+    // public static DeferredBlock<WallBlock> CREAKING_STONE_BRICKS_WALL;
+    // public static DeferredBlock<PressurePlateBlock> CREAKING_STONE_BRICKS_PRESSURE_PLATE;
+
+    // public static DeferredBlock<Block> CREAKING_CHISELED_STONE_BRICKS;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
@@ -1041,6 +1072,7 @@ public class simpleblockregistry {
         registerSkeletonCobblestone();
         registerWitherSkeletonCobblestone();
         registerGhastCobblestone();
+        registerCreakingCobblestone();
     }
     public static void registerZombieCobblestone() {
         ZOMBIE_COBBLESTONE = SpooktasticDecor.BLOCKS.register(
@@ -1287,6 +1319,68 @@ public class simpleblockregistry {
             .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
             .requiresCorrectToolForDrops()
             .sound(SoundType.NETHERRACK)
+            )
+        );
+    }
+    public static void registerCreakingCobblestone() {
+        CREAKING_COBBLESTONE = SpooktasticDecor.BLOCKS.register(
+            "creaking_cobblestone",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.RESIN_BRICKS)
+            )
+        );
+        CREAKING_COBBLESTONE_SLAB = SpooktasticDecor.BLOCKS.register(
+            "creaking_cobblestone_slab",
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.RESIN_BRICKS)
+            )
+        );
+        CREAKING_COBBLESTONE_STAIRS = SpooktasticDecor.BLOCKS.register(
+            "creaking_cobblestone_stairs",
+            registryName -> new StairBlock(CREAKING_COBBLESTONE.get().defaultBlockState(), BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.RESIN_BRICKS)
+            )
+        );
+        CREAKING_COBBLESTONE_BUTTON = SpooktasticDecor.BLOCKS.register(
+            "creaking_cobblestone_button",
+            registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.RESIN_BRICKS)
+            )
+        );
+        CREAKING_COBBLESTONE_WALL = SpooktasticDecor.BLOCKS.register(
+            "creaking_cobblestone_wall",
+            registryName -> new WallBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.NETHERRACK)
+            )
+        );
+        CREAKING_COBBLESTONE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+            "creaking_cobblestone_pressure_plate",
+            registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.RESIN_BRICKS)
             )
         );
     }

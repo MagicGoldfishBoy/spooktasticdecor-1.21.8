@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "spooktasticdecor:block/creaking_cobblestone_slab"
+    },
+    "type=double": {
+      "model": "spooktasticdecor:block/creaking_cobblestone"
+    },
+    "type=top": {
+      "model": "spooktasticdecor:block/creaking_cobblestone_slab_top"
+    }
+  }
+}

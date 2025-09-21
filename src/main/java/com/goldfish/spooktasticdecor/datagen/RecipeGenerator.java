@@ -930,6 +930,27 @@ public class RecipeGenerator extends RecipeProvider {
                         0.0f,
                         0
                         );
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.CREAKING_COBBLESTONE_ITEM.get(), 8)
+                        .pattern("AAA")
+                        .pattern("ABA")
+                        .pattern("AAA")
+                        .define('A', this.tag(COBBLESTONE_TAG))
+                        .define('B', Items.RESIN_CLUMP)
+                        .unlockedBy("has_resin_clump", has(Items.RESIN_CLUMP))
+                        .save(this.output);
+
+                        helper.registerFamily(
+                        simpleblockregistry.CREAKING_COBBLESTONE.get(),
+                        SimpleBlockItemRegistry.CREAKING_COBBLESTONE_ITEM.get(),
+                        simpleblockregistry.CREAKING_COBBLESTONE_SLAB.get(),
+                        simpleblockregistry.CREAKING_COBBLESTONE_STAIRS.get(),
+                        simpleblockregistry.CREAKING_COBBLESTONE_WALL.get(),
+                        SimpleBlockItemRegistry.CREAKING_COBBLESTONE_BUTTON_ITEM.get(),
+                        SimpleBlockItemRegistry.CREAKING_COBBLESTONE_PRESSURE_PLATE_ITEM.get(),
+                        null,
+                        0.0f,
+                        0
+                        );
         }
 
         protected void registerStoneRecipes() {

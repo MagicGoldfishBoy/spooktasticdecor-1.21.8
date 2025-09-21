@@ -6,6 +6,8 @@
         "spooktasticdecor:skeleton_stone_lamp",
         "#spooktasticdecor:wither_skeleton_stones",
         "spooktasticdecor:skeleton_stone_lamp",
-        "#spooktasticdecor:ghast_stones"
+        "#spooktasticdecor:ghast_stones",
+        "spooktasticdecor:ghast_stone_lamp",
+        "#spooktasticdecor:creaking_stones"
     ]
 }

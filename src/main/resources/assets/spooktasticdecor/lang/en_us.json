@@ -210,6 +210,14 @@
   "block.spooktasticdecor.ghast_chiseled_stone_bricks": "Ghast Chiseled Stone Bricks",
 
 
+  "block.spooktasticdecor.creaking_cobblestone": "Creaking Cobblestone",
+  "block.spooktasticdecor.creaking_cobblestone_slab": "Creaking Cobblestone Slab",
+  "block.spooktasticdecor.creaking_cobblestone_stairs": "Creaking Cobblestone Stairs",
+  "block.spooktasticdecor.creaking_cobblestone_button": "Creaking Cobblestone Button",
+  "block.spooktasticdecor.creaking_cobblestone_wall": "Creaking Cobblestone Wall",
+  "block.spooktasticdecor.creaking_cobblestone_pressure_plate": "Creaking Cobblestone Pressure Plate",
+
+
   "block.spooktasticdecor.zombie_wood_planter": "Zombie Wood Planter",
   "block.spooktasticdecor.skeleton_wood_planter": "Skeleton Wood Planter",
   "block.spooktasticdecor.wither_skeleton_wood_planter": "Wither Skeleton Wood Planter",
