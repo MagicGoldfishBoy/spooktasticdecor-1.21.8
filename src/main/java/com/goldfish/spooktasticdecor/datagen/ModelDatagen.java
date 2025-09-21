@@ -342,14 +342,14 @@ public class ModelDatagen extends ModelProvider {
                     .wall(simpleblockregistry.CREAKING_STONE_WALL.get())
                     .pressurePlate(simpleblockregistry.CREAKING_STONE_PRESSURE_PLATE.get());
 
-        // blockModels.createTrivialCube(simpleblockregistry.CREAKING_SMOOTH_STONE.get());
+        blockModels.createTrivialCube(simpleblockregistry.CREAKING_SMOOTH_STONE.get());
 
-        // blockModels.familyWithExistingFullBlock(simpleblockregistry.CREAKING_SMOOTH_STONE.get())
-        //             .slab(simpleblockregistry.CREAKING_SMOOTH_STONE_SLAB.get())
-        //             .stairs(simpleblockregistry.CREAKING_SMOOTH_STONE_STAIRS.get())
-        //             .button(simpleblockregistry.CREAKING_SMOOTH_STONE_BUTTON.get())
-        //             .wall(simpleblockregistry.CREAKING_SMOOTH_STONE_WALL.get())
-        //             .pressurePlate(simpleblockregistry.CREAKING_SMOOTH_STONE_PRESSURE_PLATE.get());
+        blockModels.familyWithExistingFullBlock(simpleblockregistry.CREAKING_SMOOTH_STONE.get())
+                    .slab(simpleblockregistry.CREAKING_SMOOTH_STONE_SLAB.get())
+                    .stairs(simpleblockregistry.CREAKING_SMOOTH_STONE_STAIRS.get())
+                    .button(simpleblockregistry.CREAKING_SMOOTH_STONE_BUTTON.get())
+                    .wall(simpleblockregistry.CREAKING_SMOOTH_STONE_WALL.get())
+                    .pressurePlate(simpleblockregistry.CREAKING_SMOOTH_STONE_PRESSURE_PLATE.get());
 
         // blockModels.createTrivialCube(simpleblockregistry.CREAKING_STONE_BRICKS.get());
 

@@ -260,12 +260,12 @@ public class simpleblockregistry {
     public static DeferredBlock<WallBlock> CREAKING_STONE_WALL;
     public static DeferredBlock<PressurePlateBlock> CREAKING_STONE_PRESSURE_PLATE;
 
-    // public static DeferredBlock<Block> CREAKING_SMOOTH_STONE;
-    // public static DeferredBlock<SlabBlock> CREAKING_SMOOTH_STONE_SLAB;
-    // public static DeferredBlock<StairBlock> CREAKING_SMOOTH_STONE_STAIRS;
-    // public static DeferredBlock<ButtonBlock> CREAKING_SMOOTH_STONE_BUTTON;
-    // public static DeferredBlock<WallBlock> CREAKING_SMOOTH_STONE_WALL;
-    // public static DeferredBlock<PressurePlateBlock> CREAKING_SMOOTH_STONE_PRESSURE_PLATE;
+    public static DeferredBlock<Block> CREAKING_SMOOTH_STONE;
+    public static DeferredBlock<SlabBlock> CREAKING_SMOOTH_STONE_SLAB;
+    public static DeferredBlock<StairBlock> CREAKING_SMOOTH_STONE_STAIRS;
+    public static DeferredBlock<ButtonBlock> CREAKING_SMOOTH_STONE_BUTTON;
+    public static DeferredBlock<WallBlock> CREAKING_SMOOTH_STONE_WALL;
+    public static DeferredBlock<PressurePlateBlock> CREAKING_SMOOTH_STONE_PRESSURE_PLATE;
 
     // public static DeferredBlock<Block> CREAKING_STONE_BRICKS;
     // public static DeferredBlock<SlabBlock> CREAKING_STONE_BRICKS_SLAB;
@@ -2233,66 +2233,66 @@ public class simpleblockregistry {
             )
         );
 
-        // CREAKING_SMOOTH_STONE = SpooktasticDecor.BLOCKS.register(
-        //     "creaking_smooth_stone",
-        //     registryName -> new Block(BlockBehaviour.Properties.of()
-        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //     .destroyTime(STONE_DESTROY_TIME)
-        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
-        //     .requiresCorrectToolForDrops()
-        //     .sound(SoundType.RESIN_BRICKS)
-        //     )
-        // );
-        // CREAKING_SMOOTH_STONE_SLAB = SpooktasticDecor.BLOCKS.register(
-        //     "creaking_smooth_stone_slab",
-        //     registryName -> new SlabBlock(BlockBehaviour.Properties.of()
-        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //     .destroyTime(STONE_DESTROY_TIME)
-        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
-        //     .requiresCorrectToolForDrops()
-        //     .sound(SoundType.RESIN_BRICKS)
-        //     )
-        // );
-        // CREAKING_SMOOTH_STONE_STAIRS = SpooktasticDecor.BLOCKS.register(
-        //     "creaking_smooth_stone_stairs",
-        //     registryName -> new StairBlock(CREAKING_SMOOTH_STONE.get().defaultBlockState(),BlockBehaviour.Properties.of()
-        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //     .destroyTime(STONE_DESTROY_TIME)
-        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
-        //     .requiresCorrectToolForDrops()
-        //     .sound(SoundType.RESIN_BRICKS)
-        //     )
-        // );
-        // CREAKING_SMOOTH_STONE_BUTTON = SpooktasticDecor.BLOCKS.register(
-        //     "creaking_smooth_stone_button",
-        //     registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
-        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //     .destroyTime(STONE_DESTROY_TIME)
-        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
-        //     .requiresCorrectToolForDrops()
-        //     .sound(SoundType.RESIN_BRICKS)
-        //     )
-        // );
-        // CREAKING_SMOOTH_STONE_WALL = SpooktasticDecor.BLOCKS.register(
-        //     "creaking_smooth_stone_wall",
-        //     registryName -> new WallBlock(BlockBehaviour.Properties.of()
-        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //     .destroyTime(STONE_DESTROY_TIME)
-        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
-        //     .requiresCorrectToolForDrops()
-        //     .sound(SoundType.RESIN_BRICKS)
-        //     )
-        // );
-        // CREAKING_SMOOTH_STONE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
-        //     "creaking_smooth_stone_pressure_plate",
-        //     registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
-        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //     .destroyTime(STONE_DESTROY_TIME)
-        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
-        //     .requiresCorrectToolForDrops()
-        //     .sound(SoundType.RESIN_BRICKS)
-        //     )
-        // );
+        CREAKING_SMOOTH_STONE = SpooktasticDecor.BLOCKS.register(
+            "creaking_smooth_stone",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.RESIN_BRICKS)
+            )
+        );
+        CREAKING_SMOOTH_STONE_SLAB = SpooktasticDecor.BLOCKS.register(
+            "creaking_smooth_stone_slab",
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.RESIN_BRICKS)
+            )
+        );
+        CREAKING_SMOOTH_STONE_STAIRS = SpooktasticDecor.BLOCKS.register(
+            "creaking_smooth_stone_stairs",
+            registryName -> new StairBlock(CREAKING_SMOOTH_STONE.get().defaultBlockState(),BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.RESIN_BRICKS)
+            )
+        );
+        CREAKING_SMOOTH_STONE_BUTTON = SpooktasticDecor.BLOCKS.register(
+            "creaking_smooth_stone_button",
+            registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.RESIN_BRICKS)
+            )
+        );
+        CREAKING_SMOOTH_STONE_WALL = SpooktasticDecor.BLOCKS.register(
+            "creaking_smooth_stone_wall",
+            registryName -> new WallBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.RESIN_BRICKS)
+            )
+        );
+        CREAKING_SMOOTH_STONE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+            "creaking_smooth_stone_pressure_plate",
+            registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.RESIN_BRICKS)
+            )
+        );
 
         // CREAKING_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
         //     "creaking_stone_bricks",

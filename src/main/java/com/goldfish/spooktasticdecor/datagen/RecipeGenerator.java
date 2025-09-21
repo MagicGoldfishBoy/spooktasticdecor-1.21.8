@@ -1232,18 +1232,18 @@ public class RecipeGenerator extends RecipeProvider {
                         20 
                         );
 
-                //         helper.registerFamily(
-                //         simpleblockregistry.CREAKING_SMOOTH_STONE.get(),
-                //         SimpleBlockItemRegistry.CREAKING_SMOOTH_STONE_ITEM.get(),
-                //         simpleblockregistry.CREAKING_SMOOTH_STONE_SLAB.get(),
-                //         simpleblockregistry.CREAKING_SMOOTH_STONE_STAIRS.get(),
-                //         simpleblockregistry.CREAKING_SMOOTH_STONE_WALL.get(),
-                //         SimpleBlockItemRegistry.CREAKING_SMOOTH_STONE_BUTTON_ITEM.get(),
-                //         SimpleBlockItemRegistry.CREAKING_SMOOTH_STONE_PRESSURE_PLATE_ITEM.get(),
-                //         SimpleBlockItemRegistry.CREAKING_STONE_ITEM.get(),
-                //         0.5f, 
-                //         20 
-                //         );
+                        helper.registerFamily(
+                        simpleblockregistry.CREAKING_SMOOTH_STONE.get(),
+                        SimpleBlockItemRegistry.CREAKING_SMOOTH_STONE_ITEM.get(),
+                        simpleblockregistry.CREAKING_SMOOTH_STONE_SLAB.get(),
+                        simpleblockregistry.CREAKING_SMOOTH_STONE_STAIRS.get(),
+                        simpleblockregistry.CREAKING_SMOOTH_STONE_WALL.get(),
+                        SimpleBlockItemRegistry.CREAKING_SMOOTH_STONE_BUTTON_ITEM.get(),
+                        SimpleBlockItemRegistry.CREAKING_SMOOTH_STONE_PRESSURE_PLATE_ITEM.get(),
+                        SimpleBlockItemRegistry.CREAKING_STONE_ITEM.get(),
+                        0.5f, 
+                        20 
+                        );
                 // ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.CREAKING_STONE_BRICKS_ITEM.get(), 4)
                 //         .pattern("AA ")
                 //         .pattern("AA ")

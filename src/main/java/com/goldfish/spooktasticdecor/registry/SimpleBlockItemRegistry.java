@@ -237,12 +237,12 @@ public class SimpleBlockItemRegistry {
     public static DeferredItem<BlockItem> CREAKING_STONE_WALL_ITEM;
     public static DeferredItem<BlockItem> CREAKING_STONE_PRESSURE_PLATE_ITEM;
 
-    // public static DeferredItem<BlockItem> CREAKING_SMOOTH_STONE_ITEM;
-    // public static DeferredItem<BlockItem> CREAKING_SMOOTH_STONE_SLAB_ITEM;
-    // public static DeferredItem<BlockItem> CREAKING_SMOOTH_STONE_STAIRS_ITEM;
-    // public static DeferredItem<BlockItem> CREAKING_SMOOTH_STONE_BUTTON_ITEM;
-    // public static DeferredItem<BlockItem> CREAKING_SMOOTH_STONE_WALL_ITEM;
-    // public static DeferredItem<BlockItem> CREAKING_SMOOTH_STONE_PRESSURE_PLATE_ITEM;
+    public static DeferredItem<BlockItem> CREAKING_SMOOTH_STONE_ITEM;
+    public static DeferredItem<BlockItem> CREAKING_SMOOTH_STONE_SLAB_ITEM;
+    public static DeferredItem<BlockItem> CREAKING_SMOOTH_STONE_STAIRS_ITEM;
+    public static DeferredItem<BlockItem> CREAKING_SMOOTH_STONE_BUTTON_ITEM;
+    public static DeferredItem<BlockItem> CREAKING_SMOOTH_STONE_WALL_ITEM;
+    public static DeferredItem<BlockItem> CREAKING_SMOOTH_STONE_PRESSURE_PLATE_ITEM;
 
     // public static DeferredItem<BlockItem> CREAKING_STONE_BRICKS_ITEM;
     // public static DeferredItem<BlockItem> CREAKING_STONE_BRICKS_SLAB_ITEM;
@@ -1094,30 +1094,30 @@ public class SimpleBlockItemRegistry {
             new Item.Properties()
         );
 
-        // CREAKING_SMOOTH_STONE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
-        //     simpleblockregistry.CREAKING_SMOOTH_STONE,
-        //     new Item.Properties()
-        // );
-        // CREAKING_SMOOTH_STONE_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
-        //     simpleblockregistry.CREAKING_SMOOTH_STONE_SLAB,
-        //     new Item.Properties()
-        // );
-        // CREAKING_SMOOTH_STONE_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
-        //     simpleblockregistry.CREAKING_SMOOTH_STONE_STAIRS,
-        //     new Item.Properties()
-        // );
-        // CREAKING_SMOOTH_STONE_BUTTON_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
-        //     simpleblockregistry.CREAKING_SMOOTH_STONE_BUTTON,
-        //     new Item.Properties()
-        // );
-        // CREAKING_SMOOTH_STONE_WALL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
-        //     simpleblockregistry.CREAKING_SMOOTH_STONE_WALL,
-        //     new Item.Properties()
-        // );
-        // CREAKING_SMOOTH_STONE_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
-        //     simpleblockregistry.CREAKING_SMOOTH_STONE_PRESSURE_PLATE,
-        //     new Item.Properties()
-        // );
+        CREAKING_SMOOTH_STONE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.CREAKING_SMOOTH_STONE,
+            new Item.Properties()
+        );
+        CREAKING_SMOOTH_STONE_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.CREAKING_SMOOTH_STONE_SLAB,
+            new Item.Properties()
+        );
+        CREAKING_SMOOTH_STONE_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.CREAKING_SMOOTH_STONE_STAIRS,
+            new Item.Properties()
+        );
+        CREAKING_SMOOTH_STONE_BUTTON_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.CREAKING_SMOOTH_STONE_BUTTON,
+            new Item.Properties()
+        );
+        CREAKING_SMOOTH_STONE_WALL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.CREAKING_SMOOTH_STONE_WALL,
+            new Item.Properties()
+        );
+        CREAKING_SMOOTH_STONE_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.CREAKING_SMOOTH_STONE_PRESSURE_PLATE,
+            new Item.Properties()
+        );
 
         // CREAKING_STONE_BRICKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
         //     simpleblockregistry.CREAKING_STONE_BRICKS,
