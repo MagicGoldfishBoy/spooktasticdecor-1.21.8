@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "spooktasticdecor:spider_cobblestone",
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:spider_cobblestone_stairs"
+  }
+}

@@ -363,6 +363,45 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createTrivialCube(simpleblockregistry.CREAKING_CHISELED_STONE_BRICKS.get());
 
+
+        blockModels.createTrivialCube(simpleblockregistry.SPIDER_COBBLESTONE.get());
+
+        blockModels.familyWithExistingFullBlock(simpleblockregistry.SPIDER_COBBLESTONE.get())
+                   .slab(simpleblockregistry.SPIDER_COBBLESTONE_SLAB.get())
+                   .stairs(simpleblockregistry.SPIDER_COBBLESTONE_STAIRS.get())
+                   .button(simpleblockregistry.SPIDER_COBBLESTONE_BUTTON.get())
+                   .wall(simpleblockregistry.SPIDER_COBBLESTONE_WALL.get())
+                   .pressurePlate(simpleblockregistry.SPIDER_COBBLESTONE_PRESSURE_PLATE.get());
+
+        // blockModels.createTrivialCube(simpleblockregistry.SPIDER_STONE.get());
+
+        // blockModels.familyWithExistingFullBlock(simpleblockregistry.SPIDER_STONE.get())
+        //             .slab(simpleblockregistry.SPIDER_STONE_SLAB.get())
+        //             .stairs(simpleblockregistry.SPIDER_STONE_STAIRS.get())
+        //             .button(simpleblockregistry.SPIDER_STONE_BUTTON.get())
+        //             .wall(simpleblockregistry.SPIDER_STONE_WALL.get())
+        //             .pressurePlate(simpleblockregistry.SPIDER_STONE_PRESSURE_PLATE.get());
+
+        // blockModels.createTrivialCube(simpleblockregistry.SPIDER_SMOOTH_STONE.get());
+
+        // blockModels.familyWithExistingFullBlock(simpleblockregistry.SPIDER_SMOOTH_STONE.get())
+        //             .slab(simpleblockregistry.SPIDER_SMOOTH_STONE_SLAB.get())
+        //             .stairs(simpleblockregistry.SPIDER_SMOOTH_STONE_STAIRS.get())
+        //             .button(simpleblockregistry.SPIDER_SMOOTH_STONE_BUTTON.get())
+        //             .wall(simpleblockregistry.SPIDER_SMOOTH_STONE_WALL.get())
+        //             .pressurePlate(simpleblockregistry.SPIDER_SMOOTH_STONE_PRESSURE_PLATE.get());
+
+        // blockModels.createTrivialCube(simpleblockregistry.SPIDER_STONE_BRICKS.get());
+
+        // blockModels.familyWithExistingFullBlock(simpleblockregistry.SPIDER_STONE_BRICKS.get())
+        //             .slab(simpleblockregistry.SPIDER_STONE_BRICKS_SLAB.get())
+        //             .stairs(simpleblockregistry.SPIDER_STONE_BRICKS_STAIRS.get())
+        //             .button(simpleblockregistry.SPIDER_STONE_BRICKS_BUTTON.get())
+        //             .wall(simpleblockregistry.SPIDER_STONE_BRICKS_WALL.get())
+        //             .pressurePlate(simpleblockregistry.SPIDER_STONE_BRICKS_PRESSURE_PLATE.get());
+
+        // blockModels.createTrivialCube(simpleblockregistry.SPIDER_CHISELED_STONE_BRICKS.get());
+
     }
 
     ResourceLocation woodtable;

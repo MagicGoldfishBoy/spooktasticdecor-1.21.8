@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "spooktasticdecor:spider_cobblestone"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:spider_cobblestone_button"
+  }
+}

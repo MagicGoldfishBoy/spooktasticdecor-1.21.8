@@ -242,6 +242,14 @@
   "block.spooktasticdecor.creaking_chiseled_stone_bricks": "Creaking Chiseled Stone Bricks",
 
 
+  "block.spooktasticdecor.spider_cobblestone": "Spider Cobblestone",
+  "block.spooktasticdecor.spider_cobblestone_slab": "Spider Cobblestone Slab",
+  "block.spooktasticdecor.spider_cobblestone_stairs": "Spider Cobblestone Stairs",
+  "block.spooktasticdecor.spider_cobblestone_button": "Spider Cobblestone Button",
+  "block.spooktasticdecor.spider_cobblestone_wall": "Spider Cobblestone Wall",
+  "block.spooktasticdecor.spider_cobblestone_pressure_plate": "Spider Cobblestone Pressure Plate",
+
+
   "block.spooktasticdecor.zombie_wood_planter": "Zombie Wood Planter",
   "block.spooktasticdecor.skeleton_wood_planter": "Skeleton Wood Planter",
   "block.spooktasticdecor.wither_skeleton_wood_planter": "Wither Skeleton Wood Planter",
