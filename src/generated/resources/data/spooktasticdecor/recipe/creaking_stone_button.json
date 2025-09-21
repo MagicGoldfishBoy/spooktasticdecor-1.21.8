@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "spooktasticdecor:creaking_stone"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:creaking_stone_button"
+  }
+}
