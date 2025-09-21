@@ -251,7 +251,7 @@ public class SimpleBlockItemRegistry {
     public static DeferredItem<BlockItem> CREAKING_STONE_BRICKS_WALL_ITEM;
     public static DeferredItem<BlockItem> CREAKING_STONE_BRICKS_PRESSURE_PLATE_ITEM;
 
-    // public static DeferredItem<BlockItem> CREAKING_CHISELED_STONE_BRICKS_ITEM;
+    public static DeferredItem<BlockItem> CREAKING_CHISELED_STONE_BRICKS_ITEM;
 
     public static void registerAll() {
         register_lamps();
@@ -1144,10 +1144,10 @@ public class SimpleBlockItemRegistry {
             new Item.Properties()
         );
 
-        // CREAKING_CHISELED_STONE_BRICKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
-        //     simpleblockregistry.CREAKING_CHISELED_STONE_BRICKS,
-        //     new Item.Properties()
-        // );
+        CREAKING_CHISELED_STONE_BRICKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.CREAKING_CHISELED_STONE_BRICKS,
+            new Item.Properties()
+        );
     }
 
 }

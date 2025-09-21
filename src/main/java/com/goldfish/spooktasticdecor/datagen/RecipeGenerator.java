@@ -1269,16 +1269,16 @@ public class RecipeGenerator extends RecipeProvider {
                         );
 
 
-                // ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.CREAKING_CHISELED_STONE_BRICKS_ITEM.get())
-                //         .pattern("A")
-                //         .pattern("A")
-                //         .define('A', SimpleBlockItemRegistry.CREAKING_STONE_BRICKS_SLAB_ITEM.get())
-                //         .unlockedBy("has_creaking_stone_bricks_slab", has(SimpleBlockItemRegistry.CREAKING_STONE_BRICKS_SLAB_ITEM.get()))
-                //         .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.CREAKING_CHISELED_STONE_BRICKS_ITEM.get())
+                        .pattern("A")
+                        .pattern("A")
+                        .define('A', SimpleBlockItemRegistry.CREAKING_STONE_BRICKS_SLAB_ITEM.get())
+                        .unlockedBy("has_creaking_stone_bricks_slab", has(SimpleBlockItemRegistry.CREAKING_STONE_BRICKS_SLAB_ITEM.get()))
+                        .save(this.output);
 
-                // SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.CREAKING_STONE_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.CREAKING_CHISELED_STONE_BRICKS.get(), 1)
-                //         .unlockedBy("has_creaking_stone_bricks", has(simpleblockregistry.CREAKING_STONE_BRICKS.get()))
-                //         .save(this.output, SpooktasticDecor.MODID + ":creaking_chiseled_stone_bricks_from_stonecutting");                
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.CREAKING_STONE_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.CREAKING_CHISELED_STONE_BRICKS.get(), 1)
+                        .unlockedBy("has_creaking_stone_bricks", has(simpleblockregistry.CREAKING_STONE_BRICKS.get()))
+                        .save(this.output, SpooktasticDecor.MODID + ":creaking_chiseled_stone_bricks_from_stonecutting");                
         }
 
 

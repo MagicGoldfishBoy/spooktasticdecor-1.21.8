@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_creaking_stone_bricks_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spooktasticdecor:creaking_stone_bricks_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "spooktasticdecor:creaking_chiseled_stone_bricks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_creaking_stone_bricks_slab"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "spooktasticdecor:creaking_chiseled_stone_bricks"
+    ]
+  }
+}

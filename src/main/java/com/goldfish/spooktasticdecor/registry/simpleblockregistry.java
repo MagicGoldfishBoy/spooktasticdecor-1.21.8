@@ -274,7 +274,7 @@ public class simpleblockregistry {
     public static DeferredBlock<WallBlock> CREAKING_STONE_BRICKS_WALL;
     public static DeferredBlock<PressurePlateBlock> CREAKING_STONE_BRICKS_PRESSURE_PLATE;
 
-    // public static DeferredBlock<Block> CREAKING_CHISELED_STONE_BRICKS;
+    public static DeferredBlock<Block> CREAKING_CHISELED_STONE_BRICKS;
 
     public static void registerAll() {
         register_lamps();
@@ -2354,15 +2354,15 @@ public class simpleblockregistry {
             .sound(SoundType.RESIN_BRICKS)
             )
         );
-        // CREAKING_CHISELED_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
-        //     "creaking_chiseled_stone_bricks",
-        //     registryName -> new Block(BlockBehaviour.Properties.of()
-        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //     .destroyTime(STONE_DESTROY_TIME)
-        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
-        //     .requiresCorrectToolForDrops()
-        //     .sound(SoundType.RESIN_BRICKS)
-        //     )
-        // );
+        CREAKING_CHISELED_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
+            "creaking_chiseled_stone_bricks",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.RESIN_BRICKS)
+            )
+        );
     }
 }
