@@ -145,6 +145,13 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('C', Items.RESIN_CLUMP)
                         .unlockedBy("has_pale_oak_planks", has(Items.PALE_OAK_PLANKS))
                         .save(this.output);
+                ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.CREAKING_STONE_LAMP_ITEM.get())
+                        .requires(SimpleBlockItemRegistry.CREAKING_CHISELED_STONE_BRICKS_ITEM.get())
+                        .requires(Items.GLOWSTONE_DUST)
+                        .unlockedBy("has_creaking_chiseled_stone", has(SimpleBlockItemRegistry.CREAKING_CHISELED_STONE_BRICKS_ITEM.get()))
+                        .unlockedBy("has_glowstone_dust", has(Items.GLOWSTONE_DUST))
+                        .save(this.output);
+
                 ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.EYEBALL_LAMP_ITEM.get(), 2)
                         .pattern(" C ")
                         .pattern("ABA")
