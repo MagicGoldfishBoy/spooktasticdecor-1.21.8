@@ -49,6 +49,7 @@ public class simpleblockregistry {
     public static DeferredBlock<Block> EYEBALL_LAMP;
 
     public static DeferredBlock<Block> SPIDER_LAMP;
+    public static DeferredBlock<Block> SPIDER_STONE_LAMP;
 
     public static DeferredBlock<Block> ENDER_LAMP;
 
@@ -309,7 +310,7 @@ public class simpleblockregistry {
     public static DeferredBlock<WallBlock> SPIDER_STONE_BRICKS_WALL;
     public static DeferredBlock<PressurePlateBlock> SPIDER_STONE_BRICKS_PRESSURE_PLATE;
 
-    // public static DeferredBlock<Block> SPIDER_CHISELED_STONE_BRICKS;
+    public static DeferredBlock<Block> SPIDER_CHISELED_STONE_BRICKS;
 
     public static void registerAll() {
         register_lamps();
@@ -437,6 +438,16 @@ public class simpleblockregistry {
                 .explosionResistance(15.0f)
                 .sound(SoundType.COBWEB)
                 .lightLevel(state -> 10)
+            )
+        );
+        SPIDER_STONE_LAMP = SpooktasticDecor.BLOCKS.register(
+            "spider_stone_lamp",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(3.0f)
+                .explosionResistance(15.0f)
+                .sound(SoundType.STONE)
+                .lightLevel(state -> 12)
             )
         );
         ENDER_LAMP = SpooktasticDecor.BLOCKS.register(
@@ -2657,15 +2668,15 @@ public class simpleblockregistry {
             .sound(SoundType.STONE)
             )
         );
-        // SPIDER_CHISELED_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
-        //     "spider_chiseled_stone_bricks",
-        //     registryName -> new Block(BlockBehaviour.Properties.of()
-        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //     .destroyTime(STONE_DESTROY_TIME)
-        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
-        //     .requiresCorrectToolForDrops()
-        //     .sound(SoundType.STONE)
-        //     )
-        // );
+        SPIDER_CHISELED_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
+            "spider_chiseled_stone_bricks",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
     }
 }

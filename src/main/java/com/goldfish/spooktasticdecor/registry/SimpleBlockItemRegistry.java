@@ -24,7 +24,10 @@ public class SimpleBlockItemRegistry {
     public static DeferredItem<BlockItem> CREAKING_STONE_LAMP_ITEM;
 
     public static DeferredItem<BlockItem> EYEBALL_LAMP_ITEM;
+
     public static DeferredItem<BlockItem> SPIDER_LAMP_ITEM;
+    public static DeferredItem<BlockItem> SPIDER_STONE_LAMP_ITEM;
+
     public static DeferredItem<BlockItem> ENDER_LAMP_ITEM;
 
 
@@ -284,7 +287,7 @@ public class SimpleBlockItemRegistry {
     public static DeferredItem<BlockItem> SPIDER_STONE_BRICKS_WALL_ITEM;
     public static DeferredItem<BlockItem> SPIDER_STONE_BRICKS_PRESSURE_PLATE_ITEM;
 
-    // public static DeferredItem<BlockItem> SPIDER_CHISELED_STONE_BRICKS_ITEM;
+    public static DeferredItem<BlockItem> SPIDER_CHISELED_STONE_BRICKS_ITEM;
 
     public static void registerAll() {
         register_lamps();
@@ -330,6 +333,7 @@ public class SimpleBlockItemRegistry {
         simpleblockregistry.GHAST_STONE_LAMP,
         new Item.Properties());
 
+
         CREAKING_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
         simpleblockregistry.CREAKING_LAMP,
         new Item.Properties());
@@ -338,14 +342,21 @@ public class SimpleBlockItemRegistry {
         simpleblockregistry.CREAKING_STONE_LAMP,
         new Item.Properties());
 
+
         EYEBALL_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
         simpleblockregistry.EYEBALL_LAMP,
         new Item.Properties());
 
+        
         SPIDER_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
         simpleblockregistry.SPIDER_LAMP,
         new Item.Properties());
 
+        SPIDER_STONE_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        simpleblockregistry.SPIDER_STONE_LAMP,
+        new Item.Properties());
+
+        
         ENDER_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
         simpleblockregistry.ENDER_LAMP,
         new Item.Properties());    
@@ -1290,10 +1301,10 @@ public class SimpleBlockItemRegistry {
             new Item.Properties()
         );
 
-        // SPIDER_CHISELED_STONE_BRICKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
-        //     simpleblockregistry.SPIDER_CHISELED_STONE_BRICKS,
-        //     new Item.Properties()
-        // );
+        SPIDER_CHISELED_STONE_BRICKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.SPIDER_CHISELED_STONE_BRICKS,
+            new Item.Properties()
+        );
     }
 
 }

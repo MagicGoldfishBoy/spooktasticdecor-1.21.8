@@ -161,6 +161,7 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('C', Items.ENDER_EYE)
                         .unlockedBy("has_spider_eye", has(Items.SPIDER_EYE))
                         .save(this.output);
+
                 ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.SPIDER_LAMP_ITEM.get(), 2)
                         .pattern(" C ")
                         .pattern("ABA")
@@ -170,6 +171,13 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('C', Items.FERMENTED_SPIDER_EYE)
                         .unlockedBy("has_spider_eye", has(Items.SPIDER_EYE))
                         .save(this.output);
+                ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.SPIDER_STONE_LAMP_ITEM.get())
+                        .requires(SimpleBlockItemRegistry.SPIDER_CHISELED_STONE_BRICKS_ITEM.get())
+                        .requires(Items.GLOWSTONE_DUST)
+                        .unlockedBy("has_spider_chiseled_stone", has(SimpleBlockItemRegistry.SPIDER_CHISELED_STONE_BRICKS_ITEM.get()))
+                        .unlockedBy("has_glowstone_dust", has(Items.GLOWSTONE_DUST))
+                        .save(this.output);
+                        
                 ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ENDER_LAMP_ITEM.get(), 2)
                         .pattern(" C ")
                         .pattern("ABA")
@@ -1362,16 +1370,16 @@ public class RecipeGenerator extends RecipeProvider {
                         );
 
 
-                // ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.SPIDER_CHISELED_STONE_BRICKS_ITEM.get())
-                //         .pattern("A")
-                //         .pattern("A")
-                //         .define('A', SimpleBlockItemRegistry.SPIDER_STONE_BRICKS_SLAB_ITEM.get())
-                //         .unlockedBy("has_spider_stone_bricks_slab", has(SimpleBlockItemRegistry.SPIDER_STONE_BRICKS_SLAB_ITEM.get()))
-                //         .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.SPIDER_CHISELED_STONE_BRICKS_ITEM.get())
+                        .pattern("A")
+                        .pattern("A")
+                        .define('A', SimpleBlockItemRegistry.SPIDER_STONE_BRICKS_SLAB_ITEM.get())
+                        .unlockedBy("has_spider_stone_bricks_slab", has(SimpleBlockItemRegistry.SPIDER_STONE_BRICKS_SLAB_ITEM.get()))
+                        .save(this.output);
 
-                // SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.SPIDER_STONE_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.SPIDER_CHISELED_STONE_BRICKS.get(), 1)
-                //         .unlockedBy("has_spider_stone_bricks", has(simpleblockregistry.SPIDER_STONE_BRICKS.get()))
-                //         .save(this.output, SpooktasticDecor.MODID + ":spider_chiseled_stone_bricks_from_stonecutting");                
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.SPIDER_STONE_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.SPIDER_CHISELED_STONE_BRICKS.get(), 1)
+                        .unlockedBy("has_spider_stone_bricks", has(simpleblockregistry.SPIDER_STONE_BRICKS.get()))
+                        .save(this.output, SpooktasticDecor.MODID + ":spider_chiseled_stone_bricks_from_stonecutting");                
         }
 
 

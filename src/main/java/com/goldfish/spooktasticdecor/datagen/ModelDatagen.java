@@ -54,6 +54,7 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createTrivialCube(simpleblockregistry.EYEBALL_LAMP.get());
 
         blockModels.createTrivialCube(simpleblockregistry.SPIDER_LAMP.get());
+        blockModels.createTrivialCube(simpleblockregistry.SPIDER_STONE_LAMP.get());
 
         blockModels.createTrivialCube(simpleblockregistry.ENDER_LAMP.get());
 
@@ -400,7 +401,7 @@ public class ModelDatagen extends ModelProvider {
                     .wall(simpleblockregistry.SPIDER_STONE_BRICKS_WALL.get())
                     .pressurePlate(simpleblockregistry.SPIDER_STONE_BRICKS_PRESSURE_PLATE.get());
 
-        // blockModels.createTrivialCube(simpleblockregistry.SPIDER_CHISELED_STONE_BRICKS.get());
+        blockModels.createTrivialCube(simpleblockregistry.SPIDER_CHISELED_STONE_BRICKS.get());
 
     }
 

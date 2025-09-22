@@ -13,6 +13,7 @@
   "block.spooktasticdecor.creaking_stone_lamp": "Creaking Stone Lamp",
   "block.spooktasticdecor.eyeball_lamp": "Eyeball Lamp",
   "block.spooktasticdecor.spider_lamp": "Spider Lamp",
+  "block.spooktasticdecor.spider_stone_lamp": "Spider Stone Lamp",
   "block.spooktasticdecor.ender_lamp": "Ender Lamp",
 
   "block.spooktasticdecor.zombie_log": "Zombie Log",
@@ -269,6 +270,8 @@
   "block.spooktasticdecor.spider_stone_bricks_button": "Spider Stone Bricks Button",
   "block.spooktasticdecor.spider_stone_bricks_wall": "Spider Stone Bricks Wall",
   "block.spooktasticdecor.spider_stone_bricks_pressure_plate": "Spider Stone Bricks Pressure Plate",
+
+  "block.spooktasticdecor.spider_chiseled_stone_bricks": "Spider Chiseled Stone Bricks",
 
 
   "block.spooktasticdecor.zombie_wood_planter": "Zombie Wood Planter",
