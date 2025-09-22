@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "spooktasticdecor:block/spider_stone_slab"
+    },
+    "type=double": {
+      "model": "spooktasticdecor:block/spider_stone"
+    },
+    "type=top": {
+      "model": "spooktasticdecor:block/spider_stone_slab_top"
+    }
+  }
+}

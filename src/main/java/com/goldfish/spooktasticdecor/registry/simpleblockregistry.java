@@ -288,12 +288,12 @@ public class simpleblockregistry {
     public static DeferredBlock<WallBlock> SPIDER_COBBLESTONE_WALL;
     public static DeferredBlock<PressurePlateBlock> SPIDER_COBBLESTONE_PRESSURE_PLATE;
 
-    // public static DeferredBlock<Block> SPIDER_STONE;
-    // public static DeferredBlock<SlabBlock> SPIDER_STONE_SLAB;
-    // public static DeferredBlock<StairBlock> SPIDER_STONE_STAIRS;
-    // public static DeferredBlock<ButtonBlock> SPIDER_STONE_BUTTON;
-    // public static DeferredBlock<WallBlock> SPIDER_STONE_WALL;
-    // public static DeferredBlock<PressurePlateBlock> SPIDER_STONE_PRESSURE_PLATE;
+    public static DeferredBlock<Block> SPIDER_STONE;
+    public static DeferredBlock<SlabBlock> SPIDER_STONE_SLAB;
+    public static DeferredBlock<StairBlock> SPIDER_STONE_STAIRS;
+    public static DeferredBlock<ButtonBlock> SPIDER_STONE_BUTTON;
+    public static DeferredBlock<WallBlock> SPIDER_STONE_WALL;
+    public static DeferredBlock<PressurePlateBlock> SPIDER_STONE_PRESSURE_PLATE;
 
     // public static DeferredBlock<Block> SPIDER_SMOOTH_STONE;
     // public static DeferredBlock<SlabBlock> SPIDER_SMOOTH_STONE_SLAB;
@@ -1502,6 +1502,7 @@ public class simpleblockregistry {
         registerWitherSkeletonStone();
         registerGhastStone();
         registerCreakingStone();
+        registerSpiderStone();
     }
     public static void registerZombieStone() {
         ZOMBIE_STONE = SpooktasticDecor.BLOCKS.register(
@@ -2472,5 +2473,199 @@ public class simpleblockregistry {
             .sound(SoundType.RESIN_BRICKS)
             )
         );
+    }
+    public static void registerSpiderStone() {
+        SPIDER_STONE = SpooktasticDecor.BLOCKS.register(
+            "spider_stone",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        SPIDER_STONE_SLAB = SpooktasticDecor.BLOCKS.register(
+            "spider_stone_slab",
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        SPIDER_STONE_STAIRS = SpooktasticDecor.BLOCKS.register(
+            "spider_stone_stairs",
+            registryName -> new StairBlock(SPIDER_STONE.get().defaultBlockState(),BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        SPIDER_STONE_BUTTON = SpooktasticDecor.BLOCKS.register(
+            "spider_stone_button",
+            registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        SPIDER_STONE_WALL = SpooktasticDecor.BLOCKS.register(
+            "spider_stone_wall",
+            registryName -> new WallBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        SPIDER_STONE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+            "spider_stone_pressure_plate",
+            registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+
+        // SPIDER_SMOOTH_STONE = SpooktasticDecor.BLOCKS.register(
+        //     "spider_smooth_stone",
+        //     registryName -> new Block(BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.RESIN_BRICKS)
+        //     )
+        // );
+        // SPIDER_SMOOTH_STONE_SLAB = SpooktasticDecor.BLOCKS.register(
+        //     "spider_smooth_stone_slab",
+        //     registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.RESIN_BRICKS)
+        //     )
+        // );
+        // SPIDER_SMOOTH_STONE_STAIRS = SpooktasticDecor.BLOCKS.register(
+        //     "spider_smooth_stone_stairs",
+        //     registryName -> new StairBlock(SPIDER_SMOOTH_STONE.get().defaultBlockState(),BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.RESIN_BRICKS)
+        //     )
+        // );
+        // SPIDER_SMOOTH_STONE_BUTTON = SpooktasticDecor.BLOCKS.register(
+        //     "spider_smooth_stone_button",
+        //     registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.RESIN_BRICKS)
+        //     )
+        // );
+        // SPIDER_SMOOTH_STONE_WALL = SpooktasticDecor.BLOCKS.register(
+        //     "spider_smooth_stone_wall",
+        //     registryName -> new WallBlock(BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.RESIN_BRICKS)
+        //     )
+        // );
+        // SPIDER_SMOOTH_STONE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+        //     "spider_smooth_stone_pressure_plate",
+        //     registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.RESIN_BRICKS)
+        //     )
+        // );
+
+        // SPIDER_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
+        //     "spider_stone_bricks",
+        //     registryName -> new Block(BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.RESIN_BRICKS)
+        //     )
+        // );
+        // SPIDER_STONE_BRICKS_SLAB = SpooktasticDecor.BLOCKS.register(
+        //     "spider_stone_bricks_slab",
+        //     registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.RESIN_BRICKS)
+        //     )
+        // );
+        // SPIDER_STONE_BRICKS_STAIRS = SpooktasticDecor.BLOCKS.register(
+        //     "spider_stone_bricks_stairs",
+        //     registryName -> new StairBlock(SPIDER_STONE_BRICKS.get().defaultBlockState(),BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.RESIN_BRICKS)
+        //     )
+        // );
+        // SPIDER_STONE_BRICKS_BUTTON = SpooktasticDecor.BLOCKS.register(
+        //     "spider_stone_bricks_button",
+        //     registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.RESIN_BRICKS)
+        //     )
+        // );
+        // SPIDER_STONE_BRICKS_WALL = SpooktasticDecor.BLOCKS.register(
+        //     "spider_stone_bricks_wall",
+        //     registryName -> new WallBlock(BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.RESIN_BRICKS)
+        //     )
+        // );
+        // SPIDER_STONE_BRICKS_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+        //     "spider_stone_bricks_pressure_plate",
+        //     registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.RESIN_BRICKS)
+        //     )
+        // );
+        // SPIDER_CHISELED_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
+        //     "spider_chiseled_stone_bricks",
+        //     registryName -> new Block(BlockBehaviour.Properties.of()
+        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
+        //     .destroyTime(STONE_DESTROY_TIME)
+        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+        //     .requiresCorrectToolForDrops()
+        //     .sound(SoundType.RESIN_BRICKS)
+        //     )
+        // );
     }
 }

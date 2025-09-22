@@ -987,6 +987,7 @@ public class RecipeGenerator extends RecipeProvider {
                 registerWitherSkeletonStoneRecipes();
                 registerGhastStoneRecipes();
                 registerCreakingStoneRecipes();
+                registerSpiderStoneRecipes();
         }
         protected void registerZombieStoneRecipes() {
                 RecipeFamilyHelper helper = new RecipeFamilyHelper(this.output, this.registries);
@@ -1307,6 +1308,70 @@ public class RecipeGenerator extends RecipeProvider {
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.CREAKING_STONE_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.CREAKING_CHISELED_STONE_BRICKS.get(), 1)
                         .unlockedBy("has_creaking_stone_bricks", has(simpleblockregistry.CREAKING_STONE_BRICKS.get()))
                         .save(this.output, SpooktasticDecor.MODID + ":creaking_chiseled_stone_bricks_from_stonecutting");                
+        }
+        protected void registerSpiderStoneRecipes() {
+                RecipeFamilyHelper helper = new RecipeFamilyHelper(this.output, this.registries);
+
+                        helper.registerFamily(
+                        simpleblockregistry.SPIDER_STONE.get(),
+                        SimpleBlockItemRegistry.SPIDER_STONE_ITEM.get(),
+                        simpleblockregistry.SPIDER_STONE_SLAB.get(),
+                        simpleblockregistry.SPIDER_STONE_STAIRS.get(),
+                        simpleblockregistry.SPIDER_STONE_WALL.get(),
+                        SimpleBlockItemRegistry.SPIDER_STONE_BUTTON_ITEM.get(),
+                        SimpleBlockItemRegistry.SPIDER_STONE_PRESSURE_PLATE_ITEM.get(),
+                        SimpleBlockItemRegistry.SPIDER_COBBLESTONE_ITEM.get(),
+                        0.5f, 
+                        20 
+                        );
+
+                //         helper.registerFamily(
+                //         simpleblockregistry.SPIDER_SMOOTH_STONE.get(),
+                //         SimpleBlockItemRegistry.SPIDER_SMOOTH_STONE_ITEM.get(),
+                //         simpleblockregistry.SPIDER_SMOOTH_STONE_SLAB.get(),
+                //         simpleblockregistry.SPIDER_SMOOTH_STONE_STAIRS.get(),
+                //         simpleblockregistry.SPIDER_SMOOTH_STONE_WALL.get(),
+                //         SimpleBlockItemRegistry.SPIDER_SMOOTH_STONE_BUTTON_ITEM.get(),
+                //         SimpleBlockItemRegistry.SPIDER_SMOOTH_STONE_PRESSURE_PLATE_ITEM.get(),
+                //         SimpleBlockItemRegistry.SPIDER_STONE_ITEM.get(),
+                //         0.5f, 
+                //         20 
+                //         );
+                // ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.SPIDER_STONE_BRICKS_ITEM.get(), 4)
+                //         .pattern("AA ")
+                //         .pattern("AA ")
+                //         .define('A', SimpleBlockItemRegistry.SPIDER_STONE_ITEM.get())
+                //         .unlockedBy("has_spider_stone", has(SimpleBlockItemRegistry.SPIDER_STONE_ITEM.get()))
+                //         .save(this.output);
+
+                // SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.SPIDER_STONE.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.SPIDER_STONE_BRICKS.get(), 1)
+                //         .unlockedBy("has_spider_stone", has(simpleblockregistry.SPIDER_STONE.get()))
+                //         .save(this.output, SpooktasticDecor.MODID + ":spider_stone_bricks_from_stonecutting");
+
+                //         helper.registerFamily(
+                //         simpleblockregistry.SPIDER_STONE_BRICKS.get(),
+                //         SimpleBlockItemRegistry.SPIDER_STONE_BRICKS_ITEM.get(),
+                //         simpleblockregistry.SPIDER_STONE_BRICKS_SLAB.get(),
+                //         simpleblockregistry.SPIDER_STONE_BRICKS_STAIRS.get(),
+                //         simpleblockregistry.SPIDER_STONE_BRICKS_WALL.get(),
+                //         SimpleBlockItemRegistry.SPIDER_STONE_BRICKS_BUTTON_ITEM.get(),
+                //         SimpleBlockItemRegistry.SPIDER_STONE_BRICKS_PRESSURE_PLATE_ITEM.get(),
+                //         null,
+                //         0.0f,
+                //         0   
+                //         );
+
+
+                // ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.SPIDER_CHISELED_STONE_BRICKS_ITEM.get())
+                //         .pattern("A")
+                //         .pattern("A")
+                //         .define('A', SimpleBlockItemRegistry.SPIDER_STONE_BRICKS_SLAB_ITEM.get())
+                //         .unlockedBy("has_spider_stone_bricks_slab", has(SimpleBlockItemRegistry.SPIDER_STONE_BRICKS_SLAB_ITEM.get()))
+                //         .save(this.output);
+
+                // SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.SPIDER_STONE_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.SPIDER_CHISELED_STONE_BRICKS.get(), 1)
+                //         .unlockedBy("has_spider_stone_bricks", has(simpleblockregistry.SPIDER_STONE_BRICKS.get()))
+                //         .save(this.output, SpooktasticDecor.MODID + ":spider_chiseled_stone_bricks_from_stonecutting");                
         }
 
 

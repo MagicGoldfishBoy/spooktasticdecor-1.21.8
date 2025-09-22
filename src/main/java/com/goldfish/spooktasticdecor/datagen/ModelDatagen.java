@@ -373,14 +373,14 @@ public class ModelDatagen extends ModelProvider {
                    .wall(simpleblockregistry.SPIDER_COBBLESTONE_WALL.get())
                    .pressurePlate(simpleblockregistry.SPIDER_COBBLESTONE_PRESSURE_PLATE.get());
 
-        // blockModels.createTrivialCube(simpleblockregistry.SPIDER_STONE.get());
+        blockModels.createTrivialCube(simpleblockregistry.SPIDER_STONE.get());
 
-        // blockModels.familyWithExistingFullBlock(simpleblockregistry.SPIDER_STONE.get())
-        //             .slab(simpleblockregistry.SPIDER_STONE_SLAB.get())
-        //             .stairs(simpleblockregistry.SPIDER_STONE_STAIRS.get())
-        //             .button(simpleblockregistry.SPIDER_STONE_BUTTON.get())
-        //             .wall(simpleblockregistry.SPIDER_STONE_WALL.get())
-        //             .pressurePlate(simpleblockregistry.SPIDER_STONE_PRESSURE_PLATE.get());
+        blockModels.familyWithExistingFullBlock(simpleblockregistry.SPIDER_STONE.get())
+                    .slab(simpleblockregistry.SPIDER_STONE_SLAB.get())
+                    .stairs(simpleblockregistry.SPIDER_STONE_STAIRS.get())
+                    .button(simpleblockregistry.SPIDER_STONE_BUTTON.get())
+                    .wall(simpleblockregistry.SPIDER_STONE_WALL.get())
+                    .pressurePlate(simpleblockregistry.SPIDER_STONE_PRESSURE_PLATE.get());
 
         // blockModels.createTrivialCube(simpleblockregistry.SPIDER_SMOOTH_STONE.get());
 
