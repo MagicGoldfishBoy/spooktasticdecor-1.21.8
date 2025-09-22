@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "spooktasticdecor:ender_cobblestone",
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:ender_cobblestone_wall"
+  }
+}

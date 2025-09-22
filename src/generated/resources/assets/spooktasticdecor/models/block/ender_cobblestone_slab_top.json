@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "spooktasticdecor:block/ender_cobblestone",
+    "side": "spooktasticdecor:block/ender_cobblestone",
+    "top": "spooktasticdecor:block/ender_cobblestone"
+  }
+}

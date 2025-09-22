@@ -289,6 +289,37 @@ public class SimpleBlockItemRegistry {
 
     public static DeferredItem<BlockItem> SPIDER_CHISELED_STONE_BRICKS_ITEM;
 
+
+    public static DeferredItem<BlockItem> ENDER_COBBLESTONE_ITEM;
+    public static DeferredItem<BlockItem> ENDER_COBBLESTONE_SLAB_ITEM;
+    public static DeferredItem<BlockItem> ENDER_COBBLESTONE_STAIRS_ITEM;
+    public static DeferredItem<BlockItem> ENDER_COBBLESTONE_BUTTON_ITEM;
+    public static DeferredItem<BlockItem> ENDER_COBBLESTONE_WALL_ITEM;
+    public static DeferredItem<BlockItem> ENDER_COBBLESTONE_PRESSURE_PLATE_ITEM;
+
+    public static DeferredItem<BlockItem> ENDER_STONE_ITEM;
+    public static DeferredItem<BlockItem> ENDER_STONE_SLAB_ITEM;
+    public static DeferredItem<BlockItem> ENDER_STONE_STAIRS_ITEM;
+    public static DeferredItem<BlockItem> ENDER_STONE_BUTTON_ITEM;
+    public static DeferredItem<BlockItem> ENDER_STONE_WALL_ITEM;
+    public static DeferredItem<BlockItem> ENDER_STONE_PRESSURE_PLATE_ITEM;
+
+    public static DeferredItem<BlockItem> ENDER_SMOOTH_STONE_ITEM;
+    public static DeferredItem<BlockItem> ENDER_SMOOTH_STONE_SLAB_ITEM;
+    public static DeferredItem<BlockItem> ENDER_SMOOTH_STONE_STAIRS_ITEM;
+    public static DeferredItem<BlockItem> ENDER_SMOOTH_STONE_BUTTON_ITEM;
+    public static DeferredItem<BlockItem> ENDER_SMOOTH_STONE_WALL_ITEM;
+    public static DeferredItem<BlockItem> ENDER_SMOOTH_STONE_PRESSURE_PLATE_ITEM;
+
+    public static DeferredItem<BlockItem> ENDER_STONE_BRICKS_ITEM;
+    public static DeferredItem<BlockItem> ENDER_STONE_BRICKS_SLAB_ITEM;
+    public static DeferredItem<BlockItem> ENDER_STONE_BRICKS_STAIRS_ITEM;
+    public static DeferredItem<BlockItem> ENDER_STONE_BRICKS_BUTTON_ITEM;
+    public static DeferredItem<BlockItem> ENDER_STONE_BRICKS_WALL_ITEM;
+    public static DeferredItem<BlockItem> ENDER_STONE_BRICKS_PRESSURE_PLATE_ITEM;
+
+    public static DeferredItem<BlockItem> ENDER_CHISELED_STONE_BRICKS_ITEM;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
@@ -356,7 +387,7 @@ public class SimpleBlockItemRegistry {
         simpleblockregistry.SPIDER_STONE_LAMP,
         new Item.Properties());
 
-        
+
         ENDER_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
         simpleblockregistry.ENDER_LAMP,
         new Item.Properties());    
@@ -654,6 +685,7 @@ public class SimpleBlockItemRegistry {
         registerGhastCobblestone();
         registerCreakingCobblestone();
         registerSpiderCobblestone();
+        registerEnderCobblestone();
     }
     public static void registerZombieCobblestone() {
         ZOMBIE_COBBLESTONE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
@@ -808,6 +840,32 @@ public class SimpleBlockItemRegistry {
         );
         SPIDER_COBBLESTONE_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             simpleblockregistry.SPIDER_COBBLESTONE_PRESSURE_PLATE,
+            new Item.Properties()
+        );
+    }
+    public static void registerEnderCobblestone() {
+        ENDER_COBBLESTONE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ENDER_COBBLESTONE,
+            new Item.Properties()
+        );
+        ENDER_COBBLESTONE_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ENDER_COBBLESTONE_SLAB,
+            new Item.Properties()
+        );
+        ENDER_COBBLESTONE_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ENDER_COBBLESTONE_STAIRS,
+            new Item.Properties()
+        );
+        ENDER_COBBLESTONE_BUTTON_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ENDER_COBBLESTONE_BUTTON,
+            new Item.Properties()
+        );
+        ENDER_COBBLESTONE_WALL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ENDER_COBBLESTONE_WALL,
+            new Item.Properties()
+        );
+        ENDER_COBBLESTONE_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ENDER_COBBLESTONE_PRESSURE_PLATE,
             new Item.Properties()
         );
     }

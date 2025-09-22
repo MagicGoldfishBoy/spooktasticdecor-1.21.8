@@ -403,6 +403,16 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createTrivialCube(simpleblockregistry.SPIDER_CHISELED_STONE_BRICKS.get());
 
+
+        blockModels.createTrivialCube(simpleblockregistry.ENDER_COBBLESTONE.get());
+
+        blockModels.familyWithExistingFullBlock(simpleblockregistry.ENDER_COBBLESTONE.get())
+                   .slab(simpleblockregistry.ENDER_COBBLESTONE_SLAB.get())
+                   .stairs(simpleblockregistry.ENDER_COBBLESTONE_STAIRS.get())
+                   .button(simpleblockregistry.ENDER_COBBLESTONE_BUTTON.get())
+                   .wall(simpleblockregistry.ENDER_COBBLESTONE_WALL.get())
+                   .pressurePlate(simpleblockregistry.ENDER_COBBLESTONE_PRESSURE_PLATE.get());
+
     }
 
     ResourceLocation woodtable;

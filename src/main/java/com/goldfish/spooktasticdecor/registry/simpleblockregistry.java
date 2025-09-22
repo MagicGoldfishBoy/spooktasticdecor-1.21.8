@@ -312,6 +312,37 @@ public class simpleblockregistry {
 
     public static DeferredBlock<Block> SPIDER_CHISELED_STONE_BRICKS;
 
+
+    public static DeferredBlock<Block> ENDER_COBBLESTONE;
+    public static DeferredBlock<SlabBlock> ENDER_COBBLESTONE_SLAB;
+    public static DeferredBlock<StairBlock> ENDER_COBBLESTONE_STAIRS;
+    public static DeferredBlock<ButtonBlock> ENDER_COBBLESTONE_BUTTON;
+    public static DeferredBlock<WallBlock> ENDER_COBBLESTONE_WALL;
+    public static DeferredBlock<PressurePlateBlock> ENDER_COBBLESTONE_PRESSURE_PLATE;
+
+    public static DeferredBlock<Block> ENDER_STONE;
+    public static DeferredBlock<SlabBlock> ENDER_STONE_SLAB;
+    public static DeferredBlock<StairBlock> ENDER_STONE_STAIRS;
+    public static DeferredBlock<ButtonBlock> ENDER_STONE_BUTTON;
+    public static DeferredBlock<WallBlock> ENDER_STONE_WALL;
+    public static DeferredBlock<PressurePlateBlock> ENDER_STONE_PRESSURE_PLATE;
+
+    public static DeferredBlock<Block> ENDER_SMOOTH_STONE;
+    public static DeferredBlock<SlabBlock> ENDER_SMOOTH_STONE_SLAB;
+    public static DeferredBlock<StairBlock> ENDER_SMOOTH_STONE_STAIRS;
+    public static DeferredBlock<ButtonBlock> ENDER_SMOOTH_STONE_BUTTON;
+    public static DeferredBlock<WallBlock> ENDER_SMOOTH_STONE_WALL;
+    public static DeferredBlock<PressurePlateBlock> ENDER_SMOOTH_STONE_PRESSURE_PLATE;
+
+    public static DeferredBlock<Block> ENDER_STONE_BRICKS;
+    public static DeferredBlock<SlabBlock> ENDER_STONE_BRICKS_SLAB;
+    public static DeferredBlock<StairBlock> ENDER_STONE_BRICKS_STAIRS;
+    public static DeferredBlock<ButtonBlock> ENDER_STONE_BRICKS_BUTTON;
+    public static DeferredBlock<WallBlock> ENDER_STONE_BRICKS_WALL;
+    public static DeferredBlock<PressurePlateBlock> ENDER_STONE_BRICKS_PRESSURE_PLATE;
+
+    public static DeferredBlock<Block> ENDER_CHISELED_STONE_BRICKS;
+
     public static void registerAll() {
         register_lamps();
         register_wood();
@@ -1130,6 +1161,7 @@ public class simpleblockregistry {
         registerGhastCobblestone();
         registerCreakingCobblestone();
         registerSpiderCobblestone();
+        registerEnderCobblestone();
     }
     public static void registerZombieCobblestone() {
         ZOMBIE_COBBLESTONE = SpooktasticDecor.BLOCKS.register(
@@ -1494,6 +1526,68 @@ public class simpleblockregistry {
         );
         SPIDER_COBBLESTONE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
             "spider_cobblestone_pressure_plate",
+            registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+    }
+    public static void registerEnderCobblestone() {
+        ENDER_COBBLESTONE = SpooktasticDecor.BLOCKS.register(
+            "ender_cobblestone",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ENDER_COBBLESTONE_SLAB = SpooktasticDecor.BLOCKS.register(
+            "ender_cobblestone_slab",
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ENDER_COBBLESTONE_STAIRS = SpooktasticDecor.BLOCKS.register(
+            "ender_cobblestone_stairs",
+            registryName -> new StairBlock(ENDER_COBBLESTONE.get().defaultBlockState(), BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ENDER_COBBLESTONE_BUTTON = SpooktasticDecor.BLOCKS.register(
+            "ender_cobblestone_button",
+            registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ENDER_COBBLESTONE_WALL = SpooktasticDecor.BLOCKS.register(
+            "ender_cobblestone_wall",
+            registryName -> new WallBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(COBBLESTONE_DESTROY_TIME)
+            .explosionResistance(COBBLESTONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ENDER_COBBLESTONE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+            "ender_cobblestone_pressure_plate",
             registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
             .setId(ResourceKey.create(Registries.BLOCK, registryName))
             .destroyTime(COBBLESTONE_DESTROY_TIME)

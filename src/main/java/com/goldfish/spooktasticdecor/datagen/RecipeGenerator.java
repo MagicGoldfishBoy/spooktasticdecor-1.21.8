@@ -177,7 +177,7 @@ public class RecipeGenerator extends RecipeProvider {
                         .unlockedBy("has_spider_chiseled_stone", has(SimpleBlockItemRegistry.SPIDER_CHISELED_STONE_BRICKS_ITEM.get()))
                         .unlockedBy("has_glowstone_dust", has(Items.GLOWSTONE_DUST))
                         .save(this.output);
-                        
+
                 ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ENDER_LAMP_ITEM.get(), 2)
                         .pattern(" C ")
                         .pattern("ABA")
@@ -983,6 +983,27 @@ public class RecipeGenerator extends RecipeProvider {
                         simpleblockregistry.SPIDER_COBBLESTONE_WALL.get(),
                         SimpleBlockItemRegistry.SPIDER_COBBLESTONE_BUTTON_ITEM.get(),
                         SimpleBlockItemRegistry.SPIDER_COBBLESTONE_PRESSURE_PLATE_ITEM.get(),
+                        null,
+                        0.0f,
+                        0
+                        );
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ENDER_COBBLESTONE_ITEM.get(), 8)
+                        .pattern("AAA")
+                        .pattern("ABA")
+                        .pattern("AAA")
+                        .define('A', this.tag(COBBLESTONE_TAG))
+                        .define('B', Items.ENDER_EYE)
+                        .unlockedBy("has_ender_eye", has(Items.ENDER_EYE))
+                        .save(this.output);
+
+                        helper.registerFamily(
+                        simpleblockregistry.ENDER_COBBLESTONE.get(),
+                        SimpleBlockItemRegistry.ENDER_COBBLESTONE_ITEM.get(),
+                        simpleblockregistry.ENDER_COBBLESTONE_SLAB.get(),
+                        simpleblockregistry.ENDER_COBBLESTONE_STAIRS.get(),
+                        simpleblockregistry.ENDER_COBBLESTONE_WALL.get(),
+                        SimpleBlockItemRegistry.ENDER_COBBLESTONE_BUTTON_ITEM.get(),
+                        SimpleBlockItemRegistry.ENDER_COBBLESTONE_PRESSURE_PLATE_ITEM.get(),
                         null,
                         0.0f,
                         0

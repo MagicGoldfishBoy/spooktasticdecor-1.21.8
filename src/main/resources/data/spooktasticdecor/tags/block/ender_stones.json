@@ -1,0 +1,29 @@
+{
+    "values": [
+        "spooktasticdecor:ender_cobblestone",
+        "spooktasticdecor:ender_cobblestone_slab",
+        "spooktasticdecor:ender_cobblestone_stairs",
+        "spooktasticdecor:ender_cobblestone_button",
+        "spooktasticdecor:ender_cobblestone_wall",
+        "spooktasticdecor:ender_cobblestone_pressure_plate",
+        "spooktasticdecor:ender_stone",
+        "spooktasticdecor:ender_stone_slab",
+        "spooktasticdecor:ender_stone_stairs",
+        "spooktasticdecor:ender_stone_button",
+        "spooktasticdecor:ender_stone_wall",
+        "spooktasticdecor:ender_stone_pressure_plate",
+        "spooktasticdecor:ender_smooth_stone",
+        "spooktasticdecor:ender_smooth_stone_slab",
+        "spooktasticdecor:ender_smooth_stone_stairs",
+        "spooktasticdecor:ender_smooth_stone_button",
+        "spooktasticdecor:ender_smooth_stone_wall",
+        "spooktasticdecor:ender_smooth_stone_pressure_plate",
+        "spooktasticdecor:ender_stone_bricks",
+        "spooktasticdecor:ender_stone_bricks_slab",
+        "spooktasticdecor:ender_stone_bricks_stairs",
+        "spooktasticdecor:ender_stone_bricks_button",
+        "spooktasticdecor:ender_stone_bricks_wall",
+        "spooktasticdecor:ender_stone_bricks_pressure_plate",
+        "spooktasticdecor:ender_chiseled_stone_bricks"
+    ]
+}
