@@ -1325,18 +1325,18 @@ public class RecipeGenerator extends RecipeProvider {
                         20 
                         );
 
-                //         helper.registerFamily(
-                //         simpleblockregistry.SPIDER_SMOOTH_STONE.get(),
-                //         SimpleBlockItemRegistry.SPIDER_SMOOTH_STONE_ITEM.get(),
-                //         simpleblockregistry.SPIDER_SMOOTH_STONE_SLAB.get(),
-                //         simpleblockregistry.SPIDER_SMOOTH_STONE_STAIRS.get(),
-                //         simpleblockregistry.SPIDER_SMOOTH_STONE_WALL.get(),
-                //         SimpleBlockItemRegistry.SPIDER_SMOOTH_STONE_BUTTON_ITEM.get(),
-                //         SimpleBlockItemRegistry.SPIDER_SMOOTH_STONE_PRESSURE_PLATE_ITEM.get(),
-                //         SimpleBlockItemRegistry.SPIDER_STONE_ITEM.get(),
-                //         0.5f, 
-                //         20 
-                //         );
+                        helper.registerFamily(
+                        simpleblockregistry.SPIDER_SMOOTH_STONE.get(),
+                        SimpleBlockItemRegistry.SPIDER_SMOOTH_STONE_ITEM.get(),
+                        simpleblockregistry.SPIDER_SMOOTH_STONE_SLAB.get(),
+                        simpleblockregistry.SPIDER_SMOOTH_STONE_STAIRS.get(),
+                        simpleblockregistry.SPIDER_SMOOTH_STONE_WALL.get(),
+                        SimpleBlockItemRegistry.SPIDER_SMOOTH_STONE_BUTTON_ITEM.get(),
+                        SimpleBlockItemRegistry.SPIDER_SMOOTH_STONE_PRESSURE_PLATE_ITEM.get(),
+                        SimpleBlockItemRegistry.SPIDER_STONE_ITEM.get(),
+                        0.5f, 
+                        20 
+                        );
                 // ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.SPIDER_STONE_BRICKS_ITEM.get(), 4)
                 //         .pattern("AA ")
                 //         .pattern("AA ")
