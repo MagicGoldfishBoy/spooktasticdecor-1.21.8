@@ -1456,16 +1456,16 @@ public class RecipeGenerator extends RecipeProvider {
                         );
 
 
-                // ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ENDER_CHISELED_STONE_BRICKS_ITEM.get())
-                //         .pattern("A")
-                //         .pattern("A")
-                //         .define('A', SimpleBlockItemRegistry.ENDER_STONE_BRICKS_SLAB_ITEM.get())
-                //         .unlockedBy("has_ender_stone_bricks_slab", has(SimpleBlockItemRegistry.ENDER_STONE_BRICKS_SLAB_ITEM.get()))
-                //         .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ENDER_CHISELED_STONE_BRICKS_ITEM.get())
+                        .pattern("A")
+                        .pattern("A")
+                        .define('A', SimpleBlockItemRegistry.ENDER_STONE_BRICKS_SLAB_ITEM.get())
+                        .unlockedBy("has_ender_stone_bricks_slab", has(SimpleBlockItemRegistry.ENDER_STONE_BRICKS_SLAB_ITEM.get()))
+                        .save(this.output);
 
-                // SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.ENDER_STONE_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.ENDER_CHISELED_STONE_BRICKS.get(), 1)
-                //         .unlockedBy("has_ender_stone_bricks", has(simpleblockregistry.ENDER_STONE_BRICKS.get()))
-                //         .save(this.output, SpooktasticDecor.MODID + ":ender_chiseled_stone_bricks_from_stonecutting");                
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.ENDER_STONE_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.ENDER_CHISELED_STONE_BRICKS.get(), 1)
+                        .unlockedBy("has_ender_stone_bricks", has(simpleblockregistry.ENDER_STONE_BRICKS.get()))
+                        .save(this.output, SpooktasticDecor.MODID + ":ender_chiseled_stone_bricks_from_stonecutting");                
         }
 
 

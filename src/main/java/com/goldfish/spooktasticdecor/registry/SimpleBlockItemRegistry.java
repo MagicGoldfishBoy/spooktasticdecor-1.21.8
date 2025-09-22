@@ -1441,10 +1441,10 @@ public class SimpleBlockItemRegistry {
             new Item.Properties()
         );
 
-        // ENDER_CHISELED_STONE_BRICKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
-        //     simpleblockregistry.ENDER_CHISELED_STONE_BRICKS,
-        //     new Item.Properties()
-        // );
+        ENDER_CHISELED_STONE_BRICKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ENDER_CHISELED_STONE_BRICKS,
+            new Item.Properties()
+        );
     }
 
 }

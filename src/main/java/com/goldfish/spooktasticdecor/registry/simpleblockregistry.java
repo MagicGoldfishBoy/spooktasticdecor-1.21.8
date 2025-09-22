@@ -2957,15 +2957,15 @@ public class simpleblockregistry {
             .sound(SoundType.STONE)
             )
         );
-        // ENDER_CHISELED_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
-        //     "ender_chiseled_stone_bricks",
-        //     registryName -> new Block(BlockBehaviour.Properties.of()
-        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //     .destroyTime(STONE_DESTROY_TIME)
-        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
-        //     .requiresCorrectToolForDrops()
-        //     .sound(SoundType.STONE)
-        //     )
-        // );
+        ENDER_CHISELED_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
+            "ender_chiseled_stone_bricks",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
     }
 }
