@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-22T12:37:34.382903414	Loot Tables
+// 1.21.8	2025-09-22T12:50:04.319702229	Loot Tables
 3979aff7e2013d08422c154236a02661f84bb471 data/spooktasticdecor/loot_table/blocks/creaking_chiseled_stone_bricks.json
 7a4306cc517d79572667eac009ef92e1f99520e1 data/spooktasticdecor/loot_table/blocks/creaking_cobblestone.json
 9a993bcde17272c8a4bf1085a3059ae112f468de data/spooktasticdecor/loot_table/blocks/creaking_cobblestone_button.json
@@ -54,6 +54,7 @@ afebaa9fde26700c8e84893de19d088c5667aa26 data/spooktasticdecor/loot_table/blocks
 065dc8d380a5eef6e6e02180f993ae9f5b61200d data/spooktasticdecor/loot_table/blocks/ender_stone_bricks_stairs.json
 d23c80f4dbcc5a237ef1c0e624353b86134adeeb data/spooktasticdecor/loot_table/blocks/ender_stone_bricks_wall.json
 ccc3146188c42a8e60b080a24eb44516595992d9 data/spooktasticdecor/loot_table/blocks/ender_stone_button.json
+5dcf9146103722e0746db2edb680e9dbf20e24fc data/spooktasticdecor/loot_table/blocks/ender_stone_lamp.json
 0a6d71e1493c36b575c455e487c7aea13bd91af5 data/spooktasticdecor/loot_table/blocks/ender_stone_pressure_plate.json
 7a7e0ba2b545050db0fd95213dc0b762e40464d4 data/spooktasticdecor/loot_table/blocks/ender_stone_slab.json
 d00cbbc2b78d8ac8e5013afd9822105cf7d28865 data/spooktasticdecor/loot_table/blocks/ender_stone_stairs.json

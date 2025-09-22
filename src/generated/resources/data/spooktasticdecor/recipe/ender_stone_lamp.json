@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "spooktasticdecor:ender_chiseled_stone_bricks",
+    "minecraft:glowstone_dust"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:ender_stone_lamp"
+  }
+}

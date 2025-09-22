@@ -29,6 +29,7 @@ public class SimpleBlockItemRegistry {
     public static DeferredItem<BlockItem> SPIDER_STONE_LAMP_ITEM;
 
     public static DeferredItem<BlockItem> ENDER_LAMP_ITEM;
+    public static DeferredItem<BlockItem> ENDER_STONE_LAMP_ITEM;
 
 
     public static DeferredItem<BlockItem> ZOMBIE_LOG_ITEM;
@@ -390,6 +391,10 @@ public class SimpleBlockItemRegistry {
 
         ENDER_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
         simpleblockregistry.ENDER_LAMP,
+        new Item.Properties());    
+
+        ENDER_STONE_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        simpleblockregistry.ENDER_STONE_LAMP,
         new Item.Properties());    
 
     }

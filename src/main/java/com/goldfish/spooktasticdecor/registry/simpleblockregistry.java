@@ -52,6 +52,7 @@ public class simpleblockregistry {
     public static DeferredBlock<Block> SPIDER_STONE_LAMP;
 
     public static DeferredBlock<Block> ENDER_LAMP;
+    public static DeferredBlock<Block> ENDER_STONE_LAMP;
 
 
     public static DeferredBlock<ZombieLog> ZOMBIE_LOG;
@@ -489,6 +490,16 @@ public class simpleblockregistry {
                 .explosionResistance(15.0f)
                 .sound(SoundType.GLASS)
                 .lightLevel(state -> 10)
+            )
+        );    
+        ENDER_STONE_LAMP = SpooktasticDecor.BLOCKS.register(
+            "ender_stone_lamp",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(3.0f)
+                .explosionResistance(15.0f)
+                .sound(SoundType.STONE)
+                .lightLevel(state -> 12)
             )
         );    
     }

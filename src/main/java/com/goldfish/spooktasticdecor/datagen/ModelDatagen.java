@@ -57,6 +57,7 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createTrivialCube(simpleblockregistry.SPIDER_STONE_LAMP.get());
 
         blockModels.createTrivialCube(simpleblockregistry.ENDER_LAMP.get());
+        blockModels.createTrivialCube(simpleblockregistry.ENDER_STONE_LAMP.get());
 
 
         blockModels.woodProvider(simpleblockregistry.ZOMBIE_LOG.get()).log(simpleblockregistry.ZOMBIE_LOG.get());

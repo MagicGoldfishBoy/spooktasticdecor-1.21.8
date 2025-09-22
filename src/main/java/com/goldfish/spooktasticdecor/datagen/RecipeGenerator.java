@@ -187,6 +187,12 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('C', Items.ENDER_EYE)
                         .unlockedBy("has_ender_pearl", has(Items.ENDER_PEARL))
                         .save(this.output); 
+                ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ENDER_STONE_LAMP_ITEM.get())
+                        .requires(SimpleBlockItemRegistry.ENDER_CHISELED_STONE_BRICKS_ITEM.get())
+                        .requires(Items.GLOWSTONE_DUST)
+                        .unlockedBy("has_ender_chiseled_stone", has(SimpleBlockItemRegistry.ENDER_CHISELED_STONE_BRICKS_ITEM.get()))
+                        .unlockedBy("has_glowstone_dust", has(Items.GLOWSTONE_DUST))
+                        .save(this.output);
         }
 
         protected void registerWoodRecipes() {
