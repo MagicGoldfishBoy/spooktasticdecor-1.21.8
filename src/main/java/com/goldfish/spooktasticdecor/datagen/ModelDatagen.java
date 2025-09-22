@@ -391,14 +391,14 @@ public class ModelDatagen extends ModelProvider {
                     .wall(simpleblockregistry.SPIDER_SMOOTH_STONE_WALL.get())
                     .pressurePlate(simpleblockregistry.SPIDER_SMOOTH_STONE_PRESSURE_PLATE.get());
 
-        // blockModels.createTrivialCube(simpleblockregistry.SPIDER_STONE_BRICKS.get());
+        blockModels.createTrivialCube(simpleblockregistry.SPIDER_STONE_BRICKS.get());
 
-        // blockModels.familyWithExistingFullBlock(simpleblockregistry.SPIDER_STONE_BRICKS.get())
-        //             .slab(simpleblockregistry.SPIDER_STONE_BRICKS_SLAB.get())
-        //             .stairs(simpleblockregistry.SPIDER_STONE_BRICKS_STAIRS.get())
-        //             .button(simpleblockregistry.SPIDER_STONE_BRICKS_BUTTON.get())
-        //             .wall(simpleblockregistry.SPIDER_STONE_BRICKS_WALL.get())
-        //             .pressurePlate(simpleblockregistry.SPIDER_STONE_BRICKS_PRESSURE_PLATE.get());
+        blockModels.familyWithExistingFullBlock(simpleblockregistry.SPIDER_STONE_BRICKS.get())
+                    .slab(simpleblockregistry.SPIDER_STONE_BRICKS_SLAB.get())
+                    .stairs(simpleblockregistry.SPIDER_STONE_BRICKS_STAIRS.get())
+                    .button(simpleblockregistry.SPIDER_STONE_BRICKS_BUTTON.get())
+                    .wall(simpleblockregistry.SPIDER_STONE_BRICKS_WALL.get())
+                    .pressurePlate(simpleblockregistry.SPIDER_STONE_BRICKS_PRESSURE_PLATE.get());
 
         // blockModels.createTrivialCube(simpleblockregistry.SPIDER_CHISELED_STONE_BRICKS.get());
 
