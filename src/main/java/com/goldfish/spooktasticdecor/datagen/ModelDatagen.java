@@ -1,6 +1,7 @@
 package com.goldfish.spooktasticdecor.datagen;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
+import com.goldfish.spooktasticdecor.registry.MaterialRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
 import net.minecraft.client.data.models.BlockModelGenerators;
@@ -8,6 +9,7 @@ import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.model.ItemModelUtils;
+import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.renderer.block.model.Variant;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -540,6 +542,8 @@ public class ModelDatagen extends ModelProvider {
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+        itemModels.generateFlatItem(MaterialRegistry.PORCELAIN_CLAY.get(), ModelTemplates.FLAT_ITEM);
+        
         itemModels.itemModelOutput.accept(
             SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get(),
             ItemModelUtils.plainModel(modLocation("block/zombie_lamp"))

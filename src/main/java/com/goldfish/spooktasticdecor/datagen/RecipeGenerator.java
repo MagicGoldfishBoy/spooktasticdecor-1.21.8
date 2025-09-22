@@ -4,6 +4,7 @@ import java.util.concurrent.CompletableFuture;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockItemRegistry;
+import com.goldfish.spooktasticdecor.registry.MaterialRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
 
@@ -68,12 +69,21 @@ public class RecipeGenerator extends RecipeProvider {
 
         System.out.println("Running RecipeGenerator#buildRecipes");
 
+        registerMaterialRecipes();
         registerLampRecipes();
         registerWoodRecipes();
         registerTableRecipes();
         registerPlanterRecipes();
         registerCobblestoneRecipes();
         registerStoneRecipes();
+        }
+        protected void registerMaterialRecipes() {
+                ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MaterialRegistry.PORCELAIN_CLAY.get(), 2)
+                        .requires(Items.CLAY_BALL)
+                        .requires(Items.QUARTZ)
+                        .unlockedBy("has_clay_ball", has(Items.CLAY_BALL))
+                        .unlockedBy("has_quartz", has(Items.QUARTZ))
+                        .save(this.output);
         }
         protected void registerLampRecipes() {
                 ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get(), 2)

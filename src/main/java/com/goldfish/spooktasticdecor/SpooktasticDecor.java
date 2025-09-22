@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import com.goldfish.spooktasticdecor.datagen.Datagen;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockRegistry;
+import com.goldfish.spooktasticdecor.registry.MaterialRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
 import com.mojang.logging.LogUtils;
@@ -66,6 +67,8 @@ public class SpooktasticDecor {
         ITEMS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
 
+        MaterialRegistry.registerAll();
+        
         simpleblockregistry.registerAll();
         SimpleBlockItemRegistry.registerAll();
 
