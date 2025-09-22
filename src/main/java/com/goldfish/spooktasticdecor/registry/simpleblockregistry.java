@@ -2836,66 +2836,66 @@ public class simpleblockregistry {
             )
         );
 
-        // ENDER_SMOOTH_STONE = SpooktasticDecor.BLOCKS.register(
-        //     "ender_smooth_stone",
-        //     registryName -> new Block(BlockBehaviour.Properties.of()
-        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //     .destroyTime(STONE_DESTROY_TIME)
-        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
-        //     .requiresCorrectToolForDrops()
-        //     .sound(SoundType.STONE)
-        //     )
-        // );
-        // ENDER_SMOOTH_STONE_SLAB = SpooktasticDecor.BLOCKS.register(
-        //     "ender_smooth_stone_slab",
-        //     registryName -> new SlabBlock(BlockBehaviour.Properties.of()
-        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //     .destroyTime(STONE_DESTROY_TIME)
-        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
-        //     .requiresCorrectToolForDrops()
-        //     .sound(SoundType.STONE)
-        //     )
-        // );
-        // ENDER_SMOOTH_STONE_STAIRS = SpooktasticDecor.BLOCKS.register(
-        //     "ender_smooth_stone_stairs",
-        //     registryName -> new StairBlock(ENDER_SMOOTH_STONE.get().defaultBlockState(),BlockBehaviour.Properties.of()
-        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //     .destroyTime(STONE_DESTROY_TIME)
-        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
-        //     .requiresCorrectToolForDrops()
-        //     .sound(SoundType.STONE)
-        //     )
-        // );
-        // ENDER_SMOOTH_STONE_BUTTON = SpooktasticDecor.BLOCKS.register(
-        //     "ender_smooth_stone_button",
-        //     registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
-        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //     .destroyTime(STONE_DESTROY_TIME)
-        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
-        //     .requiresCorrectToolForDrops()
-        //     .sound(SoundType.STONE)
-        //     )
-        // );
-        // ENDER_SMOOTH_STONE_WALL = SpooktasticDecor.BLOCKS.register(
-        //     "ender_smooth_stone_wall",
-        //     registryName -> new WallBlock(BlockBehaviour.Properties.of()
-        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //     .destroyTime(STONE_DESTROY_TIME)
-        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
-        //     .requiresCorrectToolForDrops()
-        //     .sound(SoundType.STONE)
-        //     )
-        // );
-        // ENDER_SMOOTH_STONE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
-        //     "ender_smooth_stone_pressure_plate",
-        //     registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
-        //     .setId(ResourceKey.create(Registries.BLOCK, registryName))
-        //     .destroyTime(STONE_DESTROY_TIME)
-        //     .explosionResistance(STONE_EXPLOSION_RESISTANCE)
-        //     .requiresCorrectToolForDrops()
-        //     .sound(SoundType.STONE)
-        //     )
-        // );
+        ENDER_SMOOTH_STONE = SpooktasticDecor.BLOCKS.register(
+            "ender_smooth_stone",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ENDER_SMOOTH_STONE_SLAB = SpooktasticDecor.BLOCKS.register(
+            "ender_smooth_stone_slab",
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ENDER_SMOOTH_STONE_STAIRS = SpooktasticDecor.BLOCKS.register(
+            "ender_smooth_stone_stairs",
+            registryName -> new StairBlock(ENDER_SMOOTH_STONE.get().defaultBlockState(),BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ENDER_SMOOTH_STONE_BUTTON = SpooktasticDecor.BLOCKS.register(
+            "ender_smooth_stone_button",
+            registryName -> new ButtonBlock(BlockSetType.STONE, 10, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ENDER_SMOOTH_STONE_WALL = SpooktasticDecor.BLOCKS.register(
+            "ender_smooth_stone_wall",
+            registryName -> new WallBlock(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
+        ENDER_SMOOTH_STONE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+            "ender_smooth_stone_pressure_plate",
+            registryName -> new PressurePlateBlock(BlockSetType.STONE, BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .destroyTime(STONE_DESTROY_TIME)
+            .explosionResistance(STONE_EXPLOSION_RESISTANCE)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+            )
+        );
 
         // ENDER_STONE_BRICKS = SpooktasticDecor.BLOCKS.register(
         //     "ender_stone_bricks",

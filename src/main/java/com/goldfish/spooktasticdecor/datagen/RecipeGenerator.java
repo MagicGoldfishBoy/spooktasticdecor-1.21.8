@@ -1419,18 +1419,18 @@ public class RecipeGenerator extends RecipeProvider {
                         20 
                         );
 
-                //         helper.registerFamily(
-                //         simpleblockregistry.ENDER_SMOOTH_STONE.get(),
-                //         SimpleBlockItemRegistry.ENDER_SMOOTH_STONE_ITEM.get(),
-                //         simpleblockregistry.ENDER_SMOOTH_STONE_SLAB.get(),
-                //         simpleblockregistry.ENDER_SMOOTH_STONE_STAIRS.get(),
-                //         simpleblockregistry.ENDER_SMOOTH_STONE_WALL.get(),
-                //         SimpleBlockItemRegistry.ENDER_SMOOTH_STONE_BUTTON_ITEM.get(),
-                //         SimpleBlockItemRegistry.ENDER_SMOOTH_STONE_PRESSURE_PLATE_ITEM.get(),
-                //         SimpleBlockItemRegistry.ENDER_STONE_ITEM.get(),
-                //         0.5f, 
-                //         20 
-                //         );
+                        helper.registerFamily(
+                        simpleblockregistry.ENDER_SMOOTH_STONE.get(),
+                        SimpleBlockItemRegistry.ENDER_SMOOTH_STONE_ITEM.get(),
+                        simpleblockregistry.ENDER_SMOOTH_STONE_SLAB.get(),
+                        simpleblockregistry.ENDER_SMOOTH_STONE_STAIRS.get(),
+                        simpleblockregistry.ENDER_SMOOTH_STONE_WALL.get(),
+                        SimpleBlockItemRegistry.ENDER_SMOOTH_STONE_BUTTON_ITEM.get(),
+                        SimpleBlockItemRegistry.ENDER_SMOOTH_STONE_PRESSURE_PLATE_ITEM.get(),
+                        SimpleBlockItemRegistry.ENDER_STONE_ITEM.get(),
+                        0.5f, 
+                        20 
+                        );
                 // ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, SimpleBlockItemRegistry.ENDER_STONE_BRICKS_ITEM.get(), 4)
                 //         .pattern("AA ")
                 //         .pattern("AA ")
