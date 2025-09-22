@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "spooktasticdecor:block/ender_stone_slab"
+    },
+    "type=double": {
+      "model": "spooktasticdecor:block/ender_stone"
+    },
+    "type=top": {
+      "model": "spooktasticdecor:block/ender_stone_slab_top"
+    }
+  }
+}

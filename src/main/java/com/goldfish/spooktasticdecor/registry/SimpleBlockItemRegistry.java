@@ -877,6 +877,7 @@ public class SimpleBlockItemRegistry {
         registerGhastStone();
         registerCreakingStone();
         registerSpiderStone();
+        registerEnderStone();
     }
     public static void registerZombieStone() {
         ZOMBIE_STONE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
@@ -1363,6 +1364,87 @@ public class SimpleBlockItemRegistry {
             simpleblockregistry.SPIDER_CHISELED_STONE_BRICKS,
             new Item.Properties()
         );
+    }
+    public static void registerEnderStone() {
+        ENDER_STONE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ENDER_STONE,
+            new Item.Properties()
+        );
+        ENDER_STONE_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ENDER_STONE_SLAB,
+            new Item.Properties()
+        );
+        ENDER_STONE_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ENDER_STONE_STAIRS,
+            new Item.Properties()
+        );
+        ENDER_STONE_BUTTON_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ENDER_STONE_BUTTON,
+            new Item.Properties()
+        );
+        ENDER_STONE_WALL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ENDER_STONE_WALL,
+            new Item.Properties()
+        );
+        ENDER_STONE_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            simpleblockregistry.ENDER_STONE_PRESSURE_PLATE,
+            new Item.Properties()
+        );
+
+        // ENDER_SMOOTH_STONE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.ENDER_SMOOTH_STONE,
+        //     new Item.Properties()
+        // );
+        // ENDER_SMOOTH_STONE_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.ENDER_SMOOTH_STONE_SLAB,
+        //     new Item.Properties()
+        // );
+        // ENDER_SMOOTH_STONE_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.ENDER_SMOOTH_STONE_STAIRS,
+        //     new Item.Properties()
+        // );
+        // ENDER_SMOOTH_STONE_BUTTON_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.ENDER_SMOOTH_STONE_BUTTON,
+        //     new Item.Properties()
+        // );
+        // ENDER_SMOOTH_STONE_WALL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.ENDER_SMOOTH_STONE_WALL,
+        //     new Item.Properties()
+        // );
+        // ENDER_SMOOTH_STONE_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.ENDER_SMOOTH_STONE_PRESSURE_PLATE,
+        //     new Item.Properties()
+        // );
+
+        // ENDER_STONE_BRICKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.ENDER_STONE_BRICKS,
+        //     new Item.Properties()
+        // );
+        // ENDER_STONE_BRICKS_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.ENDER_STONE_BRICKS_SLAB,
+        //     new Item.Properties()
+        // );
+        // ENDER_STONE_BRICKS_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.ENDER_STONE_BRICKS_STAIRS,
+        //     new Item.Properties()
+        // );
+        // ENDER_STONE_BRICKS_BUTTON_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.ENDER_STONE_BRICKS_BUTTON,
+        //     new Item.Properties()
+        // );
+        // ENDER_STONE_BRICKS_WALL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.ENDER_STONE_BRICKS_WALL,
+        //     new Item.Properties()
+        // );
+        // ENDER_STONE_BRICKS_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.ENDER_STONE_BRICKS_PRESSURE_PLATE,
+        //     new Item.Properties()
+        // );
+
+        // ENDER_CHISELED_STONE_BRICKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+        //     simpleblockregistry.ENDER_CHISELED_STONE_BRICKS,
+        //     new Item.Properties()
+        // );
     }
 
 }

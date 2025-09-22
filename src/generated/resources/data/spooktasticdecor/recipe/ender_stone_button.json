@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "spooktasticdecor:ender_stone"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:ender_stone_button"
+  }
+}
