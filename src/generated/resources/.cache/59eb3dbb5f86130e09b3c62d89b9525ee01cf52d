@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-23T07:51:45.414518765	Loot Tables
+// 1.21.8	2025-09-23T15:32:48.874718232	Loot Tables
 3979aff7e2013d08422c154236a02661f84bb471 data/spooktasticdecor/loot_table/blocks/creaking_chiseled_stone_bricks.json
 7a4306cc517d79572667eac009ef92e1f99520e1 data/spooktasticdecor/loot_table/blocks/creaking_cobblestone.json
 9a993bcde17272c8a4bf1085a3059ae112f468de data/spooktasticdecor/loot_table/blocks/creaking_cobblestone_button.json
@@ -119,6 +119,7 @@ edf9c869dff6ce2220a9c2c562a4de1131cc1124 data/spooktasticdecor/loot_table/blocks
 4975084e302aff5f69a593140bdfd4ce69e54828 data/spooktasticdecor/loot_table/blocks/ghast_wood_table.json
 651fc25208178da8969476e9b693e9062d377db7 data/spooktasticdecor/loot_table/blocks/glazed_porcelain_block.json
 f288781ca65d05412df8411effd205184e69ac9e data/spooktasticdecor/loot_table/blocks/porcelain_block.json
+436163a19a93ad1b9fa5412c0f5955dd3c22d19e data/spooktasticdecor/loot_table/blocks/porcelain_patty_doll.json
 4ce4498f2a78bfefe16493993c46b07dabed4b07 data/spooktasticdecor/loot_table/blocks/skeleton_chiseled_stone_bricks.json
 082c0411e6e9026e221fe3259164be276b445712 data/spooktasticdecor/loot_table/blocks/skeleton_cobblestone.json
 11b264a8fe7f2f973a55477254cef8bc0ffd45e2 data/spooktasticdecor/loot_table/blocks/skeleton_cobblestone_button.json

@@ -3,9 +3,11 @@ package com.goldfish.spooktasticdecor.datagen;
 import java.util.concurrent.CompletableFuture;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
+import com.goldfish.spooktasticdecor.block.SmallDecorItem;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.MaterialRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
+import com.goldfish.spooktasticdecor.registry.SmallDecorItemRegistry;
 import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
 
 import net.minecraft.core.HolderLookup;
@@ -76,7 +78,9 @@ public class RecipeGenerator extends RecipeProvider {
         registerPlanterRecipes();
         registerCobblestoneRecipes();
         registerStoneRecipes();
+        registerSmallDecorItemRecipes();
         }
+
         protected void registerMaterialRecipes() {
                 ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MaterialRegistry.PORCELAIN_CLAY.get(), 2)
                         .requires(Items.CLAY_BALL)
@@ -106,6 +110,7 @@ public class RecipeGenerator extends RecipeProvider {
                         .unlockedBy("has_porcelain_block_item", has(MaterialRegistry.PORCELAIN_BLOCK_ITEM.get()))
                         .save(this.output);
         }
+
         protected void registerLampRecipes() {
                 ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get(), 2)
                         .pattern(" A ")
@@ -1503,6 +1508,20 @@ public class RecipeGenerator extends RecipeProvider {
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(simpleblockregistry.ENDER_STONE_BRICKS.get()), RecipeCategory.BUILDING_BLOCKS, simpleblockregistry.ENDER_CHISELED_STONE_BRICKS.get(), 1)
                         .unlockedBy("has_ender_stone_bricks", has(simpleblockregistry.ENDER_STONE_BRICKS.get()))
                         .save(this.output, SpooktasticDecor.MODID + ":ender_chiseled_stone_bricks_from_stonecutting");                
+        }
+
+        protected void registerSmallDecorItemRecipes() {
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, SmallDecorItemRegistry.PORCELAIN_PATTY_DOLL_ITEM.get())
+                .pattern(" A ")
+                .pattern("BCB")
+                .pattern("CBC")
+                .define('A', Items.YELLOW_WOOL)
+                .define('B', MaterialRegistry.PORCELAIN_BRICK.get())
+                .define('C', Items.RED_WOOL)
+                .unlockedBy("has_yellow_wool", has(Items.YELLOW_WOOL))
+                .unlockedBy("has_porcelain_brick", has(MaterialRegistry.PORCELAIN_BRICK.get()))
+                .unlockedBy("has_red_wool", has(Items.RED_WOOL))
+                .save(this.output);
         }
 
 

@@ -1,20 +1,31 @@
 package com.goldfish.spooktasticdecor.datagen;
 
+import java.util.Map;
+
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
+import com.goldfish.spooktasticdecor.block.SmallDecorItem;
 import com.goldfish.spooktasticdecor.registry.MaterialRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
+import com.goldfish.spooktasticdecor.registry.SmallDecorItemRegistry;
 import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
+import com.mojang.datafixers.types.templates.List;
+
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.blockstates.MultiPartGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.ItemModelUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.renderer.block.model.Variant;
+import net.minecraft.client.renderer.block.model.multipart.CombinedCondition;
+import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class ModelDatagen extends ModelProvider {
@@ -35,6 +46,8 @@ public class ModelDatagen extends ModelProvider {
         registerTableModels(blockModels, itemModels);
 
         registerPlanterModels(blockModels, itemModels);
+
+        registerSmallDecorModels(blockModels, itemModels);
 
     }
 
@@ -563,6 +576,38 @@ public class ModelDatagen extends ModelProvider {
             }
         }
     }
+
+    protected void registerSmallDecorModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+    SmallDecorItem porcelainPatty = SmallDecorItemRegistry.PORCELAIN_PATTY_DOLL.get();
+
+    Map<Direction, ResourceLocation> modelByFacing = Map.of(
+        Direction.NORTH, modLocation("block/porcelain_patty_north"),
+        Direction.SOUTH, modLocation("block/porcelain_patty_south"),
+        Direction.EAST,  modLocation("block/porcelain_patty_east"),
+        Direction.WEST,  modLocation("block/porcelain_patty_west")
+    );
+
+    MultiPartGenerator generator = MultiPartGenerator.multiPart(porcelainPatty);
+
+    for (Map.Entry<Direction, ResourceLocation> entry : modelByFacing.entrySet()) {
+        Direction facing = entry.getKey();
+        ResourceLocation modelLoc = entry.getValue();
+
+        Variant variant = new Variant(modelLoc);
+
+        generator = generator.with(
+            BlockModelGenerators.condition().term(BlockStateProperties.FACING, facing),
+            BlockModelGenerators.variant(variant)
+        );
+    }
+
+    blockModels.blockStateOutput.accept(generator);
+
+    itemModels.itemModelOutput.accept(
+        SmallDecorItemRegistry.PORCELAIN_PATTY_DOLL_ITEM.get(),
+        ItemModelUtils.plainModel(modLocation("block/porcelain_patty_north"))
+    );
+}
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 

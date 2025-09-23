@@ -7,13 +7,17 @@ import com.goldfish.spooktasticdecor.registry.FurnitureBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockRegistry;
 import com.goldfish.spooktasticdecor.registry.MaterialRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
+import com.goldfish.spooktasticdecor.registry.SmallDecorItemRegistry;
 import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
 import com.mojang.logging.LogUtils;
+import com.mojang.serialization.MapCodec;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -39,11 +43,13 @@ public class SpooktasticDecor {
     
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
 
+    public static final DeferredRegister<MapCodec<? extends Block>> CODECS = DeferredRegister.create(BuiltInRegistries.BLOCK_TYPE, MODID);
+
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> SPOOKTASTIC_DECOR_TAB = CREATIVE_MODE_TABS.register("spooktastic_decor_tab", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.spooktasticdecor")) //The language key for the title of your CreativeModeTab
+            .title(Component.translatable("itemGroup.spooktasticdecor"))
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
@@ -61,11 +67,12 @@ public class SpooktasticDecor {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-        // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so items get registered
+
         ITEMS.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so tabs get registered
+
+        CODECS.register(modEventBus);
+
 
         MaterialRegistry.registerAll();
         
@@ -74,6 +81,8 @@ public class SpooktasticDecor {
 
         FurnitureBlockRegistry.registerAll();
         FurnitureBlockItemRegistry.registerAll();
+
+        SmallDecorItemRegistry.registerAll();
         
         CREATIVE_MODE_TABS.register(modEventBus);
 
