@@ -2,7 +2,10 @@
   "itemGroup.spooktasticdecor": "Spooktastic Decor",
 
   "item.spooktasticdecor.porcelain_clay": "Porcelain Clay",
-  "item.spooktasticdecor.porcelain_ingot": "Porcelain Ingot",
+  "item.spooktasticdecor.porcelain_brick": "Porcelain Ingot",
+
+  "block.spooktasticdecor.porcelain_block": "Porcelain Block",
+  "block.spooktasticdecor.glazed_porcelain_block": "Glazed Porcelain Block",
   
   "block.spooktasticdecor.zombie_lamp": "Zombie Lamp",
   "block.spooktasticdecor.zombie_stone_lamp": "Zombie Stone Lamp",

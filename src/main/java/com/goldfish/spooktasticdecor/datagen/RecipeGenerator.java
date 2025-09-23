@@ -86,10 +86,24 @@ public class RecipeGenerator extends RecipeProvider {
                         .save(this.output);
                 SimpleCookingRecipeBuilder.smelting(Ingredient.of(MaterialRegistry.PORCELAIN_CLAY.get()), 
                         RecipeCategory.MISC, 
-                        MaterialRegistry.PORCELAIN_INGOT.get(), 
+                        MaterialRegistry.PORCELAIN_BRICK.get(), 
                         1.0f, 
                         10)
-                        .unlockedBy("has_porcelain_clay", has(MaterialRegistry.PORCELAIN_CLAY))
+                        .unlockedBy("has_porcelain_clay", has(MaterialRegistry.PORCELAIN_CLAY.get()))
+                        .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MaterialRegistry.PORCELAIN_BLOCK_ITEM.get())
+                        .pattern("AAA")
+                        .pattern("AAA")
+                        .pattern("AAA")
+                        .define('A', MaterialRegistry.PORCELAIN_BRICK.get())
+                        .unlockedBy("has_porcelain_brick", has(MaterialRegistry.PORCELAIN_BRICK.get()))
+                        .save(this.output);
+                SimpleCookingRecipeBuilder.smelting(Ingredient.of(MaterialRegistry.PORCELAIN_BLOCK_ITEM.get()), 
+                        RecipeCategory.BUILDING_BLOCKS, 
+                        MaterialRegistry.GLAZED_PORCELAIN_BLOCK_ITEM.get(), 
+                        0.5f, 
+                        20)
+                        .unlockedBy("has_porcelain_block_item", has(MaterialRegistry.PORCELAIN_BLOCK_ITEM.get()))
                         .save(this.output);
         }
         protected void registerLampRecipes() {

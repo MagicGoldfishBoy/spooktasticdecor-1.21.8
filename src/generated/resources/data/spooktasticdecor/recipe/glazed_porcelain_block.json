@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 20,
+  "experience": 0.5,
+  "ingredient": "spooktasticdecor:porcelain_block",
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:glazed_porcelain_block"
+  }
+}

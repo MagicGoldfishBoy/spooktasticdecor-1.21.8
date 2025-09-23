@@ -26,6 +26,8 @@ public class ModelDatagen extends ModelProvider {
     @Override
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
+        registerMaterialModels(blockModels, itemModels);
+
         registerBlockModels(blockModels, itemModels);
 
         registerItemModels(blockModels, itemModels);
@@ -34,6 +36,27 @@ public class ModelDatagen extends ModelProvider {
 
         registerPlanterModels(blockModels, itemModels);
 
+    }
+
+    protected void registerMaterialModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+
+        itemModels.generateFlatItem(MaterialRegistry.PORCELAIN_CLAY.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(MaterialRegistry.PORCELAIN_BRICK.get(), ModelTemplates.FLAT_ITEM);
+
+        blockModels.createTrivialCube(MaterialRegistry.PORCELAIN_BLOCK.get());
+
+        itemModels.itemModelOutput.accept(
+            MaterialRegistry.PORCELAIN_BLOCK_ITEM.get(), 
+            ItemModelUtils.plainModel(modLocation("block/porcelain_block"))
+        );
+
+        blockModels.createTrivialCube(MaterialRegistry.GLAZED_PORCELAIN_BLOCK.get());
+
+        itemModels.itemModelOutput.accept(
+            MaterialRegistry.GLAZED_PORCELAIN_BLOCK_ITEM.get(), 
+            ItemModelUtils.plainModel(modLocation("block/glazed_porcelain_block"))
+        );
     }
 
     protected void registerBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
@@ -543,9 +566,6 @@ public class ModelDatagen extends ModelProvider {
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
-        itemModels.generateFlatItem(MaterialRegistry.PORCELAIN_CLAY.get(), ModelTemplates.FLAT_ITEM);
-
-        itemModels.generateFlatItem(MaterialRegistry.PORCELAIN_INGOT.get(), ModelTemplates.FLAT_ITEM);
         
         itemModels.itemModelOutput.accept(
             SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get(),

@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_porcelain_clay": {
+    "has_porcelain_brick": {
       "conditions": {
         "items": [
           {
-            "items": "spooktasticdecor:porcelain_clay"
+            "items": "spooktasticdecor:porcelain_brick"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "spooktasticdecor:porcelain_ingot"
+        "recipe": "spooktasticdecor:porcelain_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_porcelain_clay"
+      "has_porcelain_brick"
     ]
   ],
   "rewards": {
     "recipes": [
-      "spooktasticdecor:porcelain_ingot"
+      "spooktasticdecor:porcelain_block"
     ]
   }
 }
