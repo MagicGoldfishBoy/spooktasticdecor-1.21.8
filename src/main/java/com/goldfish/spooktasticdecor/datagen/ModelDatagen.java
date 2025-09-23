@@ -577,35 +577,82 @@ public class ModelDatagen extends ModelProvider {
         }
     }
 
-    protected void registerSmallDecorModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
-    SmallDecorItem porcelainPatty = SmallDecorItemRegistry.PORCELAIN_PATTY_DOLL.get();
+    private void registerFacingModelsWithItem(
+        BlockModelGenerators blockModels,
+        ItemModelGenerators itemModels,
+        Block block,
+        Map<Direction, String> modelNames,
+        Direction itemFacing
+    ) {
+        MultiPartGenerator generator = MultiPartGenerator.multiPart(block);
 
-    Map<Direction, ResourceLocation> modelByFacing = Map.of(
-        Direction.NORTH, modLocation("block/porcelain_patty_north"),
-        Direction.SOUTH, modLocation("block/porcelain_patty_south"),
-        Direction.EAST,  modLocation("block/porcelain_patty_east"),
-        Direction.WEST,  modLocation("block/porcelain_patty_west")
-    );
+        for (Map.Entry<Direction, String> entry : modelNames.entrySet()) {
+            Direction facing = entry.getKey();
+            ResourceLocation modelLoc = modLocation("block/" + entry.getValue());
 
-    MultiPartGenerator generator = MultiPartGenerator.multiPart(porcelainPatty);
+            generator = generator.with(
+                BlockModelGenerators.condition().term(BlockStateProperties.FACING, facing),
+                BlockModelGenerators.variant(new Variant(modelLoc))
+            );
+        }
 
-    for (Map.Entry<Direction, ResourceLocation> entry : modelByFacing.entrySet()) {
-        Direction facing = entry.getKey();
-        ResourceLocation modelLoc = entry.getValue();
+        blockModels.blockStateOutput.accept(generator);
 
-        Variant variant = new Variant(modelLoc);
-
-        generator = generator.with(
-            BlockModelGenerators.condition().term(BlockStateProperties.FACING, facing),
-            BlockModelGenerators.variant(variant)
-        );
+        String itemModelName = modelNames.get(itemFacing);
+        if (itemModelName != null) {
+            itemModels.itemModelOutput.accept(
+                block.asItem(),
+                ItemModelUtils.plainModel(modLocation("block/" + itemModelName))
+            );
+        }
     }
 
-    blockModels.blockStateOutput.accept(generator);
 
-    itemModels.itemModelOutput.accept(
-        SmallDecorItemRegistry.PORCELAIN_PATTY_DOLL_ITEM.get(),
-        ItemModelUtils.plainModel(modLocation("block/porcelain_patty_north"))
+    protected void registerSmallDecorModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+        
+    SmallDecorItem porcelainPatty = SmallDecorItemRegistry.PORCELAIN_PATTY_DOLL.get();
+
+    registerFacingModelsWithItem(
+        blockModels,
+        itemModels,
+        porcelainPatty,
+        Map.of(
+            Direction.NORTH, "porcelain_patty_north",
+            Direction.SOUTH, "porcelain_patty_south",
+            Direction.EAST,  "porcelain_patty_east",
+            Direction.WEST,  "porcelain_patty_west"
+        ),
+        Direction.NORTH
+    );
+    
+    SmallDecorItem porcelainPoppy = SmallDecorItemRegistry.PORCELAIN_POPPY_DOLL.get();
+
+    registerFacingModelsWithItem(
+        blockModels,
+        itemModels,
+        porcelainPoppy,
+        Map.of(
+            Direction.NORTH, "porcelain_poppy_north",
+            Direction.SOUTH, "porcelain_poppy_south",
+            Direction.EAST,  "porcelain_poppy_east",
+            Direction.WEST,  "porcelain_poppy_west"
+        ),
+        Direction.NORTH
+    );
+    
+    SmallDecorItem porcelainPenelope = SmallDecorItemRegistry.PORCELAIN_PENELOPE_DOLL.get();
+
+    registerFacingModelsWithItem(
+        blockModels,
+        itemModels,
+        porcelainPenelope,
+        Map.of(
+            Direction.NORTH, "porcelain_penelope_north",
+            Direction.SOUTH, "porcelain_penelope_south",
+            Direction.EAST,  "porcelain_penelope_east",
+            Direction.WEST,  "porcelain_penelope_west"
+        ),
+        Direction.NORTH
     );
 }
 

@@ -22,6 +22,12 @@ public class SmallDecorItemRegistry {
     public static DeferredBlock<SmallDecorItem> PORCELAIN_PATTY_DOLL;
     public static DeferredItem<BlockItem> PORCELAIN_PATTY_DOLL_ITEM;
 
+    public static DeferredBlock<SmallDecorItem> PORCELAIN_POPPY_DOLL;
+    public static DeferredItem<BlockItem> PORCELAIN_POPPY_DOLL_ITEM;
+
+    public static DeferredBlock<SmallDecorItem> PORCELAIN_PENELOPE_DOLL;
+    public static DeferredItem<BlockItem> PORCELAIN_PENELOPE_DOLL_ITEM;
+
     public static void registerAll() {
 
         SMALL_DECOR_ITEM_CODEC = SpooktasticDecor.CODECS.register(
@@ -40,6 +46,36 @@ public class SmallDecorItemRegistry {
         );
         PORCELAIN_PATTY_DOLL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             PORCELAIN_PATTY_DOLL,
+            new Item.Properties()
+        );
+
+        PORCELAIN_POPPY_DOLL = SpooktasticDecor.BLOCKS.register(
+            "porcelain_poppy_doll", 
+            registryName -> new SmallDecorItem(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .noOcclusion()
+            .destroyTime(0.5f)
+            .explosionResistance(10.0f)
+            .sound(SoundType.GLASS)
+            )
+        );
+        PORCELAIN_POPPY_DOLL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            PORCELAIN_POPPY_DOLL,
+            new Item.Properties()
+        );
+
+        PORCELAIN_PENELOPE_DOLL = SpooktasticDecor.BLOCKS.register(
+            "porcelain_penelope_doll", 
+            registryName -> new SmallDecorItem(BlockBehaviour.Properties.of()
+            .setId(ResourceKey.create(Registries.BLOCK, registryName))
+            .noOcclusion()
+            .destroyTime(0.5f)
+            .explosionResistance(10.0f)
+            .sound(SoundType.GLASS)
+            )
+        );
+        PORCELAIN_PENELOPE_DOLL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            PORCELAIN_PENELOPE_DOLL,
             new Item.Properties()
         );
     }

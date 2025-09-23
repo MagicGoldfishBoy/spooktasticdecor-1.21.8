@@ -1511,7 +1511,7 @@ public class RecipeGenerator extends RecipeProvider {
         }
 
         protected void registerSmallDecorItemRecipes() {
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, SmallDecorItemRegistry.PORCELAIN_PATTY_DOLL_ITEM.get())
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, SmallDecorItemRegistry.PORCELAIN_PATTY_DOLL_ITEM.get())
                 .pattern(" A ")
                 .pattern("BCB")
                 .pattern("CBC")
@@ -1521,6 +1521,28 @@ public class RecipeGenerator extends RecipeProvider {
                 .unlockedBy("has_yellow_wool", has(Items.YELLOW_WOOL))
                 .unlockedBy("has_porcelain_brick", has(MaterialRegistry.PORCELAIN_BRICK.get()))
                 .unlockedBy("has_red_wool", has(Items.RED_WOOL))
+                .save(this.output);
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, SmallDecorItemRegistry.PORCELAIN_POPPY_DOLL_ITEM.get())
+                .pattern(" A ")
+                .pattern("BCB")
+                .pattern("CBC")
+                .define('A', Items.BLACK_WOOL)
+                .define('B', MaterialRegistry.PORCELAIN_BRICK.get())
+                .define('C', Items.PURPLE_WOOL)
+                .unlockedBy("has_black_wool", has(Items.BLACK_WOOL))
+                .unlockedBy("has_porcelain_brick", has(MaterialRegistry.PORCELAIN_BRICK.get()))
+                .unlockedBy("has_red_wool", has(Items.PURPLE_WOOL))
+                .save(this.output);
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, SmallDecorItemRegistry.PORCELAIN_PENELOPE_DOLL_ITEM.get())
+                .pattern(" A ")
+                .pattern("BCB")
+                .pattern("CBC")
+                .define('A', Items.RED_WOOL)
+                .define('B', MaterialRegistry.PORCELAIN_BRICK.get())
+                .define('C', Items.WHITE_WOOL)
+                .unlockedBy("has_black_wool", has(Items.RED_WOOL))
+                .unlockedBy("has_porcelain_brick", has(MaterialRegistry.PORCELAIN_BRICK.get()))
+                .unlockedBy("has_red_wool", has(Items.WHITE_WOOL))
                 .save(this.output);
         }
 

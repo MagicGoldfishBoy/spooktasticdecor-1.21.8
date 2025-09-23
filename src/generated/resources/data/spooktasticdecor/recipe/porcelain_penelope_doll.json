@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "minecraft:red_wool",
+    "B": "spooktasticdecor:porcelain_brick",
+    "C": "minecraft:white_wool"
+  },
+  "pattern": [
+    " A ",
+    "BCB",
+    "CBC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:porcelain_penelope_doll"
+  }
+}
