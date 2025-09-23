@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_porcelain_clay": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spooktasticdecor:porcelain_clay"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "spooktasticdecor:porcelain_ingot"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_porcelain_clay"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "spooktasticdecor:porcelain_ingot"
+    ]
+  }
+}

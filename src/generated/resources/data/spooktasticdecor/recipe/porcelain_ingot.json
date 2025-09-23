@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 10,
+  "experience": 1.0,
+  "ingredient": "spooktasticdecor:porcelain_clay",
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:porcelain_ingot"
+  }
+}

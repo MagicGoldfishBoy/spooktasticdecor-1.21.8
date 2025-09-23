@@ -542,7 +542,10 @@ public class ModelDatagen extends ModelProvider {
     }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+
         itemModels.generateFlatItem(MaterialRegistry.PORCELAIN_CLAY.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(MaterialRegistry.PORCELAIN_INGOT.get(), ModelTemplates.FLAT_ITEM);
         
         itemModels.itemModelOutput.accept(
             SimpleBlockItemRegistry.ZOMBIE_LAMP_ITEM.get(),
