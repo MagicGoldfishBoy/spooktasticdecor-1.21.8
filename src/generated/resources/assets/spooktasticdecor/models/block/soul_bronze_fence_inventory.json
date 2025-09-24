@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "spooktasticdecor:block/soul_bronze_block"
+  }
+}

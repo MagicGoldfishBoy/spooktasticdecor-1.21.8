@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 50,
+  "experience": 1.0,
+  "ingredient": "spooktasticdecor:soul_bronze_alloy",
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:soul_bronze_ingot"
+  }
+}

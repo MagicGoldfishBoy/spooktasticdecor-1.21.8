@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "A": "spooktasticdecor:soul_bronze_block",
+    "B": "minecraft:stick"
+  },
+  "pattern": [
+    "ABA",
+    "ABA"
+  ],
+  "result": {
+    "count": 6,
+    "id": "spooktasticdecor:soul_bronze_fence"
+  }
+}

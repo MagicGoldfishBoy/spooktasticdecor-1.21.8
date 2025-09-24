@@ -26,6 +26,10 @@ public class MaterialRegistry {
     public static DeferredBlock<Block> GLAZED_PORCELAIN_BLOCK;
     public static DeferredItem<BlockItem> GLAZED_PORCELAIN_BLOCK_ITEM;
 
+    public static DeferredItem<Item> SOUL_BRONZE_ALLOY;
+    public static DeferredItem<Item> SOUL_BRONZE_INGOT;
+    public static DeferredItem<Item> SOUL_BRONZE_NUGGET;
+
     public static void registerAll() {
         PORCELAIN_CLAY = SpooktasticDecor.ITEMS.registerItem(
             "porcelain_clay",
@@ -68,6 +72,22 @@ public class MaterialRegistry {
             MaterialRegistry.GLAZED_PORCELAIN_BLOCK,
             new Item.Properties()
             .fireResistant()
+        );
+
+        SOUL_BRONZE_ALLOY = SpooktasticDecor.ITEMS.registerItem(
+            "soul_bronze_alloy", 
+            Item::new,
+            new Item.Properties()
+        );
+        SOUL_BRONZE_INGOT = SpooktasticDecor.ITEMS.registerItem(
+            "soul_bronze_ingot", 
+            Item::new,
+            new Item.Properties()
+        );
+        SOUL_BRONZE_NUGGET = SpooktasticDecor.ITEMS.registerItem(
+            "soul_bronze_nugget", 
+            Item::new,
+            new Item.Properties()
         );
     }
     

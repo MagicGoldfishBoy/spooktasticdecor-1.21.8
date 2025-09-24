@@ -6,6 +6,7 @@ import com.goldfish.spooktasticdecor.datagen.Datagen;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockRegistry;
 import com.goldfish.spooktasticdecor.registry.MaterialRegistry;
+import com.goldfish.spooktasticdecor.registry.MetalBlockRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.SmallDecorItemRegistry;
 import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
@@ -78,6 +79,8 @@ public class SpooktasticDecor {
         
         simpleblockregistry.registerAll();
         SimpleBlockItemRegistry.registerAll();
+
+        MetalBlockRegistry.registerAll();
 
         FurnitureBlockRegistry.registerAll();
         FurnitureBlockItemRegistry.registerAll();

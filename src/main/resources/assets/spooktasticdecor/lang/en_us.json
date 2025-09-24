@@ -312,6 +312,20 @@
   "block.spooktasticdecor.ender_chiseled_stone_bricks": "Ender Chiseled Stone Bricks",
 
 
+  "item.spooktasticdecor.soul_bronze_alloy": "Soul Bronze Alloy",
+  "item.spooktasticdecor.soul_bronze_ingot": "Soul Bronze Ingot",
+  "item.spooktasticdecor.soul_bronze_nugget": "Soul Bronze Nugget",
+
+  "block.spooktasticdecor.soul_bronze_block": "Soul Bronze Block",
+  "block.spooktasticdecor.soul_bronze_slab": "Soul Bronze Slab",
+  "block.spooktasticdecor.soul_bronze_stairs": "Soul Bronze Stairs",
+  "block.spooktasticdecor.soul_bronze_button": "Soul Bronze Button",
+  "block.spooktasticdecor.soul_bronze_wall": "Soul Bronze Wall",
+  "block.spooktasticdecor.soul_bronze_fence": "Soul Bronze Fence",
+  "block.spooktasticdecor.soul_bronze_gate": "Soul Bronze Gate",
+  "block.spooktasticdecor.soul_bronze_pressure_plate": "Soul Bronze Pressure Plate",
+
+
   "block.spooktasticdecor.zombie_wood_planter": "Zombie Wood Planter",
   "block.spooktasticdecor.skeleton_wood_planter": "Skeleton Wood Planter",
   "block.spooktasticdecor.wither_skeleton_wood_planter": "Wither Skeleton Wood Planter",

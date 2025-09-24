@@ -5,6 +5,7 @@ import java.util.Map;
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.SmallDecorItem;
 import com.goldfish.spooktasticdecor.registry.MaterialRegistry;
+import com.goldfish.spooktasticdecor.registry.MetalBlockRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.SmallDecorItemRegistry;
 import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
@@ -41,6 +42,8 @@ public class ModelDatagen extends ModelProvider {
 
         registerBlockModels(blockModels, itemModels);
 
+        registerSoulBronzeModels(blockModels, itemModels);
+
         registerItemModels(blockModels, itemModels);
 
         registerTableModels(blockModels, itemModels);
@@ -70,6 +73,12 @@ public class ModelDatagen extends ModelProvider {
             MaterialRegistry.GLAZED_PORCELAIN_BLOCK_ITEM.get(), 
             ItemModelUtils.plainModel(modLocation("block/glazed_porcelain_block"))
         );
+
+        itemModels.generateFlatItem(MaterialRegistry.SOUL_BRONZE_ALLOY.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(MaterialRegistry.SOUL_BRONZE_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        
+        itemModels.generateFlatItem(MaterialRegistry.SOUL_BRONZE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
     }
 
     protected void registerBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
@@ -483,6 +492,20 @@ public class ModelDatagen extends ModelProvider {
 
     }
 
+    protected void registerSoulBronzeModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+
+        blockModels.createTrivialCube(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get());
+
+        blockModels.familyWithExistingFullBlock(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get())
+                    .slab(MetalBlockRegistry.SOUL_BRONZE_SLAB.get())
+                    .stairs(MetalBlockRegistry.SOUL_BRONZE_STAIRS.get())
+                    .button(MetalBlockRegistry.SOUL_BRONZE_BUTTON.get())
+                    .wall(MetalBlockRegistry.SOUL_BRONZE_WALL.get())
+                    .fence(MetalBlockRegistry.SOUL_BRONZE_FENCE.get())
+                    .fenceGate(MetalBlockRegistry.SOUL_BRONZE_GATE.get())
+                    .pressurePlate(MetalBlockRegistry.SOUL_BRONZE_PRESSURE_PLATE.get());
+    }
+
     ResourceLocation woodtable;
     Variant woodtablevariant;
 
@@ -610,51 +633,51 @@ public class ModelDatagen extends ModelProvider {
 
     protected void registerSmallDecorModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
         
-    SmallDecorItem porcelainPatty = SmallDecorItemRegistry.PORCELAIN_PATTY_DOLL.get();
+        SmallDecorItem porcelainPatty = SmallDecorItemRegistry.PORCELAIN_PATTY_DOLL.get();
 
-    registerFacingModelsWithItem(
-        blockModels,
-        itemModels,
-        porcelainPatty,
-        Map.of(
-            Direction.NORTH, "porcelain_patty_north",
-            Direction.SOUTH, "porcelain_patty_south",
-            Direction.EAST,  "porcelain_patty_east",
-            Direction.WEST,  "porcelain_patty_west"
-        ),
-        Direction.NORTH
-    );
-    
-    SmallDecorItem porcelainPoppy = SmallDecorItemRegistry.PORCELAIN_POPPY_DOLL.get();
+        registerFacingModelsWithItem(
+            blockModels,
+            itemModels,
+            porcelainPatty,
+            Map.of(
+                Direction.NORTH, "porcelain_patty_north",
+                Direction.SOUTH, "porcelain_patty_south",
+                Direction.EAST,  "porcelain_patty_east",
+                Direction.WEST,  "porcelain_patty_west"
+            ),
+            Direction.NORTH
+        );
+        
+        SmallDecorItem porcelainPoppy = SmallDecorItemRegistry.PORCELAIN_POPPY_DOLL.get();
 
-    registerFacingModelsWithItem(
-        blockModels,
-        itemModels,
-        porcelainPoppy,
-        Map.of(
-            Direction.NORTH, "porcelain_poppy_north",
-            Direction.SOUTH, "porcelain_poppy_south",
-            Direction.EAST,  "porcelain_poppy_east",
-            Direction.WEST,  "porcelain_poppy_west"
-        ),
-        Direction.NORTH
-    );
-    
-    SmallDecorItem porcelainPenelope = SmallDecorItemRegistry.PORCELAIN_PENELOPE_DOLL.get();
+        registerFacingModelsWithItem(
+            blockModels,
+            itemModels,
+            porcelainPoppy,
+            Map.of(
+                Direction.NORTH, "porcelain_poppy_north",
+                Direction.SOUTH, "porcelain_poppy_south",
+                Direction.EAST,  "porcelain_poppy_east",
+                Direction.WEST,  "porcelain_poppy_west"
+            ),
+            Direction.NORTH
+        );
+        
+        SmallDecorItem porcelainPenelope = SmallDecorItemRegistry.PORCELAIN_PENELOPE_DOLL.get();
 
-    registerFacingModelsWithItem(
-        blockModels,
-        itemModels,
-        porcelainPenelope,
-        Map.of(
-            Direction.NORTH, "porcelain_penelope_north",
-            Direction.SOUTH, "porcelain_penelope_south",
-            Direction.EAST,  "porcelain_penelope_east",
-            Direction.WEST,  "porcelain_penelope_west"
-        ),
-        Direction.NORTH
-    );
-}
+        registerFacingModelsWithItem(
+            blockModels,
+            itemModels,
+            porcelainPenelope,
+            Map.of(
+                Direction.NORTH, "porcelain_penelope_north",
+                Direction.SOUTH, "porcelain_penelope_south",
+                Direction.EAST,  "porcelain_penelope_east",
+                Direction.WEST,  "porcelain_penelope_west"
+            ),
+            Direction.NORTH
+        );
+    }
 
     protected void registerItemModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 

@@ -1,0 +1,182 @@
+package com.goldfish.spooktasticdecor.registry;
+
+import com.goldfish.spooktasticdecor.SpooktasticDecor;
+
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.ButtonBlock;
+import net.minecraft.world.level.block.FenceBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.PressurePlateBlock;
+import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.WoodType;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredItem;
+
+public class MetalBlockRegistry {
+
+    public static DeferredBlock<Block> SOUL_BRONZE_BLOCK;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_ITEM;
+
+    public static DeferredBlock<SlabBlock> SOUL_BRONZE_SLAB;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_SLAB_ITEM;
+
+    public static DeferredBlock<StairBlock> SOUL_BRONZE_STAIRS;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_STAIRS_ITEM;
+
+    public static DeferredBlock<ButtonBlock> SOUL_BRONZE_BUTTON;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_BUTTON_ITEM;
+
+    public static DeferredBlock<WallBlock> SOUL_BRONZE_WALL;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_WALL_ITEM;
+
+    public static DeferredBlock<FenceBlock> SOUL_BRONZE_FENCE;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_FENCE_ITEM;
+
+    public static DeferredBlock<FenceGateBlock> SOUL_BRONZE_GATE;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_GATE_ITEM;
+
+    public static DeferredBlock<PressurePlateBlock> SOUL_BRONZE_PRESSURE_PLATE;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_PRESSURE_PLATE_ITEM;
+
+    public static void registerAll() {
+        registerSoulBronze();
+    }
+
+    private static Float SOUL_BRONZE_DESTROY_TIME = 3.25f;
+    private static Float SOUL_BRONZE_EXPLOSION_RESISTANCE = 6.25f;
+
+    public static void registerSoulBronze() {
+        SOUL_BRONZE_BLOCK = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_block",
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .sound(SoundType.COPPER)
+                .instrument(NoteBlockInstrument.COW_BELL)
+                .requiresCorrectToolForDrops()
+            )
+        );
+        SOUL_BRONZE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_BLOCK,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_SLAB = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_slab", 
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .sound(SoundType.COPPER)
+                .requiresCorrectToolForDrops()
+            )
+        );
+        SOUL_BRONZE_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_SLAB,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_STAIRS = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_stairs",
+            registryName -> new StairBlock(SOUL_BRONZE_BLOCK.get().defaultBlockState(),BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+            )
+        );
+        SOUL_BRONZE_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_STAIRS,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_BUTTON = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_button",
+            registryName -> new ButtonBlock(BlockSetType.COPPER, 25, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+            )
+        );
+        SOUL_BRONZE_BUTTON_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_BUTTON,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_WALL = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_wall",
+            registryName -> new WallBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+            )
+        );
+        SOUL_BRONZE_WALL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_WALL,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_FENCE = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_fence", 
+            registryName -> new FenceBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+            )
+        );
+        SOUL_BRONZE_FENCE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_FENCE,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_GATE = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_gate", 
+            registryName -> new FenceGateBlock(WoodType.WARPED, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+            )
+        );
+        SOUL_BRONZE_GATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_GATE,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_PRESSURE_PLATE = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_pressure_plate", 
+            registryName -> new PressurePlateBlock(BlockSetType.COPPER, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .sound(SoundType.COPPER)
+                .noCollission()
+                .instabreak()
+            )
+        );
+        SOUL_BRONZE_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_PRESSURE_PLATE,
+            new Item.Properties()
+        );
+    }
+    
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_soul_alloy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spooktasticdecor:soul_bronze_alloy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:soul_ingot_by_smelting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_soul_alloy"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:soul_ingot_by_smelting"
+    ]
+  }
+}

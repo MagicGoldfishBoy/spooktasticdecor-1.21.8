@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "spooktasticdecor:soul_bronze_ingot"
+  ],
+  "result": {
+    "count": 9,
+    "id": "spooktasticdecor:soul_bronze_nugget"
+  }
+}

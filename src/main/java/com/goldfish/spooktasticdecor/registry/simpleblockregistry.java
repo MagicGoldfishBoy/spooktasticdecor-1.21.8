@@ -1,7 +1,5 @@
 package com.goldfish.spooktasticdecor.registry;
 
-import java.rmi.registry.Registry;
-
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.EnderLog;
 import com.goldfish.spooktasticdecor.block.GhastLog;
@@ -1609,7 +1607,7 @@ public class simpleblockregistry {
         );
     }
 
-    private static Float STONE_DESTROY_TIME = 3.5f;
+    private static Float STONE_DESTROY_TIME = 2.5f;
     private static Float STONE_EXPLOSION_RESISTANCE = COBBLESTONE_EXPLOSION_RESISTANCE;
 
     public static void registerStone() {
