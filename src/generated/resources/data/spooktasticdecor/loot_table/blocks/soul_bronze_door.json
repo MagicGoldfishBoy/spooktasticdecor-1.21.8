@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "spooktasticdecor:soul_bronze_door",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "half": "lower"
+              }
+            }
+          ],
+          "name": "spooktasticdecor:soul_bronze_door"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "spooktasticdecor:blocks/soul_bronze_door"
+}

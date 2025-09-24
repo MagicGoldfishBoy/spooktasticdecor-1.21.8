@@ -8,8 +8,10 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
+import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -47,6 +49,14 @@ public class MetalBlockRegistry {
 
     public static DeferredBlock<PressurePlateBlock> SOUL_BRONZE_PRESSURE_PLATE;
     public static DeferredItem<BlockItem> SOUL_BRONZE_PRESSURE_PLATE_ITEM;
+
+    public static DeferredBlock<IronBarsBlock> SOUL_BRONZE_BARS;
+    public static DeferredBlock<Block> SOUL_BRONZE_BARS_BLOCK;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_BARS_ITEM;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_BARS_BLOCK_ITEM;
+
+    public static DeferredBlock<DoorBlock> SOUL_BRONZE_DOOR;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_DOOR_ITEM;
 
     public static void registerAll() {
         registerSoulBronze();
@@ -175,6 +185,54 @@ public class MetalBlockRegistry {
         );
         SOUL_BRONZE_PRESSURE_PLATE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             SOUL_BRONZE_PRESSURE_PLATE,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_BARS = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_bars", 
+            registryName -> new IronBarsBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+                .noOcclusion()
+            )
+        );
+
+        SOUL_BRONZE_BARS_BLOCK = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_bars_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+                .noOcclusion()
+            )
+        );
+        SOUL_BRONZE_BARS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_BARS,
+            new Item.Properties()
+        );
+        SOUL_BRONZE_BARS_BLOCK_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_BARS_BLOCK,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_DOOR = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_door", 
+            registryName -> new DoorBlock(BlockSetType.COPPER, BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+                .noOcclusion()
+            )
+        );
+        SOUL_BRONZE_DOOR_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_DOOR,
             new Item.Properties()
         );
     }

@@ -1,6 +1,11 @@
 package com.goldfish.spooktasticdecor.datagen;
 
+import java.io.IOException;
 import java.util.Map;
+import java.util.Optional;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.SmallDecorItem;
@@ -9,7 +14,9 @@ import com.goldfish.spooktasticdecor.registry.MetalBlockRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.SmallDecorItemRegistry;
 import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
+import com.google.gson.JsonElement;
 import com.mojang.datafixers.types.templates.List;
+import com.mojang.datafixers.util.Pair;
 
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
@@ -18,7 +25,13 @@ import net.minecraft.client.data.models.blockstates.MultiPartGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.ItemModelUtils;
+import net.minecraft.client.data.models.model.ModelInstance;
+import net.minecraft.client.data.models.model.ModelLocationUtils;
+import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.data.models.model.TextureSlot;
+import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.client.renderer.block.model.Variant;
 import net.minecraft.client.renderer.block.model.multipart.CombinedCondition;
 import net.minecraft.core.Direction;
@@ -26,7 +39,10 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.neoforged.neoforge.client.model.generators.template.ExtendedModelTemplate;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class ModelDatagen extends ModelProvider {
@@ -53,6 +69,26 @@ public class ModelDatagen extends ModelProvider {
         registerSmallDecorModels(blockModels, itemModels);
 
     }
+    // ResourceLocation createIronBarsModel(Block block, String suffix) {
+    //     ResourceLocation parent = ModelLocationUtils.getModelLocation(Blocks.IRON_BARS, suffix);
+    //     TextureSlot barsSlot = TextureSlot.create("bars");
+    //     ModelTemplate modelTemplate = new ModelTemplate(Optional.of(parent), Optional.of(suffix), TextureSlot.PARTICLE, barsSlot, TextureSlot.EDGE);
+    //     return TexturedModel.createDefault(b -> new TextureMapping()
+    //             .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(block))
+    //             .put(barsSlot, TextureMapping.getBlockTexture(block))
+    //             .put(TextureSlot.EDGE, TextureMapping.getBlockTexture(block)), modelTemplate)
+    //             .create(block, null);
+    //             //.create(block, modelOutput);
+    // }
+
+    // public void createModdedIronBars(Block block) {
+    //     ResourceLocation postEnds = createIronBarsModel(block, "_post_ends");
+    //     ResourceLocation post = createIronBarsModel(block, "_post");
+    //     ResourceLocation cap = createIronBarsModel(block, "_cap");
+    //     ResourceLocation capAlt = createIronBarsModel(block, "_cap_alt");
+    //     ResourceLocation side = createIronBarsModel(block, "_side");
+    //     ResourceLocation sideAlt = createIronBarsModel(block, "_side_alt");
+    // }
 
     protected void registerMaterialModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
@@ -504,7 +540,17 @@ public class ModelDatagen extends ModelProvider {
                     .fence(MetalBlockRegistry.SOUL_BRONZE_FENCE.get())
                     .fenceGate(MetalBlockRegistry.SOUL_BRONZE_GATE.get())
                     .pressurePlate(MetalBlockRegistry.SOUL_BRONZE_PRESSURE_PLATE.get());
+
+              //  createIronBarsModel(MetalBlockRegistry.SOUL_BRONZE_BARS.get(), "bars");
+        // blockModels.createIronBars();
+        
+        // blockModels.createTrivialBlock(MetalBlockRegistry.SOUL_BRONZE_BARS.get(), null);
+       // blockModels.createTrivialCube(MetalBlockRegistry.SOUL_BRONZE_BARS.get());
+
+        blockModels.createGlassBlocks(MetalBlockRegistry.SOUL_BRONZE_BARS_BLOCK.get(), MetalBlockRegistry.SOUL_BRONZE_BARS.get());
+        blockModels.createDoor(MetalBlockRegistry.SOUL_BRONZE_DOOR.get());
     }
+
 
     ResourceLocation woodtable;
     Variant woodtablevariant;

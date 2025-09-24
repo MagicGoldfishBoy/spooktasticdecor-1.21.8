@@ -7,6 +7,9 @@
         "spooktasticdecor:soul_bronze_wall",
         "spooktasticdecor:soul_bronze_fence",
         "spooktasticdecor:soul_bronze_gate",
-        "spooktasticdecor:soul_bronze_pressure_plate"
+        "spooktasticdecor:soul_bronze_pressure_plate",
+        "spooktasticdecor:soul_bronze_bars",
+        "spooktasticdecor:soul_bronze_bars_block",
+        "spooktasticdecor:soul_bronze_door"
     ]
 }

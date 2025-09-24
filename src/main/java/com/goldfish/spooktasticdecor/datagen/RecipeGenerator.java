@@ -1599,16 +1599,26 @@ public class RecipeGenerator extends RecipeProvider {
                 .define('B', Items.STICK)
                 .unlockedBy("has_soul_copper_block", has(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get()))
                 .save(this.output, "soul_bronze_gate_by_crafting");
-        //    ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_GATE.get(), 2)
-        //         .pattern("AA ")
-        //         .define('A', MetalBlockRegistry.SOUL_BRONZE_BLOCK.get())
-        //         .unlockedBy("has_soul_copper_block", has(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get()))
-        //         .save(this.output, "soul_bronze_gate_by_stonecutting");
 
            ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.REDSTONE, MetalBlockRegistry.SOUL_BRONZE_PRESSURE_PLATE.get(), 2)
                 .pattern("AA ")
                 .define('A', MetalBlockRegistry.SOUL_BRONZE_BLOCK.get())
                 .unlockedBy("has_soul_copper_block", has(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get()))
+                .save(this.output);
+
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_BARS.get(), 16)
+                .pattern("AAA")
+                .pattern("AAA")
+                .define('A', MaterialRegistry.SOUL_BRONZE_INGOT.get())
+                .unlockedBy("has_soul_bronze_ingot", has(MaterialRegistry.SOUL_BRONZE_INGOT.get()))
+                .save(this.output);
+
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_DOOR.get(), 3)
+                .pattern("AA ")
+                .pattern("AA ")
+                .pattern("AA ")
+                .define('A', MaterialRegistry.SOUL_BRONZE_INGOT.get())
+                .unlockedBy("has_soul_bronze_ingot", has(MaterialRegistry.SOUL_BRONZE_INGOT.get()))
                 .save(this.output);
         }
 

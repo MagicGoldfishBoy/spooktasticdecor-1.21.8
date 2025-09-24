@@ -13,6 +13,8 @@ import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.MapCodec;
 
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -24,6 +26,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
@@ -68,11 +71,14 @@ public class SpooktasticDecor {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+        modEventBus.addListener(this::onClientSetup);
+
         BLOCKS.register(modEventBus);
 
         ITEMS.register(modEventBus);
 
         CODECS.register(modEventBus);
+        
 
 
         MaterialRegistry.registerAll();
@@ -88,8 +94,6 @@ public class SpooktasticDecor {
         SmallDecorItemRegistry.registerAll();
         
         CREATIVE_MODE_TABS.register(modEventBus);
-
-        //modEventBus.addListener(Datagen::gatherData);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (SpooktasticDecor) to respond directly to events.
@@ -134,4 +138,11 @@ public class SpooktasticDecor {
         Datagen datagen = new Datagen();
         datagen.gatherData(event);
     }
+
+    public void onClientSetup(FMLClientSetupEvent event)
+    {
+        LOGGER.info("fixing bars");
+        ItemBlockRenderTypes.setRenderLayer(MetalBlockRegistry.SOUL_BRONZE_BARS.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(MetalBlockRegistry.SOUL_BRONZE_BARS_BLOCK.get(), ChunkSectionLayer.CUTOUT);
+        }
 }
