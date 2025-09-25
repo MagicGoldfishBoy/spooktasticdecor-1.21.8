@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_soul_bronze_bars_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spooktasticdecor:soul_bronze_bars"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "spooktasticdecor:soul_bronze_bars_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_soul_bronze_bars_item"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "spooktasticdecor:soul_bronze_bars_block"
+    ]
+  }
+}

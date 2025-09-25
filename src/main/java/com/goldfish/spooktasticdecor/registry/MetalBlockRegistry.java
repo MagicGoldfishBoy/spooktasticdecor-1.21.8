@@ -8,10 +8,12 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
+import net.minecraft.world.level.block.ChainBlock;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
 import net.minecraft.world.level.block.IronBarsBlock;
+import net.minecraft.world.level.block.LanternBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -57,6 +59,18 @@ public class MetalBlockRegistry {
 
     public static DeferredBlock<DoorBlock> SOUL_BRONZE_DOOR;
     public static DeferredItem<BlockItem> SOUL_BRONZE_DOOR_ITEM;
+
+    public static DeferredBlock<ChainBlock> SOUL_BRONZE_CHAIN;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_CHAIN_ITEM;
+
+    public static DeferredBlock<LanternBlock> SOUL_BRONZE_LANTERN;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_LANTERN_ITEM;
+
+    public static DeferredBlock<LanternBlock> SOUL_BRONZE_SOUL_LANTERN;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_SOUL_LANTERN_ITEM;
+
+    public static DeferredBlock<Block> SOUL_BRONZE_LAMP_BLOCK;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_LAMP_ITEM;
 
     public static void registerAll() {
         registerSoulBronze();
@@ -199,7 +213,6 @@ public class MetalBlockRegistry {
                 .noOcclusion()
             )
         );
-
         SOUL_BRONZE_BARS_BLOCK = SpooktasticDecor.BLOCKS.register(
             "soul_bronze_bars_block", 
             registryName -> new Block(BlockBehaviour.Properties.of()
@@ -233,6 +246,72 @@ public class MetalBlockRegistry {
         );
         SOUL_BRONZE_DOOR_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             SOUL_BRONZE_DOOR,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_CHAIN = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_chain", 
+            registryName -> new ChainBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.CHAIN)
+                .noOcclusion()
+            )
+        );
+        SOUL_BRONZE_CHAIN_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_CHAIN,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_LANTERN = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_lantern", 
+            registryName -> new LanternBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.LANTERN)
+                .noOcclusion()
+                .lightLevel(state -> 15)
+            )
+        );
+        SOUL_BRONZE_LANTERN_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_LANTERN,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_SOUL_LANTERN = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_soul_lantern", 
+            registryName -> new LanternBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.LANTERN)
+                .noOcclusion()
+                .lightLevel(state -> 10)
+            )
+        );
+        SOUL_BRONZE_SOUL_LANTERN_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_SOUL_LANTERN,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_LAMP_BLOCK = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_lamp_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER_BULB)
+                .lightLevel(state -> 15)
+            )
+        );
+        SOUL_BRONZE_LAMP_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_LAMP_BLOCK,
             new Item.Properties()
         );
     }

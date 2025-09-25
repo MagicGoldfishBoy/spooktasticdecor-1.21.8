@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "spooktasticdecor:block/soul_bronze_lantern"
+    },
+    "hanging=true": {
+      "model": "spooktasticdecor:block/soul_bronze_lantern_hanging"
+    }
+  }
+}

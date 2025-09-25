@@ -10,6 +10,10 @@
         "spooktasticdecor:soul_bronze_pressure_plate",
         "spooktasticdecor:soul_bronze_bars",
         "spooktasticdecor:soul_bronze_bars_block",
-        "spooktasticdecor:soul_bronze_door"
+        "spooktasticdecor:soul_bronze_door",
+        "spooktasticdecor:soul_bronze_chain",
+        "spooktasticdecor:soul_bronze_lantern",
+        "spooktasticdecor:soul_bronze_soul_lantern",
+        "spooktasticdecor:soul_bronze_lamp_block"
     ]
 }

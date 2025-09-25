@@ -1606,11 +1606,18 @@ public class RecipeGenerator extends RecipeProvider {
                 .unlockedBy("has_soul_copper_block", has(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get()))
                 .save(this.output);
 
-           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_BARS.get(), 16)
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_BARS.get(), 18)
                 .pattern("AAA")
                 .pattern("AAA")
                 .define('A', MaterialRegistry.SOUL_BRONZE_INGOT.get())
                 .unlockedBy("has_soul_bronze_ingot", has(MaterialRegistry.SOUL_BRONZE_INGOT.get()))
+                .save(this.output);
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_BARS_BLOCK_ITEM.get())
+                .pattern("AAA")
+                .pattern("AAA")
+                .pattern("AAA")
+                .define('A', MetalBlockRegistry.SOUL_BRONZE_BARS_ITEM.get())
+                .unlockedBy("has_soul_bronze_bars_item", has(MetalBlockRegistry.SOUL_BRONZE_BARS_ITEM.get()))
                 .save(this.output);
 
            ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_DOOR.get(), 3)
@@ -1619,6 +1626,42 @@ public class RecipeGenerator extends RecipeProvider {
                 .pattern("AA ")
                 .define('A', MaterialRegistry.SOUL_BRONZE_INGOT.get())
                 .unlockedBy("has_soul_bronze_ingot", has(MaterialRegistry.SOUL_BRONZE_INGOT.get()))
+                .save(this.output);
+
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalBlockRegistry.SOUL_BRONZE_CHAIN_ITEM.get())
+                .pattern(" A ")
+                .pattern(" B ")
+                .pattern(" A ")
+                .define('A', MaterialRegistry.SOUL_BRONZE_NUGGET.get())
+                .define('B', MaterialRegistry.SOUL_BRONZE_INGOT.get())
+                .unlockedBy("has_soul_bronze_ingot", has(MaterialRegistry.SOUL_BRONZE_INGOT.get()))
+                .save(this.output);
+                
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalBlockRegistry.SOUL_BRONZE_LANTERN_ITEM.get())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', MaterialRegistry.SOUL_BRONZE_NUGGET.get())
+                .define('B', Items.TORCH)
+                .unlockedBy("has_soul_bronze_nugget", has(MaterialRegistry.SOUL_BRONZE_NUGGET.get()))
+                .unlockedBy("has_torch", has(Items.TORCH))
+                .save(this.output);
+                
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalBlockRegistry.SOUL_BRONZE_SOUL_LANTERN_ITEM.get())
+                .pattern("AAA")
+                .pattern("ABA")
+                .pattern("AAA")
+                .define('A', MaterialRegistry.SOUL_BRONZE_NUGGET.get())
+                .define('B', Items.SOUL_TORCH)
+                .unlockedBy("has_soul_bronze_nugget", has(MaterialRegistry.SOUL_BRONZE_NUGGET.get()))
+                .unlockedBy("has_torch", has(Items.SOUL_TORCH))
+                .save(this.output);
+
+           ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_LAMP_ITEM.get())
+                .requires(MetalBlockRegistry.SOUL_BRONZE_BARS_BLOCK_ITEM.get())
+                .requires(Items.GLOWSTONE_DUST)
+                .unlockedBy("has_soul_bronze_bars_block_item", has(MetalBlockRegistry.SOUL_BRONZE_BARS_BLOCK_ITEM.get()))
+                .unlockedBy("has_glow_dust", has(Items.GLOWSTONE_DUST))
                 .save(this.output);
         }
 

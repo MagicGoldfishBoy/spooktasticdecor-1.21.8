@@ -21,6 +21,7 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.BlockModelGenerators.PlantType;
 import net.minecraft.client.data.models.blockstates.MultiPartGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
@@ -32,6 +33,7 @@ import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.client.data.models.model.TexturedModel;
+import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.renderer.block.model.Variant;
 import net.minecraft.client.renderer.block.model.multipart.CombinedCondition;
 import net.minecraft.core.Direction;
@@ -40,6 +42,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ChainBlock;
 import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.client.model.generators.template.ExtendedModelTemplate;
@@ -541,14 +544,34 @@ public class ModelDatagen extends ModelProvider {
                     .fenceGate(MetalBlockRegistry.SOUL_BRONZE_GATE.get())
                     .pressurePlate(MetalBlockRegistry.SOUL_BRONZE_PRESSURE_PLATE.get());
 
-              //  createIronBarsModel(MetalBlockRegistry.SOUL_BRONZE_BARS.get(), "bars");
-        // blockModels.createIronBars();
-        
-        // blockModels.createTrivialBlock(MetalBlockRegistry.SOUL_BRONZE_BARS.get(), null);
-       // blockModels.createTrivialCube(MetalBlockRegistry.SOUL_BRONZE_BARS.get());
-
         blockModels.createGlassBlocks(MetalBlockRegistry.SOUL_BRONZE_BARS_BLOCK.get(), MetalBlockRegistry.SOUL_BRONZE_BARS.get());
+
         blockModels.createDoor(MetalBlockRegistry.SOUL_BRONZE_DOOR.get());
+
+        ChainBlock soul_bronze_chain = MetalBlockRegistry.SOUL_BRONZE_CHAIN.get();
+
+        Variant soulBronzeChainVariant = new Variant(ModelLocationUtils.getModelLocation(soul_bronze_chain));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(
+                soul_bronze_chain,
+                BlockModelGenerators.variant(soulBronzeChainVariant)
+            ).with(
+                PropertyDispatch.modify(BlockStateProperties.AXIS)
+                    .select(Direction.Axis.Y, BlockModelGenerators.NOP)
+                    .select(Direction.Axis.Z, BlockModelGenerators.X_ROT_90)
+                    .select(Direction.Axis.X, BlockModelGenerators.X_ROT_90.then(BlockModelGenerators.Y_ROT_90))
+            )
+        );
+
+        itemModels.generateFlatItem(MetalBlockRegistry.SOUL_BRONZE_CHAIN_ITEM.get(), ModelTemplates.FLAT_ITEM);
+
+        
+        blockModels.createLantern(MetalBlockRegistry.SOUL_BRONZE_LANTERN.get());
+
+        blockModels.createLantern(MetalBlockRegistry.SOUL_BRONZE_SOUL_LANTERN.get());
+
+        blockModels.createTrivialCube(MetalBlockRegistry.SOUL_BRONZE_LAMP_BLOCK.get());
     }
 
 

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "spooktasticdecor:soul_bronze_nugget",
+    "B": "minecraft:torch"
+  },
+  "pattern": [
+    "AAA",
+    "ABA",
+    "AAA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:soul_bronze_lantern"
+  }
+}

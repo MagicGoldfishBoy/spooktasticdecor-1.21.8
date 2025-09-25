@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "spooktasticdecor:soul_bronze_bars_block",
+    "minecraft:glowstone_dust"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:soul_bronze_lamp_block"
+  }
+}

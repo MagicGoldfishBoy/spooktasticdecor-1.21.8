@@ -144,5 +144,8 @@ public class SpooktasticDecor {
         LOGGER.info("fixing bars");
         ItemBlockRenderTypes.setRenderLayer(MetalBlockRegistry.SOUL_BRONZE_BARS.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(MetalBlockRegistry.SOUL_BRONZE_BARS_BLOCK.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(MetalBlockRegistry.SOUL_BRONZE_CHAIN.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(MetalBlockRegistry.SOUL_BRONZE_LANTERN.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(MetalBlockRegistry.SOUL_BRONZE_SOUL_LANTERN.get(), ChunkSectionLayer.CUTOUT);
         }
 }
