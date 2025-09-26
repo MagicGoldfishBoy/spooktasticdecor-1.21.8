@@ -1512,42 +1512,42 @@ public class RecipeGenerator extends RecipeProvider {
                         .save(this.output, SpooktasticDecor.MODID + ":ender_chiseled_stone_bricks_from_stonecutting");                
         }
         protected void registerSoulBronzeRecipes() {
-           ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MaterialRegistry.SOUL_BRONZE_ALLOY.get(), 2)
+           ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_ALLOY.get(), 2)
                 .requires(Items.RAW_COPPER)
                 .requires(Items.SOUL_SAND)
                 .unlockedBy("has_raw_copper", has(Items.RAW_COPPER))
                 .unlockedBy("has_soul_sand", has(Items.SOUL_SAND))
                 .save(this.output);
 
-           SimpleCookingRecipeBuilder.smelting(Ingredient.of(MaterialRegistry.SOUL_BRONZE_ALLOY.get()), RecipeCategory.MISC, MaterialRegistry.SOUL_BRONZE_INGOT.get(), 1.0f, 50)
-                .unlockedBy("has_soul_alloy", has(MaterialRegistry.SOUL_BRONZE_ALLOY.get()))
+           SimpleCookingRecipeBuilder.smelting(Ingredient.of(MetalBlockRegistry.SOUL_BRONZE_ALLOY.get()), RecipeCategory.MISC, MetalBlockRegistry.SOUL_BRONZE_INGOT.get(), 1.0f, 50)
+                .unlockedBy("has_soul_alloy", has(MetalBlockRegistry.SOUL_BRONZE_ALLOY.get()))
                 .save(this.output, "soul_ingot_by_smelting");
-           SimpleCookingRecipeBuilder.blasting(Ingredient.of(MaterialRegistry.SOUL_BRONZE_ALLOY.get()), RecipeCategory.MISC, MaterialRegistry.SOUL_BRONZE_INGOT.get(), 1.0f, 25)
-                .unlockedBy("has_soul_alloy", has(MaterialRegistry.SOUL_BRONZE_ALLOY.get()))
+           SimpleCookingRecipeBuilder.blasting(Ingredient.of(MetalBlockRegistry.SOUL_BRONZE_ALLOY.get()), RecipeCategory.MISC, MetalBlockRegistry.SOUL_BRONZE_INGOT.get(), 1.0f, 25)
+                .unlockedBy("has_soul_alloy", has(MetalBlockRegistry.SOUL_BRONZE_ALLOY.get()))
                 .save(this.output, "soul_ingot_by_blasting");                
-           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow((Registries.ITEM)), RecipeCategory.MISC, MaterialRegistry.SOUL_BRONZE_INGOT.get())
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow((Registries.ITEM)), RecipeCategory.MISC, MetalBlockRegistry.SOUL_BRONZE_INGOT.get())
                 .pattern("AAA")
                 .pattern("AAA")
                 .pattern("AAA")
-                .define('A', MaterialRegistry.SOUL_BRONZE_NUGGET.get())
-                .unlockedBy("has_soul_bronze_nugget", has(MaterialRegistry.SOUL_BRONZE_NUGGET.get()))
+                .define('A', MetalBlockRegistry.SOUL_BRONZE_NUGGET.get())
+                .unlockedBy("has_soul_bronze_nugget", has(MetalBlockRegistry.SOUL_BRONZE_NUGGET.get()))
                 .save(this.output, "soul_ingot_by_crafting_with_nuggets");
-           ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MaterialRegistry.SOUL_BRONZE_INGOT.get(), 9)
+           ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_INGOT.get(), 9)
                 .requires(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get())
                 .unlockedBy("has_soul_bronze_block", has(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get()))
                 .save(this.output, "soul_ingot_by_crafting_with_block");
 
-           ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, MaterialRegistry.SOUL_BRONZE_NUGGET.get(), 9)
-                .requires(MaterialRegistry.SOUL_BRONZE_INGOT.get())
-                .unlockedBy("has_soul_bronze_ingot", has(MaterialRegistry.SOUL_BRONZE_INGOT.get()))
+           ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, MetalBlockRegistry.SOUL_BRONZE_NUGGET.get(), 9)
+                .requires(MetalBlockRegistry.SOUL_BRONZE_INGOT.get())
+                .unlockedBy("has_soul_bronze_ingot", has(MetalBlockRegistry.SOUL_BRONZE_INGOT.get()))
                 .save(this.output);
 
            ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow((Registries.ITEM)), RecipeCategory.MISC, MetalBlockRegistry.SOUL_BRONZE_BLOCK.get())
                 .pattern("AAA")
                 .pattern("AAA")
                 .pattern("AAA")
-                .define('A', MaterialRegistry.SOUL_BRONZE_INGOT.get())
-                .unlockedBy("has_soul_bronze_ingot", has(MaterialRegistry.SOUL_BRONZE_INGOT.get()))
+                .define('A', MetalBlockRegistry.SOUL_BRONZE_INGOT.get())
+                .unlockedBy("has_soul_bronze_ingot", has(MetalBlockRegistry.SOUL_BRONZE_INGOT.get()))
                 .save(this.output);
 
            ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_BRICKS_ITEM.get(), 4)
@@ -1649,8 +1649,8 @@ public class RecipeGenerator extends RecipeProvider {
            ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_BARS.get(), 18)
                 .pattern("AAA")
                 .pattern("AAA")
-                .define('A', MaterialRegistry.SOUL_BRONZE_INGOT.get())
-                .unlockedBy("has_soul_bronze_ingot", has(MaterialRegistry.SOUL_BRONZE_INGOT.get()))
+                .define('A', MetalBlockRegistry.SOUL_BRONZE_INGOT.get())
+                .unlockedBy("has_soul_bronze_ingot", has(MetalBlockRegistry.SOUL_BRONZE_INGOT.get()))
                 .save(this.output);
            ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_BARS_BLOCK_ITEM.get())
                 .pattern("AAA")
@@ -1664,26 +1664,26 @@ public class RecipeGenerator extends RecipeProvider {
                 .pattern("AA ")
                 .pattern("AA ")
                 .pattern("AA ")
-                .define('A', MaterialRegistry.SOUL_BRONZE_INGOT.get())
-                .unlockedBy("has_soul_bronze_ingot", has(MaterialRegistry.SOUL_BRONZE_INGOT.get()))
+                .define('A', MetalBlockRegistry.SOUL_BRONZE_INGOT.get())
+                .unlockedBy("has_soul_bronze_ingot", has(MetalBlockRegistry.SOUL_BRONZE_INGOT.get()))
                 .save(this.output);
 
            ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalBlockRegistry.SOUL_BRONZE_CHAIN_ITEM.get())
                 .pattern(" A ")
                 .pattern(" B ")
                 .pattern(" A ")
-                .define('A', MaterialRegistry.SOUL_BRONZE_NUGGET.get())
-                .define('B', MaterialRegistry.SOUL_BRONZE_INGOT.get())
-                .unlockedBy("has_soul_bronze_ingot", has(MaterialRegistry.SOUL_BRONZE_INGOT.get()))
+                .define('A', MetalBlockRegistry.SOUL_BRONZE_NUGGET.get())
+                .define('B', MetalBlockRegistry.SOUL_BRONZE_INGOT.get())
+                .unlockedBy("has_soul_bronze_ingot", has(MetalBlockRegistry.SOUL_BRONZE_INGOT.get()))
                 .save(this.output);
                 
            ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalBlockRegistry.SOUL_BRONZE_LANTERN_ITEM.get())
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
-                .define('A', MaterialRegistry.SOUL_BRONZE_NUGGET.get())
+                .define('A', MetalBlockRegistry.SOUL_BRONZE_NUGGET.get())
                 .define('B', Items.TORCH)
-                .unlockedBy("has_soul_bronze_nugget", has(MaterialRegistry.SOUL_BRONZE_NUGGET.get()))
+                .unlockedBy("has_soul_bronze_nugget", has(MetalBlockRegistry.SOUL_BRONZE_NUGGET.get()))
                 .unlockedBy("has_torch", has(Items.TORCH))
                 .save(this.output);
                 
@@ -1691,9 +1691,9 @@ public class RecipeGenerator extends RecipeProvider {
                 .pattern("AAA")
                 .pattern("ABA")
                 .pattern("AAA")
-                .define('A', MaterialRegistry.SOUL_BRONZE_NUGGET.get())
+                .define('A', MetalBlockRegistry.SOUL_BRONZE_NUGGET.get())
                 .define('B', Items.SOUL_TORCH)
-                .unlockedBy("has_soul_bronze_nugget", has(MaterialRegistry.SOUL_BRONZE_NUGGET.get()))
+                .unlockedBy("has_soul_bronze_nugget", has(MetalBlockRegistry.SOUL_BRONZE_NUGGET.get()))
                 .unlockedBy("has_torch", has(Items.SOUL_TORCH))
                 .save(this.output);
 

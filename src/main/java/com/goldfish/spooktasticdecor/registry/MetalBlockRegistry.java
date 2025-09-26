@@ -28,6 +28,11 @@ import net.neoforged.neoforge.registries.DeferredItem;
 
 public class MetalBlockRegistry {
 
+
+    public static DeferredItem<Item> SOUL_BRONZE_ALLOY;
+    public static DeferredItem<Item> SOUL_BRONZE_INGOT;
+    public static DeferredItem<Item> SOUL_BRONZE_NUGGET;
+
     public static DeferredBlock<Block> SOUL_BRONZE_BLOCK;
     public static DeferredItem<BlockItem> SOUL_BRONZE_ITEM;
 
@@ -95,6 +100,22 @@ public class MetalBlockRegistry {
     private static Float SOUL_BRONZE_EXPLOSION_RESISTANCE = 6.25f;
 
     public static void registerSoulBronze() {
+
+        SOUL_BRONZE_ALLOY = SpooktasticDecor.ITEMS.registerItem(
+            "soul_bronze_alloy", 
+            Item::new,
+            new Item.Properties()
+        );
+        SOUL_BRONZE_INGOT = SpooktasticDecor.ITEMS.registerItem(
+            "soul_bronze_ingot", 
+            Item::new,
+            new Item.Properties()
+        );
+        SOUL_BRONZE_NUGGET = SpooktasticDecor.ITEMS.registerItem(
+            "soul_bronze_nugget", 
+            Item::new,
+            new Item.Properties()
+        );
         SOUL_BRONZE_BLOCK = SpooktasticDecor.BLOCKS.register(
             "soul_bronze_block",
             registryName -> new Block(BlockBehaviour.Properties.of()

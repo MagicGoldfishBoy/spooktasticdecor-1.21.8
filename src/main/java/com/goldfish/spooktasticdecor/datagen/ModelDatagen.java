@@ -113,11 +113,11 @@ public class ModelDatagen extends ModelProvider {
             ItemModelUtils.plainModel(modLocation("block/glazed_porcelain_block"))
         );
 
-        itemModels.generateFlatItem(MaterialRegistry.SOUL_BRONZE_ALLOY.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(MetalBlockRegistry.SOUL_BRONZE_ALLOY.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModels.generateFlatItem(MaterialRegistry.SOUL_BRONZE_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(MetalBlockRegistry.SOUL_BRONZE_INGOT.get(), ModelTemplates.FLAT_ITEM);
         
-        itemModels.generateFlatItem(MaterialRegistry.SOUL_BRONZE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(MetalBlockRegistry.SOUL_BRONZE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
     }
 
     protected void registerBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {

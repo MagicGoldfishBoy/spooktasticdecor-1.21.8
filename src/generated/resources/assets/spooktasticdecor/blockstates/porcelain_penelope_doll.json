@@ -10,6 +10,14 @@
     },
     {
       "apply": {
+        "model": "spooktasticdecor:block/porcelain_penelope_north"
+      },
+      "when": {
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
         "model": "spooktasticdecor:block/porcelain_penelope_south"
       },
       "when": {
@@ -22,14 +30,6 @@
       },
       "when": {
         "facing": "east"
-      }
-    },
-    {
-      "apply": {
-        "model": "spooktasticdecor:block/porcelain_penelope_north"
-      },
-      "when": {
-        "facing": "north"
       }
     }
   ]
