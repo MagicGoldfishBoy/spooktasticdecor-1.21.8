@@ -26,7 +26,7 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 
-public class MetalBlockRegistry {
+public class MetalRegistry {
 
 
     public static DeferredItem<Item> SOUL_BRONZE_ALLOY;

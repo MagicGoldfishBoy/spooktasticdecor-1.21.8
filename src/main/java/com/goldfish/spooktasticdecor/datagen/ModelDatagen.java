@@ -10,7 +10,7 @@ import java.util.function.Supplier;
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.SmallDecorItem;
 import com.goldfish.spooktasticdecor.registry.MaterialRegistry;
-import com.goldfish.spooktasticdecor.registry.MetalBlockRegistry;
+import com.goldfish.spooktasticdecor.registry.MetalRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.SmallDecorItemRegistry;
 import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
@@ -113,11 +113,11 @@ public class ModelDatagen extends ModelProvider {
             ItemModelUtils.plainModel(modLocation("block/glazed_porcelain_block"))
         );
 
-        itemModels.generateFlatItem(MetalBlockRegistry.SOUL_BRONZE_ALLOY.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(MetalRegistry.SOUL_BRONZE_ALLOY.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModels.generateFlatItem(MetalBlockRegistry.SOUL_BRONZE_INGOT.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(MetalRegistry.SOUL_BRONZE_INGOT.get(), ModelTemplates.FLAT_ITEM);
         
-        itemModels.generateFlatItem(MetalBlockRegistry.SOUL_BRONZE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(MetalRegistry.SOUL_BRONZE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
     }
 
     protected void registerBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
@@ -533,31 +533,31 @@ public class ModelDatagen extends ModelProvider {
 
     protected void registerSoulBronzeModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
-        blockModels.createTrivialCube(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get());
+        blockModels.createTrivialCube(MetalRegistry.SOUL_BRONZE_BLOCK.get());
 
-        blockModels.createTrivialCube(MetalBlockRegistry.SOUL_BRONZE_BRICKS_BLOCK.get());
+        blockModels.createTrivialCube(MetalRegistry.SOUL_BRONZE_BRICKS_BLOCK.get());
 
-        blockModels.createTrivialCube(MetalBlockRegistry.SOUL_BRONZE_CHISELED_BLOCK.get());
+        blockModels.createTrivialCube(MetalRegistry.SOUL_BRONZE_CHISELED_BLOCK.get());
 
 
-        blockModels.familyWithExistingFullBlock(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get())
-                    .slab(MetalBlockRegistry.SOUL_BRONZE_SLAB.get())
-                    .stairs(MetalBlockRegistry.SOUL_BRONZE_STAIRS.get())
-                    .button(MetalBlockRegistry.SOUL_BRONZE_BUTTON.get())
-                    .wall(MetalBlockRegistry.SOUL_BRONZE_WALL.get())
-                    .fence(MetalBlockRegistry.SOUL_BRONZE_FENCE.get())
-                    .fenceGate(MetalBlockRegistry.SOUL_BRONZE_GATE.get())
-                    .pressurePlate(MetalBlockRegistry.SOUL_BRONZE_PRESSURE_PLATE.get());
+        blockModels.familyWithExistingFullBlock(MetalRegistry.SOUL_BRONZE_BLOCK.get())
+                    .slab(MetalRegistry.SOUL_BRONZE_SLAB.get())
+                    .stairs(MetalRegistry.SOUL_BRONZE_STAIRS.get())
+                    .button(MetalRegistry.SOUL_BRONZE_BUTTON.get())
+                    .wall(MetalRegistry.SOUL_BRONZE_WALL.get())
+                    .fence(MetalRegistry.SOUL_BRONZE_FENCE.get())
+                    .fenceGate(MetalRegistry.SOUL_BRONZE_GATE.get())
+                    .pressurePlate(MetalRegistry.SOUL_BRONZE_PRESSURE_PLATE.get());
 
-        blockModels.familyWithExistingFullBlock(MetalBlockRegistry.SOUL_BRONZE_BRICKS_BLOCK.get())
-                   .slab(MetalBlockRegistry.SOUL_BRONZE_BRICKS_SLAB.get())
-                   .stairs(MetalBlockRegistry.SOUL_BRONZE_BRICKS_STAIRS.get());
+        blockModels.familyWithExistingFullBlock(MetalRegistry.SOUL_BRONZE_BRICKS_BLOCK.get())
+                   .slab(MetalRegistry.SOUL_BRONZE_BRICKS_SLAB.get())
+                   .stairs(MetalRegistry.SOUL_BRONZE_BRICKS_STAIRS.get());
 
-        blockModels.createGlassBlocks(MetalBlockRegistry.SOUL_BRONZE_BARS_BLOCK.get(), MetalBlockRegistry.SOUL_BRONZE_BARS.get());
+        blockModels.createGlassBlocks(MetalRegistry.SOUL_BRONZE_BARS_BLOCK.get(), MetalRegistry.SOUL_BRONZE_BARS.get());
 
-        blockModels.createDoor(MetalBlockRegistry.SOUL_BRONZE_DOOR.get());
+        blockModels.createDoor(MetalRegistry.SOUL_BRONZE_DOOR.get());
 
-        ChainBlock soul_bronze_chain = MetalBlockRegistry.SOUL_BRONZE_CHAIN.get();
+        ChainBlock soul_bronze_chain = MetalRegistry.SOUL_BRONZE_CHAIN.get();
 
         Variant soulBronzeChainVariant = new Variant(ModelLocationUtils.getModelLocation(soul_bronze_chain));
 
@@ -573,14 +573,14 @@ public class ModelDatagen extends ModelProvider {
             )
         );
 
-        itemModels.generateFlatItem(MetalBlockRegistry.SOUL_BRONZE_CHAIN_ITEM.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(MetalRegistry.SOUL_BRONZE_CHAIN_ITEM.get(), ModelTemplates.FLAT_ITEM);
 
         
-        blockModels.createLantern(MetalBlockRegistry.SOUL_BRONZE_LANTERN.get());
+        blockModels.createLantern(MetalRegistry.SOUL_BRONZE_LANTERN.get());
 
-        blockModels.createLantern(MetalBlockRegistry.SOUL_BRONZE_SOUL_LANTERN.get());
+        blockModels.createLantern(MetalRegistry.SOUL_BRONZE_SOUL_LANTERN.get());
 
-        blockModels.createTrivialCube(MetalBlockRegistry.SOUL_BRONZE_LAMP_BLOCK.get());
+        blockModels.createTrivialCube(MetalRegistry.SOUL_BRONZE_LAMP_BLOCK.get());
     }
 
 

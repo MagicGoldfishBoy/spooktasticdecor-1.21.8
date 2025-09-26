@@ -6,7 +6,7 @@ import com.goldfish.spooktasticdecor.datagen.Datagen;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockRegistry;
 import com.goldfish.spooktasticdecor.registry.MaterialRegistry;
-import com.goldfish.spooktasticdecor.registry.MetalBlockRegistry;
+import com.goldfish.spooktasticdecor.registry.MetalRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.SmallDecorItemRegistry;
 import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
@@ -86,7 +86,7 @@ public class SpooktasticDecor {
         simpleblockregistry.registerAll();
         SimpleBlockItemRegistry.registerAll();
 
-        MetalBlockRegistry.registerAll();
+        MetalRegistry.registerAll();
 
         FurnitureBlockRegistry.registerAll();
         FurnitureBlockItemRegistry.registerAll();
@@ -142,10 +142,10 @@ public class SpooktasticDecor {
     public void onClientSetup(FMLClientSetupEvent event)
     {
         LOGGER.info("fixing bars");
-        ItemBlockRenderTypes.setRenderLayer(MetalBlockRegistry.SOUL_BRONZE_BARS.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(MetalBlockRegistry.SOUL_BRONZE_BARS_BLOCK.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(MetalBlockRegistry.SOUL_BRONZE_CHAIN.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(MetalBlockRegistry.SOUL_BRONZE_LANTERN.get(), ChunkSectionLayer.CUTOUT);
-        ItemBlockRenderTypes.setRenderLayer(MetalBlockRegistry.SOUL_BRONZE_SOUL_LANTERN.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(MetalRegistry.SOUL_BRONZE_BARS.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(MetalRegistry.SOUL_BRONZE_BARS_BLOCK.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(MetalRegistry.SOUL_BRONZE_CHAIN.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(MetalRegistry.SOUL_BRONZE_LANTERN.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(MetalRegistry.SOUL_BRONZE_SOUL_LANTERN.get(), ChunkSectionLayer.CUTOUT);
         }
 }
