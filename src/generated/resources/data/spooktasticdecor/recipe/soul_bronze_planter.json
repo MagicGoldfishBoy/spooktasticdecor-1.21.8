@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "spooktasticdecor:soul_bronze_block",
+    "B": "minecraft:dirt",
+    "C": "spooktasticdecor:soul_bronze_ingot"
+  },
+  "pattern": [
+    "ABA",
+    "CCC",
+    "AAA"
+  ],
+  "result": {
+    "count": 4,
+    "id": "spooktasticdecor:soul_bronze_planter"
+  }
+}

@@ -72,26 +72,6 @@ public class ModelDatagen extends ModelProvider {
         registerSmallDecorModels(blockModels, itemModels);
 
     }
-    // ResourceLocation createIronBarsModel(Block block, String suffix) {
-    //     ResourceLocation parent = ModelLocationUtils.getModelLocation(Blocks.IRON_BARS, suffix);
-    //     TextureSlot barsSlot = TextureSlot.create("bars");
-    //     ModelTemplate modelTemplate = new ModelTemplate(Optional.of(parent), Optional.of(suffix), TextureSlot.PARTICLE, barsSlot, TextureSlot.EDGE);
-    //     return TexturedModel.createDefault(b -> new TextureMapping()
-    //             .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(block))
-    //             .put(barsSlot, TextureMapping.getBlockTexture(block))
-    //             .put(TextureSlot.EDGE, TextureMapping.getBlockTexture(block)), modelTemplate)
-    //             .create(block, null);
-    //             //.create(block, modelOutput);
-    // }
-
-    // public void createModdedIronBars(Block block) {
-    //     ResourceLocation postEnds = createIronBarsModel(block, "_post_ends");
-    //     ResourceLocation post = createIronBarsModel(block, "_post");
-    //     ResourceLocation cap = createIronBarsModel(block, "_cap");
-    //     ResourceLocation capAlt = createIronBarsModel(block, "_cap_alt");
-    //     ResourceLocation side = createIronBarsModel(block, "_side");
-    //     ResourceLocation sideAlt = createIronBarsModel(block, "_side_alt");
-    // }
 
     protected void registerMaterialModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 

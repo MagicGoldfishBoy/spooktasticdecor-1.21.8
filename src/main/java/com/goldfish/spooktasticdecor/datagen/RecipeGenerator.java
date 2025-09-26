@@ -1703,6 +1703,17 @@ public class RecipeGenerator extends RecipeProvider {
                 .unlockedBy("has_soul_bronze_bars_block_item", has(MetalRegistry.SOUL_BRONZE_BARS_BLOCK_ITEM.get()))
                 .unlockedBy("has_glow_dust", has(Items.GLOWSTONE_DUST))
                 .save(this.output);
+
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.SOUL_BRONZE_PLANTER_ITEM.get(), 4)
+                .pattern("ABA")
+                .pattern("CCC")
+                .pattern("AAA")
+                .define('A', MetalRegistry.SOUL_BRONZE_ITEM.get())
+                .define('B', Items.DIRT)
+                .define('C', MetalRegistry.SOUL_BRONZE_INGOT.get())
+                .unlockedBy("has_soul_bronze_item", has(MetalRegistry.SOUL_BRONZE_ITEM.get()))
+                .unlockedBy("has_soul_bronze_ingot", has(MetalRegistry.SOUL_BRONZE_INGOT.get()))
+                .save(this.output);
         }
 
         protected void registerSmallDecorItemRecipes() {
