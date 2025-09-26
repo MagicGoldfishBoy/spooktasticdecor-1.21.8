@@ -31,11 +31,26 @@ public class MetalBlockRegistry {
     public static DeferredBlock<Block> SOUL_BRONZE_BLOCK;
     public static DeferredItem<BlockItem> SOUL_BRONZE_ITEM;
 
+    public static DeferredBlock<Block> SOUL_BRONZE_BRICKS_BLOCK;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_BRICKS_ITEM;
+
+    public static DeferredBlock<Block> SOUL_BRONZE_CHISELED_BLOCK;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_CHISELED_ITEM;
+
+
     public static DeferredBlock<SlabBlock> SOUL_BRONZE_SLAB;
     public static DeferredItem<BlockItem> SOUL_BRONZE_SLAB_ITEM;
 
+    public static DeferredBlock<SlabBlock> SOUL_BRONZE_BRICKS_SLAB;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_BRICKS_SLAB_ITEM;
+
+
     public static DeferredBlock<StairBlock> SOUL_BRONZE_STAIRS;
     public static DeferredItem<BlockItem> SOUL_BRONZE_STAIRS_ITEM;
+
+    public static DeferredBlock<StairBlock> SOUL_BRONZE_BRICKS_STAIRS;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_BRICKS_STAIRS_ITEM;
+
 
     public static DeferredBlock<ButtonBlock> SOUL_BRONZE_BUTTON;
     public static DeferredItem<BlockItem> SOUL_BRONZE_BUTTON_ITEM;
@@ -96,6 +111,38 @@ public class MetalBlockRegistry {
             new Item.Properties()
         );
 
+        SOUL_BRONZE_BRICKS_BLOCK = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_bricks_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .sound(SoundType.COPPER)
+                .instrument(NoteBlockInstrument.COW_BELL)
+                .requiresCorrectToolForDrops()
+            )
+        );
+        SOUL_BRONZE_BRICKS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_BRICKS_BLOCK,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_CHISELED_BLOCK = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_chiseled_block", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .sound(SoundType.COPPER)
+                .instrument(NoteBlockInstrument.COW_BELL)
+                .requiresCorrectToolForDrops()
+            )
+        );
+        SOUL_BRONZE_CHISELED_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_CHISELED_BLOCK,
+            new Item.Properties()
+        );
+
         SOUL_BRONZE_SLAB = SpooktasticDecor.BLOCKS.register(
             "soul_bronze_slab", 
             registryName -> new SlabBlock(BlockBehaviour.Properties.of()
@@ -111,9 +158,24 @@ public class MetalBlockRegistry {
             new Item.Properties()
         );
 
+        SOUL_BRONZE_BRICKS_SLAB = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_bricks_slab", 
+            registryName -> new SlabBlock(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .sound(SoundType.COPPER)
+                .requiresCorrectToolForDrops()                
+            )
+        );
+        SOUL_BRONZE_BRICKS_SLAB_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_BRICKS_SLAB,
+            new Item.Properties()
+        );
+
         SOUL_BRONZE_STAIRS = SpooktasticDecor.BLOCKS.register(
             "soul_bronze_stairs",
-            registryName -> new StairBlock(SOUL_BRONZE_BLOCK.get().defaultBlockState(),BlockBehaviour.Properties.of()
+            registryName -> new StairBlock(SOUL_BRONZE_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.of()
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .destroyTime(SOUL_BRONZE_DESTROY_TIME)
                 .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
@@ -123,6 +185,21 @@ public class MetalBlockRegistry {
         );
         SOUL_BRONZE_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             SOUL_BRONZE_STAIRS,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_BRICKS_STAIRS = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_bricks_stairs", 
+            registryName -> new StairBlock(SOUL_BRONZE_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.of() 
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+            )
+        );
+        SOUL_BRONZE_BRICKS_STAIRS_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_BRICKS_STAIRS,
             new Item.Properties()
         );
 

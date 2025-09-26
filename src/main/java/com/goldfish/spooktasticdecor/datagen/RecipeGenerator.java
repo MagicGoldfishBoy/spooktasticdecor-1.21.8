@@ -1549,15 +1549,44 @@ public class RecipeGenerator extends RecipeProvider {
                 .define('A', MaterialRegistry.SOUL_BRONZE_INGOT.get())
                 .unlockedBy("has_soul_bronze_ingot", has(MaterialRegistry.SOUL_BRONZE_INGOT.get()))
                 .save(this.output);
+
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_BRICKS_ITEM.get(), 4)
+                .pattern("AA")
+                .pattern("AA")
+                .define('A', MetalBlockRegistry.SOUL_BRONZE_ITEM.get())
+                .unlockedBy("has_soul_bronze_block", has(MetalBlockRegistry.SOUL_BRONZE_ITEM.get()))
+                .save(this.output, "soul_bronze_bricks_by_crafting");
+           SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalBlockRegistry.SOUL_BRONZE_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_BRICKS_ITEM.get())
+                .unlockedBy("has_soul_bronze_block", has(MetalBlockRegistry.SOUL_BRONZE_ITEM.get()))
+                .save(this.output, "soul_bronze_bricks_by_stonecutting");
+
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_CHISELED_ITEM.get())
+                .pattern("A")
+                .pattern("A")
+                .define('A', MetalBlockRegistry.SOUL_BRONZE_SLAB_ITEM.get())
+                .unlockedBy("has_soul_bronze_slab", has(MetalBlockRegistry.SOUL_BRONZE_SLAB_ITEM.get()))
+                .save(this.output, "soul_bronze_chiseled_block_by_crafting");
+           SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_CHISELED_ITEM.get())
+                .unlockedBy("has_soul_bronze_block", has(MetalBlockRegistry.SOUL_BRONZE_ITEM.get()))
+                .save(this.output, "soul_bronze_chiseled_block_by_stonecutting");
                 
            ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_SLAB.get(), 6)
                 .pattern("AAA")
                 .define('A', MetalBlockRegistry.SOUL_BRONZE_BLOCK.get())
                 .unlockedBy("has_soul_copper_block", has(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get()))
                 .save(this.output, "soul_bronze_slab_by_crafting");
-           SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_SLAB.get())
+           SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_SLAB.get(), 2)
                 .unlockedBy("has_soul_bronze_block", has(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get()))
                 .save(this.output, "soul_bronze_slab_by_stonecutting");
+
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_BRICKS_SLAB_ITEM.get(), 6)
+                .pattern("AAA")
+                .define('A', MetalBlockRegistry.SOUL_BRONZE_BRICKS_ITEM.get())
+                .unlockedBy("has_soul_bronze_bricks_block", has(MetalBlockRegistry.SOUL_BRONZE_BRICKS_ITEM))
+                .save(this.output, "soul_bronze_bricks_slab_by_crafting");
+           SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalBlockRegistry.SOUL_BRONZE_BRICKS_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_BRICKS_SLAB_ITEM.get(), 2)
+                .unlockedBy("has_soul_bronze_bricks_block", has(MetalBlockRegistry.SOUL_BRONZE_BRICKS_ITEM))
+                .save(this.output, "soul_bronze_bricks_slab_by_stonecutting");
 
            ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_STAIRS.get(), 4)
                 .pattern("A  ")
@@ -1569,6 +1598,17 @@ public class RecipeGenerator extends RecipeProvider {
            SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_STAIRS.get())
                 .unlockedBy("has_soul_bronze_block", has(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get()))
                 .save(this.output, "soul_bronze_stairs_by_stonecutting");
+
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_BRICKS_STAIRS_ITEM.get(), 4)
+                .pattern("A  ")
+                .pattern("AA ")
+                .pattern("AAA")
+                .define('A', MetalBlockRegistry.SOUL_BRONZE_BRICKS_ITEM.get())
+                .unlockedBy("has_soul_bronze_bricks_block", has(MetalBlockRegistry.SOUL_BRONZE_BRICKS_ITEM))
+                .save(this.output, "soul_bronze_bricks_stairs_by_crafting");
+           SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalBlockRegistry.SOUL_BRONZE_BRICKS_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, MetalBlockRegistry.SOUL_BRONZE_BRICKS_STAIRS_ITEM.get())
+                .unlockedBy("has_soul_bronze_bricks_block", has(MetalBlockRegistry.SOUL_BRONZE_BRICKS_BLOCK.get()))
+                .save(this.output, "soul_bronze_bricks_stairs_by_stonecutting");
 
            SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get()), RecipeCategory.REDSTONE, MetalBlockRegistry.SOUL_BRONZE_BUTTON.get(), 3)
                 .unlockedBy("has_soul_bronze_block", has(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get()))

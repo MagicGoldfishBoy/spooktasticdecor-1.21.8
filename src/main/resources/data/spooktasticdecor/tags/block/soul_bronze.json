@@ -1,8 +1,12 @@
 {
     "values": [
         "spooktasticdecor:soul_bronze_block",
+        "spooktasticdecor:soul_bronze_bricks_block",
+        "spooktasticdecor:soul_bronze_chiseled_block",
         "spooktasticdecor:soul_bronze_slab",
+        "spooktasticdecor:soul_bronze_bricks_slab",
         "spooktasticdecor:soul_bronze_stairs",
+        "spooktasticdecor:soul_bronze_bricks_stairs",
         "spooktasticdecor:soul_bronze_button",
         "spooktasticdecor:soul_bronze_wall",
         "spooktasticdecor:soul_bronze_fence",

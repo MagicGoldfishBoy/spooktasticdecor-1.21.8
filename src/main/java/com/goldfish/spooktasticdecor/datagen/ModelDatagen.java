@@ -535,6 +535,11 @@ public class ModelDatagen extends ModelProvider {
 
         blockModels.createTrivialCube(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get());
 
+        blockModels.createTrivialCube(MetalBlockRegistry.SOUL_BRONZE_BRICKS_BLOCK.get());
+
+        blockModels.createTrivialCube(MetalBlockRegistry.SOUL_BRONZE_CHISELED_BLOCK.get());
+
+
         blockModels.familyWithExistingFullBlock(MetalBlockRegistry.SOUL_BRONZE_BLOCK.get())
                     .slab(MetalBlockRegistry.SOUL_BRONZE_SLAB.get())
                     .stairs(MetalBlockRegistry.SOUL_BRONZE_STAIRS.get())
@@ -543,6 +548,10 @@ public class ModelDatagen extends ModelProvider {
                     .fence(MetalBlockRegistry.SOUL_BRONZE_FENCE.get())
                     .fenceGate(MetalBlockRegistry.SOUL_BRONZE_GATE.get())
                     .pressurePlate(MetalBlockRegistry.SOUL_BRONZE_PRESSURE_PLATE.get());
+
+        blockModels.familyWithExistingFullBlock(MetalBlockRegistry.SOUL_BRONZE_BRICKS_BLOCK.get())
+                   .slab(MetalBlockRegistry.SOUL_BRONZE_BRICKS_SLAB.get())
+                   .stairs(MetalBlockRegistry.SOUL_BRONZE_BRICKS_STAIRS.get());
 
         blockModels.createGlassBlocks(MetalBlockRegistry.SOUL_BRONZE_BARS_BLOCK.get(), MetalBlockRegistry.SOUL_BRONZE_BARS.get());
 

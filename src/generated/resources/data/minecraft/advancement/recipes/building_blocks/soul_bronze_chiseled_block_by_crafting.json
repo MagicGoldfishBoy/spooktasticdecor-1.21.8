@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_soul_bronze_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spooktasticdecor:soul_bronze_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:soul_bronze_chiseled_block_by_crafting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_soul_bronze_slab"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:soul_bronze_chiseled_block_by_crafting"
+    ]
+  }
+}
