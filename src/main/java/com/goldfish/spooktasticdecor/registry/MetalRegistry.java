@@ -95,6 +95,9 @@ public class MetalRegistry {
     public static DeferredBlock<Block> SOUL_BRONZE_PLANTER;
     public static DeferredItem<BlockItem> SOUL_BRONZE_PLANTER_ITEM;
 
+    public static DeferredBlock<Block> SOUL_BRONZE_TABLE;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_TABLE_ITEM;
+
     public static void registerAll() {
         registerSoulBronze();
     }
@@ -430,6 +433,22 @@ public class MetalRegistry {
         );
         SOUL_BRONZE_PLANTER_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             SOUL_BRONZE_PLANTER,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_TABLE = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_table", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+                .noOcclusion()
+            )
+        );
+        SOUL_BRONZE_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_TABLE,
             new Item.Properties()
         );
     }
