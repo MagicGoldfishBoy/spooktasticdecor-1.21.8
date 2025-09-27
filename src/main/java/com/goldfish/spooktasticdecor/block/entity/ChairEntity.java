@@ -59,8 +59,7 @@ public class ChairEntity extends Entity {
     @Override
     public void positionRider(Entity passenger, MoveFunction callback) {
         if (this.hasPassenger(passenger)) {
-            // Position the rider slightly above the entity
-            callback.accept(passenger, this.getX(), this.getY() + 0.8, this.getZ());
+            callback.accept(passenger, this.getX(), this.getY() + 0.1, this.getZ());
         }
     }
         @Override
