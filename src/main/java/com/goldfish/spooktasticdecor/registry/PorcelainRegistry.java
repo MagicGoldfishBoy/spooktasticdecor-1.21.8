@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 
-public class MaterialRegistry {
+public class PorcelainRegistry {
 
     public static DeferredItem<Item> PORCELAIN_CLAY;
     public static DeferredItem<Item> PORCELAIN_BRICK;
@@ -51,7 +51,7 @@ public class MaterialRegistry {
             )
         );  
         PORCELAIN_BLOCK_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
-            MaterialRegistry.PORCELAIN_BLOCK,
+            PorcelainRegistry.PORCELAIN_BLOCK,
             new Item.Properties()
             .fireResistant()
         );
@@ -66,7 +66,7 @@ public class MaterialRegistry {
             )
         );
         GLAZED_PORCELAIN_BLOCK_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
-            MaterialRegistry.GLAZED_PORCELAIN_BLOCK,
+            PorcelainRegistry.GLAZED_PORCELAIN_BLOCK,
             new Item.Properties()
             .fireResistant()
         );

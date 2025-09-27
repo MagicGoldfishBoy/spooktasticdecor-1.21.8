@@ -5,7 +5,7 @@ import org.slf4j.Logger;
 import com.goldfish.spooktasticdecor.datagen.Datagen;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockRegistry;
-import com.goldfish.spooktasticdecor.registry.MaterialRegistry;
+import com.goldfish.spooktasticdecor.registry.PorcelainRegistry;
 import com.goldfish.spooktasticdecor.registry.MetalRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.SmallDecorItemRegistry;
@@ -30,7 +30,6 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -65,10 +64,8 @@ public class SpooktasticDecor {
             );
             }).build());
 
-    // The constructor for the mod class is the first code that is run when your mod is loaded.
-    // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public SpooktasticDecor(IEventBus modEventBus, ModContainer modContainer) {
-        // Register the commonSetup method for modloading
+
         modEventBus.addListener(this::commonSetup);
 
         modEventBus.addListener(this::onClientSetup);
@@ -80,8 +77,7 @@ public class SpooktasticDecor {
         CODECS.register(modEventBus);
         
 
-
-        MaterialRegistry.registerAll();
+        PorcelainRegistry.registerAll();
         
         simpleblockregistry.registerAll();
         SimpleBlockItemRegistry.registerAll();
@@ -100,9 +96,6 @@ public class SpooktasticDecor {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-        // Register the item to a creative tab
-        //modEventBus.addListener(this::addCreative);
-
         modEventBus.addListener(this::gatherData);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
@@ -110,27 +103,12 @@ public class SpooktasticDecor {
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
-        // Some common setup code
         LOGGER.info("Setup of the common variety is happening!");
         Config.ITEM_STRINGS.get().forEach((item) -> LOGGER.info("ITEM >> {}", item));
     }
 
-    // Add the example block item to the building blocks tab
-    // private void addCreative(BuildCreativeModeTabContentsEvent event) {
-    //     if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-    //         event.acceptAll(
-    //             ITEMS.getEntries().stream()
-    //                 .map(sup -> sup.get().getDefaultInstance())
-    //                 .filter(itemStack -> itemStack != null && !itemStack.isEmpty())
-    //                 .toList()
-    //         );
-    //     }
-    // }
-
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-        // Do something when the server starts
         LOGGER.info("Good news, the server is starting! :D");
     }
 

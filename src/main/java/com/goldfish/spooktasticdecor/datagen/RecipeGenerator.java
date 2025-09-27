@@ -5,7 +5,7 @@ import java.util.concurrent.CompletableFuture;
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.SmallDecorItem;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockItemRegistry;
-import com.goldfish.spooktasticdecor.registry.MaterialRegistry;
+import com.goldfish.spooktasticdecor.registry.PorcelainRegistry;
 import com.goldfish.spooktasticdecor.registry.MetalRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.SmallDecorItemRegistry;
@@ -84,32 +84,32 @@ public class RecipeGenerator extends RecipeProvider {
         }
 
         protected void registerMaterialRecipes() {
-                ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MaterialRegistry.PORCELAIN_CLAY.get(), 2)
+                ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, PorcelainRegistry.PORCELAIN_CLAY.get(), 2)
                         .requires(Items.CLAY_BALL)
                         .requires(Items.QUARTZ)
                         .unlockedBy("has_clay_ball", has(Items.CLAY_BALL))
                         .unlockedBy("has_quartz", has(Items.QUARTZ))
                         .save(this.output);
-                SimpleCookingRecipeBuilder.smelting(Ingredient.of(MaterialRegistry.PORCELAIN_CLAY.get()), 
+                SimpleCookingRecipeBuilder.smelting(Ingredient.of(PorcelainRegistry.PORCELAIN_CLAY.get()), 
                         RecipeCategory.MISC, 
-                        MaterialRegistry.PORCELAIN_BRICK.get(), 
+                        PorcelainRegistry.PORCELAIN_BRICK.get(), 
                         1.0f, 
                         10)
-                        .unlockedBy("has_porcelain_clay", has(MaterialRegistry.PORCELAIN_CLAY.get()))
+                        .unlockedBy("has_porcelain_clay", has(PorcelainRegistry.PORCELAIN_CLAY.get()))
                         .save(this.output);
-                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MaterialRegistry.PORCELAIN_BLOCK_ITEM.get())
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, PorcelainRegistry.PORCELAIN_BLOCK_ITEM.get())
                         .pattern("AAA")
                         .pattern("AAA")
                         .pattern("AAA")
-                        .define('A', MaterialRegistry.PORCELAIN_BRICK.get())
-                        .unlockedBy("has_porcelain_brick", has(MaterialRegistry.PORCELAIN_BRICK.get()))
+                        .define('A', PorcelainRegistry.PORCELAIN_BRICK.get())
+                        .unlockedBy("has_porcelain_brick", has(PorcelainRegistry.PORCELAIN_BRICK.get()))
                         .save(this.output);
-                SimpleCookingRecipeBuilder.smelting(Ingredient.of(MaterialRegistry.PORCELAIN_BLOCK_ITEM.get()), 
+                SimpleCookingRecipeBuilder.smelting(Ingredient.of(PorcelainRegistry.PORCELAIN_BLOCK_ITEM.get()), 
                         RecipeCategory.BUILDING_BLOCKS, 
-                        MaterialRegistry.GLAZED_PORCELAIN_BLOCK_ITEM.get(), 
+                        PorcelainRegistry.GLAZED_PORCELAIN_BLOCK_ITEM.get(), 
                         0.5f, 
                         20)
-                        .unlockedBy("has_porcelain_block_item", has(MaterialRegistry.PORCELAIN_BLOCK_ITEM.get()))
+                        .unlockedBy("has_porcelain_block_item", has(PorcelainRegistry.PORCELAIN_BLOCK_ITEM.get()))
                         .save(this.output);
         }
 
@@ -1722,10 +1722,10 @@ public class RecipeGenerator extends RecipeProvider {
                 .pattern("BCB")
                 .pattern("CBC")
                 .define('A', Items.YELLOW_WOOL)
-                .define('B', MaterialRegistry.PORCELAIN_BRICK.get())
+                .define('B', PorcelainRegistry.PORCELAIN_BRICK.get())
                 .define('C', Items.RED_WOOL)
                 .unlockedBy("has_yellow_wool", has(Items.YELLOW_WOOL))
-                .unlockedBy("has_porcelain_brick", has(MaterialRegistry.PORCELAIN_BRICK.get()))
+                .unlockedBy("has_porcelain_brick", has(PorcelainRegistry.PORCELAIN_BRICK.get()))
                 .unlockedBy("has_red_wool", has(Items.RED_WOOL))
                 .save(this.output);
            ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, SmallDecorItemRegistry.PORCELAIN_POPPY_DOLL_ITEM.get())
@@ -1733,10 +1733,10 @@ public class RecipeGenerator extends RecipeProvider {
                 .pattern("BCB")
                 .pattern("CBC")
                 .define('A', Items.BLACK_WOOL)
-                .define('B', MaterialRegistry.PORCELAIN_BRICK.get())
+                .define('B', PorcelainRegistry.PORCELAIN_BRICK.get())
                 .define('C', Items.PURPLE_WOOL)
                 .unlockedBy("has_black_wool", has(Items.BLACK_WOOL))
-                .unlockedBy("has_porcelain_brick", has(MaterialRegistry.PORCELAIN_BRICK.get()))
+                .unlockedBy("has_porcelain_brick", has(PorcelainRegistry.PORCELAIN_BRICK.get()))
                 .unlockedBy("has_red_wool", has(Items.PURPLE_WOOL))
                 .save(this.output);
            ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, SmallDecorItemRegistry.PORCELAIN_PENELOPE_DOLL_ITEM.get())
@@ -1744,10 +1744,10 @@ public class RecipeGenerator extends RecipeProvider {
                 .pattern("BCB")
                 .pattern("CBC")
                 .define('A', Items.RED_WOOL)
-                .define('B', MaterialRegistry.PORCELAIN_BRICK.get())
+                .define('B', PorcelainRegistry.PORCELAIN_BRICK.get())
                 .define('C', Items.WHITE_WOOL)
                 .unlockedBy("has_black_wool", has(Items.RED_WOOL))
-                .unlockedBy("has_porcelain_brick", has(MaterialRegistry.PORCELAIN_BRICK.get()))
+                .unlockedBy("has_porcelain_brick", has(PorcelainRegistry.PORCELAIN_BRICK.get()))
                 .unlockedBy("has_red_wool", has(Items.WHITE_WOOL))
                 .save(this.output);
         }

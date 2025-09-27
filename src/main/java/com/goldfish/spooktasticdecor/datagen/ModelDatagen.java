@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.SmallDecorItem;
-import com.goldfish.spooktasticdecor.registry.MaterialRegistry;
+import com.goldfish.spooktasticdecor.registry.PorcelainRegistry;
 import com.goldfish.spooktasticdecor.registry.MetalRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.SmallDecorItemRegistry;
@@ -75,21 +75,21 @@ public class ModelDatagen extends ModelProvider {
 
     protected void registerMaterialModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 
-        itemModels.generateFlatItem(MaterialRegistry.PORCELAIN_CLAY.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PorcelainRegistry.PORCELAIN_CLAY.get(), ModelTemplates.FLAT_ITEM);
 
-        itemModels.generateFlatItem(MaterialRegistry.PORCELAIN_BRICK.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(PorcelainRegistry.PORCELAIN_BRICK.get(), ModelTemplates.FLAT_ITEM);
 
-        blockModels.createTrivialCube(MaterialRegistry.PORCELAIN_BLOCK.get());
+        blockModels.createTrivialCube(PorcelainRegistry.PORCELAIN_BLOCK.get());
 
         itemModels.itemModelOutput.accept(
-            MaterialRegistry.PORCELAIN_BLOCK_ITEM.get(), 
+            PorcelainRegistry.PORCELAIN_BLOCK_ITEM.get(), 
             ItemModelUtils.plainModel(modLocation("block/porcelain_block"))
         );
 
-        blockModels.createTrivialCube(MaterialRegistry.GLAZED_PORCELAIN_BLOCK.get());
+        blockModels.createTrivialCube(PorcelainRegistry.GLAZED_PORCELAIN_BLOCK.get());
 
         itemModels.itemModelOutput.accept(
-            MaterialRegistry.GLAZED_PORCELAIN_BLOCK_ITEM.get(), 
+            PorcelainRegistry.GLAZED_PORCELAIN_BLOCK_ITEM.get(), 
             ItemModelUtils.plainModel(modLocation("block/glazed_porcelain_block"))
         );
 
