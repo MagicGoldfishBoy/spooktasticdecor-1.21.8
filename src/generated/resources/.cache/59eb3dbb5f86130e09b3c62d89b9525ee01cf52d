@@ -1,4 +1,4 @@
-// 1.21.8	2025-09-27T11:51:02.649149929	Loot Tables
+// 1.21.8	2025-09-27T18:33:00.53086097	Loot Tables
 3979aff7e2013d08422c154236a02661f84bb471 data/spooktasticdecor/loot_table/blocks/creaking_chiseled_stone_bricks.json
 7a4306cc517d79572667eac009ef92e1f99520e1 data/spooktasticdecor/loot_table/blocks/creaking_cobblestone.json
 9a993bcde17272c8a4bf1085a3059ae112f468de data/spooktasticdecor/loot_table/blocks/creaking_cobblestone_button.json
@@ -172,6 +172,7 @@ d2989533b0a5abd214795e19e5965b5d09b67ad0 data/spooktasticdecor/loot_table/blocks
 9e1cff6e389b5e7b7a8360da1ee0b7fbaab6a7b9 data/spooktasticdecor/loot_table/blocks/soul_bronze_bricks_stairs.json
 0809f509f83ebd72f7bd5fd9bd365b820253f471 data/spooktasticdecor/loot_table/blocks/soul_bronze_button.json
 b8a93c69b840e1c1c245ef251570891c746aec7e data/spooktasticdecor/loot_table/blocks/soul_bronze_chain.json
+2a5852cccda0d3410343bd6be08649bdf84dfaab data/spooktasticdecor/loot_table/blocks/soul_bronze_chair.json
 aa56413d8393c938db275a4ec4772e6803ccec67 data/spooktasticdecor/loot_table/blocks/soul_bronze_chiseled_block.json
 be6c47d7c726ef252f30f683e46c43f98f8f2c3f data/spooktasticdecor/loot_table/blocks/soul_bronze_door.json
 cde523dc8b84312f228a37c416ecae9ee9965fae data/spooktasticdecor/loot_table/blocks/soul_bronze_fence.json

@@ -71,6 +71,8 @@ public class ModelDatagen extends ModelProvider {
 
         registerTableModels(blockModels, itemModels);
 
+        registerChairModels(blockModels, itemModels);
+
         registerPlanterModels(blockModels, itemModels);
 
         registerSmallDecorModels(blockModels, itemModels);
@@ -662,6 +664,38 @@ public class ModelDatagen extends ModelProvider {
             }
         }
     }
+    ResourceLocation chair;
+    Variant chair_variant;
+
+    protected void registerChairModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+
+        LOGGER.info("Creating Chair Models");
+
+        for (DeferredHolder<Block, ? extends Block> holder : SpooktasticDecor.BLOCKS.getEntries()) {
+            String rawName = holder.getId().getPath();
+            if (rawName.contains("chair")) {
+                String name = "block/" + rawName;
+
+                LOGGER.info("Generating model for: {}", name);
+
+                ResourceLocation chair = modLocation(name);
+                Variant chair_variant = new Variant(chair);
+
+                blockModels.blockStateOutput.accept(
+                    MultiVariantGenerator.dispatch(
+                        holder.get(),
+                        BlockModelGenerators.variant(chair_variant)
+                    ).with(
+                PropertyDispatch.modify(HorizontalDirectionalBlock.FACING)
+                    .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                    .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+                    )
+                );
+            }
+        } 
+    }      
 
     ResourceLocation planter;
     Variant plantervariant;

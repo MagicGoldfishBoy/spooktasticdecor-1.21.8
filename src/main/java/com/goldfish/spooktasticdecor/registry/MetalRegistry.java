@@ -470,6 +470,7 @@ public class MetalRegistry {
             new Item.Properties()
         );
 
+
         SOUL_BRONZE_PATH = SpooktasticDecor.BLOCKS.register(
             "soul_bronze_path", 
             registryName -> new Path(BlockBehaviour.Properties.of()
@@ -486,6 +487,22 @@ public class MetalRegistry {
             new Item.Properties()
         );
 
+        SOUL_BRONZE_CHAIR = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_chair", 
+            registryName -> new Chair(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+                .noOcclusion()
+            )
+        );
+        SOUL_BRONZE_CHAIR_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_CHAIR,
+            new Item.Properties()
+        );
+        
         SOUL_BRONZE_SKULL = SpooktasticDecor.BLOCKS.register(
             "soul_bronze_skull", 
             registryName -> new Skull(BlockBehaviour.Properties.of()
@@ -518,21 +535,7 @@ public class MetalRegistry {
             new Item.Properties()
         );
 
-        SOUL_BRONZE_CHAIR = SpooktasticDecor.BLOCKS.register(
-            "soul_bronze_chair", 
-            registryName -> new Chair(BlockBehaviour.Properties.of()
-                .setId(ResourceKey.create(Registries.BLOCK, registryName))
-                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
-                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
-                .requiresCorrectToolForDrops()
-                .sound(SoundType.COPPER)
-                .noOcclusion()
-            )
-        );
-        SOUL_BRONZE_CHAIR_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
-            SOUL_BRONZE_CHAIR,
-            new Item.Properties()
-        );
+
     }
     
 }

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "spooktasticdecor:block/soul_bronze_chair",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "spooktasticdecor:block/soul_bronze_chair",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "spooktasticdecor:block/soul_bronze_chair"
+    },
+    "facing=west": {
+      "model": "spooktasticdecor:block/soul_bronze_chair",
+      "y": 90
+    }
+  }
+}

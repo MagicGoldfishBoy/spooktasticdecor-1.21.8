@@ -1723,6 +1723,15 @@ public class RecipeGenerator extends RecipeProvider {
                 .unlockedBy("has_soul_bronze_ingot", has(MetalRegistry.SOUL_BRONZE_INGOT.get()))
                 .save(this.output);
 
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.SOUL_BRONZE_CHAIR_ITEM.get(), 4)
+                .pattern(" BA")
+                .pattern("ABA")
+                .pattern("A A")
+                .define('A', MetalRegistry.SOUL_BRONZE_INGOT.get())
+                .define('B', Items.RED_WOOL)
+                .unlockedBy("has_soul_bronze_ingot", has(MetalRegistry.SOUL_BRONZE_INGOT.get()))
+                .save(this.output);
+
            SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.SOUL_BRONZE_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRONZE_PATH.get(), 16)
                 .unlockedBy("has_soul_bronze_block", has(MetalRegistry.SOUL_BRONZE_BLOCK.get()))
                 .save(this.output);

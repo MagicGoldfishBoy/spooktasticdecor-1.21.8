@@ -2,10 +2,10 @@
   "multipart": [
     {
       "apply": {
-        "model": "spooktasticdecor:block/porcelain_patty_west"
+        "model": "spooktasticdecor:block/porcelain_patty_south"
       },
       "when": {
-        "facing": "west"
+        "facing": "south"
       }
     },
     {
@@ -18,10 +18,10 @@
     },
     {
       "apply": {
-        "model": "spooktasticdecor:block/porcelain_patty_south"
+        "model": "spooktasticdecor:block/porcelain_patty_west"
       },
       "when": {
-        "facing": "south"
+        "facing": "west"
       }
     },
     {

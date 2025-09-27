@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class Chair extends HorizontalDirectionalBlock {
@@ -87,69 +88,9 @@ protected InteractionResult useWithoutItem(BlockState state, Level level, BlockP
     }
     return InteractionResult.SUCCESS;
 }
-// @Override
-// protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
-//     if(!level.isClientSide()) {
-//         SpooktasticDecor.LOGGER.info("Right-clicking chair on server side");
-        
-//         if (player.isPassenger()) {
-//             SpooktasticDecor.LOGGER.info("Player is already riding something");
-//             return InteractionResult.PASS;
-//         }
-        
-//         try {
-//             ChairEntity entity = EntityRegistry.CHAIR_ENTITY.get().create(level, EntitySpawnReason.TRIGGERED);
-//             if (entity != null) {
-//                 //entity.moveTo(pos.getX() + 0.5, pos.getY() + 0.3, pos.getZ() + 0.5);
-//                 level.addFreshEntity(entity);
-//                 SpooktasticDecor.LOGGER.info("Entity added to world");
-                
-//                 level.getServer().execute(() -> {
-//                     // Additional player-side checks
-//                     SpooktasticDecor.LOGGER.info("Player riding something: " + player.isPassenger());
-//                     SpooktasticDecor.LOGGER.info("Player vehicle: " + player.getVehicle());
-//                     SpooktasticDecor.LOGGER.info("Entity position: " + entity.position());
-//                     SpooktasticDecor.LOGGER.info("Player position: " + player.position());
-//                     SpooktasticDecor.LOGGER.info("Distance: " + entity.position().distanceTo(player.position()));
-                    
-//                     // Try a more direct approach
-//                     boolean rideSuccess = player.startRiding(entity, true);
-//                     SpooktasticDecor.LOGGER.info("Direct ride attempt: " + rideSuccess);
-                    
-//                     if (!rideSuccess) {
-//                         // Try using reflection or check if there are other validation methods
-//                         SpooktasticDecor.LOGGER.info("Trying manual passenger assignment...");
-                        
-//                         // Check if player can ride at all
-//                         SpooktasticDecor.LOGGER.info("Player can ride check: " + !player.isPassenger());
-//                         SpooktasticDecor.LOGGER.info("Entity alive: " + entity.isAlive());
-//                         SpooktasticDecor.LOGGER.info("Same level: " + (player.level() == entity.level()));
-//                     }
-//                 });
-//             }
-//         } catch (Exception e) {
-//             SpooktasticDecor.LOGGER.error("Exception: " + e.getMessage());
-//             e.printStackTrace();
-//         }
-//     }
-//     return InteractionResult.SUCCESS;
-// }
-
-    // @Override
-    // protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
-    //     if(!level.isClientSide()) {
-    //         SpooktasticDecor.LOGGER.info("chair is server side");
-    //         Entity entity = EntityRegistry.CHAIR_ENTITY.get().spawn(((ServerLevel) level), pos, EntitySpawnReason.TRIGGERED);
-    //         level.addFreshEntity(entity);
-    //         SpooktasticDecor.LOGGER.info("attempting to ride");
-    //         player.startRiding(entity, true);
-    //     }
-    //     return InteractionResult.SUCCESS;
-    // }
-
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return SHAPE;
+        return Shapes.box(0.25, 0.0, 0.25, 0.75, 0.5, 0.75);
     }
 
     @Nullable
