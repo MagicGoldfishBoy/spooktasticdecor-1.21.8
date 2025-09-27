@@ -3,7 +3,7 @@ package com.goldfish.spooktasticdecor.datagen;
 import java.util.concurrent.CompletableFuture;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
-import com.goldfish.spooktasticdecor.block.SmallDecorItem;
+import com.goldfish.spooktasticdecor.block.Doll;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.PorcelainRegistry;
 import com.goldfish.spooktasticdecor.registry.MetalRegistry;

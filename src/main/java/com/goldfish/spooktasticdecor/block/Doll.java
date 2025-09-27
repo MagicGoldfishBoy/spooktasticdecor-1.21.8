@@ -17,11 +17,11 @@ import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class SmallDecorItem extends HorizontalDirectionalBlock {
+public class Doll extends HorizontalDirectionalBlock {
 
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
 
-    public SmallDecorItem(Properties properties) {
+    public Doll(Properties properties) {
         super(properties);
             this.registerDefaultState(stateDefinition.any()
             .setValue(FACING, Direction.NORTH)

@@ -8,7 +8,7 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
-import com.goldfish.spooktasticdecor.block.SmallDecorItem;
+import com.goldfish.spooktasticdecor.block.Doll;
 import com.goldfish.spooktasticdecor.registry.PorcelainRegistry;
 import com.goldfish.spooktasticdecor.registry.MetalRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
@@ -691,7 +691,7 @@ public class ModelDatagen extends ModelProvider {
 
     protected void registerSmallDecorModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
         
-        SmallDecorItem porcelainPatty = SmallDecorItemRegistry.PORCELAIN_PATTY_DOLL.get();
+        Doll porcelainPatty = SmallDecorItemRegistry.PORCELAIN_PATTY_DOLL.get();
 
         registerFacingModelsWithItem(
             blockModels,
@@ -706,7 +706,7 @@ public class ModelDatagen extends ModelProvider {
             Direction.NORTH
         );
         
-        SmallDecorItem porcelainPoppy = SmallDecorItemRegistry.PORCELAIN_POPPY_DOLL.get();
+        Doll porcelainPoppy = SmallDecorItemRegistry.PORCELAIN_POPPY_DOLL.get();
 
         registerFacingModelsWithItem(
             blockModels,
@@ -721,7 +721,7 @@ public class ModelDatagen extends ModelProvider {
             Direction.NORTH
         );
         
-        SmallDecorItem porcelainPenelope = SmallDecorItemRegistry.PORCELAIN_PENELOPE_DOLL.get();
+        Doll porcelainPenelope = SmallDecorItemRegistry.PORCELAIN_PENELOPE_DOLL.get();
 
         registerFacingModelsWithItem(
             blockModels,

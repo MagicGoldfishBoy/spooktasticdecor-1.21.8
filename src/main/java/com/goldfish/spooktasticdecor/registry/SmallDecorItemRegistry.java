@@ -3,7 +3,7 @@ package com.goldfish.spooktasticdecor.registry;
 import java.util.function.Supplier;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
-import com.goldfish.spooktasticdecor.block.SmallDecorItem;
+import com.goldfish.spooktasticdecor.block.Doll;
 import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.registries.Registries;
@@ -17,27 +17,27 @@ import net.neoforged.neoforge.registries.DeferredItem;
 
 public class SmallDecorItemRegistry {
 
-    public static Supplier<MapCodec<SmallDecorItem>> SMALL_DECOR_ITEM_CODEC;
+    public static Supplier<MapCodec<Doll>> SMALL_DECOR_ITEM_CODEC;
 
-    public static DeferredBlock<SmallDecorItem> PORCELAIN_PATTY_DOLL;
+    public static DeferredBlock<Doll> PORCELAIN_PATTY_DOLL;
     public static DeferredItem<BlockItem> PORCELAIN_PATTY_DOLL_ITEM;
 
-    public static DeferredBlock<SmallDecorItem> PORCELAIN_POPPY_DOLL;
+    public static DeferredBlock<Doll> PORCELAIN_POPPY_DOLL;
     public static DeferredItem<BlockItem> PORCELAIN_POPPY_DOLL_ITEM;
 
-    public static DeferredBlock<SmallDecorItem> PORCELAIN_PENELOPE_DOLL;
+    public static DeferredBlock<Doll> PORCELAIN_PENELOPE_DOLL;
     public static DeferredItem<BlockItem> PORCELAIN_PENELOPE_DOLL_ITEM;
 
     public static void registerAll() {
 
         SMALL_DECOR_ITEM_CODEC = SpooktasticDecor.CODECS.register(
             "small_decor_codec",
-                () -> BlockBehaviour.simpleCodec(SmallDecorItem::new)
+                () -> BlockBehaviour.simpleCodec(Doll::new)
         );
 
         PORCELAIN_PATTY_DOLL = SpooktasticDecor.BLOCKS.register(
             "porcelain_patty_doll", 
-                registryName -> new SmallDecorItem(BlockBehaviour.Properties.of()
+                registryName -> new Doll(BlockBehaviour.Properties.of()
                 .setId(ResourceKey.create(Registries.BLOCK, registryName))
                 .noOcclusion()
                 .destroyTime(0.5f)
@@ -51,7 +51,7 @@ public class SmallDecorItemRegistry {
 
         PORCELAIN_POPPY_DOLL = SpooktasticDecor.BLOCKS.register(
             "porcelain_poppy_doll", 
-            registryName -> new SmallDecorItem(BlockBehaviour.Properties.of()
+            registryName -> new Doll(BlockBehaviour.Properties.of()
             .setId(ResourceKey.create(Registries.BLOCK, registryName))
             .noOcclusion()
             .destroyTime(0.5f)
@@ -66,7 +66,7 @@ public class SmallDecorItemRegistry {
 
         PORCELAIN_PENELOPE_DOLL = SpooktasticDecor.BLOCKS.register(
             "porcelain_penelope_doll", 
-            registryName -> new SmallDecorItem(BlockBehaviour.Properties.of()
+            registryName -> new Doll(BlockBehaviour.Properties.of()
             .setId(ResourceKey.create(Registries.BLOCK, registryName))
             .noOcclusion()
             .destroyTime(0.5f)
