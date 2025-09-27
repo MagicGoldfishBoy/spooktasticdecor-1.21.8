@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 
 import com.goldfish.spooktasticdecor.datagen.Datagen;
 import com.goldfish.spooktasticdecor.registry.CodecRegistry;
+import com.goldfish.spooktasticdecor.registry.EntityRegistry;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockRegistry;
 import com.goldfish.spooktasticdecor.registry.PorcelainRegistry;
@@ -15,13 +16,18 @@ import com.mojang.logging.LogUtils;
 import com.mojang.serialization.MapCodec;
 
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.blockentity.ChestRenderer;
+import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
+import net.minecraft.client.renderer.entity.NoopRenderer;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -29,6 +35,7 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
@@ -46,6 +53,8 @@ public class SpooktasticDecor {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
     
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
+
+  //  public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, SpooktasticDecor.MODID);
 
     public static final DeferredRegister<MapCodec<? extends Block>> CODECS = DeferredRegister.create(BuiltInRegistries.BLOCK_TYPE, MODID);
 
@@ -70,14 +79,21 @@ public class SpooktasticDecor {
         modEventBus.addListener(this::commonSetup);
 
         modEventBus.addListener(this::onClientSetup);
+        
+        modEventBus.addListener(this::onRegisterRenderers);
 
         BLOCKS.register(modEventBus);
 
         ITEMS.register(modEventBus);
 
         CODECS.register(modEventBus);
+
+      //  ENTITIES.register(modEventBus);
+
         
         CodecRegistry.registerAll();
+
+        EntityRegistry.init(modEventBus);
 
         PorcelainRegistry.registerAll();
         
@@ -127,5 +143,9 @@ public class SpooktasticDecor {
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.SOUL_BRONZE_CHAIN.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.SOUL_BRONZE_LANTERN.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.SOUL_BRONZE_SOUL_LANTERN.get(), ChunkSectionLayer.CUTOUT);
-        }
+    }
+
+    public void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(EntityRegistry.CHAIR_ENTITY.get(), NoopRenderer::new);
+    }
 }

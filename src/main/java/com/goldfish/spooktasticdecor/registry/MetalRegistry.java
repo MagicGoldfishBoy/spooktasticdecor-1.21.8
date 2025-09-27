@@ -3,6 +3,7 @@ package com.goldfish.spooktasticdecor.registry;
 import java.util.function.Supplier;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
+import com.goldfish.spooktasticdecor.block.Chair;
 import com.goldfish.spooktasticdecor.block.Path;
 import com.goldfish.spooktasticdecor.block.Skull;
 import com.goldfish.spooktasticdecor.block.TallStatue;
@@ -111,6 +112,9 @@ public class MetalRegistry {
 
     public static DeferredBlock<TallStatue> SOUL_BRONZE_SKELETON_STATUE;
     public static DeferredItem<BlockItem> SOUL_BRONZE_SKELETON_STATUE_ITEM;
+
+    public static DeferredBlock<Chair> SOUL_BRONZE_CHAIR;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_CHAIR_ITEM;
 
     public static void registerAll() {
         registerSoulBronze();
@@ -511,6 +515,22 @@ public class MetalRegistry {
         );
         SOUL_BRONZE_SKELETON_STATUE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             SOUL_BRONZE_SKELETON_STATUE,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_CHAIR = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_chair", 
+            registryName -> new Chair(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+                .noOcclusion()
+            )
+        );
+        SOUL_BRONZE_CHAIR_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_CHAIR,
             new Item.Properties()
         );
     }
