@@ -54,7 +54,7 @@ public class SpooktasticDecor {
     
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
 
-  //  public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, SpooktasticDecor.MODID);
+    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, SpooktasticDecor.MODID);
 
     public static final DeferredRegister<MapCodec<? extends Block>> CODECS = DeferredRegister.create(BuiltInRegistries.BLOCK_TYPE, MODID);
 
@@ -88,7 +88,7 @@ public class SpooktasticDecor {
 
         CODECS.register(modEventBus);
 
-      //  ENTITIES.register(modEventBus);
+        ENTITIES.register(modEventBus);
 
         
         CodecRegistry.registerAll();
