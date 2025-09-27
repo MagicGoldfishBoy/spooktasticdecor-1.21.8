@@ -1722,6 +1722,10 @@ public class RecipeGenerator extends RecipeProvider {
                 .define('A', MetalRegistry.SOUL_BRONZE_INGOT.get())
                 .unlockedBy("has_soul_bronze_ingot", has(MetalRegistry.SOUL_BRONZE_INGOT.get()))
                 .save(this.output);
+                
+           SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.SOUL_BRONZE_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRONZE_PATH.get(), 16)
+                .unlockedBy("has_soul_bronze_block", has(MetalRegistry.SOUL_BRONZE_BLOCK.get()))
+                .save(this.output);
         }
 
         protected void registerSmallDecorItemRecipes() {

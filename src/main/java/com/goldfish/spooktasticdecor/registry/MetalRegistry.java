@@ -1,6 +1,10 @@
 package com.goldfish.spooktasticdecor.registry;
 
+import java.util.function.Supplier;
+
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
+import com.goldfish.spooktasticdecor.block.Path;
+import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -27,7 +31,6 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 
 public class MetalRegistry {
-
 
     public static DeferredItem<Item> SOUL_BRONZE_ALLOY;
     public static DeferredItem<Item> SOUL_BRONZE_INGOT;
@@ -97,6 +100,9 @@ public class MetalRegistry {
 
     public static DeferredBlock<Block> SOUL_BRONZE_TABLE;
     public static DeferredItem<BlockItem> SOUL_BRONZE_TABLE_ITEM;
+
+    public static DeferredBlock<Path> SOUL_BRONZE_PATH;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_PATH_ITEM;
 
     public static void registerAll() {
         registerSoulBronze();
@@ -449,6 +455,22 @@ public class MetalRegistry {
         );
         SOUL_BRONZE_TABLE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             SOUL_BRONZE_TABLE,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_PATH = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_path", 
+            registryName -> new Path(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME / 2)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE / 2)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+                .noOcclusion()
+            )
+        );
+        SOUL_BRONZE_PATH_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_PATH,
             new Item.Properties()
         );
     }

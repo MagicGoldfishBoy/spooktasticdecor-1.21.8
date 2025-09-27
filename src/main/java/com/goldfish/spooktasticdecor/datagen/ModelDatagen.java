@@ -9,6 +9,7 @@ import java.util.function.Supplier;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.Doll;
+import com.goldfish.spooktasticdecor.block.Path;
 import com.goldfish.spooktasticdecor.registry.PorcelainRegistry;
 import com.goldfish.spooktasticdecor.registry.MetalRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
@@ -43,6 +44,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ChainBlock;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.client.model.generators.template.ExtendedModelTemplate;
@@ -561,6 +563,32 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createLantern(MetalRegistry.SOUL_BRONZE_SOUL_LANTERN.get());
 
         blockModels.createTrivialCube(MetalRegistry.SOUL_BRONZE_LAMP_BLOCK.get());
+
+
+
+        Path soul_bronze_path = MetalRegistry.SOUL_BRONZE_PATH.get();
+
+        //blockModels.createHorizontallyRotatedBlock(soul_bronze_path, TexturedModel.CUBE);
+
+        Variant soulPathVariant = new Variant(ModelLocationUtils.getModelLocation(soul_bronze_path));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(
+                soul_bronze_path,
+                BlockModelGenerators.variant(soulPathVariant)
+            ).with(
+                PropertyDispatch.modify(HorizontalDirectionalBlock.FACING)
+                    .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                    .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_270)
+                    // .select(Direction.UP, BlockModelGenerators.NOP)
+                    // .select(Direction.DOWN, BlockModelGenerators.NOP)
+                    // .select(Direction.Axis.Y, BlockModelGenerators.NOP)
+                    // .select(Direction.Axis.Z, BlockModelGenerators.X_ROT_90)
+                    // .select(Direction.Axis.X, BlockModelGenerators.X_ROT_90.then(BlockModelGenerators.Y_ROT_90))
+            )
+        );
     }
 
 
@@ -603,18 +631,6 @@ public class ModelDatagen extends ModelProvider {
             );
             }
         }
-            // Block table = FurnitureBlockRegistry.ZOMBIE_WOOD_TABLE.get();
-
-            // ResourceLocation modelLoc = modLocation("block/zombie_wood_table");
-
-            // Variant variant = new Variant(modelLoc);
-
-            // blockModels.blockStateOutput.accept(
-            //     MultiVariantGenerator.dispatch(
-            //         table,
-            //         BlockModelGenerators.variant(variant)
-            //     )
-            // );
     }
 
     ResourceLocation planter;

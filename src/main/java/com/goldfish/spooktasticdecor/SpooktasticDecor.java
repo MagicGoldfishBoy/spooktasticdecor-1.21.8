@@ -3,6 +3,7 @@ package com.goldfish.spooktasticdecor;
 import org.slf4j.Logger;
 
 import com.goldfish.spooktasticdecor.datagen.Datagen;
+import com.goldfish.spooktasticdecor.registry.CodecRegistry;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.FurnitureBlockRegistry;
 import com.goldfish.spooktasticdecor.registry.PorcelainRegistry;
@@ -76,6 +77,7 @@ public class SpooktasticDecor {
 
         CODECS.register(modEventBus);
         
+        CodecRegistry.registerAll();
 
         PorcelainRegistry.registerAll();
         
