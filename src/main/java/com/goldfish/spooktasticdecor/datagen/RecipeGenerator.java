@@ -1730,6 +1730,16 @@ public class RecipeGenerator extends RecipeProvider {
            SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.SOUL_BRONZE_ITEM), RecipeCategory.DECORATIONS, MetalRegistry.SOUL_BRONZE_SKULL_ITEM.get())
                 .unlockedBy("has_soul_bronze_block", has(MetalRegistry.SOUL_BRONZE_BLOCK.get()))
                 .save(this.output);
+
+           ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.SOUL_BRONZE_SKELETON_STATUE_ITEM.get())
+                .pattern(" A ")
+                .pattern("CBC")
+                .pattern("CBC")
+                .define('A', MetalRegistry.SOUL_BRONZE_SKULL_ITEM.get())
+                .define('B', MetalRegistry.SOUL_BRONZE_ITEM.get())
+                .define('C', MetalRegistry.SOUL_BRONZE_INGOT.get())
+                .unlockedBy("has_soul_bronze_skull", has(MetalRegistry.SOUL_BRONZE_SKULL_ITEM.get()))
+                .save(this.output);
         }
 
         protected void registerSmallDecorItemRecipes() {

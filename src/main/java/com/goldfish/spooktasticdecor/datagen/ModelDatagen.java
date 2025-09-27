@@ -11,6 +11,7 @@ import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.Doll;
 import com.goldfish.spooktasticdecor.block.Path;
 import com.goldfish.spooktasticdecor.block.Skull;
+import com.goldfish.spooktasticdecor.block.TallStatue;
 import com.goldfish.spooktasticdecor.registry.PorcelainRegistry;
 import com.goldfish.spooktasticdecor.registry.MetalRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
@@ -599,7 +600,24 @@ public class ModelDatagen extends ModelProvider {
                     .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
                     .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
             )
+        );
 
+
+        TallStatue soul_bronze_skeleton_statue = MetalRegistry.SOUL_BRONZE_SKELETON_STATUE.get();
+
+        Variant soul_bronze_skeleton_variant = new Variant(ModelLocationUtils.getModelLocation(soul_bronze_skeleton_statue));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(
+                soul_bronze_skeleton_statue,
+                BlockModelGenerators.variant(soul_bronze_skeleton_variant)
+            ).with(
+                PropertyDispatch.modify(HorizontalDirectionalBlock.FACING)
+                    .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                    .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+            )
         );
     }
 

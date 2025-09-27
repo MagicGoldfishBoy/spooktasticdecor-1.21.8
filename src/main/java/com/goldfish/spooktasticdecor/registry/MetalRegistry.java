@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.Path;
 import com.goldfish.spooktasticdecor.block.Skull;
+import com.goldfish.spooktasticdecor.block.TallStatue;
 import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.registries.Registries;
@@ -107,6 +108,9 @@ public class MetalRegistry {
 
     public static DeferredBlock<Skull> SOUL_BRONZE_SKULL;
     public static DeferredItem<BlockItem> SOUL_BRONZE_SKULL_ITEM;
+
+    public static DeferredBlock<TallStatue> SOUL_BRONZE_SKELETON_STATUE;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_SKELETON_STATUE_ITEM;
 
     public static void registerAll() {
         registerSoulBronze();
@@ -491,6 +495,22 @@ public class MetalRegistry {
         );
         SOUL_BRONZE_SKULL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             SOUL_BRONZE_SKULL,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_SKELETON_STATUE = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_skeleton_statue", 
+            registryName -> new TallStatue(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+                .noOcclusion()
+            )
+        );
+        SOUL_BRONZE_SKELETON_STATUE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_SKELETON_STATUE,
             new Item.Properties()
         );
     }

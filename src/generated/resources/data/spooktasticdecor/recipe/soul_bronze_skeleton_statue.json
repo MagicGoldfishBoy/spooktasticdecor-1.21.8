@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "spooktasticdecor:soul_bronze_skull",
+    "B": "spooktasticdecor:soul_bronze_block",
+    "C": "spooktasticdecor:soul_bronze_ingot"
+  },
+  "pattern": [
+    " A ",
+    "CBC",
+    "CBC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:soul_bronze_skeleton_statue"
+  }
+}
