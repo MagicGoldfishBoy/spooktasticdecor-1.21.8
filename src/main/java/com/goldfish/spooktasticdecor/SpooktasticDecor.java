@@ -101,7 +101,7 @@ public class SpooktasticDecor {
         NeoForge.EVENT_BUS.register(this);
 
         // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
+        //modEventBus.addListener(this::addCreative);
 
         modEventBus.addListener(this::gatherData);
 
@@ -116,16 +116,16 @@ public class SpooktasticDecor {
     }
 
     // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.acceptAll(
-                ITEMS.getEntries().stream()
-                    .map(sup -> sup.get().getDefaultInstance())
-                    .filter(itemStack -> itemStack != null && !itemStack.isEmpty())
-                    .toList()
-            );
-        }
-    }
+    // private void addCreative(BuildCreativeModeTabContentsEvent event) {
+    //     if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+    //         event.acceptAll(
+    //             ITEMS.getEntries().stream()
+    //                 .map(sup -> sup.get().getDefaultInstance())
+    //                 .filter(itemStack -> itemStack != null && !itemStack.isEmpty())
+    //                 .toList()
+    //         );
+    //     }
+    // }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
