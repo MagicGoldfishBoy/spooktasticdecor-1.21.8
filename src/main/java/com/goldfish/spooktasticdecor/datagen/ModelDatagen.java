@@ -10,6 +10,7 @@ import java.util.function.Supplier;
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.Doll;
 import com.goldfish.spooktasticdecor.block.Path;
+import com.goldfish.spooktasticdecor.block.Skull;
 import com.goldfish.spooktasticdecor.registry.PorcelainRegistry;
 import com.goldfish.spooktasticdecor.registry.MetalRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
@@ -565,10 +566,7 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createTrivialCube(MetalRegistry.SOUL_BRONZE_LAMP_BLOCK.get());
 
 
-
         Path soul_bronze_path = MetalRegistry.SOUL_BRONZE_PATH.get();
-
-        //blockModels.createHorizontallyRotatedBlock(soul_bronze_path, TexturedModel.CUBE);
 
         Variant soulPathVariant = new Variant(ModelLocationUtils.getModelLocation(soul_bronze_path));
 
@@ -580,14 +578,28 @@ public class ModelDatagen extends ModelProvider {
                 PropertyDispatch.modify(HorizontalDirectionalBlock.FACING)
                     .select(Direction.SOUTH, BlockModelGenerators.NOP)
                     .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
-                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_90)
-                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_270)
-                    // .select(Direction.UP, BlockModelGenerators.NOP)
-                    // .select(Direction.DOWN, BlockModelGenerators.NOP)
-                    // .select(Direction.Axis.Y, BlockModelGenerators.NOP)
-                    // .select(Direction.Axis.Z, BlockModelGenerators.X_ROT_90)
-                    // .select(Direction.Axis.X, BlockModelGenerators.X_ROT_90.then(BlockModelGenerators.Y_ROT_90))
+                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
             )
+        );
+
+
+        Skull soul_bronze_skull = MetalRegistry.SOUL_BRONZE_SKULL.get();
+
+        Variant soul_bronze_skull_variant = new Variant(ModelLocationUtils.getModelLocation(soul_bronze_skull));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(
+                soul_bronze_skull,
+                BlockModelGenerators.variant(soul_bronze_skull_variant)
+            ).with(
+                PropertyDispatch.modify(HorizontalDirectionalBlock.FACING)
+                    .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                    .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+            )
+
         );
     }
 

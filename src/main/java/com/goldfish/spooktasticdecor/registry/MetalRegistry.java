@@ -4,6 +4,7 @@ import java.util.function.Supplier;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.Path;
+import com.goldfish.spooktasticdecor.block.Skull;
 import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.registries.Registries;
@@ -103,6 +104,9 @@ public class MetalRegistry {
 
     public static DeferredBlock<Path> SOUL_BRONZE_PATH;
     public static DeferredItem<BlockItem> SOUL_BRONZE_PATH_ITEM;
+
+    public static DeferredBlock<Skull> SOUL_BRONZE_SKULL;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_SKULL_ITEM;
 
     public static void registerAll() {
         registerSoulBronze();
@@ -471,6 +475,22 @@ public class MetalRegistry {
         );
         SOUL_BRONZE_PATH_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             SOUL_BRONZE_PATH,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_SKULL = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_skull", 
+            registryName -> new Skull(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME / 2)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE / 2)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+                .noOcclusion()
+            )
+        );
+        SOUL_BRONZE_SKULL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_SKULL,
             new Item.Properties()
         );
     }
