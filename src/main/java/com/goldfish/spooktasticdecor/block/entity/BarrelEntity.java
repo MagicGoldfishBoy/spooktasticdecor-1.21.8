@@ -18,67 +18,73 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BarrelBlockEntity;
 import net.minecraft.world.level.block.entity.ContainerOpenersCounter;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 
 public class BarrelEntity extends RandomizableContainerBlockEntity {
+    
+    public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
+    private static final int CONTAINER_SIZE = 27; // Standard barrel size (3 rows)
 
     public BarrelEntity(BlockPos pos, BlockState blockState) {
         super(MetalRegistry.SOUL_BRONZE_BARREL_ENTITY.get(), pos, blockState);
     }
-    private NonNullList<ItemStack> items = NonNullList.withSize(36, ItemStack.EMPTY);
+    
+    private NonNullList<ItemStack> items = NonNullList.withSize(CONTAINER_SIZE, ItemStack.EMPTY);
+    
     private final ContainerOpenersCounter openersCounter = new ContainerOpenersCounter() {
         @Override
-        protected void onOpen(Level p_155062_, BlockPos p_155063_, BlockState p_155064_) {
-            BarrelEntity.this.playSound(p_155064_, SoundEvents.BARREL_OPEN);
-            BarrelEntity.this.updateBlockState(p_155064_, true);
+        protected void onOpen(Level level, BlockPos pos, BlockState state) {
+            BarrelEntity.this.playSound(state, SoundEvents.BARREL_OPEN);
+            BarrelEntity.this.updateBlockState(state, true);
         }
 
         @Override
-        protected void onClose(Level p_155072_, BlockPos p_155073_, BlockState p_155074_) {
-            BarrelEntity.this.playSound(p_155074_, SoundEvents.BARREL_CLOSE);
-            BarrelEntity.this.updateBlockState(p_155074_, false);
+        protected void onClose(Level level, BlockPos pos, BlockState state) {
+            BarrelEntity.this.playSound(state, SoundEvents.BARREL_CLOSE);
+            BarrelEntity.this.updateBlockState(state, false);
         }
 
         @Override
-        protected void openerCountChanged(Level p_155066_, BlockPos p_155067_, BlockState p_155068_, int p_155069_, int p_155070_) {
+        protected void openerCountChanged(Level level, BlockPos pos, BlockState state, int oldCount, int newCount) {
+            // Optional: Add logic if you need to handle opener count changes
         }
 
         @Override
-        protected boolean isOwnContainer(Player p_155060_) {
-            if (p_155060_.containerMenu instanceof ChestMenu) {
-                Container container = ((ChestMenu)p_155060_.containerMenu).getContainer();
+        protected boolean isOwnContainer(Player player) {
+            if (player.containerMenu instanceof ChestMenu chestMenu) {
+                Container container = chestMenu.getContainer();
                 return container == BarrelEntity.this;
-            } else {
-                return false;
             }
+            return false;
         }
     };
 
     @Override
-    protected void saveAdditional(ValueOutput p_422559_) {
-        super.saveAdditional(p_422559_);
-        if (!this.trySaveLootTable(p_422559_)) {
-            ContainerHelper.saveAllItems(p_422559_, this.items);
+    protected void saveAdditional(ValueOutput output) {
+        super.saveAdditional(output);
+        if (!this.trySaveLootTable(output)) {
+            ContainerHelper.saveAllItems(output, this.items);
         }
     }
 
     @Override
-    protected void loadAdditional(ValueInput p_422397_) {
-        super.loadAdditional(p_422397_);
+    protected void loadAdditional(ValueInput input) {
+        super.loadAdditional(input);
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
-        if (!this.tryLoadLootTable(p_422397_)) {
-            ContainerHelper.loadAllItems(p_422397_, this.items);
+        if (!this.tryLoadLootTable(input)) {
+            ContainerHelper.loadAllItems(input, this.items);
         }
     }
 
     @Override
     public int getContainerSize() {
-        return 36;
+        return CONTAINER_SIZE;
     }
 
     @Override
@@ -97,8 +103,9 @@ public class BarrelEntity extends RandomizableContainerBlockEntity {
     }
 
     @Override
-    protected AbstractContainerMenu createMenu(int id, Inventory player) {
-        return ChestMenu.fourRows(id, player);
+    protected AbstractContainerMenu createMenu(int id, Inventory playerInventory) {
+        // Use threeRows for 27 slots instead of fourRows for 36 slots
+        return ChestMenu.threeRows(id, playerInventory, this);
     }
 
     @Override
@@ -122,14 +129,19 @@ public class BarrelEntity extends RandomizableContainerBlockEntity {
     }
 
     void updateBlockState(BlockState state, boolean open) {
-        this.level.setBlock(this.getBlockPos(), state.setValue(Barrel.OPEN, open), 3);
+        if (this.level != null) {
+            this.level.setBlock(this.getBlockPos(), state.setValue(Barrel.OPEN, open), 3);
+        }
     }
 
     void playSound(BlockState state, SoundEvent sound) {
-        Vec3i vec3i = state.getValue(Barrel.FACING).getUnitVec3i();
-        double d0 = this.worldPosition.getX() + 0.5 + vec3i.getX() / 2.0;
-        double d1 = this.worldPosition.getY() + 0.5 + vec3i.getY() / 2.0;
-        double d2 = this.worldPosition.getZ() + 0.5 + vec3i.getZ() / 2.0;
-        this.level.playSound(null, d0, d1, d2, sound, SoundSource.BLOCKS, 0.5F, this.level.random.nextFloat() * 0.1F + 0.9F);
+        if (this.level != null) {
+            Vec3i vec3i = state.getValue(Barrel.FACING).getUnitVec3i();
+            double d0 = this.worldPosition.getX() + 0.5 + vec3i.getX() / 2.0;
+            double d1 = this.worldPosition.getY() + 0.5 + vec3i.getY() / 2.0;
+            double d2 = this.worldPosition.getZ() + 0.5 + vec3i.getZ() / 2.0;
+            this.level.playSound(null, d0, d1, d2, sound, SoundSource.BLOCKS, 0.5F, 
+                this.level.random.nextFloat() * 0.1F + 0.9F);
+        }
     }
 }

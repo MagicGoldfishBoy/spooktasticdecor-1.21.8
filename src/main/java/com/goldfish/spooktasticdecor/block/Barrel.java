@@ -3,6 +3,7 @@ package com.goldfish.spooktasticdecor.block;
 import javax.annotation.Nullable;
 
 import com.goldfish.spooktasticdecor.block.entity.BarrelEntity;
+import com.goldfish.spooktasticdecor.registry.MetalRegistry;
 import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.BlockPos;
@@ -22,6 +23,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -45,24 +48,31 @@ public class Barrel extends BaseEntityBlock {
     }
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState p_49069_, Level p_49070_, BlockPos p_49071_, Player p_49072_, BlockHitResult p_49074_) {
-        if (p_49070_ instanceof ServerLevel serverlevel && p_49070_.getBlockEntity(p_49071_) instanceof BarrelEntity barrelentity) {
-            p_49072_.openMenu(barrelentity);
-            p_49072_.awardStat(Stats.OPEN_BARREL);
-           //PiglinAi.angerNearbyPiglins(serverlevel, p_49072_, true);
+    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+        if (level instanceof ServerLevel serverLevel) {
+            BlockEntity blockEntity = level.getBlockEntity(pos);
+            if (blockEntity instanceof BarrelEntity barrelEntity) {
+                player.openMenu(barrelEntity);
+                player.awardStat(Stats.OPEN_BARREL);
+                return InteractionResult.CONSUME;
+            }
         }
-
         return InteractionResult.SUCCESS;
     }
 
-    @Override
-    protected void affectNeighborsAfterRemoval(BlockState p_393681_, ServerLevel p_394632_, BlockPos p_394133_, boolean p_394282_) {
-        Containers.updateNeighboursAfterDestroy(p_393681_, p_394632_, p_394133_);
+    protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        if (!state.is(newState.getBlock())) {
+            BlockEntity blockentity = level.getBlockEntity(pos);
+            if (blockentity instanceof BarrelEntity) {
+                Containers.dropContents(level, pos, (BarrelEntity)blockentity);
+                level.updateNeighbourForOutputSignal(pos, this);
+            }
+        }
     }
 
     @Override
-    protected void tick(BlockState p_220758_, ServerLevel p_220759_, BlockPos p_220760_, RandomSource p_220761_) {
-        BlockEntity blockentity = p_220759_.getBlockEntity(p_220760_);
+    protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        BlockEntity blockentity = level.getBlockEntity(pos);
         if (blockentity instanceof BarrelEntity) {
             ((BarrelEntity)blockentity).recheckOpen();
         }
@@ -70,8 +80,16 @@ public class Barrel extends BaseEntityBlock {
 
     @Nullable
     @Override
-    public BlockEntity newBlockEntity(BlockPos p_152102_, BlockState p_152103_) {
-        return new BarrelEntity(p_152102_, p_152103_);
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
+        return level.isClientSide ? null : createTickerHelper(blockEntityType, MetalRegistry.SOUL_BRONZE_BARREL_ENTITY.get(), (level1, pos, state1, blockEntity) -> {
+            blockEntity.recheckOpen();
+        });
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new BarrelEntity(pos, state);
     }
 
     @Override
@@ -80,7 +98,7 @@ public class Barrel extends BaseEntityBlock {
     }
 
     @Override
-    protected int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos pos) {
+    protected int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
         return AbstractContainerMenu.getRedstoneSignalFromBlockEntity(level.getBlockEntity(pos));
     }
 
