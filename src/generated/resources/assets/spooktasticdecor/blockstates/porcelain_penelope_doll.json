@@ -2,18 +2,18 @@
   "multipart": [
     {
       "apply": {
-        "model": "spooktasticdecor:block/porcelain_penelope_east"
-      },
-      "when": {
-        "facing": "east"
-      }
-    },
-    {
-      "apply": {
         "model": "spooktasticdecor:block/porcelain_penelope_south"
       },
       "when": {
         "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "spooktasticdecor:block/porcelain_penelope_east"
+      },
+      "when": {
+        "facing": "east"
       }
     },
     {

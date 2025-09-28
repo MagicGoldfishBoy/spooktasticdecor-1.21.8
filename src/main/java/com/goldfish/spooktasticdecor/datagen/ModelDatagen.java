@@ -645,75 +645,16 @@ public class ModelDatagen extends ModelProvider {
                         .select(false, soul_bronze_barrel_closed_multi)
                         .select(true, soul_bronze_barrel_open_multi)
                 )
-            );
-            // .with(
-            //     PropertyDispatch.modify(DirectionalBlock.FACING)
-            //         .select(Direction.SOUTH, BlockModelGenerators.NOP)
-            //         .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
-            //         .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
-            //         .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
-            //         .select(Direction.UP, BlockModelGenerators.X_ROT_90)
-            //         .select(Direction.DOWN, BlockModelGenerators.X_ROT_180)
-            // )
-        //);
-
-        // blockModels.blockStateOutput.accept(
-        //     MultiVariantGenerator.dispatch(
-        //         soul_bronze_barrel,
-        //         BlockModelGenerators.variant(soul_bronze_barrel_closed)
-        //     ).with(
-        //         PropertyDispatch.modify(BlockStateProperties.FACING)
-        //             .select(Direction.SOUTH, BlockModelGenerators.NOP)
-        //             .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
-        //             .select(Direction.EAST, BlockModelGenerators.Y_ROT_90)
-        //             .select(Direction.WEST, BlockModelGenerators.Y_ROT_270)
-        //             .select(Direction.UP, BlockModelGenerators.X_ROT_90)
-        //             .select(Direction.DOWN, BlockModelGenerators.X_ROT_270)
-        //     )
-        // );        
-
-        // return MultiVariantGenerator.dispatch(block)
-        //     .with(
-        //         PropertyDispatch.initial(
-        //                 BlockStateProperties.HORIZONTAL_FACING,
-        //                 BlockStateProperties.DOUBLE_BLOCK_HALF,
-        //                 BlockStateProperties.DOOR_HINGE,
-        //                 BlockStateProperties.OPEN
-        //             )
-        //             .select(Direction.EAST, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, false, topLeft)
-        //             .select(Direction.SOUTH, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, false, topLeft.with(Y_ROT_90))
-        //             .select(Direction.WEST, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, false, topLeft.with(Y_ROT_180))
-        //             .select(Direction.NORTH, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, false, topLeft.with(Y_ROT_270))
-        //             .select(Direction.EAST, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, false, topRight)
-        //             .select(Direction.SOUTH, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, false, topRight.with(Y_ROT_90))
-        //             .select(Direction.WEST, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, false, topRight.with(Y_ROT_180))
-        //             .select(Direction.NORTH, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, false, topRight.with(Y_ROT_270))
-        //             .select(Direction.EAST, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, true, topLeftOpen.with(Y_ROT_90))
-        //             .select(Direction.SOUTH, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, true, topLeftOpen.with(Y_ROT_180))
-        //             .select(Direction.WEST, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, true, topLeftOpen.with(Y_ROT_270))
-        //             .select(Direction.NORTH, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, true, topLeftOpen)
-        //             .select(Direction.EAST, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, true, topRightOpen.with(Y_ROT_270))
-        //             .select(Direction.SOUTH, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, true, topRightOpen)
-        //             .select(Direction.WEST, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, true, topRightOpen.with(Y_ROT_90))
-        //             .select(Direction.NORTH, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, true, topRightOpen.with(Y_ROT_180))
-        //             .select(Direction.EAST, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, false, bottomLeft)
-        //             .select(Direction.SOUTH, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, false, bottomLeft.with(Y_ROT_90))
-        //             .select(Direction.WEST, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, false, bottomLeft.with(Y_ROT_180))
-        //             .select(Direction.NORTH, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, false, bottomLeft.with(Y_ROT_270))
-        //             .select(Direction.EAST, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, false, bottomRight)
-        //             .select(Direction.SOUTH, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, false, bottomRight.with(Y_ROT_90))
-        //             .select(Direction.WEST, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, false, bottomRight.with(Y_ROT_180))
-        //             .select(Direction.NORTH, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, false, bottomRight.with(Y_ROT_270))
-        //             .select(Direction.EAST, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, true, bottomLeftOpen.with(Y_ROT_90))
-        //             .select(Direction.SOUTH, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, true, bottomLeftOpen.with(Y_ROT_180))
-        //             .select(Direction.WEST, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, true, bottomLeftOpen.with(Y_ROT_270))
-        //             .select(Direction.NORTH, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, true, bottomLeftOpen)
-        //             .select(Direction.EAST, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, true, bottomRightOpen.with(Y_ROT_270))
-        //             .select(Direction.SOUTH, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, true, bottomRightOpen)
-        //             .select(Direction.WEST, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, true, bottomRightOpen.with(Y_ROT_90))
-        //             .select(Direction.NORTH, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, true, bottomRightOpen.with(Y_ROT_180))
-        //     );
-    //}
+            .with(
+                PropertyDispatch.modify(DirectionalBlock.FACING)
+                    .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                    .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+                    .select(Direction.UP, BlockModelGenerators.X_ROT_90)
+                    .select(Direction.DOWN, BlockModelGenerators.X_ROT_270)
+            )
+        );
     }
 
     
