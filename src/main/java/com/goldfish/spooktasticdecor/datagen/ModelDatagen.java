@@ -13,6 +13,7 @@ import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.Barrel;
 import com.goldfish.spooktasticdecor.block.Doll;
 import com.goldfish.spooktasticdecor.block.Path;
+import com.goldfish.spooktasticdecor.block.ShortStatue;
 import com.goldfish.spooktasticdecor.block.Skull;
 import com.goldfish.spooktasticdecor.block.TallStatue;
 import com.goldfish.spooktasticdecor.registry.PorcelainRegistry;
@@ -624,6 +625,40 @@ public class ModelDatagen extends ModelProvider {
             MultiVariantGenerator.dispatch(
                 soul_bronze_skeleton_statue,
                 BlockModelGenerators.variant(soul_bronze_skeleton_variant)
+            ).with(
+                PropertyDispatch.modify(HorizontalDirectionalBlock.FACING)
+                    .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                    .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+            )
+        );
+
+        ShortStatue soul_bronze_spider_statue = MetalRegistry.SOUL_BRONZE_SPIDER_STATUE.get();
+
+        Variant soul_bronze_spider_variant = new Variant(ModelLocationUtils.getModelLocation(soul_bronze_spider_statue));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(
+                soul_bronze_spider_statue,
+                BlockModelGenerators.variant(soul_bronze_spider_variant)
+            ).with(
+                PropertyDispatch.modify(HorizontalDirectionalBlock.FACING)
+                    .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                    .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+            )
+        );
+
+        TallStatue soul_bronze_creeper_statue = MetalRegistry.SOUL_BRONZE_CREEPER_STATUE.get();
+
+        Variant soul_bronze_creeper_variant = new Variant(ModelLocationUtils.getModelLocation(soul_bronze_creeper_statue));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(
+                soul_bronze_creeper_statue,
+                BlockModelGenerators.variant(soul_bronze_creeper_variant)
             ).with(
                 PropertyDispatch.modify(HorizontalDirectionalBlock.FACING)
                     .select(Direction.SOUTH, BlockModelGenerators.NOP)

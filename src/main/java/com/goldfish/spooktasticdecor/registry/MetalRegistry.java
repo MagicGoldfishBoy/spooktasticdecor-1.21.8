@@ -8,6 +8,7 @@ import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.Barrel;
 import com.goldfish.spooktasticdecor.block.Chair;
 import com.goldfish.spooktasticdecor.block.Path;
+import com.goldfish.spooktasticdecor.block.ShortStatue;
 import com.goldfish.spooktasticdecor.block.Skull;
 import com.goldfish.spooktasticdecor.block.TallStatue;
 import com.goldfish.spooktasticdecor.block.entity.BarrelEntity;
@@ -127,6 +128,12 @@ public class MetalRegistry {
 
     public static DeferredBlock<TallStatue> SOUL_BRONZE_SKELETON_STATUE;
     public static DeferredItem<BlockItem> SOUL_BRONZE_SKELETON_STATUE_ITEM;
+
+    public static DeferredBlock<ShortStatue> SOUL_BRONZE_SPIDER_STATUE;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_SPIDER_STATUE_ITEM;
+
+    public static DeferredBlock<TallStatue> SOUL_BRONZE_CREEPER_STATUE;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_CREEPER_STATUE_ITEM;
 
     public static DeferredBlock<Barrel> SOUL_BRONZE_BARREL;
     public static Supplier<BlockEntityType<BarrelEntity>> SOUL_BRONZE_BARREL_ENTITY;
@@ -549,6 +556,38 @@ public class MetalRegistry {
         );
         SOUL_BRONZE_SKELETON_STATUE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             SOUL_BRONZE_SKELETON_STATUE,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_SPIDER_STATUE = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_spider_statue", 
+            registryName -> new ShortStatue(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+                .noOcclusion()
+            )
+        );
+        SOUL_BRONZE_SPIDER_STATUE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_SPIDER_STATUE,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_CREEPER_STATUE = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_creeper_statue", 
+            registryName -> new TallStatue(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+                .noOcclusion()
+            )
+        );
+        SOUL_BRONZE_CREEPER_STATUE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_CREEPER_STATUE,
             new Item.Properties()
         );
 
