@@ -514,7 +514,6 @@ public class ModelDatagen extends ModelProvider {
                     .pressurePlate(simpleblockregistry.ENDER_STONE_BRICKS_PRESSURE_PLATE.get());
 
         blockModels.createTrivialCube(simpleblockregistry.ENDER_CHISELED_STONE_BRICKS.get());
-
     }
 
     protected void registerSoulBronzeModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {

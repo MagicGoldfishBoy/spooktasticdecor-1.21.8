@@ -1,18 +1,26 @@
 package com.goldfish.spooktasticdecor.registry;
 
+import java.security.Provider;
+import java.util.Set;
 import java.util.function.Supplier;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
+import com.goldfish.spooktasticdecor.block.Barrel;
 import com.goldfish.spooktasticdecor.block.Chair;
 import com.goldfish.spooktasticdecor.block.Path;
 import com.goldfish.spooktasticdecor.block.Skull;
 import com.goldfish.spooktasticdecor.block.TallStatue;
+import com.goldfish.spooktasticdecor.block.entity.BarrelEntity;
+import com.goldfish.spooktasticdecor.block.entity.ChairEntity;
 import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.datafix.fixes.References;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.BarrelBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.ChainBlock;
@@ -26,11 +34,15 @@ import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.entity.BarrelBlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 
 public class MetalRegistry {
@@ -104,6 +116,9 @@ public class MetalRegistry {
     public static DeferredBlock<Block> SOUL_BRONZE_TABLE;
     public static DeferredItem<BlockItem> SOUL_BRONZE_TABLE_ITEM;
 
+    public static DeferredBlock<Chair> SOUL_BRONZE_CHAIR;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_CHAIR_ITEM;   
+
     public static DeferredBlock<Path> SOUL_BRONZE_PATH;
     public static DeferredItem<BlockItem> SOUL_BRONZE_PATH_ITEM;
 
@@ -113,8 +128,10 @@ public class MetalRegistry {
     public static DeferredBlock<TallStatue> SOUL_BRONZE_SKELETON_STATUE;
     public static DeferredItem<BlockItem> SOUL_BRONZE_SKELETON_STATUE_ITEM;
 
-    public static DeferredBlock<Chair> SOUL_BRONZE_CHAIR;
-    public static DeferredItem<BlockItem> SOUL_BRONZE_CHAIR_ITEM;
+    public static DeferredBlock<Barrel> SOUL_BRONZE_BARREL;
+    public static Supplier<BlockEntityType<BarrelEntity>> SOUL_BRONZE_BARREL_ENTITY;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_BARREL_ITEM;
+
 
     public static void registerAll() {
         registerSoulBronze();
@@ -502,7 +519,7 @@ public class MetalRegistry {
             SOUL_BRONZE_CHAIR,
             new Item.Properties()
         );
-        
+
         SOUL_BRONZE_SKULL = SpooktasticDecor.BLOCKS.register(
             "soul_bronze_skull", 
             registryName -> new Skull(BlockBehaviour.Properties.of()
@@ -532,6 +549,28 @@ public class MetalRegistry {
         );
         SOUL_BRONZE_SKELETON_STATUE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
             SOUL_BRONZE_SKELETON_STATUE,
+            new Item.Properties()
+        );
+
+        SOUL_BRONZE_BARREL = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_barrel", 
+            registryName -> new Barrel(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+            )
+        );
+        SOUL_BRONZE_BARREL_ENTITY = SpooktasticDecor.BLOCK_ENTITIES.register(
+            "soul_bronze_barrel_entity",
+            () -> new BlockEntityType<>(
+                BarrelEntity::new,
+                false,
+                SOUL_BRONZE_BARREL.get())
+        );
+        SOUL_BRONZE_BARREL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_BARREL,
             new Item.Properties()
         );
 
