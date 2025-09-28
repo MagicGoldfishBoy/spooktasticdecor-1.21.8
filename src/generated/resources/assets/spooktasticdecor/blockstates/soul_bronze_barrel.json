@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "open=false": {
+      "model": "spooktasticdecor:block/soul_bronze_barrel"
+    },
+    "open=true": {
+      "model": "spooktasticdecor:block/soul_bronze_barrel_open"
+    }
+  }
+}

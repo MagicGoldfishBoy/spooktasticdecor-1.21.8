@@ -1,13 +1,16 @@
 package com.goldfish.spooktasticdecor.datagen;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
+//import java.util.List;
 
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
+import com.goldfish.spooktasticdecor.block.Barrel;
 import com.goldfish.spooktasticdecor.block.Doll;
 import com.goldfish.spooktasticdecor.block.Path;
 import com.goldfish.spooktasticdecor.block.Skull;
@@ -24,7 +27,9 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
+import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.BlockModelGenerators.PlantType;
+import net.minecraft.client.data.models.blockstates.BlockModelDefinitionGenerator;
 import net.minecraft.client.data.models.blockstates.MultiPartGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
@@ -38,17 +43,24 @@ import net.minecraft.client.data.models.model.TextureSlot;
 import net.minecraft.client.data.models.model.TexturedModel;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.renderer.block.model.Variant;
+import net.minecraft.client.renderer.block.model.VariantMutator;
 import net.minecraft.client.renderer.block.model.multipart.CombinedCondition;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.random.Weighted;
+import net.minecraft.util.random.WeightedList;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ChainBlock;
+import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DoorHingeSide;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.neoforged.neoforge.client.model.generators.template.ExtendedModelTemplate;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
@@ -620,9 +632,91 @@ public class ModelDatagen extends ModelProvider {
                     .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
             )
         );
+
+            Barrel soul_bronze_barrel = MetalRegistry.SOUL_BRONZE_BARREL.get();
+            Variant soul_bronze_barrel_closed = new Variant(ModelLocationUtils.getModelLocation(soul_bronze_barrel));
+            Variant soul_bronze_barrel_open = new Variant(modLocation("block/soul_bronze_barrel_open"));
+            MultiVariant soul_bronze_barrel_closed_multi = new MultiVariant(WeightedList.of(soul_bronze_barrel_closed));
+            MultiVariant soul_bronze_barrel_open_multi = new MultiVariant(WeightedList.of(soul_bronze_barrel_open));
+
+            blockModels.blockStateOutput.accept(
+                MultiVariantGenerator.dispatch(soul_bronze_barrel).with(
+                    PropertyDispatch.initial(BlockStateProperties.OPEN)
+                        .select(false, soul_bronze_barrel_closed_multi)
+                        .select(true, soul_bronze_barrel_open_multi)
+                )
+            );
+            // .with(
+            //     PropertyDispatch.modify(DirectionalBlock.FACING)
+            //         .select(Direction.SOUTH, BlockModelGenerators.NOP)
+            //         .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+            //         .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+            //         .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+            //         .select(Direction.UP, BlockModelGenerators.X_ROT_90)
+            //         .select(Direction.DOWN, BlockModelGenerators.X_ROT_180)
+            // )
+        //);
+
+        // blockModels.blockStateOutput.accept(
+        //     MultiVariantGenerator.dispatch(
+        //         soul_bronze_barrel,
+        //         BlockModelGenerators.variant(soul_bronze_barrel_closed)
+        //     ).with(
+        //         PropertyDispatch.modify(BlockStateProperties.FACING)
+        //             .select(Direction.SOUTH, BlockModelGenerators.NOP)
+        //             .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+        //             .select(Direction.EAST, BlockModelGenerators.Y_ROT_90)
+        //             .select(Direction.WEST, BlockModelGenerators.Y_ROT_270)
+        //             .select(Direction.UP, BlockModelGenerators.X_ROT_90)
+        //             .select(Direction.DOWN, BlockModelGenerators.X_ROT_270)
+        //     )
+        // );        
+
+        // return MultiVariantGenerator.dispatch(block)
+        //     .with(
+        //         PropertyDispatch.initial(
+        //                 BlockStateProperties.HORIZONTAL_FACING,
+        //                 BlockStateProperties.DOUBLE_BLOCK_HALF,
+        //                 BlockStateProperties.DOOR_HINGE,
+        //                 BlockStateProperties.OPEN
+        //             )
+        //             .select(Direction.EAST, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, false, topLeft)
+        //             .select(Direction.SOUTH, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, false, topLeft.with(Y_ROT_90))
+        //             .select(Direction.WEST, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, false, topLeft.with(Y_ROT_180))
+        //             .select(Direction.NORTH, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, false, topLeft.with(Y_ROT_270))
+        //             .select(Direction.EAST, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, false, topRight)
+        //             .select(Direction.SOUTH, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, false, topRight.with(Y_ROT_90))
+        //             .select(Direction.WEST, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, false, topRight.with(Y_ROT_180))
+        //             .select(Direction.NORTH, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, false, topRight.with(Y_ROT_270))
+        //             .select(Direction.EAST, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, true, topLeftOpen.with(Y_ROT_90))
+        //             .select(Direction.SOUTH, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, true, topLeftOpen.with(Y_ROT_180))
+        //             .select(Direction.WEST, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, true, topLeftOpen.with(Y_ROT_270))
+        //             .select(Direction.NORTH, DoubleBlockHalf.LOWER, DoorHingeSide.LEFT, true, topLeftOpen)
+        //             .select(Direction.EAST, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, true, topRightOpen.with(Y_ROT_270))
+        //             .select(Direction.SOUTH, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, true, topRightOpen)
+        //             .select(Direction.WEST, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, true, topRightOpen.with(Y_ROT_90))
+        //             .select(Direction.NORTH, DoubleBlockHalf.LOWER, DoorHingeSide.RIGHT, true, topRightOpen.with(Y_ROT_180))
+        //             .select(Direction.EAST, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, false, bottomLeft)
+        //             .select(Direction.SOUTH, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, false, bottomLeft.with(Y_ROT_90))
+        //             .select(Direction.WEST, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, false, bottomLeft.with(Y_ROT_180))
+        //             .select(Direction.NORTH, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, false, bottomLeft.with(Y_ROT_270))
+        //             .select(Direction.EAST, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, false, bottomRight)
+        //             .select(Direction.SOUTH, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, false, bottomRight.with(Y_ROT_90))
+        //             .select(Direction.WEST, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, false, bottomRight.with(Y_ROT_180))
+        //             .select(Direction.NORTH, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, false, bottomRight.with(Y_ROT_270))
+        //             .select(Direction.EAST, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, true, bottomLeftOpen.with(Y_ROT_90))
+        //             .select(Direction.SOUTH, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, true, bottomLeftOpen.with(Y_ROT_180))
+        //             .select(Direction.WEST, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, true, bottomLeftOpen.with(Y_ROT_270))
+        //             .select(Direction.NORTH, DoubleBlockHalf.UPPER, DoorHingeSide.LEFT, true, bottomLeftOpen)
+        //             .select(Direction.EAST, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, true, bottomRightOpen.with(Y_ROT_270))
+        //             .select(Direction.SOUTH, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, true, bottomRightOpen)
+        //             .select(Direction.WEST, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, true, bottomRightOpen.with(Y_ROT_90))
+        //             .select(Direction.NORTH, DoubleBlockHalf.UPPER, DoorHingeSide.RIGHT, true, bottomRightOpen.with(Y_ROT_180))
+        //     );
+    //}
     }
 
-
+    
     ResourceLocation woodtable;
     Variant woodtablevariant;
 
