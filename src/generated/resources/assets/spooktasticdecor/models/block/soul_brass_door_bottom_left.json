@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "textures": {
+    "bottom": "spooktasticdecor:block/soul_brass_door_bottom",
+    "top": "spooktasticdecor:block/soul_brass_door_top"
+  }
+}

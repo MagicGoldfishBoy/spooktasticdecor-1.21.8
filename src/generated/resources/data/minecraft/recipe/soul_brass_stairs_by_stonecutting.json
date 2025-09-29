@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "spooktasticdecor:soul_brass_block",
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:soul_brass_stairs"
+  }
+}

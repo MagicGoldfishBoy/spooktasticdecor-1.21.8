@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_glass_pane_noside_alt",
+  "textures": {
+    "pane": "spooktasticdecor:block/soul_brass_bars_block"
+  }
+}

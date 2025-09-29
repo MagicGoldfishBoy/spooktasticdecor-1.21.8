@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_post",
+  "textures": {
+    "edge": "spooktasticdecor:block/soul_brass_bars_top",
+    "pane": "spooktasticdecor:block/soul_brass_bars_block"
+  }
+}

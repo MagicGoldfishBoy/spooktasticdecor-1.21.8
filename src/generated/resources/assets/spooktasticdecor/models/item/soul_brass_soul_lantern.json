@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spooktasticdecor:item/soul_brass_soul_lantern"
+  }
+}

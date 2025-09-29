@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_soul_brass_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spooktasticdecor:soul_brass_nugget"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:soul_brass_ingot_by_crafting_with_nuggets"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_soul_brass_nugget"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:soul_brass_ingot_by_crafting_with_nuggets"
+    ]
+  }
+}

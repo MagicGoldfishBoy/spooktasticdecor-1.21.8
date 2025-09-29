@@ -147,6 +147,12 @@ public class SpooktasticDecor {
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.SOUL_BRONZE_CHAIN.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.SOUL_BRONZE_LANTERN.get(), ChunkSectionLayer.CUTOUT);
         ItemBlockRenderTypes.setRenderLayer(MetalRegistry.SOUL_BRONZE_SOUL_LANTERN.get(), ChunkSectionLayer.CUTOUT);
+
+        ItemBlockRenderTypes.setRenderLayer(MetalRegistry.SOUL_BRASS_BARS.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(MetalRegistry.SOUL_BRASS_BARS_BLOCK.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(MetalRegistry.SOUL_BRASS_CHAIN.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(MetalRegistry.SOUL_BRASS_LANTERN.get(), ChunkSectionLayer.CUTOUT);
+        ItemBlockRenderTypes.setRenderLayer(MetalRegistry.SOUL_BRASS_SOUL_LANTERN.get(), ChunkSectionLayer.CUTOUT);
     }
 
     public void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {

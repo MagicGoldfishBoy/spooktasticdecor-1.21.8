@@ -1,14 +1,6 @@
 package com.goldfish.spooktasticdecor.datagen;
 
-import java.io.IOException;
-import java.util.Arrays;
 import java.util.Map;
-import java.util.Optional;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
-//import java.util.List;
-
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.Barrel;
 import com.goldfish.spooktasticdecor.block.Doll;
@@ -22,48 +14,27 @@ import com.goldfish.spooktasticdecor.registry.MetalRegistry;
 import com.goldfish.spooktasticdecor.registry.SimpleBlockItemRegistry;
 import com.goldfish.spooktasticdecor.registry.SmallDecorItemRegistry;
 import com.goldfish.spooktasticdecor.registry.simpleblockregistry;
-import com.google.gson.JsonElement;
-import com.mojang.datafixers.types.templates.List;
-import com.mojang.datafixers.util.Pair;
-
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.MultiVariant;
-import net.minecraft.client.data.models.BlockModelGenerators.PlantType;
-import net.minecraft.client.data.models.blockstates.BlockModelDefinitionGenerator;
 import net.minecraft.client.data.models.blockstates.MultiPartGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.ItemModelUtils;
-import net.minecraft.client.data.models.model.ModelInstance;
 import net.minecraft.client.data.models.model.ModelLocationUtils;
-import net.minecraft.client.data.models.model.ModelTemplate;
 import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TextureSlot;
-import net.minecraft.client.data.models.model.TexturedModel;
-import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.client.renderer.block.model.Variant;
-import net.minecraft.client.renderer.block.model.VariantMutator;
-import net.minecraft.client.renderer.block.model.multipart.CombinedCondition;
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.random.Weighted;
 import net.minecraft.util.random.WeightedList;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ChainBlock;
 import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.DoorHingeSide;
-import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.neoforged.neoforge.client.model.generators.template.ExtendedModelTemplate;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class ModelDatagen extends ModelProvider {
@@ -80,6 +51,8 @@ public class ModelDatagen extends ModelProvider {
         registerBlockModels(blockModels, itemModels);
 
         registerSoulBronzeModels(blockModels, itemModels);
+
+        registerSoulBrassModels(blockModels, itemModels);
 
         registerItemModels(blockModels, itemModels);
 
@@ -118,6 +91,13 @@ public class ModelDatagen extends ModelProvider {
         itemModels.generateFlatItem(MetalRegistry.SOUL_BRONZE_INGOT.get(), ModelTemplates.FLAT_ITEM);
         
         itemModels.generateFlatItem(MetalRegistry.SOUL_BRONZE_NUGGET.get(), ModelTemplates.FLAT_ITEM);
+
+
+        itemModels.generateFlatItem(MetalRegistry.SOUL_BRASS_ALLOY.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(MetalRegistry.SOUL_BRASS_INGOT.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModels.generateFlatItem(MetalRegistry.SOUL_BRASS_NUGGET.get(), ModelTemplates.FLAT_ITEM);
     }
 
     protected void registerBlockModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
@@ -708,6 +688,55 @@ public class ModelDatagen extends ModelProvider {
                     .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
             )
         );
+    }
+    protected void registerSoulBrassModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+
+        blockModels.createTrivialCube(MetalRegistry.SOUL_BRASS_BLOCK.get());
+
+        blockModels.createTrivialCube(MetalRegistry.SOUL_BRASS_BRICKS_BLOCK.get());
+
+        blockModels.createTrivialCube(MetalRegistry.SOUL_BRASS_CHISELED_BLOCK.get());
+
+        blockModels.familyWithExistingFullBlock(MetalRegistry.SOUL_BRASS_BLOCK.get())
+                    .slab(MetalRegistry.SOUL_BRASS_SLAB.get())
+                    .stairs(MetalRegistry.SOUL_BRASS_STAIRS.get())
+                    .button(MetalRegistry.SOUL_BRASS_BUTTON.get())
+                    .wall(MetalRegistry.SOUL_BRASS_WALL.get())
+                    .fence(MetalRegistry.SOUL_BRASS_FENCE.get())
+                    .fenceGate(MetalRegistry.SOUL_BRASS_GATE.get())
+                    .pressurePlate(MetalRegistry.SOUL_BRASS_PRESSURE_PLATE.get());
+
+        blockModels.familyWithExistingFullBlock(MetalRegistry.SOUL_BRASS_BRICKS_BLOCK.get())
+                   .slab(MetalRegistry.SOUL_BRASS_BRICKS_SLAB.get())
+                   .stairs(MetalRegistry.SOUL_BRASS_BRICKS_STAIRS.get());
+
+        blockModels.createGlassBlocks(MetalRegistry.SOUL_BRASS_BARS_BLOCK.get(), MetalRegistry.SOUL_BRASS_BARS.get());
+
+        blockModels.createDoor(MetalRegistry.SOUL_BRASS_DOOR.get());
+
+
+        ChainBlock soul_brass_chain = MetalRegistry.SOUL_BRASS_CHAIN.get();
+        Variant soulBrassChainVariant = new Variant(ModelLocationUtils.getModelLocation(soul_brass_chain));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(
+                soul_brass_chain,
+                BlockModelGenerators.variant(soulBrassChainVariant)
+            ).with(
+                PropertyDispatch.modify(BlockStateProperties.AXIS)
+                    .select(Direction.Axis.Y, BlockModelGenerators.NOP)
+                    .select(Direction.Axis.Z, BlockModelGenerators.X_ROT_90)
+                    .select(Direction.Axis.X, BlockModelGenerators.X_ROT_90.then(BlockModelGenerators.Y_ROT_90))
+            )
+        );
+
+        itemModels.generateFlatItem(MetalRegistry.SOUL_BRASS_CHAIN_ITEM.get(), ModelTemplates.FLAT_ITEM);
+
+        blockModels.createLantern(MetalRegistry.SOUL_BRASS_LANTERN.get());
+
+        blockModels.createLantern(MetalRegistry.SOUL_BRASS_SOUL_LANTERN.get());
+
+        blockModels.createTrivialCube(MetalRegistry.SOUL_BRASS_LAMP_BLOCK.get());
     }
 
     

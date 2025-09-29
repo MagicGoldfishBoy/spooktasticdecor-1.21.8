@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "spooktasticdecor:block/soul_brass_bars_block"
+  }
+}

@@ -80,6 +80,7 @@ public class RecipeGenerator extends RecipeProvider {
         registerCobblestoneRecipes();
         registerStoneRecipes();
         registerSoulBronzeRecipes();
+        registerSoulBrassRecipes();
         registerSmallDecorItemRecipes();
         }
 
@@ -1784,6 +1785,199 @@ public class RecipeGenerator extends RecipeProvider {
                 .define('B', MetalRegistry.SOUL_BRONZE_INGOT.get())
                 .unlockedBy("has_soul_bronze_ingot", has(MetalRegistry.SOUL_BRONZE_INGOT.get()))
                 .save(this.output);
+        }
+        protected void registerSoulBrassRecipes() {
+                ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_ALLOY.get(), 2)
+                        .requires(Items.RAW_COPPER)
+                        .requires(Items.SOUL_SOIL)
+                        .unlockedBy("has_raw_copper", has(Items.RAW_COPPER))
+                        .unlockedBy("has_soul_soil", has(Items.SOUL_SOIL))
+                        .save(this.output);
+        
+                SimpleCookingRecipeBuilder.smelting(Ingredient.of(MetalRegistry.SOUL_BRASS_ALLOY.get()), RecipeCategory.MISC, MetalRegistry.SOUL_BRASS_INGOT.get(), 1.0f, 50)
+                        .unlockedBy("has_soul_brass_alloy", has(MetalRegistry.SOUL_BRASS_ALLOY.get()))
+                        .save(this.output, "soul_brass_ingot_by_smelting");
+                SimpleCookingRecipeBuilder.blasting(Ingredient.of(MetalRegistry.SOUL_BRASS_ALLOY.get()), RecipeCategory.MISC, MetalRegistry.SOUL_BRASS_INGOT.get(), 1.0f, 25)
+                        .unlockedBy("has_soul_alloy", has(MetalRegistry.SOUL_BRASS_ALLOY.get()))
+                        .save(this.output, "soul_brass_ingot_by_blasting");                
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow((Registries.ITEM)), RecipeCategory.MISC, MetalRegistry.SOUL_BRASS_INGOT.get())
+                        .pattern("AAA")
+                        .pattern("AAA")
+                        .pattern("AAA")
+                        .define('A', MetalRegistry.SOUL_BRASS_NUGGET.get())
+                        .unlockedBy("has_soul_brass_nugget", has(MetalRegistry.SOUL_BRASS_NUGGET.get()))
+                        .save(this.output, "soul_brass_ingot_by_crafting_with_nuggets");
+                ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_INGOT.get(), 9)
+                        .requires(MetalRegistry.SOUL_BRASS_BLOCK.get())
+                        .unlockedBy("has_soul_brass_block", has(MetalRegistry.SOUL_BRASS_BLOCK.get()))
+                        .save(this.output, "soul_brass_ingot_by_crafting_with_block");
+
+                ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.MISC, MetalRegistry.SOUL_BRASS_NUGGET.get(), 9)
+                        .requires(MetalRegistry.SOUL_BRASS_INGOT.get())
+                        .unlockedBy("has_soul_brass_ingot", has(MetalRegistry.SOUL_BRASS_INGOT.get()))
+                        .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow((Registries.ITEM)), RecipeCategory.MISC, MetalRegistry.SOUL_BRASS_BLOCK.get())
+                        .pattern("AAA")
+                        .pattern("AAA")
+                        .pattern("AAA")
+                        .define('A', MetalRegistry.SOUL_BRASS_INGOT.get())
+                        .unlockedBy("has_soul_brass_ingot", has(MetalRegistry.SOUL_BRASS_INGOT.get()))
+                        .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_BRICKS_ITEM.get(), 4)
+                        .pattern("AA")
+                        .pattern("AA")
+                        .define('A', MetalRegistry.SOUL_BRASS_ITEM.get())
+                        .unlockedBy("has_soul_brass_block", has(MetalRegistry.SOUL_BRASS_ITEM.get()))
+                        .save(this.output, "soul_brass_bricks_by_crafting");
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.SOUL_BRASS_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_BRICKS_ITEM.get())
+                        .unlockedBy("has_soul_brass_block", has(MetalRegistry.SOUL_BRASS_ITEM.get()))
+                        .save(this.output, "soul_brass_bricks_by_stonecutting");
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_CHISELED_ITEM.get())
+                        .pattern("A")
+                        .pattern("A")
+                        .define('A', MetalRegistry.SOUL_BRASS_SLAB_ITEM.get())
+                        .unlockedBy("has_soul_brass_slab", has(MetalRegistry.SOUL_BRASS_SLAB_ITEM.get()))
+                        .save(this.output, "soul_brass_chiseled_block_by_crafting");
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.SOUL_BRASS_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_CHISELED_ITEM.get())
+                        .unlockedBy("has_soul_brass_block", has(MetalRegistry.SOUL_BRASS_ITEM.get()))
+                        .save(this.output, "soul_brass_chiseled_block_by_stonecutting");
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_SLAB.get(), 6)
+                        .pattern("AAA")
+                        .define('A', MetalRegistry.SOUL_BRASS_BLOCK.get())
+                        .unlockedBy("has_soul_brass_block", has(MetalRegistry.SOUL_BRASS_BLOCK.get()))
+                        .save(this.output, "soul_brass_slab_by_crafting");
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.SOUL_BRASS_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_SLAB.get(), 2)
+                        .unlockedBy("has_soul_brass_block", has(MetalRegistry.SOUL_BRASS_BLOCK.get()))
+                        .save(this.output, "soul_brass_slab_by_stonecutting");
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_BRICKS_SLAB_ITEM.get(), 6)
+                        .pattern("AAA")
+                        .define('A', MetalRegistry.SOUL_BRASS_BRICKS_ITEM.get())
+                        .unlockedBy("has_soul_brass_bricks_block", has(MetalRegistry.SOUL_BRASS_BRICKS_ITEM))
+                        .save(this.output, "soul_brass_bricks_slab_by_crafting");
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.SOUL_BRASS_BRICKS_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_BRICKS_SLAB_ITEM.get(), 2)
+                        .unlockedBy("has_soul_brass_bricks_block", has(MetalRegistry.SOUL_BRASS_BRICKS_ITEM))
+                        .save(this.output, "soul_brass_bricks_slab_by_stonecutting");
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_STAIRS.get(), 4)
+                        .pattern("A  ")
+                        .pattern("AA ")
+                        .pattern("AAA")
+                        .define('A', MetalRegistry.SOUL_BRASS_BLOCK.get())
+                        .unlockedBy("has_soul_brass_block", has(MetalRegistry.SOUL_BRASS_BLOCK.get()))
+                        .save(this.output, "soul_brass_stairs_by_crafting");
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.SOUL_BRASS_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_STAIRS.get())
+                        .unlockedBy("has_soul_brass_block", has(MetalRegistry.SOUL_BRASS_BLOCK.get()))
+                        .save(this.output, "soul_brass_stairs_by_stonecutting");
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_BRICKS_STAIRS_ITEM.get(), 4)
+                        .pattern("A  ")
+                        .pattern("AA ")
+                        .pattern("AAA")
+                        .define('A', MetalRegistry.SOUL_BRASS_BRICKS_ITEM.get())
+                        .unlockedBy("has_soul_brass_bricks_block", has(MetalRegistry.SOUL_BRASS_BRICKS_ITEM))
+                        .save(this.output, "soul_brass_bricks_stairs_by_crafting");
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.SOUL_BRASS_BRICKS_ITEM.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_BRICKS_STAIRS_ITEM.get())
+                        .unlockedBy("has_soul_brass_bricks_block", has(MetalRegistry.SOUL_BRASS_BRICKS_BLOCK.get()))
+                        .save(this.output, "soul_brass_bricks_stairs_by_stonecutting");
+
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.SOUL_BRASS_BLOCK.get()), RecipeCategory.REDSTONE, MetalRegistry.SOUL_BRASS_BUTTON.get(), 3)
+                        .unlockedBy("has_soul_brass_block", has(MetalRegistry.SOUL_BRASS_BLOCK.get()))
+                        .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_WALL.get(), 6)
+                        .pattern("AAA")
+                        .pattern("AAA")
+                        .define('A', MetalRegistry.SOUL_BRASS_BLOCK.get())
+                        .unlockedBy("has_soul_brass_block", has(MetalRegistry.SOUL_BRASS_BLOCK.get()))
+                        .save(this.output, "soul_brass_wall_by_crafting");
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.SOUL_BRASS_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_WALL.get())
+                        .unlockedBy("has_soul_brass_block", has(MetalRegistry.SOUL_BRASS_BLOCK.get()))
+                        .save(this.output, "soul_brass_wall_by_stonecutting");
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_FENCE.get(), 6)
+                        .pattern("ABA")
+                        .pattern("ABA")
+                        .define('A', MetalRegistry.SOUL_BRASS_BLOCK.get())
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_soul_brass_block", has(MetalRegistry.SOUL_BRASS_BLOCK.get()))
+                        .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_GATE.get(), 2)
+                        .pattern("BAB")
+                        .pattern("BAB")
+                        .define('A', MetalRegistry.SOUL_BRASS_BLOCK.get())
+                        .define('B', Items.STICK)
+                        .unlockedBy("has_soul_brass_block", has(MetalRegistry.SOUL_BRASS_BLOCK.get()))
+                        .save(this.output, "soul_brass_gate_by_crafting");
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.REDSTONE, MetalRegistry.SOUL_BRASS_PRESSURE_PLATE.get(), 2)
+                        .pattern("AA ")
+                        .define('A', MetalRegistry.SOUL_BRASS_BLOCK.get())
+                        .unlockedBy("has_soul_brass_block", has(MetalRegistry.SOUL_BRASS_BLOCK.get()))
+                        .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_BARS.get(), 18)
+                        .pattern("AAA")
+                        .pattern("AAA")
+                        .define('A', MetalRegistry.SOUL_BRASS_INGOT.get())
+                        .unlockedBy("has_soul_brass_ingot", has(MetalRegistry.SOUL_BRASS_INGOT.get()))
+                        .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_BARS_BLOCK_ITEM.get())
+                        .pattern("AAA")
+                        .pattern("AAA")
+                        .pattern("AAA")
+                        .define('A', MetalRegistry.SOUL_BRASS_BARS_ITEM.get())
+                        .unlockedBy("has_soul_brass_bars_item", has(MetalRegistry.SOUL_BRASS_BARS_ITEM.get()))
+                        .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_DOOR.get(), 3)
+                        .pattern("AA ")
+                        .pattern("AA ")
+                        .pattern("AA ")
+                        .define('A', MetalRegistry.SOUL_BRASS_INGOT.get())
+                        .unlockedBy("has_soul_brass_ingot", has(MetalRegistry.SOUL_BRASS_INGOT.get()))
+                        .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.SOUL_BRASS_CHAIN_ITEM.get())
+                        .pattern(" A ")
+                        .pattern(" B ")
+                        .pattern(" A ")
+                        .define('A', MetalRegistry.SOUL_BRASS_NUGGET.get())
+                        .define('B', MetalRegistry.SOUL_BRASS_INGOT.get())
+                        .unlockedBy("has_soul_brass_ingot", has(MetalRegistry.SOUL_BRASS_INGOT.get()))
+                        .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.SOUL_BRASS_LANTERN_ITEM.get())
+                        .pattern("AAA")
+                        .pattern("ABA")
+                        .pattern("AAA")
+                        .define('A', MetalRegistry.SOUL_BRASS_NUGGET.get())
+                        .define('B', Items.TORCH)
+                        .unlockedBy("has_soul_brass_nugget", has(MetalRegistry.SOUL_BRASS_NUGGET.get()))
+                        .unlockedBy("has_torch", has(Items.TORCH))
+                        .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.SOUL_BRASS_SOUL_LANTERN_ITEM.get())
+                        .pattern("AAA")
+                        .pattern("ABA")
+                        .pattern("AAA")
+                        .define('A', MetalRegistry.SOUL_BRASS_NUGGET.get())
+                        .define('B', Items.SOUL_TORCH)
+                        .unlockedBy("has_soul_brass_nugget", has(MetalRegistry.SOUL_BRASS_NUGGET.get()))
+                        .unlockedBy("has_torch", has(Items.SOUL_TORCH))
+                        .save(this.output);
+
+                ShapelessRecipeBuilder.shapeless(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_LAMP_ITEM.get())
+                        .requires(MetalRegistry.SOUL_BRASS_BARS_BLOCK_ITEM.get())
+                        .requires(Items.GLOWSTONE_DUST)
+                        .unlockedBy("has_soul_brass_bars_block_item", has(MetalRegistry.SOUL_BRASS_BARS_BLOCK_ITEM.get()))
+                        .unlockedBy("has_glow_dust", has(Items.GLOWSTONE_DUST))
+                        .save(this.output);
         }
 
         protected void registerSmallDecorItemRecipes() {
