@@ -1776,6 +1776,14 @@ public class RecipeGenerator extends RecipeProvider {
                 .define('B', MetalRegistry.SOUL_BRONZE_INGOT.get())
                 .unlockedBy("has_soul_bronze_ingot", has(MetalRegistry.SOUL_BRONZE_INGOT.get()))
                 .save(this.output);
+                
+          ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.SOUL_BRONZE_SHELF_ITEM.get())
+                .pattern("AAA")
+                .pattern("B  ")
+                .define('A', MetalRegistry.SOUL_BRONZE_SLAB_ITEM.get())
+                .define('B', MetalRegistry.SOUL_BRONZE_INGOT.get())
+                .unlockedBy("has_soul_bronze_ingot", has(MetalRegistry.SOUL_BRONZE_INGOT.get()))
+                .save(this.output);
         }
 
         protected void registerSmallDecorItemRecipes() {

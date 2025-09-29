@@ -8,6 +8,7 @@ import com.goldfish.spooktasticdecor.SpooktasticDecor;
 import com.goldfish.spooktasticdecor.block.Barrel;
 import com.goldfish.spooktasticdecor.block.Chair;
 import com.goldfish.spooktasticdecor.block.Path;
+import com.goldfish.spooktasticdecor.block.Shelf;
 import com.goldfish.spooktasticdecor.block.ShortStatue;
 import com.goldfish.spooktasticdecor.block.Skull;
 import com.goldfish.spooktasticdecor.block.TallStatue;
@@ -25,12 +26,17 @@ import net.minecraft.world.level.block.BarrelBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.ChainBlock;
+import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.FaceAttachedHorizontalDirectionalBlock;
 import net.minecraft.world.level.block.FenceBlock;
 import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.LanternBlock;
+import net.minecraft.world.level.block.LecternBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
@@ -138,6 +144,9 @@ public class MetalRegistry {
     public static DeferredBlock<Barrel> SOUL_BRONZE_BARREL;
     public static Supplier<BlockEntityType<BarrelEntity>> SOUL_BRONZE_BARREL_ENTITY;
     public static DeferredItem<BlockItem> SOUL_BRONZE_BARREL_ITEM;
+
+    public static DeferredBlock<Shelf> SOUL_BRONZE_SHELF;
+    public static DeferredItem<BlockItem> SOUL_BRONZE_SHELF_ITEM;
 
 
     public static void registerAll() {
@@ -613,6 +622,20 @@ public class MetalRegistry {
             new Item.Properties()
         );
 
+        SOUL_BRONZE_SHELF = SpooktasticDecor.BLOCKS.register(
+            "soul_bronze_shelf", 
+            registryName -> new Shelf(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRONZE_DESTROY_TIME)
+                .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+            )
+        );
+        SOUL_BRONZE_SHELF_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRONZE_SHELF,
+            new Item.Properties()
+        );
 
     }
     
