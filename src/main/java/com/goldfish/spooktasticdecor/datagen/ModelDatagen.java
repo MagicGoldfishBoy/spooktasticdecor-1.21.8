@@ -755,7 +755,73 @@ public class ModelDatagen extends ModelProvider {
             )
         );
 
-        //Skull soul_brass_skull = MetalRegistry.SOUL_BRASS_SKULL.get();
+        Skull soul_brass_skull = MetalRegistry.SOUL_BRASS_SKULL.get();
+
+        Variant soul_brass_skull_variant = new Variant(ModelLocationUtils.getModelLocation(soul_brass_skull));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(
+                soul_brass_skull,
+                BlockModelGenerators.variant(soul_brass_skull_variant)
+            ).with(
+                PropertyDispatch.modify(HorizontalDirectionalBlock.FACING)
+                    .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                    .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+            )
+        );
+
+        TallStatue soul_brass_skeleton_statue = MetalRegistry.SOUL_BRASS_SKELETON_STATUE.get();
+
+        Variant soul_brass_skeleton_variant = new Variant(ModelLocationUtils.getModelLocation(soul_brass_skeleton_statue));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(
+                soul_brass_skeleton_statue,
+                BlockModelGenerators.variant(soul_brass_skeleton_variant)
+            ).with(
+                PropertyDispatch.modify(HorizontalDirectionalBlock.FACING)
+                    .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                    .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+            )
+        );
+
+        ShortStatue soul_brass_spider_statue = MetalRegistry.SOUL_BRASS_SPIDER_STATUE.get();
+
+        Variant soul_brass_spider_variant = new Variant(ModelLocationUtils.getModelLocation(soul_brass_spider_statue));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(
+                soul_brass_spider_statue,
+                BlockModelGenerators.variant(soul_brass_spider_variant)
+            ).with(
+                PropertyDispatch.modify(HorizontalDirectionalBlock.FACING)
+                    .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                    .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+            )
+        );
+
+        TallStatue soul_brass_creeper_statue = MetalRegistry.SOUL_BRASS_CREEPER_STATUE.get();
+
+        Variant soul_brass_creeper_variant = new Variant(ModelLocationUtils.getModelLocation(soul_brass_creeper_statue));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(
+                soul_brass_creeper_statue,
+                BlockModelGenerators.variant(soul_brass_creeper_variant)
+            ).with(
+                PropertyDispatch.modify(HorizontalDirectionalBlock.FACING)
+                    .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                    .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+            )
+        );
     }
 
     

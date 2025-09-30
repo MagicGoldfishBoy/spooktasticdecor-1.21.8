@@ -1136,6 +1136,70 @@ public class MetalRegistry {
             SOUL_BRASS_CHAIR,
             new Item.Properties()
         );
+
+        SOUL_BRASS_SKULL = SpooktasticDecor.BLOCKS.register(
+            "soul_brass_skull", 
+            registryName -> new Skull(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRASS_BLOCK_DESTROY_TIME / 2)
+                .explosionResistance(SOUL_BRASS_BLOCK_EXPLOSION_RESISTANCE / 2)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+                .noOcclusion()
+            )
+        );
+        SOUL_BRASS_SKULL_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRASS_SKULL,
+            new Item.Properties()
+        );
+
+        SOUL_BRASS_SKELETON_STATUE = SpooktasticDecor.BLOCKS.register(
+            "soul_brass_skeleton_statue", 
+            registryName -> new TallStatue(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRASS_BLOCK_DESTROY_TIME)
+                .explosionResistance(SOUL_BRASS_BLOCK_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+                .noOcclusion()
+            )
+        );
+        SOUL_BRASS_SKELETON_STATUE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRASS_SKELETON_STATUE,
+            new Item.Properties()
+        );
+
+        SOUL_BRASS_SPIDER_STATUE = SpooktasticDecor.BLOCKS.register(
+            "soul_brass_spider_statue", 
+            registryName -> new ShortStatue(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRASS_BLOCK_DESTROY_TIME)
+                .explosionResistance(SOUL_BRASS_BLOCK_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+                .noOcclusion()
+            )
+        );
+        SOUL_BRASS_SPIDER_STATUE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRASS_SPIDER_STATUE,
+            new Item.Properties()
+        );
+
+        SOUL_BRASS_CREEPER_STATUE = SpooktasticDecor.BLOCKS.register(
+            "soul_brass_creeper_statue", 
+            registryName -> new TallStatue(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRASS_BLOCK_DESTROY_TIME)
+                .explosionResistance(SOUL_BRASS_BLOCK_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+                .noOcclusion()
+            )
+        );
+        SOUL_BRASS_CREEPER_STATUE_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRASS_CREEPER_STATUE,
+            new Item.Properties()
+        );
     }
     
 }

@@ -2010,6 +2010,38 @@ public class RecipeGenerator extends RecipeProvider {
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.SOUL_BRASS_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_PATH.get(), 16)
                         .unlockedBy("has_soul_brass_block", has(MetalRegistry.SOUL_BRASS_BLOCK.get()))
                         .save(this.output);
+
+                SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.SOUL_BRASS_ITEM), RecipeCategory.DECORATIONS, MetalRegistry.SOUL_BRASS_SKULL_ITEM.get())
+                        .unlockedBy("has_soul_brass_block", has(MetalRegistry.SOUL_BRASS_BLOCK.get()))
+                        .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.SOUL_BRASS_SKELETON_STATUE_ITEM.get())
+                        .pattern(" A ")
+                        .pattern("CBC")
+                        .pattern("CBC")
+                        .define('A', MetalRegistry.SOUL_BRASS_SKULL_ITEM.get())
+                        .define('B', MetalRegistry.SOUL_BRASS_ITEM.get())
+                        .define('C', MetalRegistry.SOUL_BRASS_INGOT.get())
+                        .unlockedBy("has_soul_brass_skull", has(MetalRegistry.SOUL_BRASS_SKULL_ITEM.get()))
+                        .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.SOUL_BRASS_SPIDER_STATUE_ITEM.get())
+                        .pattern(" A ")
+                        .pattern("BAB")
+                        .pattern("BAB")
+                        .define('A', MetalRegistry.SOUL_BRASS_ITEM.get())
+                        .define('B', MetalRegistry.SOUL_BRASS_INGOT.get())
+                        .unlockedBy("has_soul_brass_ingot", has(MetalRegistry.SOUL_BRASS_INGOT.get()))
+                        .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.SOUL_BRASS_CREEPER_STATUE_ITEM.get())
+                        .pattern("BAB")
+                        .pattern("BAB")
+                        .pattern(" A ")
+                        .define('A', MetalRegistry.SOUL_BRASS_ITEM.get())
+                        .define('B', MetalRegistry.SOUL_BRASS_INGOT.get())
+                        .unlockedBy("has_soul_brass_ingot", has(MetalRegistry.SOUL_BRASS_INGOT.get()))
+                        .save(this.output);
         }
 
         protected void registerSmallDecorItemRecipes() {

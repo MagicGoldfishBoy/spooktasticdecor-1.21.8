@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "spooktasticdecor:soul_brass_block",
+    "B": "spooktasticdecor:soul_brass_ingot"
+  },
+  "pattern": [
+    "BAB",
+    "BAB",
+    " A "
+  ],
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:soul_brass_creeper_statue"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_soul_brass_skull": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spooktasticdecor:soul_brass_skull"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "spooktasticdecor:soul_brass_skeleton_statue"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_soul_brass_skull"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "spooktasticdecor:soul_brass_skeleton_statue"
+    ]
+  }
+}
