@@ -1072,6 +1072,22 @@ public class MetalRegistry {
             SOUL_BRASS_LAMP_BLOCK,
             new Item.Properties()
         );
+
+        SOUL_BRASS_PLANTER = SpooktasticDecor.BLOCKS.register(
+            "soul_brass_planter", 
+            registryName -> new Block(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRASS_BLOCK_DESTROY_TIME)
+                .explosionResistance(SOUL_BRASS_BLOCK_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+                .noOcclusion()
+            )
+        );
+        SOUL_BRASS_PLANTER_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRASS_PLANTER,
+            new Item.Properties()
+        );
     }
     
 }
