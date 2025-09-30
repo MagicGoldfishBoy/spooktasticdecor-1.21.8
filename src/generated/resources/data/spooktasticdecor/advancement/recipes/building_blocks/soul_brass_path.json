@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_soul_brass_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "spooktasticdecor:soul_brass_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "spooktasticdecor:soul_brass_path"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_soul_brass_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "spooktasticdecor:soul_brass_path"
+    ]
+  }
+}

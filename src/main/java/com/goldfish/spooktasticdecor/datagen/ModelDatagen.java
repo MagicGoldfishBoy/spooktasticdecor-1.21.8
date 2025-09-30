@@ -737,6 +737,23 @@ public class ModelDatagen extends ModelProvider {
         blockModels.createLantern(MetalRegistry.SOUL_BRASS_SOUL_LANTERN.get());
 
         blockModels.createTrivialCube(MetalRegistry.SOUL_BRASS_LAMP_BLOCK.get());
+
+        Path soul_brass_path = MetalRegistry.SOUL_BRASS_PATH.get();
+
+        Variant soulBrassPathVariant = new Variant(ModelLocationUtils.getModelLocation(soul_brass_path));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(
+                soul_brass_path,
+                BlockModelGenerators.variant(soulBrassPathVariant)
+            ).with(
+                PropertyDispatch.modify(HorizontalDirectionalBlock.FACING)
+                    .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                    .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+            )
+        );
     }
 
     

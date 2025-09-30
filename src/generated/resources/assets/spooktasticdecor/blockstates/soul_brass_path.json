@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "spooktasticdecor:block/soul_brass_path",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "spooktasticdecor:block/soul_brass_path",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "spooktasticdecor:block/soul_brass_path"
+    },
+    "facing=west": {
+      "model": "spooktasticdecor:block/soul_brass_path",
+      "y": 90
+    }
+  }
+}
