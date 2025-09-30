@@ -10,6 +10,14 @@
     },
     {
       "apply": {
+        "model": "spooktasticdecor:block/porcelain_patty_north"
+      },
+      "when": {
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
         "model": "spooktasticdecor:block/porcelain_patty_east"
       },
       "when": {
@@ -22,14 +30,6 @@
       },
       "when": {
         "facing": "south"
-      }
-    },
-    {
-      "apply": {
-        "model": "spooktasticdecor:block/porcelain_patty_north"
-      },
-      "when": {
-        "facing": "north"
       }
     }
   ]
