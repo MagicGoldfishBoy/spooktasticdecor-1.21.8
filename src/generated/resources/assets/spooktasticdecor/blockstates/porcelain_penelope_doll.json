@@ -2,18 +2,10 @@
   "multipart": [
     {
       "apply": {
-        "model": "spooktasticdecor:block/porcelain_penelope_east"
+        "model": "spooktasticdecor:block/porcelain_penelope_west"
       },
       "when": {
-        "facing": "east"
-      }
-    },
-    {
-      "apply": {
-        "model": "spooktasticdecor:block/porcelain_penelope_south"
-      },
-      "when": {
-        "facing": "south"
+        "facing": "west"
       }
     },
     {
@@ -26,10 +18,18 @@
     },
     {
       "apply": {
-        "model": "spooktasticdecor:block/porcelain_penelope_west"
+        "model": "spooktasticdecor:block/porcelain_penelope_east"
       },
       "when": {
-        "facing": "west"
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "spooktasticdecor:block/porcelain_penelope_south"
+      },
+      "when": {
+        "facing": "south"
       }
     }
   ]

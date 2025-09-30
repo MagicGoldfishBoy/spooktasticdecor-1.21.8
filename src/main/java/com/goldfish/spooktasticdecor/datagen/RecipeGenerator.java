@@ -1998,14 +1998,14 @@ public class RecipeGenerator extends RecipeProvider {
                         .unlockedBy("has_soul_brass_ingot", has(MetalRegistry.SOUL_BRASS_INGOT.get()))
                         .save(this.output);
 
-                // ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.SOUL_BRASS_CHAIR_ITEM.get(), 4)
-                //         .pattern(" BA")
-                //         .pattern("ABA")
-                //         .pattern("A A")
-                //         .define('A', MetalRegistry.SOUL_BRASS_INGOT.get())
-                //         .define('B', Items.RED_WOOL)
-                //         .unlockedBy("has_soul_brass_ingot", has(MetalRegistry.SOUL_BRASS_INGOT.get()))
-                //         .save(this.output);
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.SOUL_BRASS_CHAIR_ITEM.get(), 4)
+                        .pattern(" BA")
+                        .pattern("ABA")
+                        .pattern("A A")
+                        .define('A', MetalRegistry.SOUL_BRASS_INGOT.get())
+                        .define('B', Items.RED_WOOL)
+                        .unlockedBy("has_soul_brass_ingot", has(MetalRegistry.SOUL_BRASS_INGOT.get()))
+                        .save(this.output);
 
                 SingleItemRecipeBuilder.stonecutting(Ingredient.of(MetalRegistry.SOUL_BRASS_BLOCK.get()), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_PATH.get(), 16)
                         .unlockedBy("has_soul_brass_block", has(MetalRegistry.SOUL_BRASS_BLOCK.get()))

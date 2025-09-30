@@ -2,18 +2,10 @@
   "multipart": [
     {
       "apply": {
-        "model": "spooktasticdecor:block/porcelain_poppy_east"
+        "model": "spooktasticdecor:block/porcelain_poppy_west"
       },
       "when": {
-        "facing": "east"
-      }
-    },
-    {
-      "apply": {
-        "model": "spooktasticdecor:block/porcelain_poppy_south"
-      },
-      "when": {
-        "facing": "south"
+        "facing": "west"
       }
     },
     {
@@ -26,10 +18,18 @@
     },
     {
       "apply": {
-        "model": "spooktasticdecor:block/porcelain_poppy_west"
+        "model": "spooktasticdecor:block/porcelain_poppy_east"
       },
       "when": {
-        "facing": "west"
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "spooktasticdecor:block/porcelain_poppy_south"
+      },
+      "when": {
+        "facing": "south"
       }
     }
   ]

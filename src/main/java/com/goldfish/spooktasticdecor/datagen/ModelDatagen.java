@@ -754,6 +754,8 @@ public class ModelDatagen extends ModelProvider {
                     .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
             )
         );
+
+        //Skull soul_brass_skull = MetalRegistry.SOUL_BRASS_SKULL.get();
     }
 
     

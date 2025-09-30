@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "spooktasticdecor:soul_brass_ingot",
+    "B": "minecraft:red_wool"
+  },
+  "pattern": [
+    " BA",
+    "ABA",
+    "A A"
+  ],
+  "result": {
+    "count": 4,
+    "id": "spooktasticdecor:soul_brass_chair"
+  }
+}

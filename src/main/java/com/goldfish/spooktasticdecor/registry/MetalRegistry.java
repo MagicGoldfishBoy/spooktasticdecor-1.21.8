@@ -1120,6 +1120,22 @@ public class MetalRegistry {
             SOUL_BRASS_PATH,
             new Item.Properties()
         );
+
+        SOUL_BRASS_CHAIR = SpooktasticDecor.BLOCKS.register(
+            "soul_brass_chair", 
+            registryName -> new Chair(BlockBehaviour.Properties.of()
+                .setId(ResourceKey.create(Registries.BLOCK, registryName))
+                .destroyTime(SOUL_BRASS_BLOCK_DESTROY_TIME)
+                .explosionResistance(SOUL_BRASS_BLOCK_EXPLOSION_RESISTANCE)
+                .requiresCorrectToolForDrops()
+                .sound(SoundType.COPPER)
+                .noOcclusion()
+            )
+        );
+        SOUL_BRASS_CHAIR_ITEM = SpooktasticDecor.ITEMS.registerSimpleBlockItem(
+            SOUL_BRASS_CHAIR,
+            new Item.Properties()
+        );
     }
     
 }
