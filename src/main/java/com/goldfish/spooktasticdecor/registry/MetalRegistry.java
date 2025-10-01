@@ -468,7 +468,7 @@ public class MetalRegistry {
                 .destroyTime(SOUL_BRONZE_DESTROY_TIME)
                 .explosionResistance(SOUL_BRONZE_EXPLOSION_RESISTANCE)
                 .sound(SoundType.COPPER)
-                .noCollission()
+               // .noCollision(
                 .instabreak()
             )
         );
@@ -953,7 +953,7 @@ public class MetalRegistry {
                 .destroyTime(SOUL_BRASS_BLOCK_DESTROY_TIME)
                 .explosionResistance(SOUL_BRASS_BLOCK_EXPLOSION_RESISTANCE)
                 .sound(SoundType.COPPER)
-                .noCollission()
+                // .noCollision(
                 .instabreak()
             )
         );

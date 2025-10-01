@@ -55,7 +55,7 @@ public class SoulBrassBarrelEntity extends RandomizableContainerBlockEntity {
         }
 
         @Override
-        protected boolean isOwnContainer(Player player) {
+        public boolean isOwnContainer(Player player) {
             if (player.containerMenu instanceof ChestMenu chestMenu) {
                 Container container = chestMenu.getContainer();
                 return container == SoulBrassBarrelEntity.this;
@@ -106,19 +106,18 @@ public class SoulBrassBarrelEntity extends RandomizableContainerBlockEntity {
         return ChestMenu.threeRows(id, playerInventory, this);
     }
 
-    @Override
-    public void startOpen(Player player) {
-        if (!this.remove && !player.isSpectator()) {
-            this.openersCounter.incrementOpeners(player, this.getLevel(), this.getBlockPos(), this.getBlockState());
-        }
-    }
+    // public void startOpen(Player player) {
+    //     if (!this.remove && !player.isSpectator()) {
+    //         this.openersCounter.incrementOpeners(player, this.getLevel(), this.getBlockPos(), this.getBlockState());
+    //     }
+    // }
 
-    @Override
-    public void stopOpen(Player player) {
-        if (!this.remove && !player.isSpectator()) {
-            this.openersCounter.decrementOpeners(player, this.getLevel(), this.getBlockPos(), this.getBlockState());
-        }
-    }
+    // @Override
+    // public void stopOpen(Player player) {
+    //     if (!this.remove && !player.isSpectator()) {
+    //         this.openersCounter.decrementOpeners(player, this.getLevel(), this.getBlockPos(), this.getBlockState());
+    //     }
+    // }
 
     public void recheckOpen() {
         if (!this.remove) {

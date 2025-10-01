@@ -569,7 +569,7 @@ public class simpleblockregistry {
                 .explosionResistance(10.0f)
                 .sound(SoundType.WOOD)
                 .ignitedByLava()
-                .noCollission()
+                // .noCollision(
                 .instabreak()
             )
         );
@@ -601,7 +601,7 @@ public class simpleblockregistry {
                 .explosionResistance(10.0f)
                 .sound(SoundType.WOOD)
                 .ignitedByLava()
-                .noCollission()
+                // .noCollision(
                 .instabreak()
             )
         );
@@ -680,7 +680,7 @@ public class simpleblockregistry {
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
                 .sound(SoundType.BONE_BLOCK)
-                .noCollission()
+                // .noCollision(
                 .instabreak()
             )
         );
@@ -709,7 +709,7 @@ public class simpleblockregistry {
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
                 .sound(SoundType.BONE_BLOCK)
-                .noCollission()
+                // .noCollision(
                 .instabreak()
             )
         );
@@ -786,7 +786,7 @@ public class simpleblockregistry {
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
                 .sound(SoundType.BONE_BLOCK)
-                .noCollission()
+                // .noCollision(
                 .instabreak()
             )
         );
@@ -815,7 +815,7 @@ public class simpleblockregistry {
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
                 .sound(SoundType.BONE_BLOCK)
-                .noCollission()
+                // .noCollision(
                 .instabreak()
             )
         );
@@ -893,7 +893,7 @@ public class simpleblockregistry {
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
                 .sound(SoundType.NETHER_WOOD)
-                .noCollission()
+                // .noCollision(
                 .instabreak()
             )
         );
@@ -922,7 +922,7 @@ public class simpleblockregistry {
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
                 .sound(SoundType.NETHER_WOOD)
-                .noCollission()
+                // .noCollision(
                 .instabreak()
             )
         );
@@ -999,7 +999,7 @@ public class simpleblockregistry {
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
                 .sound(SoundType.COBWEB)
-                .noCollission()
+                // .noCollision(
                 .instabreak()
             )
         );
@@ -1028,7 +1028,7 @@ public class simpleblockregistry {
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
                 .sound(SoundType.COBWEB)
-                .noCollission()
+                // .noCollision(
                 .instabreak()
             )
         );
@@ -1106,7 +1106,7 @@ public class simpleblockregistry {
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
                 .sound(SoundType.STONE)
-                .noCollission()
+                // .noCollision(
                 .instabreak()
             )
         );
@@ -1135,7 +1135,7 @@ public class simpleblockregistry {
                 .destroyTime(2.0f)
                 .explosionResistance(10.0f)
                 .sound(SoundType.STONE)
-                .noCollission()
+                // .noCollision(
                 .instabreak()
             )
         );

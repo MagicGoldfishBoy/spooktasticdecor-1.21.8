@@ -81,7 +81,7 @@ public class SoulBronzeBarrel extends BaseEntityBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-        return level.isClientSide ? null : createTickerHelper(blockEntityType, MetalRegistry.SOUL_BRONZE_BARREL_ENTITY.get(), (level1, pos, state1, blockEntity) -> {
+        return level.isClientSide() ? null : createTickerHelper(blockEntityType, MetalRegistry.SOUL_BRONZE_BARREL_ENTITY.get(), (level1, pos, state1, blockEntity) -> {
             blockEntity.recheckOpen();
         });
     }
@@ -97,7 +97,6 @@ public class SoulBronzeBarrel extends BaseEntityBlock {
         return true;
     }
 
-    @Override
     protected int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
         return AbstractContainerMenu.getRedstoneSignalFromBlockEntity(level.getBlockEntity(pos));
     }

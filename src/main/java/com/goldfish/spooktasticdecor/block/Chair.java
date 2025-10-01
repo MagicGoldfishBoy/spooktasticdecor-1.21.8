@@ -77,7 +77,7 @@ protected InteractionResult useWithoutItem(BlockState state, Level level, BlockP
                     SpooktasticDecor.LOGGER.error("Reflection failed: " + e.getMessage());
                 }
                 
-                boolean rideSuccess = player.startRiding(entity, true);
+                boolean rideSuccess = player.startRiding(entity);
                 SpooktasticDecor.LOGGER.info("Standard ride attempt: " + rideSuccess);
             });
             
