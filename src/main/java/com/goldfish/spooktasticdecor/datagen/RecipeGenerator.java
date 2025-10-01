@@ -2051,6 +2051,14 @@ public class RecipeGenerator extends RecipeProvider {
                         .define('B', MetalRegistry.SOUL_BRASS_INGOT.get())
                         .unlockedBy("has_soul_brass_ingot", has(MetalRegistry.SOUL_BRASS_INGOT.get()))
                         .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.DECORATIONS, MetalRegistry.SOUL_BRASS_SHELF_ITEM.get())
+                        .pattern("AAA")
+                        .pattern("B  ")
+                        .define('A', MetalRegistry.SOUL_BRASS_SLAB_ITEM.get())
+                        .define('B', MetalRegistry.SOUL_BRASS_INGOT.get())
+                        .unlockedBy("has_soul_brass_ingot", has(MetalRegistry.SOUL_BRASS_INGOT.get()))
+                        .save(this.output);
         }
 
         protected void registerSmallDecorItemRecipes() {

@@ -845,6 +845,23 @@ public class ModelDatagen extends ModelProvider {
                 .select(Direction.DOWN, BlockModelGenerators.X_ROT_270)
             )
        );
+
+        Shelf soul_brass_shelf = MetalRegistry.SOUL_BRASS_SHELF.get();
+
+        Variant soul_brass_shelf_variant = new Variant(ModelLocationUtils.getModelLocation(soul_brass_shelf));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(
+                soul_brass_shelf,
+                BlockModelGenerators.variant(soul_brass_shelf_variant)
+            ).with(
+                PropertyDispatch.modify(HorizontalDirectionalBlock.FACING)
+                    .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                    .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                    .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                    .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+            )
+        );
     }
 
     

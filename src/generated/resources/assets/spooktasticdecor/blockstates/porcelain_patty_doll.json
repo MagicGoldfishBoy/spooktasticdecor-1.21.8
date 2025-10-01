@@ -2,14 +2,6 @@
   "multipart": [
     {
       "apply": {
-        "model": "spooktasticdecor:block/porcelain_patty_south"
-      },
-      "when": {
-        "facing": "south"
-      }
-    },
-    {
-      "apply": {
         "model": "spooktasticdecor:block/porcelain_patty_north"
       },
       "when": {
@@ -30,6 +22,14 @@
       },
       "when": {
         "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "spooktasticdecor:block/porcelain_patty_south"
+      },
+      "when": {
+        "facing": "south"
       }
     }
   ]

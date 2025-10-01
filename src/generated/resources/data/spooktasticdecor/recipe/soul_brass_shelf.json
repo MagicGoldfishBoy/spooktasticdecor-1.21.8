@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "spooktasticdecor:soul_brass_slab",
+    "B": "spooktasticdecor:soul_brass_ingot"
+  },
+  "pattern": [
+    "AAA",
+    "B  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "spooktasticdecor:soul_brass_shelf"
+  }
+}
