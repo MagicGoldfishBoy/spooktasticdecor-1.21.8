@@ -2,7 +2,7 @@ package com.goldfish.spooktasticdecor.block;
 
 import javax.annotation.Nullable;
 
-import com.goldfish.spooktasticdecor.block.entity.BarrelEntity;
+import com.goldfish.spooktasticdecor.block.entity.SoulBrassBarrelEntity;
 import com.goldfish.spooktasticdecor.registry.MetalRegistry;
 import com.mojang.serialization.MapCodec;
 
@@ -32,17 +32,17 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 
-public class Barrel extends BaseEntityBlock {
-    public static final MapCodec<Barrel> CODEC = simpleCodec(Barrel::new);
+public class SoulBrassBarrel extends BaseEntityBlock {
+    public static final MapCodec<SoulBrassBarrel> CODEC = simpleCodec(SoulBrassBarrel::new);
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
     @Override
-    public MapCodec<Barrel> codec() {
+    public MapCodec<SoulBrassBarrel> codec() {
         return CODEC;
     }
 
-    public Barrel(Properties properties) {
+    public SoulBrassBarrel(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(OPEN, false));
     }
@@ -51,7 +51,7 @@ public class Barrel extends BaseEntityBlock {
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
         if (level instanceof ServerLevel serverLevel) {
             BlockEntity blockEntity = level.getBlockEntity(pos);
-            if (blockEntity instanceof BarrelEntity barrelEntity) {
+            if (blockEntity instanceof SoulBrassBarrelEntity barrelEntity) {
                 player.openMenu(barrelEntity);
                 player.awardStat(Stats.OPEN_BARREL);
                 return InteractionResult.CONSUME;
@@ -63,8 +63,8 @@ public class Barrel extends BaseEntityBlock {
     protected void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
         if (!state.is(newState.getBlock())) {
             BlockEntity blockentity = level.getBlockEntity(pos);
-            if (blockentity instanceof BarrelEntity) {
-                Containers.dropContents(level, pos, (BarrelEntity)blockentity);
+            if (blockentity instanceof SoulBrassBarrelEntity) {
+                Containers.dropContents(level, pos, (SoulBrassBarrelEntity)blockentity);
                 level.updateNeighbourForOutputSignal(pos, this);
             }
         }
@@ -73,15 +73,15 @@ public class Barrel extends BaseEntityBlock {
     @Override
     protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         BlockEntity blockentity = level.getBlockEntity(pos);
-        if (blockentity instanceof BarrelEntity) {
-            ((BarrelEntity)blockentity).recheckOpen();
+        if (blockentity instanceof SoulBrassBarrelEntity) {
+            ((SoulBrassBarrelEntity)blockentity).recheckOpen();
         }
     }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-        return level.isClientSide ? null : createTickerHelper(blockEntityType, MetalRegistry.SOUL_BRONZE_BARREL_ENTITY.get(), (level1, pos, state1, blockEntity) -> {
+        return level.isClientSide ? null : createTickerHelper(blockEntityType, MetalRegistry.SOUL_BRASS_BARREL_ENTITY.get(), (level1, pos, state1, blockEntity) -> {
             blockEntity.recheckOpen();
         });
     }
@@ -89,7 +89,7 @@ public class Barrel extends BaseEntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new BarrelEntity(pos, state);
+        return new SoulBrassBarrelEntity(pos, state);
     }
 
     @Override

@@ -1773,7 +1773,7 @@ public class RecipeGenerator extends RecipeProvider {
                 .pattern(" B ")
                 .pattern("A A")
                 .pattern(" B ")
-                .define('A', MetalRegistry.SOUL_BRONZE_INGOT.get())
+                .define('A', MetalRegistry.SOUL_BRONZE_ITEM.get())
                 .define('B', MetalRegistry.SOUL_BRONZE_INGOT.get())
                 .unlockedBy("has_soul_bronze_ingot", has(MetalRegistry.SOUL_BRONZE_INGOT.get()))
                 .save(this.output);
@@ -2038,6 +2038,15 @@ public class RecipeGenerator extends RecipeProvider {
                         .pattern("BAB")
                         .pattern("BAB")
                         .pattern(" A ")
+                        .define('A', MetalRegistry.SOUL_BRASS_ITEM.get())
+                        .define('B', MetalRegistry.SOUL_BRASS_INGOT.get())
+                        .unlockedBy("has_soul_brass_ingot", has(MetalRegistry.SOUL_BRASS_INGOT.get()))
+                        .save(this.output);
+
+                ShapedRecipeBuilder.shaped(this.registries.lookupOrThrow(Registries.ITEM), RecipeCategory.BUILDING_BLOCKS, MetalRegistry.SOUL_BRASS_BARREL_ITEM.get())
+                        .pattern(" B ")
+                        .pattern("A A")
+                        .pattern(" B ")
                         .define('A', MetalRegistry.SOUL_BRASS_ITEM.get())
                         .define('B', MetalRegistry.SOUL_BRASS_INGOT.get())
                         .unlockedBy("has_soul_brass_ingot", has(MetalRegistry.SOUL_BRASS_INGOT.get()))

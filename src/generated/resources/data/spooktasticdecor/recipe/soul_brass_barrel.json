@@ -2,8 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "A": "spooktasticdecor:soul_bronze_block",
-    "B": "spooktasticdecor:soul_bronze_ingot"
+    "A": "spooktasticdecor:soul_brass_block",
+    "B": "spooktasticdecor:soul_brass_ingot"
   },
   "pattern": [
     " B ",
@@ -12,6 +12,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "spooktasticdecor:soul_bronze_barrel"
+    "id": "spooktasticdecor:soul_brass_barrel"
   }
 }

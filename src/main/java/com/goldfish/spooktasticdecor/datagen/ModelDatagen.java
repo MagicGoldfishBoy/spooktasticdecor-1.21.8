@@ -2,12 +2,13 @@ package com.goldfish.spooktasticdecor.datagen;
 
 import java.util.Map;
 import com.goldfish.spooktasticdecor.SpooktasticDecor;
-import com.goldfish.spooktasticdecor.block.Barrel;
+import com.goldfish.spooktasticdecor.block.SoulBronzeBarrel;
 import com.goldfish.spooktasticdecor.block.Doll;
 import com.goldfish.spooktasticdecor.block.Path;
 import com.goldfish.spooktasticdecor.block.Shelf;
 import com.goldfish.spooktasticdecor.block.ShortStatue;
 import com.goldfish.spooktasticdecor.block.Skull;
+import com.goldfish.spooktasticdecor.block.SoulBrassBarrel;
 import com.goldfish.spooktasticdecor.block.TallStatue;
 import com.goldfish.spooktasticdecor.registry.PorcelainRegistry;
 import com.goldfish.spooktasticdecor.registry.MetalRegistry;
@@ -649,7 +650,7 @@ public class ModelDatagen extends ModelProvider {
             )
         );
 
-            Barrel soul_bronze_barrel = MetalRegistry.SOUL_BRONZE_BARREL.get();
+            SoulBronzeBarrel soul_bronze_barrel = MetalRegistry.SOUL_BRONZE_BARREL.get();
             Variant soul_bronze_barrel_closed = new Variant(ModelLocationUtils.getModelLocation(soul_bronze_barrel));
             Variant soul_bronze_barrel_open = new Variant(modLocation("block/soul_bronze_barrel_open"));
             MultiVariant soul_bronze_barrel_closed_multi = new MultiVariant(WeightedList.of(soul_bronze_barrel_closed));
@@ -822,6 +823,28 @@ public class ModelDatagen extends ModelProvider {
                     .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
             )
         );
+
+        SoulBrassBarrel soul_brass_barrel = MetalRegistry.SOUL_BRASS_BARREL.get();
+        Variant soul_brass_barrel_closed = new Variant(ModelLocationUtils.getModelLocation(soul_brass_barrel));
+        Variant soul_brass_barrel_open = new Variant(modLocation("block/soul_brass_barrel_open"));
+        MultiVariant soul_brass_barrel_closed_multi = new MultiVariant(WeightedList.of(soul_brass_barrel_closed));
+        MultiVariant soul_brass_barrel_open_multi = new MultiVariant(WeightedList.of(soul_brass_barrel_open));
+
+        blockModels.blockStateOutput.accept(
+            MultiVariantGenerator.dispatch(soul_brass_barrel).with(
+                PropertyDispatch.initial(BlockStateProperties.OPEN)
+                    .select(false, soul_brass_barrel_closed_multi)
+                    .select(true, soul_brass_barrel_open_multi)
+            ).with(
+            PropertyDispatch.modify(DirectionalBlock.FACING)
+                .select(Direction.SOUTH, BlockModelGenerators.NOP)
+                .select(Direction.NORTH, BlockModelGenerators.Y_ROT_180)
+                .select(Direction.WEST, BlockModelGenerators.Y_ROT_90)
+                .select(Direction.EAST, BlockModelGenerators.Y_ROT_270)
+                .select(Direction.UP, BlockModelGenerators.X_ROT_90)
+                .select(Direction.DOWN, BlockModelGenerators.X_ROT_270)
+            )
+       );
     }
 
     

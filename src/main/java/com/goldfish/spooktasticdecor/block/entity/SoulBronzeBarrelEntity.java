@@ -1,6 +1,6 @@
 package com.goldfish.spooktasticdecor.block.entity;
 
-import com.goldfish.spooktasticdecor.block.Barrel;
+import com.goldfish.spooktasticdecor.block.SoulBronzeBarrel;
 import com.goldfish.spooktasticdecor.registry.MetalRegistry;
 
 import net.minecraft.core.BlockPos;
@@ -26,12 +26,12 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 
-public class BarrelEntity extends RandomizableContainerBlockEntity {
+public class SoulBronzeBarrelEntity extends RandomizableContainerBlockEntity {
     
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
-    private static final int CONTAINER_SIZE = 27; // Standard barrel size (3 rows)
+    private static final int CONTAINER_SIZE = 27;
 
-    public BarrelEntity(BlockPos pos, BlockState blockState) {
+    public SoulBronzeBarrelEntity(BlockPos pos, BlockState blockState) {
         super(MetalRegistry.SOUL_BRONZE_BARREL_ENTITY.get(), pos, blockState);
     }
     
@@ -40,26 +40,25 @@ public class BarrelEntity extends RandomizableContainerBlockEntity {
     private final ContainerOpenersCounter openersCounter = new ContainerOpenersCounter() {
         @Override
         protected void onOpen(Level level, BlockPos pos, BlockState state) {
-            BarrelEntity.this.playSound(state, SoundEvents.BARREL_OPEN);
-            BarrelEntity.this.updateBlockState(state, true);
+            SoulBronzeBarrelEntity.this.playSound(state, SoundEvents.BARREL_OPEN);
+            SoulBronzeBarrelEntity.this.updateBlockState(state, true);
         }
 
         @Override
         protected void onClose(Level level, BlockPos pos, BlockState state) {
-            BarrelEntity.this.playSound(state, SoundEvents.BARREL_CLOSE);
-            BarrelEntity.this.updateBlockState(state, false);
+            SoulBronzeBarrelEntity.this.playSound(state, SoundEvents.BARREL_CLOSE);
+            SoulBronzeBarrelEntity.this.updateBlockState(state, false);
         }
 
         @Override
         protected void openerCountChanged(Level level, BlockPos pos, BlockState state, int oldCount, int newCount) {
-            // Optional: Add logic if you need to handle opener count changes
         }
 
         @Override
         protected boolean isOwnContainer(Player player) {
             if (player.containerMenu instanceof ChestMenu chestMenu) {
                 Container container = chestMenu.getContainer();
-                return container == BarrelEntity.this;
+                return container == SoulBronzeBarrelEntity.this;
             }
             return false;
         }
@@ -104,7 +103,6 @@ public class BarrelEntity extends RandomizableContainerBlockEntity {
 
     @Override
     protected AbstractContainerMenu createMenu(int id, Inventory playerInventory) {
-        // Use threeRows for 27 slots instead of fourRows for 36 slots
         return ChestMenu.threeRows(id, playerInventory, this);
     }
 
@@ -130,13 +128,13 @@ public class BarrelEntity extends RandomizableContainerBlockEntity {
 
     void updateBlockState(BlockState state, boolean open) {
         if (this.level != null) {
-            this.level.setBlock(this.getBlockPos(), state.setValue(Barrel.OPEN, open), 3);
+            this.level.setBlock(this.getBlockPos(), state.setValue(SoulBronzeBarrel.OPEN, open), 3);
         }
     }
 
     void playSound(BlockState state, SoundEvent sound) {
         if (this.level != null) {
-            Vec3i vec3i = state.getValue(Barrel.FACING).getUnitVec3i();
+            Vec3i vec3i = state.getValue(SoulBronzeBarrel.FACING).getUnitVec3i();
             double d0 = this.worldPosition.getX() + 0.5 + vec3i.getX() / 2.0;
             double d1 = this.worldPosition.getY() + 0.5 + vec3i.getY() / 2.0;
             double d2 = this.worldPosition.getZ() + 0.5 + vec3i.getZ() / 2.0;
